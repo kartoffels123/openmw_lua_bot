@@ -1,0 +1,137 @@
+{
+  "title": "Built-in events\uf0c1",
+  "sections": [
+    {
+      "header": "Actor events\uf0c1",
+      "content": [
+        {
+          "paragraph": "Died"
+        },
+        {
+          "paragraph": "This event is sent to an actor\u2019s local script when that actor dies."
+        },
+        {
+          "code": "eventHandlers={Died=function()print('Alas, ye hardly knew me!')end}"
+        },
+        {
+          "paragraph": "StartAIPackage, RemoveAIPackages"
+        },
+        {
+          "paragraph": "Any script can send to any actor (except player, for player will be ignored) eventsStartAIPackageandRemoveAIPackages.\nThe effect is equivalent to callinginterfaces.AI.startPackageorinterfaces.AI.removePackagesin a local script on this actor."
+        },
+        {
+          "code": "StartAIPackage"
+        },
+        {
+          "code": "RemoveAIPackages"
+        },
+        {
+          "code": "interfaces.AI.startPackage"
+        },
+        {
+          "code": "interfaces.AI.removePackages"
+        },
+        {
+          "paragraph": "Examples:"
+        },
+        {
+          "code": "actor:sendEvent('StartAIPackage',{type='Combat',target=self.object})actor:sendEvent('RemoveAIPackages','Pursue')"
+        },
+        {
+          "paragraph": "UseItem"
+        },
+        {
+          "paragraph": "Any script can send global eventUseItemwith argumentsobject,actor, and optional booleanforce.\nThe actor will use (e.g. equip or consume) the object. The object should be in the actor\u2019s inventory."
+        },
+        {
+          "code": "UseItem"
+        },
+        {
+          "code": "object"
+        },
+        {
+          "code": "actor"
+        },
+        {
+          "code": "force"
+        },
+        {
+          "paragraph": "Example:"
+        },
+        {
+          "code": "core.sendGlobalEvent('UseItem',{object=potion,actor=player,force=true})"
+        }
+      ]
+    },
+    {
+      "header": "UI events\uf0c1",
+      "content": [
+        {
+          "paragraph": "UiModeChanged"
+        },
+        {
+          "paragraph": "Every time UI mode is changed built-in scripts send to player the eventUiModeChangedwith argumentsoldMode,``newMode(same asI.UI.getMode())\nandarg(for example in the modeBookthe argument is the book the player is reading)."
+        },
+        {
+          "code": "UiModeChanged"
+        },
+        {
+          "code": "oldMode,``newMode"
+        },
+        {
+          "code": "I.UI.getMode()"
+        },
+        {
+          "code": "arg"
+        },
+        {
+          "code": "Book"
+        },
+        {
+          "code": "eventHandlers={UiModeChanged=function(data)print('UiModeChanged from',data.oldMode,'to',data.newMode,'('..tostring(data.arg)..')')end}"
+        },
+        {
+          "paragraph": "AddUiMode"
+        },
+        {
+          "paragraph": "Equivalent toI.UI.addMode, but can be sent from another object or global script."
+        },
+        {
+          "code": "I.UI.addMode"
+        },
+        {
+          "code": "player:sendEvent('AddUiMode',{mode='Book',target=book})"
+        },
+        {
+          "paragraph": "SetUiMode"
+        },
+        {
+          "paragraph": "Equivalent toI.UI.setMode, but can be sent from another object or global script."
+        },
+        {
+          "code": "I.UI.setMode"
+        },
+        {
+          "code": "player:sendEvent('SetUiMode',{mode='Book',target=book})"
+        }
+      ]
+    },
+    {
+      "header": "World events\uf0c1",
+      "content": [
+        {
+          "paragraph": "Global events that just call the corresponding function inopenmw.world."
+        },
+        {
+          "code": "-- world.pause(tag)core.sendGlobalEvent('Pause',tag)-- world.unpause(tag)core.sendGlobalEvent('Unpause',tag)-- world.setGameTimeScale(scale)core.sendGlobalEvent('SetGameTimeScale',scale)-- world.setSimulationTimeScale(scale)core.sendGlobalEvent('SetSimulationTimeScale',scale)"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

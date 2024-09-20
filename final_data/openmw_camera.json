@@ -1,0 +1,850 @@
+{
+  "title": "Package openmw.camera\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local camera = require('openmw.camera')"
+        },
+        {
+          "code": "local camera = require('openmw.camera')"
+        }
+      ]
+    },
+    {
+      "header": "Typecamera",
+      "content": [
+        {
+          "code": "camera"
+        },
+        {
+          "paragraph": "Camera modes."
+        },
+        {
+          "paragraph": "If set to true then after switching from Preview to ThirdPerson the player character turns to the camera view direction."
+        },
+        {
+          "paragraph": "Return base field of view vertical angle in radians"
+        },
+        {
+          "paragraph": "Return base view distance."
+        },
+        {
+          "paragraph": "Get current camera collision type (seeopenmw.nearby#COLLISION_TYPE)."
+        },
+        {
+          "paragraph": "Additional summand for the pitch angle that is not affected by player input."
+        },
+        {
+          "paragraph": "Additional summand for the roll angle that is not affected by player input."
+        },
+        {
+          "paragraph": "Additional summand for the yaw angle that is not affected by player input."
+        },
+        {
+          "paragraph": "Return current field of view vertical angle in radians"
+        },
+        {
+          "paragraph": "The offset between the characters head and the camera in first person mode (3d vector)."
+        },
+        {
+          "paragraph": "Preferred offset between tracked position (seegetTrackedPosition) and the camera focal point (the center of the screen) in third person mode."
+        },
+        {
+          "code": "getTrackedPosition"
+        },
+        {
+          "paragraph": "The current speed coefficient of focal point (the center of the screen in third person mode) smooth transition."
+        },
+        {
+          "paragraph": "Return the currentopenmw.camera#MODE."
+        },
+        {
+          "paragraph": "Camera pitch angle (radians) without taking extraPitch into account."
+        },
+        {
+          "paragraph": "Current position of the camera."
+        },
+        {
+          "paragraph": "Return the mode the camera will switch to after the end of the current animation."
+        },
+        {
+          "paragraph": "Get camera roll angle (radians)."
+        },
+        {
+          "paragraph": "The actual distance between the camera and the character in third person mode; can differ from the preferred one if there is an obstacle."
+        },
+        {
+          "paragraph": "Current position of the tracked object (the characters head if there is no animation)."
+        },
+        {
+          "paragraph": "Return current view distance."
+        },
+        {
+          "paragraph": "Get world to local transform for the camera."
+        },
+        {
+          "paragraph": "Camera yaw angle (radians) without taking extraYaw into account."
+        },
+        {
+          "paragraph": "Make instant the current transition of camera focal point and the current deferred rotation (seeallowCharacterDeferredRotation)."
+        },
+        {
+          "code": "allowCharacterDeferredRotation"
+        },
+        {
+          "paragraph": "Set camera collision type (seeopenmw.nearby#COLLISION_TYPE)."
+        },
+        {
+          "paragraph": "Additional summand for the pitch angle; useful for camera shaking effects."
+        },
+        {
+          "paragraph": "Additional summand for the roll angle; useful for camera shaking effects."
+        },
+        {
+          "paragraph": "Additional summand for the yaw angle; useful for camera shaking effects."
+        },
+        {
+          "paragraph": "Set field of view"
+        },
+        {
+          "paragraph": "Set the offset between the characters head and the camera in first person mode (3d vector)."
+        },
+        {
+          "paragraph": "Set preferred offset between tracked position (seegetTrackedPosition) and the camera focal point (the center of the screen) in third person mode."
+        },
+        {
+          "code": "getTrackedPosition"
+        },
+        {
+          "paragraph": "Set the speed coefficient of focal point (the center of the screen in third person mode) smooth transition."
+        },
+        {
+          "paragraph": "Changeopenmw.camera#MODE; if the second (optional, true by default) argument is set to false, the switching can be delayed (seegetQueuedMode)."
+        },
+        {
+          "code": "getQueuedMode"
+        },
+        {
+          "paragraph": "Force the pitch angle to the given value (radians); player input on this axis is ignored in this frame."
+        },
+        {
+          "paragraph": "Set preferred distance between the camera and the character in third person mode."
+        },
+        {
+          "paragraph": "Set camera roll angle (radians)."
+        },
+        {
+          "paragraph": "Set camera position; can be used only if camera is in Static mode."
+        },
+        {
+          "paragraph": "Set view distance."
+        },
+        {
+          "paragraph": "Force the yaw angle to the given value (radians); player input on this axis is ignored in this frame."
+        },
+        {
+          "paragraph": "Show/hide crosshair."
+        },
+        {
+          "paragraph": "Get vector from the camera to the world for the given point in viewport."
+        },
+        {
+          "paragraph": "Get vector from the world to the viewport for the given point in world space."
+        }
+      ]
+    },
+    {
+      "header": "TypeMODE",
+      "content": [
+        {
+          "code": "MODE"
+        },
+        {
+          "paragraph": "First person mode."
+        },
+        {
+          "paragraph": "Third person mode, but player character doesn't turn to the view direction."
+        },
+        {
+          "paragraph": "Camera doesn't track player; player inputs doesn't affect camera; usesetStaticPositionto move the camera."
+        },
+        {
+          "code": "setStaticPosition"
+        },
+        {
+          "paragraph": "Third person mode; player character turns to the view direction."
+        },
+        {
+          "paragraph": "Similar to Preview; camera slowly moves around the player."
+        }
+      ]
+    },
+    {
+      "header": "Typecamera",
+      "content": [
+        {
+          "code": "camera"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Camera modes."
+        },
+        {
+          "paragraph": "If set to true then after switching from Preview to ThirdPerson the player character turns to the camera view direction."
+        },
+        {
+          "paragraph": "Otherwise the camera turns to the character view direction."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#boolean boolValue:"
+        },
+        {
+          "code": "#boolean boolValue"
+        },
+        {
+          "paragraph": "Return base field of view vertical angle in radians"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Return base view distance."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Get current camera collision type (seeopenmw.nearby#COLLISION_TYPE)."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Additional summand for the pitch angle that is not affected by player input."
+        },
+        {
+          "paragraph": "Full pitch isgetPitch()+getExtraPitch()."
+        },
+        {
+          "code": "getPitch()+getExtraPitch()"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Additional summand for the roll angle that is not affected by player input."
+        },
+        {
+          "paragraph": "Full yaw isgetRoll()+getExtraRoll()."
+        },
+        {
+          "code": "getRoll()+getExtraRoll()"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Additional summand for the yaw angle that is not affected by player input."
+        },
+        {
+          "paragraph": "Full yaw isgetYaw()+getExtraYaw()."
+        },
+        {
+          "code": "getYaw()+getExtraYaw()"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Return current field of view vertical angle in radians"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "The offset between the characters head and the camera in first person mode (3d vector)."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3:"
+        },
+        {
+          "paragraph": "Preferred offset between tracked position (seegetTrackedPosition) and the camera focal point (the center of the screen) in third person mode."
+        },
+        {
+          "code": "getTrackedPosition"
+        },
+        {
+          "paragraph": "SeesetFocalPreferredOffset."
+        },
+        {
+          "code": "setFocalPreferredOffset"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector2:"
+        },
+        {
+          "paragraph": "The current speed coefficient of focal point (the center of the screen in third person mode) smooth transition."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Return the currentopenmw.camera#MODE."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Mode:"
+        },
+        {
+          "paragraph": "Camera pitch angle (radians) without taking extraPitch into account."
+        },
+        {
+          "paragraph": "Full pitch isgetPitch()+getExtraPitch()."
+        },
+        {
+          "code": "getPitch()+getExtraPitch()"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Current position of the camera."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3:"
+        },
+        {
+          "paragraph": "Return the mode the camera will switch to after the end of the current animation."
+        },
+        {
+          "paragraph": "Can be nil."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Mode:"
+        },
+        {
+          "paragraph": "Get camera roll angle (radians)."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "The actual distance between the camera and the character in third person mode; can differ from the preferred one if there is an obstacle."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Current position of the tracked object (the characters head if there is no animation)."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3:"
+        },
+        {
+          "paragraph": "Return current view distance."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Get world to local transform for the camera."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Transform:"
+        },
+        {
+          "paragraph": "Camera yaw angle (radians) without taking extraYaw into account."
+        },
+        {
+          "paragraph": "Full yaw isgetYaw()+getExtraYaw()."
+        },
+        {
+          "code": "getYaw()+getExtraYaw()"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Make instant the current transition of camera focal point and the current deferred rotation (seeallowCharacterDeferredRotation)."
+        },
+        {
+          "code": "allowCharacterDeferredRotation"
+        },
+        {
+          "paragraph": "Set camera collision type (seeopenmw.nearby#COLLISION_TYPE)."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number collisionType:"
+        },
+        {
+          "code": "#number collisionType"
+        },
+        {
+          "paragraph": "Additional summand for the pitch angle; useful for camera shaking effects."
+        },
+        {
+          "paragraph": "Setting extra pitch doesn't block player input.\nFull pitch isgetPitch()+getExtraPitch()."
+        },
+        {
+          "code": "getPitch()+getExtraPitch()"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        },
+        {
+          "paragraph": "Additional summand for the roll angle; useful for camera shaking effects."
+        },
+        {
+          "paragraph": "Full yaw isgetRoll()+getExtraRoll()."
+        },
+        {
+          "code": "getRoll()+getExtraRoll()"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        },
+        {
+          "paragraph": "Additional summand for the yaw angle; useful for camera shaking effects."
+        },
+        {
+          "paragraph": "Setting extra pitch doesn't block player input.\nFull yaw isgetYaw()+getExtraYaw()."
+        },
+        {
+          "code": "getYaw()+getExtraYaw()"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        },
+        {
+          "paragraph": "Set field of view"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number fov: \nField of view vertical angle in radians"
+        },
+        {
+          "code": "#number fov"
+        },
+        {
+          "paragraph": "Set the offset between the characters head and the camera in first person mode (3d vector)."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3offset:"
+        },
+        {
+          "code": "openmw.util#Vector3offset"
+        },
+        {
+          "paragraph": "Set preferred offset between tracked position (seegetTrackedPosition) and the camera focal point (the center of the screen) in third person mode."
+        },
+        {
+          "code": "getTrackedPosition"
+        },
+        {
+          "paragraph": "The offset is a 2d vector (X, Y) where X is horizontal (to the right from the character) and Y component is vertical (upward).\nThe real offset can differ from the preferred one during smooth transition of if blocked by an obstacle.\nSmooth transition happens by default every time when the preferred offset was changed. UseinstantTransition()to skip the current transition."
+        },
+        {
+          "code": "instantTransition()"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector2offset:"
+        },
+        {
+          "code": "openmw.util#Vector2offset"
+        },
+        {
+          "paragraph": "Set the speed coefficient of focal point (the center of the screen in third person mode) smooth transition."
+        },
+        {
+          "paragraph": "Smooth transition happens by default every time when the preferred offset was changed. UseinstantTransition()to skip the current transition."
+        },
+        {
+          "code": "instantTransition()"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number speed:"
+        },
+        {
+          "code": "#number speed"
+        },
+        {
+          "paragraph": "Changeopenmw.camera#MODE; if the second (optional, true by default) argument is set to false, the switching can be delayed (seegetQueuedMode)."
+        },
+        {
+          "code": "getQueuedMode"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#Modemode:"
+        },
+        {
+          "code": "#Modemode"
+        },
+        {
+          "paragraph": "#boolean force:"
+        },
+        {
+          "code": "#boolean force"
+        },
+        {
+          "paragraph": "Force the pitch angle to the given value (radians); player input on this axis is ignored in this frame."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        },
+        {
+          "paragraph": "Set preferred distance between the camera and the character in third person mode."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number distance:"
+        },
+        {
+          "code": "#number distance"
+        },
+        {
+          "paragraph": "Set camera roll angle (radians)."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        },
+        {
+          "paragraph": "Set camera position; can be used only if camera is in Static mode."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3pos:"
+        },
+        {
+          "code": "openmw.util#Vector3pos"
+        },
+        {
+          "paragraph": "Set view distance."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number distance: \nView distance in game units"
+        },
+        {
+          "code": "#number distance"
+        },
+        {
+          "paragraph": "Force the yaw angle to the given value (radians); player input on this axis is ignored in this frame."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        },
+        {
+          "paragraph": "Show/hide crosshair."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#boolean boolValue:"
+        },
+        {
+          "code": "#boolean boolValue"
+        },
+        {
+          "paragraph": "Get vector from the camera to the world for the given point in viewport."
+        },
+        {
+          "paragraph": "(0, 0) is the top left corner of the screen."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector2normalizedScreenPos:"
+        },
+        {
+          "code": "openmw.util#Vector2normalizedScreenPos"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3:"
+        },
+        {
+          "paragraph": "Get vector from the world to the viewport for the given point in world space."
+        },
+        {
+          "paragraph": "(0, 0) is the top left corner of the screen.\nThe z component of the return value holds the distance from the camera to the position, in world space"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3worldPos:"
+        },
+        {
+          "code": "openmw.util#Vector3worldPos"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3:"
+        }
+      ]
+    },
+    {
+      "header": "TypeMODE",
+      "content": [
+        {
+          "code": "MODE"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "First person mode."
+        },
+        {
+          "paragraph": "Third person mode, but player character doesn't turn to the view direction."
+        },
+        {
+          "paragraph": "Camera doesn't track player; player inputs doesn't affect camera; usesetStaticPositionto move the camera."
+        },
+        {
+          "code": "setStaticPosition"
+        },
+        {
+          "paragraph": "Third person mode; player character turns to the view direction."
+        },
+        {
+          "paragraph": "Similar to Preview; camera slowly moves around the player."
+        }
+      ]
+    },
+    {
+      "header": "TypeMode",
+      "content": [
+        {
+          "code": "Mode"
+        },
+        {
+          "paragraph": "Camera mode; seeopenmw.camera#MODEfor possible values"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

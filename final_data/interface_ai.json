@@ -1,0 +1,291 @@
+{
+  "title": "Interface AI\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "require('openmw.interfaces').AI"
+        },
+        {
+          "code": "require('openmw.interfaces').AI"
+        }
+      ]
+    },
+    {
+      "header": "TypeAI",
+      "content": [
+        {
+          "code": "AI"
+        },
+        {
+          "paragraph": "Iterate over all packages starting from the active one and remove those wherefilterCallbackreturns false."
+        },
+        {
+          "code": "filterCallback"
+        },
+        {
+          "paragraph": "Iterate over all packages and runcallbackfor each starting from the active one."
+        },
+        {
+          "code": "callback"
+        },
+        {
+          "paragraph": "Return the currently active AI package (ornilif there are no AI packages)."
+        },
+        {
+          "code": "nil"
+        },
+        {
+          "paragraph": "Return the target of the active package if the package has given type"
+        },
+        {
+          "paragraph": "Get list of targets of all packages of the given type."
+        },
+        {
+          "paragraph": "Return whether the actor is fleeing."
+        },
+        {
+          "paragraph": "Remove packages of given type (remove all packages if the type is not specified)."
+        },
+        {
+          "paragraph": "Start new AI package."
+        },
+        {
+          "paragraph": "Interface version"
+        }
+      ]
+    },
+    {
+      "header": "TypePackage",
+      "content": [
+        {
+          "code": "Package"
+        },
+        {
+          "paragraph": "Destination point of the AI package."
+        },
+        {
+          "paragraph": "Distance value (can be nil)."
+        },
+        {
+          "paragraph": "Duration value (can be nil)."
+        },
+        {
+          "paragraph": "Idle value (can be nil)."
+        },
+        {
+          "paragraph": "Should this package be repeated (true or false)."
+        },
+        {
+          "paragraph": "Whether to help the target in combat (true or false)."
+        },
+        {
+          "paragraph": "Target (usually an actor) of the AI package (can be nil)."
+        },
+        {
+          "paragraph": "Type of the AI package."
+        }
+      ]
+    },
+    {
+      "header": "TypeAI",
+      "content": [
+        {
+          "code": "AI"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Iterate over all packages starting from the active one and remove those wherefilterCallbackreturns false."
+        },
+        {
+          "code": "filterCallback"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#function filterCallback:"
+        },
+        {
+          "code": "#function filterCallback"
+        },
+        {
+          "paragraph": "Iterate over all packages and runcallbackfor each starting from the active one."
+        },
+        {
+          "code": "callback"
+        },
+        {
+          "paragraph": "The same asfilterPackage, but without removal."
+        },
+        {
+          "code": "filterPackage"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#function callback:"
+        },
+        {
+          "code": "#function callback"
+        },
+        {
+          "paragraph": "Return the currently active AI package (ornilif there are no AI packages)."
+        },
+        {
+          "code": "nil"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Package:"
+        },
+        {
+          "paragraph": "Return the target of the active package if the package has given type"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string packageType: \nThe expected type of the active package"
+        },
+        {
+          "code": "#string packageType"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.core#GameObject:The target (can be nil if the package has no target or has another type)"
+        },
+        {
+          "paragraph": "Get list of targets of all packages of the given type."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string packageType:"
+        },
+        {
+          "code": "#string packageType"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#list<openmw.core#GameObject>:"
+        },
+        {
+          "paragraph": "Return whether the actor is fleeing."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#boolean:"
+        },
+        {
+          "paragraph": "Remove packages of given type (remove all packages if the type is not specified)."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string packageType: \n(optional) The type of packages to remove."
+        },
+        {
+          "code": "#string packageType"
+        },
+        {
+          "paragraph": "Start new AI package."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#table options: \nSee the \"Built-in AI packages\" page."
+        },
+        {
+          "code": "#table options"
+        },
+        {
+          "paragraph": "Interface version"
+        }
+      ]
+    },
+    {
+      "header": "TypePackage",
+      "content": [
+        {
+          "code": "Package"
+        },
+        {
+          "paragraph": "AI Package"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Destination point of the AI package."
+        },
+        {
+          "paragraph": "Distance value (can be nil)."
+        },
+        {
+          "paragraph": "Duration value (can be nil)."
+        },
+        {
+          "paragraph": "Idle value (can be nil)."
+        },
+        {
+          "paragraph": "Should this package be repeated (true or false)."
+        },
+        {
+          "paragraph": "Whether to help the target in combat (true or false)."
+        },
+        {
+          "paragraph": "Target (usually an actor) of the AI package (can be nil)."
+        },
+        {
+          "paragraph": "Type of the AI package."
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

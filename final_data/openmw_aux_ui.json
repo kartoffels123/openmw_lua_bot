@@ -1,0 +1,96 @@
+{
+  "title": "Package openmw_aux.ui\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local auxUi = require('openmw_aux.ui')"
+        },
+        {
+          "code": "local auxUi = require('openmw_aux.ui')"
+        }
+      ]
+    },
+    {
+      "header": "Typeui",
+      "content": [
+        {
+          "code": "ui"
+        },
+        {
+          "paragraph": "Recursively destroys all elements in the passed layout or element"
+        },
+        {
+          "paragraph": "Recursively updates all elements in the passed layout or element"
+        }
+      ]
+    },
+    {
+      "header": "Typeui",
+      "content": [
+        {
+          "code": "ui"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Recursively destroys all elements in the passed layout or element"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#any elementOrLayout:openmw.ui#Layoutoropenmw.ui#Element"
+        },
+        {
+          "code": "#any elementOrLayout"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#table layout:"
+        },
+        {
+          "code": "#table layout"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#table:copied layout"
+        },
+        {
+          "paragraph": "Recursively updates all elements in the passed layout or element"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#any elementOrLayout:openmw.ui#Layoutoropenmw.ui#Element"
+        },
+        {
+          "code": "#any elementOrLayout"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "title": "Package openmw_aux.calendar\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local calendar = require('openmw_aux.calendar')"
+        },
+        {
+          "code": "local calendar = require('openmw_aux.calendar')"
+        }
+      ]
+    },
+    {
+      "header": "Typecalendar",
+      "content": [
+        {
+          "code": "calendar"
+        },
+        {
+          "paragraph": "The number of days in a month"
+        },
+        {
+          "paragraph": "The number of days in a week"
+        },
+        {
+          "paragraph": "The number of days in a year"
+        },
+        {
+          "paragraph": "An equivalent ofos.datefor game time."
+        },
+        {
+          "code": "os.date"
+        },
+        {
+          "paragraph": "An equivalent ofos.timefor game time."
+        },
+        {
+          "code": "os.time"
+        },
+        {
+          "paragraph": "The number of months in a year"
+        },
+        {
+          "paragraph": "The name of a month"
+        },
+        {
+          "paragraph": "The name of a month in genitive (for English is the same asmonthName, but in some languages the form can differ)."
+        },
+        {
+          "code": "monthName"
+        },
+        {
+          "paragraph": "The name of a weekday"
+        }
+      ]
+    },
+    {
+      "header": "Typecalendar",
+      "content": [
+        {
+          "code": "calendar"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "The number of days in a month"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "monthIndex:"
+        },
+        {
+          "code": "monthIndex"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "The number of days in a week"
+        },
+        {
+          "paragraph": "The number of days in a year"
+        },
+        {
+          "paragraph": "An equivalent ofos.datefor game time."
+        },
+        {
+          "code": "os.date"
+        },
+        {
+          "paragraph": "Seehttps://www.lua.org/pil/22.1.html.\nIt is a slow function. Please try not to use it in every frame."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string format: \nformat of date (optional)"
+        },
+        {
+          "code": "#string format"
+        },
+        {
+          "paragraph": "#number time: \ntime to format (default value is current time)"
+        },
+        {
+          "code": "#number time"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#string:a formatted string representation oftime."
+        },
+        {
+          "code": "time"
+        },
+        {
+          "paragraph": "An equivalent ofos.timefor game time."
+        },
+        {
+          "code": "os.time"
+        },
+        {
+          "paragraph": "Seehttps://www.lua.org/pil/22.1.html"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#table table: \na table which describes a date (optional)."
+        },
+        {
+          "code": "#table table"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:a timestamp."
+        },
+        {
+          "paragraph": "The number of months in a year"
+        },
+        {
+          "paragraph": "The name of a month"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "monthIndex:"
+        },
+        {
+          "code": "monthIndex"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#string:"
+        },
+        {
+          "paragraph": "The name of a month in genitive (for English is the same asmonthName, but in some languages the form can differ)."
+        },
+        {
+          "code": "monthName"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "monthIndex:"
+        },
+        {
+          "code": "monthIndex"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#string:"
+        },
+        {
+          "paragraph": "The name of a weekday"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "dayIndex:"
+        },
+        {
+          "code": "dayIndex"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#string:"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

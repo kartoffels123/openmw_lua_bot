@@ -1,0 +1,201 @@
+{
+  "title": "Interface MWUI\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "require('openmw.interfaces').MWUI"
+        },
+        {
+          "code": "require('openmw.interfaces').MWUI"
+        }
+      ]
+    },
+    {
+      "header": "TypeMWUI",
+      "content": [
+        {
+          "code": "MWUI"
+        },
+        {
+          "paragraph": "Interface version"
+        }
+      ]
+    },
+    {
+      "header": "TypeTemplates",
+      "content": [
+        {
+          "code": "Templates"
+        },
+        {
+          "paragraph": "Standard rectangular borders"
+        },
+        {
+          "paragraph": "Standard rectangular borders"
+        },
+        {
+          "paragraph": "Container wrapping the content with borders"
+        },
+        {
+          "paragraph": "Same as box, but with a solid background"
+        },
+        {
+          "paragraph": "Same as box, but with a solid background"
+        },
+        {
+          "paragraph": "Container wrapping the content with borders"
+        },
+        {
+          "paragraph": "Same as box, but with a semi-transparent background"
+        },
+        {
+          "paragraph": "Same as box, but with a semi-transparent background"
+        },
+        {
+          "paragraph": "Shades its children and makes them uninteractible"
+        },
+        {
+          "paragraph": "Expanding horizontal line"
+        },
+        {
+          "paragraph": "Expanding horizontal line"
+        },
+        {
+          "paragraph": "Standard spacing interval"
+        },
+        {
+          "paragraph": "Container that adds padding around its content."
+        },
+        {
+          "paragraph": "Multiline text input"
+        },
+        {
+          "paragraph": "Single line text input"
+        },
+        {
+          "paragraph": "Header white colored text"
+        },
+        {
+          "paragraph": "Standard \"sand\" colored text"
+        },
+        {
+          "paragraph": "Standard \"sand\" colored multiline text"
+        },
+        {
+          "paragraph": "Expanding vertical line"
+        },
+        {
+          "paragraph": "Expanding vertical line"
+        }
+      ]
+    },
+    {
+      "header": "TypeMWUI",
+      "content": [
+        {
+          "code": "MWUI"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Interface version"
+        }
+      ]
+    },
+    {
+      "header": "TypeTemplates",
+      "content": [
+        {
+          "code": "Templates"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local I = require('openmw.interfaces')\nlocal ui = require('openmw.ui')\nlocal auxUi = require('openmw_aux.ui')\nui.create {\n    template = I.MWUI.templates.textNormal,\n    layer = 'Windows',\n    type = ui.TYPE.Text,\n    props = {\n        text = 'Hello, world!',\n    },\n}\n-- important to copy here\nlocal myText = auxUi.deepLayoutCopy(I.MWUI.templates.textNormal)\nmyText.props.textSize = 20\nI.MWUI.templates.textNormal = myText\nui.updateAll()"
+        },
+        {
+          "code": "local I = require('openmw.interfaces')\nlocal ui = require('openmw.ui')\nlocal auxUi = require('openmw_aux.ui')\nui.create {\n    template = I.MWUI.templates.textNormal,\n    layer = 'Windows',\n    type = ui.TYPE.Text,\n    props = {\n        text = 'Hello, world!',\n    },\n}\n-- important to copy here\nlocal myText = auxUi.deepLayoutCopy(I.MWUI.templates.textNormal)\nmyText.props.textSize = 20\nI.MWUI.templates.textNormal = myText\nui.updateAll()"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Standard rectangular borders"
+        },
+        {
+          "paragraph": "Standard rectangular borders"
+        },
+        {
+          "paragraph": "Container wrapping the content with borders"
+        },
+        {
+          "paragraph": "Same as box, but with a solid background"
+        },
+        {
+          "paragraph": "Same as box, but with a solid background"
+        },
+        {
+          "paragraph": "Container wrapping the content with borders"
+        },
+        {
+          "paragraph": "Same as box, but with a semi-transparent background"
+        },
+        {
+          "paragraph": "Same as box, but with a semi-transparent background"
+        },
+        {
+          "paragraph": "Shades its children and makes them uninteractible"
+        },
+        {
+          "paragraph": "Expanding horizontal line"
+        },
+        {
+          "paragraph": "Expanding horizontal line"
+        },
+        {
+          "paragraph": "Standard spacing interval"
+        },
+        {
+          "paragraph": "Container that adds padding around its content."
+        },
+        {
+          "paragraph": "Multiline text input"
+        },
+        {
+          "paragraph": "Single line text input"
+        },
+        {
+          "paragraph": "Header white colored text"
+        },
+        {
+          "paragraph": "Standard \"sand\" colored text"
+        },
+        {
+          "paragraph": "Standard \"sand\" colored multiline text"
+        },
+        {
+          "paragraph": "Expanding vertical line"
+        },
+        {
+          "paragraph": "Expanding vertical line"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

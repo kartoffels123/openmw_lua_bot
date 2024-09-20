@@ -1,0 +1,7 @@
+{
+  "folder_name": "The Curse of The Silent Siren",
+  "lua_files": {
+    "The Curse of The Silent Siren-54667-1-0-3-1726423648\\02a MWSE SSQN\\MWSE\\mods\\SS\\SSQN\\main.lua": "local ssqn = include(\"SSQN.interop\")\n\nlocal function init()\n    if (ssqn) then\n\t    ssqn.registerQIcon(\"SSMainQuest\",\"\\\\Icons\\\\SS\\\\q\\\\quest_silentsiren.tga\")\n    end\nend\n\nevent.register(tes3.event.initialized, init)",
+    "The Curse of The Silent Siren-54667-1-0-3-1726423648\\02b OpenMW SSQN\\Scripts\\SSQN\\iconlists\\TheCurseOfTheSilentSiren.lua": "local icons = {}\n-- The Curse of the Silent Siren\n\t\ticons.SSMainQuest = \"\\\\Icons\\\\SS\\\\q\\\\quest_silentsiren.tga\"\n\n\nreturn icons\n"
+  }
+}

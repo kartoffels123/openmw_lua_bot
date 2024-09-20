@@ -1,0 +1,1185 @@
+{
+  "title": "Overview of Lua scripting\uf0c1",
+  "sections": [
+    {
+      "header": "Language and sandboxing\uf0c1",
+      "content": [
+        {
+          "paragraph": "OpenMW supports scripts written in Lua 5.1 with some extensions (see below) from Lua 5.2 and Lua 5.3.\nThere are no plans to switch to any newer version of the language, because newer versions are not supported by LuaJIT."
+        },
+        {
+          "paragraph": "Note"
+        },
+        {
+          "paragraph": "There are also experimental declarations available for Teal, a typed dialect of Lua. seeTealfor more details."
+        },
+        {
+          "paragraph": "Here are some starting points for learning Lua:"
+        },
+        {
+          "paragraph": "Programing in Lua(first edition, aimed at Lua 5.0)"
+        },
+        {
+          "paragraph": "Lua 5.1 Reference Manual"
+        },
+        {
+          "paragraph": "Each script works in a separate sandbox and doesn\u2019t have any access to the underlying operating system.\nOnly a limited list of allowed standard libraries can be used:coroutine,math(exceptmath.randomseed\u2013 it is called by the engine on startup and not available from scripts),string,table,os(onlyos.date,os.difftime,os.time).\nThese libraries are loaded automatically and are always available."
+        },
+        {
+          "paragraph": "Allowedbasic functions:assert,error,ipairs,next,pairs,pcall,print,select,tonumber,tostring,type,unpack,xpcall,rawequal,rawget,rawset,getmetatable,setmetatable."
+        },
+        {
+          "code": "assert"
+        },
+        {
+          "code": "error"
+        },
+        {
+          "code": "ipairs"
+        },
+        {
+          "code": "next"
+        },
+        {
+          "code": "pairs"
+        },
+        {
+          "code": "pcall"
+        },
+        {
+          "code": "print"
+        },
+        {
+          "code": "select"
+        },
+        {
+          "code": "tonumber"
+        },
+        {
+          "code": "tostring"
+        },
+        {
+          "code": "type"
+        },
+        {
+          "code": "unpack"
+        },
+        {
+          "code": "xpcall"
+        },
+        {
+          "code": "rawequal"
+        },
+        {
+          "code": "rawget"
+        },
+        {
+          "code": "rawset"
+        },
+        {
+          "code": "getmetatable"
+        },
+        {
+          "code": "setmetatable"
+        },
+        {
+          "paragraph": "Supported Lua 5.2 features:"
+        },
+        {
+          "paragraph": "gotoand::labels::;"
+        },
+        {
+          "code": "goto"
+        },
+        {
+          "code": "::labels::"
+        },
+        {
+          "paragraph": "hex escapes\\x3Fand\\*escape in strings;"
+        },
+        {
+          "code": "\\x3F"
+        },
+        {
+          "code": "\\*"
+        },
+        {
+          "paragraph": "math.log(x[,base]);"
+        },
+        {
+          "code": "math.log(x[,base])"
+        },
+        {
+          "paragraph": "string.rep(s,n[,sep]);"
+        },
+        {
+          "code": "string.rep(s,n[,sep])"
+        },
+        {
+          "paragraph": "instring.format():%qis reversible,%suses__tostring,%aand%Aare added;"
+        },
+        {
+          "code": "string.format()"
+        },
+        {
+          "code": "%q"
+        },
+        {
+          "code": "%s"
+        },
+        {
+          "code": "__tostring"
+        },
+        {
+          "code": "%a"
+        },
+        {
+          "code": "%A"
+        },
+        {
+          "paragraph": "String matching pattern%g;"
+        },
+        {
+          "code": "%g"
+        },
+        {
+          "paragraph": "__pairsand__ipairsmetamethods;"
+        },
+        {
+          "code": "__pairs"
+        },
+        {
+          "code": "__ipairs"
+        },
+        {
+          "paragraph": "Functiontable.unpack(alias to Lua 5.1unpack)."
+        },
+        {
+          "code": "table.unpack"
+        },
+        {
+          "code": "unpack"
+        },
+        {
+          "paragraph": "Supported Lua 5.3 features:"
+        },
+        {
+          "paragraph": "All functions in theUTF-8 Library"
+        },
+        {
+          "paragraph": "Loading libraries withrequire('library_name')is allowed, but limited. It works this way:"
+        },
+        {
+          "code": "require('library_name')"
+        },
+        {
+          "paragraph": "Iflibrary_nameis one of the standard libraries, then return the library."
+        },
+        {
+          "paragraph": "Iflibrary_nameis one of the built-inAPI packages, then return the package."
+        },
+        {
+          "paragraph": "Otherwise search for a Lua source file with such name indata folders. For examplerequire('my_lua_library.something')will try to open one of the filesmy_lua_library/something.luaormy_lua_library/something/init.lua."
+        },
+        {
+          "code": "require('my_lua_library.something')"
+        },
+        {
+          "code": "my_lua_library/something.lua"
+        },
+        {
+          "code": "my_lua_library/something/init.lua"
+        },
+        {
+          "paragraph": "Loading DLLs and precompiled Lua files is intentionally prohibited for compatibility and security reasons."
+        }
+      ]
+    },
+    {
+      "header": "Basic concepts\uf0c1",
+      "content": [
+        {
+          "paragraph": "Any object that exists in the game world and has a specific location. Player, actors, items, and statics are game objects."
+        },
+        {
+          "paragraph": "Persistent information about an object. Includes starting stats and links to assets, but doesn\u2019t have a location. Game objects are instances of records. Some records (e.g. a unique NPC) have a single instance, some (e.g. a specific potion) may correspond to multiple objects."
+        },
+        {
+          "paragraph": "Note"
+        },
+        {
+          "paragraph": "Don\u2019t be confused with MWSE terminology. In MWSE game objects are \u201creferences\u201d and records are \u201cobjects\u201d."
+        },
+        {
+          "paragraph": "An area of the game world. A position in the world is a link to a cell and X, Y, Z coordinates in the cell. At a specific moment in time each cell can be active or inactive. Inactive cells don\u2019t perform physics updates."
+        },
+        {
+          "paragraph": "Lua scripts that are not attached to any game object and are always active. Global scripts can not be started or stopped during a game session. Lists of global scripts are defined byomwscriptsfiles, which should beregisteredinopenmw.cfg."
+        },
+        {
+          "paragraph": "Lua scripts that are ran regardless of a game being loaded. They can be used to add features to the main menu and manage save files."
+        },
+        {
+          "paragraph": "Lua scripts that are attached to some game object. A local script is active only if the object it is attached to is in an active cell. There are no limitations to the number of local scripts on one object. Local scripts can be attached to (or detached from) any object at any moment by a global script. In some cases inactive local scripts still can run code (for example during saving and loading), but while inactive they can not see nearby objects."
+        },
+        {
+          "paragraph": "Note"
+        },
+        {
+          "paragraph": "Currently scripts on objects in a container or an inventory are considered inactive. Probably later this behaviour will be changed."
+        },
+        {
+          "paragraph": "A specific kind of local scripts;player scriptis a local script that is attached to a player. It can do everything that a normal local script can do, plus some player-specific functionality (e.g. control UI and camera)."
+        },
+        {
+          "paragraph": "This scripting API was developed to be conceptually compatible withmultiplayer. In multiplayer the server is lightweight and delegates most of the work to clients. Each client processes some part of the game world. Global scripts are server-side and local scripts are client-side. Because of this, there are several rules for the Lua scripting API:"
+        },
+        {
+          "paragraph": "A local script can see only some area of the game world (cells that are active on a specific client). Any data from inactive cells can\u2019t be used, as they are not synchronized and could be already changed on another client."
+        },
+        {
+          "paragraph": "A local script can only modify the object it is attached to. Other objects can theoretically be processed by another client. To prevent synchronization problems the access to them is read-only."
+        },
+        {
+          "paragraph": "Global scripts can access and modify the whole game world including unloaded areas, but the global scripts API is different from the local scripts API and in some aspects limited, because it is not always possible to have all game assets in memory at the same time."
+        },
+        {
+          "paragraph": "Though the scripting system doesn\u2019t actually work with multiplayer yet, the API assumes that there can be several players. That\u2019s why any command related to UI, camera, and everything else that is player-specific can be used only by player scripts."
+        }
+      ]
+    },
+    {
+      "header": "How to run a script\uf0c1",
+      "content": [
+        {
+          "paragraph": "Let\u2019s write a simple example of aPlayer script:"
+        },
+        {
+          "code": "-- Save to my_lua_mod/scripts/example/player.lualocalui=require('openmw.ui')return{engineHandlers={onKeyPress=function(key)ifkey.symbol=='x'thenui.showMessage('You have pressed \"X\"')endend}}"
+        },
+        {
+          "paragraph": "The script will be used only if it is specified in one of content files.\nOpenMW Lua is an inclusive OpenMW feature, so it can not be controlled by ESP/ESM.\nThe options are:"
+        },
+        {
+          "paragraph": "1. Create text file \u201cmy_lua_mod.omwscripts\u201d with the following line:"
+        },
+        {
+          "code": "PLAYER:scripts/example/player.lua"
+        },
+        {
+          "paragraph": "(not implemented yet) Add the script in OpenMW CS on \u201cLua scripts\u201d view and save as \u201cmy_lua_mod.omwaddon\u201d."
+        },
+        {
+          "paragraph": "Enable it inopenmw.cfgthe same way as any other mod:"
+        },
+        {
+          "code": "openmw.cfg"
+        },
+        {
+          "code": "data=path/to/my_lua_modcontent=my_lua_mod.omwscripts# or content=my_lua_mod.omwaddon"
+        },
+        {
+          "paragraph": "Now every time the player presses \u201cX\u201d on a keyboard, a message is shown."
+        }
+      ]
+    },
+    {
+      "header": "Lua scripts naming policy\uf0c1",
+      "content": [
+        {
+          "paragraph": "Technically scripts can be placed anywhere in the virtual file system, but we recommend to follow the naming policy and choose one of:"
+        },
+        {
+          "paragraph": "scripts/<ModName>/<ScriptName>.lua: general case."
+        },
+        {
+          "code": "scripts/<ModName>/<ScriptName>.lua"
+        },
+        {
+          "paragraph": "scripts/<AuthorName>/<ModName>/<ScriptName>.lua: if \u201cModName\u201d is short and can potentially collide with other mods."
+        },
+        {
+          "code": "scripts/<AuthorName>/<ModName>/<ScriptName>.lua"
+        },
+        {
+          "paragraph": "scripts/<ModName>.lua: if it is a simple mod that consists of a single script, the script can be placed inscripts/without subdirs."
+        },
+        {
+          "code": "scripts/<ModName>.lua"
+        },
+        {
+          "code": "scripts/"
+        },
+        {
+          "paragraph": "scripts/omw/is reserved for built-in scripts, don\u2019t use it in mods. Overriding built-in scripts is not recommended, prefer to adjust their behaviour viaInterfaces of built-in scriptsinstead."
+        },
+        {
+          "code": "scripts/omw/"
+        },
+        {
+          "paragraph": "See also naming policy ofLocalisation Files."
+        }
+      ]
+    },
+    {
+      "header": "Format of.omwscripts\uf0c1",
+      "content": [
+        {
+          "code": ".omwscripts"
+        },
+        {
+          "code": "# Lines starting with '#' are commentsGLOBAL:scripts/my_mod/some_global_script.lua# Script that will be automatically attached to the playerPLAYER:scripts/my_mod/player.lua# Local script that will be automatically attached to every NPC and every creature in the gameNPC,CREATURE:scripts/my_mod/some_other_script.lua# Local script that can be attached to any object by a global scriptCUSTOM:scripts/my_mod/something.lua# Local script that will be automatically attached to any Container AND can be# attached to any other object by a global script.CONTAINER,CUSTOM:scripts/my_mod/container.lua"
+        },
+        {
+          "paragraph": "Each script is described by one line:<flags>:<pathto.luafileinvirtualfilesystem>.\nThe order of lines determines the script load order (i.e. script priorities)."
+        },
+        {
+          "code": "<flags>:<pathto.luafileinvirtualfilesystem>"
+        },
+        {
+          "paragraph": "Possible flags are:"
+        },
+        {
+          "paragraph": "GLOBAL- a global script; always active, can not be stopped;"
+        },
+        {
+          "code": "GLOBAL"
+        },
+        {
+          "paragraph": "MENU- a menu script; always active, even before a game is loaded"
+        },
+        {
+          "code": "MENU"
+        },
+        {
+          "paragraph": "CUSTOM- dynamic local script that can be started or stopped by a global script;"
+        },
+        {
+          "code": "CUSTOM"
+        },
+        {
+          "paragraph": "PLAYER- an auto started player script;"
+        },
+        {
+          "code": "PLAYER"
+        },
+        {
+          "paragraph": "ACTIVATOR- a local script that will be automatically attached to any activator;"
+        },
+        {
+          "code": "ACTIVATOR"
+        },
+        {
+          "paragraph": "ARMOR- a local script that will be automatically attached to any armor;"
+        },
+        {
+          "code": "ARMOR"
+        },
+        {
+          "paragraph": "BOOK- a local script that will be automatically attached to any book;"
+        },
+        {
+          "code": "BOOK"
+        },
+        {
+          "paragraph": "CLOTHING- a local script that will be automatically attached to any clothing;"
+        },
+        {
+          "code": "CLOTHING"
+        },
+        {
+          "paragraph": "CONTAINER- a local script that will be automatically attached to any container;"
+        },
+        {
+          "code": "CONTAINER"
+        },
+        {
+          "paragraph": "CREATURE- a local script that will be automatically attached to any creature;"
+        },
+        {
+          "code": "CREATURE"
+        },
+        {
+          "paragraph": "DOOR- a local script that will be automatically attached to any door;"
+        },
+        {
+          "code": "DOOR"
+        },
+        {
+          "paragraph": "INGREDIENT- a local script that will be automatically attached to any ingredient;"
+        },
+        {
+          "code": "INGREDIENT"
+        },
+        {
+          "paragraph": "LIGHT- a local script that will be automatically attached to any light;"
+        },
+        {
+          "code": "LIGHT"
+        },
+        {
+          "paragraph": "MISC_ITEM- a local script that will be automatically attached to any miscellaneous item;"
+        },
+        {
+          "code": "MISC_ITEM"
+        },
+        {
+          "paragraph": "NPC- a local script that will be automatically attached to any NPC;"
+        },
+        {
+          "code": "NPC"
+        },
+        {
+          "paragraph": "POTION- a local script that will be automatically attached to any potion;"
+        },
+        {
+          "code": "POTION"
+        },
+        {
+          "paragraph": "WEAPON- a local script that will be automatically attached to any weapon;"
+        },
+        {
+          "code": "WEAPON"
+        },
+        {
+          "paragraph": "APPARATUS- a local script that will be automatically attached to any apparatus;"
+        },
+        {
+          "code": "APPARATUS"
+        },
+        {
+          "paragraph": "LOCKPICK- a local script that will be automatically attached to any lockpick;"
+        },
+        {
+          "code": "LOCKPICK"
+        },
+        {
+          "paragraph": "PROBE- a local script that will be automatically attached to any probe tool;"
+        },
+        {
+          "code": "PROBE"
+        },
+        {
+          "paragraph": "REPAIR- a local script that will be automatically attached to any repair tool."
+        },
+        {
+          "code": "REPAIR"
+        },
+        {
+          "paragraph": "Several flags (exceptGLOBAL) can be used with a single script. Use space or comma as a separator."
+        },
+        {
+          "code": "GLOBAL"
+        }
+      ]
+    },
+    {
+      "header": "Hot reloading\uf0c1",
+      "content": [
+        {
+          "paragraph": "It is possible to modify a script without restarting OpenMW. To apply changes, open the in-game console and run the command:reloadlua.\nThis will restart all Lua scripts using theonSave and onLoadhandlers the same way as if the game was saved or loaded.\nIt reloads all.omwscriptsfiles and.luafiles that are not packed to any archives..omwaddonfiles and scripts packed to BSA can not be changed without restarting the game."
+        },
+        {
+          "code": "reloadlua"
+        },
+        {
+          "code": ".omwscripts"
+        },
+        {
+          "code": ".lua"
+        },
+        {
+          "code": ".omwaddon"
+        }
+      ]
+    },
+    {
+      "header": "Lua console\uf0c1",
+      "content": [
+        {
+          "paragraph": "It is also possible to run Lua commands directly from the in-game console."
+        },
+        {
+          "paragraph": "To enter the Lua mode run one of the commands:"
+        },
+        {
+          "paragraph": "luaplayerorluap- enter player context"
+        },
+        {
+          "code": "luaplayer"
+        },
+        {
+          "code": "luap"
+        },
+        {
+          "paragraph": "luaglobalorluag- enter global context"
+        },
+        {
+          "code": "luaglobal"
+        },
+        {
+          "code": "luag"
+        },
+        {
+          "paragraph": "luaselectedorluas- enter local context on the selected object"
+        },
+        {
+          "code": "luaselected"
+        },
+        {
+          "code": "luas"
+        },
+        {
+          "paragraph": "luamenuorluam- enter menu context"
+        },
+        {
+          "code": "luamenu"
+        },
+        {
+          "code": "luam"
+        }
+      ]
+    },
+    {
+      "header": "Script structure\uf0c1",
+      "content": [
+        {
+          "paragraph": "Each script is a separate file in the game assets.Starting a scriptmeans that the engine runs the file, parses the table it returns, and registers its interface, event handlers, and engine handlers. The handlers are permanent and exist until the script is stopped (if it is a local script, because global scripts can not be stopped)."
+        },
+        {
+          "paragraph": "Here is an example of a basic script structure:"
+        },
+        {
+          "code": "localutil=require('openmw.util')localfunctiononUpdate(dt)...endlocalfunctiononSave()...returndataendlocalfunctiononLoad(data)...endlocalfunctionmyEventHandler(eventData)...endlocalfunctionsomePublicFunction(params,...)...endreturn{interfaceName='MyScriptInterface',interface={somePublicFunction=somePublicFunction,},eventHandlers={MyEvent=myEventHandler},engineHandlers={onUpdate=onUpdate,onSave=onSave,onLoad=onLoad,}}"
+        },
+        {
+          "paragraph": "Note"
+        },
+        {
+          "paragraph": "Every instance of every script works in a separate enviroment, so it is not necessary\nto make everything local. It\u2019s local just because it makes the code a bit faster."
+        },
+        {
+          "paragraph": "All sections in the returned table are optional.\nIf you just want to do something every frame, it is enough to write the following:"
+        },
+        {
+          "code": "return{engineHandlers={onUpdate=function()print('Hello, World!')end}}"
+        }
+      ]
+    },
+    {
+      "header": "Engine handlers\uf0c1",
+      "content": [
+        {
+          "paragraph": "An engine handler is a function defined by a script, that can be called by the engine. I.e. it is an engine-to-script interaction.\nNot visible to other scripts. If several scripts register an engine handler with the same name,\nthe engine calls all of them according to the load order (i.e. the order ofcontent=entries inopenmw.cfg) and the order of scripts inomwaddon/omwscripts."
+        },
+        {
+          "code": "content="
+        },
+        {
+          "code": "openmw.cfg"
+        },
+        {
+          "code": "omwaddon/omwscripts"
+        },
+        {
+          "paragraph": "Some engine handlers are allowed only for global, or only for local/player scripts. Some are universal.\nSeeEngine handlers reference."
+        }
+      ]
+    },
+    {
+      "header": "onSave and onLoad\uf0c1",
+      "content": [
+        {
+          "paragraph": "When a game is saved or loaded, the engine calls the engine handlersonSaveoronLoadto save or load each script.\nThe value thatonSavereturns will be passed toonLoadwhen the game is loaded.\nIt is the only way to save the internal state of a script. All other script variables will be lost after closing the game.\nThe saved state must beserializable."
+        },
+        {
+          "paragraph": "Note thatonLoadmeans loading a script rather than loading a game.\nIf a script did not exist when a game was saved thenonLoadwill not be called, butonInitwill."
+        },
+        {
+          "paragraph": "onSaveandonLoadcan be called even for objects in inactive state, so it shouldn\u2019t useopenmw.nearby."
+        },
+        {
+          "paragraph": "An example:"
+        },
+        {
+          "code": "...localscriptVersion=3-- increase it every time when `onSave` is changedlocalfunctiononSave()return{version=scriptVersionsome=someVariable,someOther=someOtherVariable}endlocalfunctiononLoad(data)ifnotdataornotdata.versionordata.version<2thenprint('Was saved with an old version of the script, initializing to default')someVariable='some value'someOtherVariable=42returnendifdata.version>scriptVersionthenerror('Required update to a new version of the script')endsomeVariable=data.someifdata.version==scriptVersionthensomeOtherVariable=data.someOtherelseprint(string.format('Updating from version %d to %d',data.version,scriptVersion))someOtherVariable=42endendreturn{engineHandlers={onUpdate=update,onSave=onSave,onLoad=onLoad,}}"
+        }
+      ]
+    },
+    {
+      "header": "Serializable data\uf0c1",
+      "content": [
+        {
+          "paragraph": "Serializablevalue means that OpenMW is able to convert it to a sequence of bytes and then (probably on a different computer and with different OpenMW version) restore it back to the same form."
+        },
+        {
+          "paragraph": "Serializable value is one of:"
+        },
+        {
+          "paragraph": "nilvalue"
+        },
+        {
+          "paragraph": "a number"
+        },
+        {
+          "paragraph": "a string"
+        },
+        {
+          "paragraph": "a game object"
+        },
+        {
+          "paragraph": "a value of a type, defined byopenmw.util"
+        },
+        {
+          "paragraph": "a table whith serializable keys and values"
+        },
+        {
+          "paragraph": "Serializable data can not contain:"
+        },
+        {
+          "paragraph": "Functions"
+        },
+        {
+          "paragraph": "Tables with custom metatables"
+        },
+        {
+          "paragraph": "Several references to the same table. For example{x=some_table,y=some_table}is not allowed."
+        },
+        {
+          "code": "{x=some_table,y=some_table}"
+        },
+        {
+          "paragraph": "Circular references (i.e. when some table contains itself)."
+        }
+      ]
+    },
+    {
+      "header": "API packages\uf0c1",
+      "content": [
+        {
+          "paragraph": "API packages provide functions that can be called by scripts. I.e. it is a script-to-engine interaction.\nA package can be loaded withrequire('<packagename>').\nIt can not be overloaded even if there is a lua file with the same name.\nThe list of available packages is different for global and for local scripts.\nPlayer scripts are local scripts that are attached to a player."
+        },
+        {
+          "code": "require('<packagename>')"
+        },
+        {
+          "paragraph": "Package"
+        },
+        {
+          "paragraph": "Can be used"
+        },
+        {
+          "paragraph": "Description"
+        },
+        {
+          "paragraph": "openmw.interfaces"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.util"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.storage"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.core"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.types"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.animation"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.async"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.vfs"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.markup"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw.world"
+        },
+        {
+          "paragraph": "by global scripts"
+        },
+        {
+          "paragraph": "openmw.self"
+        },
+        {
+          "paragraph": "by local scripts"
+        },
+        {
+          "paragraph": "openmw.nearby"
+        },
+        {
+          "paragraph": "by local scripts"
+        },
+        {
+          "paragraph": "openmw.ambient"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "openmw.input"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "openmw.ui"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "openmw.menu"
+        },
+        {
+          "paragraph": "by menu scripts"
+        },
+        {
+          "paragraph": "openmw.camera"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "openmw.postprocessing"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "openmw.debug"
+        },
+        {
+          "paragraph": "by player scripts"
+        }
+      ]
+    },
+    {
+      "header": "openmw_aux\uf0c1",
+      "content": [
+        {
+          "paragraph": "openmw_aux.*are built-in libraries that are themselves implemented in Lua. They can not do anything that is not possible with the basic API, they only make it more convenient.\nSources can be found inresources/vfs/openmw_aux. In theory mods can override them, but it is not recommended."
+        },
+        {
+          "code": "openmw_aux.*"
+        },
+        {
+          "code": "resources/vfs/openmw_aux"
+        },
+        {
+          "paragraph": "Built-in library"
+        },
+        {
+          "paragraph": "Can be used"
+        },
+        {
+          "paragraph": "Description"
+        },
+        {
+          "paragraph": "openmw_aux.calendar"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw_aux.util"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw_aux.time"
+        },
+        {
+          "paragraph": "everywhere"
+        },
+        {
+          "paragraph": "openmw_aux.ui"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "They can be loaded withrequirethe same as API packages. For example:"
+        },
+        {
+          "code": "require"
+        },
+        {
+          "code": "localtime=require('openmw_aux.time')time.runRepeatedly(doSomething,15*time.second)-- run `doSomething()` every 15 seconds"
+        }
+      ]
+    },
+    {
+      "header": "Script interfaces\uf0c1",
+      "content": [
+        {
+          "paragraph": "Each script can provide a named interface for other scripts.\nIt is a script-to-script interaction. This mechanism is not used by the engine itself."
+        },
+        {
+          "paragraph": "A script can use an interface of another script either if both are global scripts, or both are local scripts on the same object.\nIn other cases events should be used."
+        },
+        {
+          "paragraph": "Defining an interface:"
+        },
+        {
+          "code": "return{interfaceName=\"SomeUtils\"interface={version=1,doSomething=function(x,y)...end,}}"
+        },
+        {
+          "paragraph": "Overriding the interface and adding a debug output:"
+        },
+        {
+          "code": "localbaseInterface=nil-- will be assigned by `onInterfaceOverride`interface={version=1,doSomething=function(x,y)print(string.format('SomeUtils.doSomething(%d, %d)',x,y))baseInterface.doSomething(x,y)-- calls the original `doSomething`-- WRONG! Would lead to an infinite recursion.-- local interfaces = require('openmw.interfaces')-- interfaces.SomeUtils.doSomething(x, y)end,}return{interfaceName=\"SomeUtils\",interface=interface,engineHandlers={onInterfaceOverride=function(base)baseInterface=baseend,},}"
+        },
+        {
+          "paragraph": "A general recommendation about overriding is that the new interface should be fully compatible with the old one.\nSo it is fine to change the behaviour ofSomeUtils.doSomething, but if you want to add a completely new function, it would be\nbetter to create a new interface for it. For exampleSomeUtilsExtendedwith an additional functiondoSomethingElse."
+        },
+        {
+          "paragraph": "Using the interface:"
+        },
+        {
+          "code": "localinterfaces=require('openmw.interfaces')localfunctiononUpdate()interfaces.SomeUtils.doSomething(2,3)endreturn{engineHandlers={onUpdate=onUpdate}}"
+        },
+        {
+          "paragraph": "The order in which the scripts are started is important. So if one mod should override an interface provided by another mod, make sure that load order (i.e. the sequence oflua-scripts=\u2026inopenmw.cfg) is correct."
+        }
+      ]
+    },
+    {
+      "header": "Interfaces of built-in scripts\uf0c1",
+      "content": [
+        {
+          "paragraph": "Interface"
+        },
+        {
+          "paragraph": "Can be used"
+        },
+        {
+          "paragraph": "Description"
+        },
+        {
+          "paragraph": "Activation"
+        },
+        {
+          "paragraph": "by global scripts"
+        },
+        {
+          "paragraph": "Allows to extend or override built-in activation mechanics."
+        },
+        {
+          "paragraph": "AI"
+        },
+        {
+          "paragraph": "by local scripts"
+        },
+        {
+          "paragraph": "Control basic AI of NPCs and creatures."
+        },
+        {
+          "paragraph": "AnimationController"
+        },
+        {
+          "paragraph": "by local scripts"
+        },
+        {
+          "paragraph": "Control animations of NPCs and creatures."
+        },
+        {
+          "paragraph": "Camera"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "Controls"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "Controls"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "ItemUsage"
+        },
+        {
+          "paragraph": "by global scripts"
+        },
+        {
+          "paragraph": "SkillProgression"
+        },
+        {
+          "paragraph": "by local scripts"
+        },
+        {
+          "paragraph": "Settings"
+        },
+        {
+          "paragraph": "by player and global scripts"
+        },
+        {
+          "paragraph": "Save, display and track changes of setting values."
+        },
+        {
+          "paragraph": "MWUI"
+        },
+        {
+          "paragraph": "by player scripts"
+        },
+        {
+          "paragraph": "Morrowind-style UI templates."
+        },
+        {
+          "paragraph": "UI"
+        },
+        {
+          "paragraph": "by player scripts"
+        }
+      ]
+    },
+    {
+      "header": "Event system\uf0c1",
+      "content": [
+        {
+          "paragraph": "This is another kind of script-to-script interactions. The differences:"
+        },
+        {
+          "paragraph": "Any script can send an event to any object or a global event to global scripts."
+        },
+        {
+          "paragraph": "Events are delivered with a small delay (in single player the delay is always one frame)."
+        },
+        {
+          "paragraph": "Event handlers can not return any data to the sender."
+        },
+        {
+          "paragraph": "Event handlers have a single argumenteventData(must beserializable)"
+        },
+        {
+          "paragraph": "There are a few methods for sending events:"
+        },
+        {
+          "paragraph": "core.sendGlobalEventto send events to global scripts"
+        },
+        {
+          "paragraph": "GameObject:sendEventto send events to local scripts attached to a game object"
+        },
+        {
+          "paragraph": "types.Player.sendMenuEventto send events to menu scripts of the given player"
+        },
+        {
+          "paragraph": "Events are the main way of interacting between local and global scripts.\nThey are not recommended for interactions between two global scripts, because in this case interfaces are more convenient."
+        },
+        {
+          "paragraph": "If several scripts register handlers for the same event, the handlers will be called in reverse order (opposite to engine handlers).\nI.e. the handler from the last script in the load order will be called first.\nReturn value \u2018false\u2019 means \u201cskip all other handlers for this event\u201d.\nAny other return value (including nil) means nothing."
+        },
+        {
+          "paragraph": "An example. Imagine we are working on a mod that adds some \u201cdark power\u201d with special effects.\nWe attach a local script to an item that can explode.\nAt some moment it will send the \u2018DamagedByDarkPower\u2019 event to all nearby actors:"
+        },
+        {
+          "code": "localself=require('openmw.self')localnearby=require('openmw.nearby')localfunctiononActivated()fori,actorinipairs(nearby.actors)dolocaldist=(self.position-actor.position):length()ifdist<500thenlocaldamage=(1-dist/500)*200actor:sendEvent('DamagedByDarkPower',{source=self.object,damage=damage})endendendreturn{engineHandlers={onActivated=onActivated}}"
+        },
+        {
+          "paragraph": "And every actor should have a local script that processes this event:"
+        },
+        {
+          "code": "localfunctiondamagedByDarkPower(data)...-- apply `data.damage` to stats / run custom animation / etcendreturn{eventHandlers={DamagedByDarkPower=damagedByDarkPower},}"
+        },
+        {
+          "paragraph": "Someone may create an additional mod that adds a protection from the dark power.\nThe protection mod attaches an additional local script to every actor. The script intercepts and modifies the event:"
+        },
+        {
+          "code": "localprotectionLevel=...localfunctionreduceDarkDamage(data)data.damage=data.damage-protectionLevel-- reduce the damagereturndata.damage>0-- it skips the original handler if the damage becomes <= 0endreturn{eventHandlers={DamagedByDarkPower=reduceDarkDamage},}"
+        },
+        {
+          "paragraph": "In order to be able to intercept the event, the protection script should be placed in the load order below the original script."
+        },
+        {
+          "paragraph": "Seethe list of eventsthat are used by built-in scripts."
+        }
+      ]
+    },
+    {
+      "header": "Timers\uf0c1",
+      "content": [
+        {
+          "paragraph": "Timers are in theopenmw.asyncpackage.\nThey can be set either in simulation time or in game time."
+        },
+        {
+          "paragraph": "Simulation time: the number of seconds in the game world (i.e. seconds when the game is not paused), passed from starting a new game."
+        },
+        {
+          "paragraph": "Game time: current time of the game world in seconds. Note that game time generally goes faster than the simulation time."
+        },
+        {
+          "paragraph": "When the game is paused, all timers are paused as well."
+        },
+        {
+          "paragraph": "When an object becomes inactive, timers on this object are not paused, but callbacks are called only when the object becomes active again.\nFor example if there were 3 timers with delays 30, 50, 90 seconds, and from the 15-th to the 65-th second the object was inactive, then the first two callbacks are both evaluated on the 65-th second and the third one \u2013 on the 90-th second."
+        },
+        {
+          "paragraph": "There are two types:reliableandunsavabletimers."
+        }
+      ]
+    },
+    {
+      "header": "Reliable timer\uf0c1",
+      "content": [
+        {
+          "paragraph": "Reliable timers are automatically saved and restored when the game is saved or loaded.\nWhen the game is saved each timer record contains only name of a callback, the time when the callback should be called, and an argument that should be passed to the callback.\nThe callback itself is not stored. That\u2019s why callbacks must be registered when the script is initialized with a functionasync:registerTimerCallback(name,func).Nameis an arbitrary string."
+        },
+        {
+          "code": "async:registerTimerCallback(name,func)"
+        },
+        {
+          "paragraph": "An example:"
+        },
+        {
+          "code": "localasync=require('openmw.async')localteleportWithDelayCallback=async:registerTimerCallback('teleport',function(data)data.actor:teleport(data.destCellName,data.destPos)end)localfunctionteleportWithDelay(delay,actor,cellName,pos)async:newSimulationTimer(delay,teleportWithDelayCallback,{actor=actor,destCellName=cellName,destPos=pos,})end"
+        }
+      ]
+    },
+    {
+      "header": "Unsavable timer\uf0c1",
+      "content": [
+        {
+          "paragraph": "Unsavable timers can be created from any function without registering a callback in advance, but they can not be saved.\nIf the player saves the game when an unsavable timer is running, then the timer will be lost after reloading.\nSo be careful with unsavable timers and don\u2019t use them if there is a risk of leaving the game world in an inconsistent state."
+        },
+        {
+          "paragraph": "An example:"
+        },
+        {
+          "code": "localasync=require('openmw.async')localui=require('openmw.ui')return{engineHandlers={onKeyPress=function(key)ifkey.symbol=='x'thenasync:newUnsavableSimulationTimer(10,function()ui.showMessage('You have pressed \"X\" 10 seconds ago')end)endend,}}"
+        },
+        {
+          "paragraph": "Also inopenmw_auxis the helper functionrunRepeatedly, it is implemented on top of unsavable timers:"
+        },
+        {
+          "code": "runRepeatedly"
+        },
+        {
+          "code": "localcore=require('openmw.core')localtime=require('openmw_aux.time')-- call `doSomething()` at the end of every game day.-- the second argument (`time.day`) is the interval.-- the periodical evaluation can be stopped at any moment by calling `stopFn()`localtimeBeforeMidnight=time.day-core.getGameTime()%time.daylocalstopFn=time.runRepeatedly(doSomething,time.day,{initialDelay=timeBeforeMidnight,type=time.GameTime,})"
+        }
+      ]
+    },
+    {
+      "header": "Using IDE for Lua scripting\uf0c1",
+      "content": [
+        {
+          "paragraph": "Find the directoryresources/lua_apiin your installation of OpenMW.\nIt describes OpenMW LuaAPI inLDT Documentation Language.\nIt is the source from which theAPI referenceis generated."
+        },
+        {
+          "code": "resources/lua_api"
+        },
+        {
+          "paragraph": "If you write scripts usingLua Development Tools(eclipse-based IDE),\nyou can import these files to get code autocompletion and integrated OpenMW API reference. Here are the steps:"
+        },
+        {
+          "paragraph": "Install and runLDT."
+        },
+        {
+          "paragraph": "PressFile/New/Lua Projectin menu."
+        },
+        {
+          "paragraph": "Specify project name (for example the title of your omwaddon)"
+        },
+        {
+          "paragraph": "SetTargeted Execution EnvironmenttoNo Execution Environment, andTarget Grammartolua-5.1."
+        },
+        {
+          "paragraph": "PressNext, choose theLibrariestab, and clickAdd External Source Folder."
+        },
+        {
+          "paragraph": "Specify there paths toresources/lua_apiandresources/vfsin your OpenMW installation."
+        },
+        {
+          "code": "resources/lua_api"
+        },
+        {
+          "code": "resources/vfs"
+        },
+        {
+          "paragraph": "PressFinish. Create a new Lua file."
+        },
+        {
+          "paragraph": "Now you have code completion! PressCtrl+Spacein any place to see the variants."
+        },
+        {
+          "code": "Ctrl+Space"
+        },
+        {
+          "paragraph": "In some cases LDT can deduce types automatically, but it is not always possible.\nYou can add special hints to give LDT more information:"
+        },
+        {
+          "paragraph": "Before function definition:---@paramTYPEargName"
+        },
+        {
+          "code": "---@paramTYPEargName"
+        },
+        {
+          "paragraph": "Before variable definition:---@fieldTYPEvariableName"
+        },
+        {
+          "code": "---@fieldTYPEvariableName"
+        },
+        {
+          "code": "--- @param openmw.core#GameObject objlocalfunctiondoSomething(obj)-- autocompletion now works with `obj`end--- @field openmw.util#Vector3 clocalc-- autocompletion now works with `c`"
+        },
+        {
+          "paragraph": "In order to have autocompletion for script interfaces the information where to find these interfaces should be provided.\nFor example for the camera interface (defined inresources/vfs/scripts/omw/camera.lua):"
+        },
+        {
+          "code": "resources/vfs/scripts/omw/camera.lua"
+        },
+        {
+          "code": "--- @type Interfaces-- @field scripts.omw.camera#Interface Camera-- ... other interfaces here--- @field #Interfaces IlocalI=require('openmw.interfaces')I.Camera.disableZoom()"
+        },
+        {
+          "paragraph": "SeeLDT Documentation Languagefor more details."
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

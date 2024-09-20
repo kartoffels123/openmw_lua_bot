@@ -1,0 +1,462 @@
+{
+  "title": "Package openmw.ambient\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local ambient = require('openmw.ambient')"
+        },
+        {
+          "code": "local ambient = require('openmw.ambient')"
+        }
+      ]
+    },
+    {
+      "header": "Typeambient",
+      "content": [
+        {
+          "code": "ambient"
+        },
+        {
+          "paragraph": "Check if music is playing"
+        },
+        {
+          "paragraph": "Check if sound file is playing"
+        },
+        {
+          "paragraph": "Check if sound is playing"
+        },
+        {
+          "paragraph": "Play a 2D sound"
+        },
+        {
+          "paragraph": "Play a 2D sound file"
+        },
+        {
+          "paragraph": "Play an ambient voiceover."
+        },
+        {
+          "paragraph": "Stop to play current music"
+        },
+        {
+          "paragraph": "Stop an ambient voiceover"
+        },
+        {
+          "paragraph": "Stop a sound"
+        },
+        {
+          "paragraph": "Stop a sound file"
+        },
+        {
+          "paragraph": "Play a sound file as a music track"
+        }
+      ]
+    },
+    {
+      "header": "TypeSound",
+      "content": [
+        {
+          "code": "Sound"
+        },
+        {
+          "paragraph": "Check if an ambient voiceover is playing"
+        }
+      ]
+    },
+    {
+      "header": "Typeambient",
+      "content": [
+        {
+          "code": "ambient"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Check if music is playing"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#boolean:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local isPlaying = ambient.isMusicPlaying();"
+        },
+        {
+          "code": "local isPlaying = ambient.isMusicPlaying();"
+        },
+        {
+          "paragraph": "Check if sound file is playing"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string fileName: \nPath to sound file in VFS"
+        },
+        {
+          "code": "#string fileName"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#boolean:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local isPlaying = ambient.isSoundFilePlaying(\"Sound\\\\test.mp3\");"
+        },
+        {
+          "code": "local isPlaying = ambient.isSoundFilePlaying(\"Sound\\\\test.mp3\");"
+        },
+        {
+          "paragraph": "Check if sound is playing"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string soundId: \nID of Sound record to check"
+        },
+        {
+          "code": "#string soundId"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#boolean:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local isPlaying = ambient.isSoundPlaying(\"shock bolt\");"
+        },
+        {
+          "code": "local isPlaying = ambient.isSoundPlaying(\"shock bolt\");"
+        },
+        {
+          "paragraph": "Play a 2D sound"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string soundId: \nID of Sound record to play"
+        },
+        {
+          "code": "#string soundId"
+        },
+        {
+          "paragraph": "#table options: \nAn optional table with additional optional arguments. Can contain:"
+        },
+        {
+          "code": "#table options"
+        },
+        {
+          "code": "timeOffset"
+        },
+        {
+          "code": "volume"
+        },
+        {
+          "code": "pitch"
+        },
+        {
+          "code": "scale"
+        },
+        {
+          "code": "loop"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local params = {\n   timeOffset=0.1\n   volume=0.3,\n   scale=false,\n   pitch=1.0,\n   loop=true\n};\nambient.playSound(\"shock bolt\", params)"
+        },
+        {
+          "code": "local params = {\n   timeOffset=0.1\n   volume=0.3,\n   scale=false,\n   pitch=1.0,\n   loop=true\n};\nambient.playSound(\"shock bolt\", params)"
+        },
+        {
+          "paragraph": "Play a 2D sound file"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string fileName: \nPath to sound file in VFS"
+        },
+        {
+          "code": "#string fileName"
+        },
+        {
+          "paragraph": "#table options: \nAn optional table with additional optional arguments. Can contain:"
+        },
+        {
+          "code": "#table options"
+        },
+        {
+          "code": "timeOffset"
+        },
+        {
+          "code": "volume"
+        },
+        {
+          "code": "pitch"
+        },
+        {
+          "code": "scale"
+        },
+        {
+          "code": "loop"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local params = {\n   timeOffset=0.1\n   volume=0.3,\n   scale=false,\n   pitch=1.0,\n   loop=true\n};\nambient.playSoundFile(\"Sound\\\\test.mp3\", params)"
+        },
+        {
+          "code": "local params = {\n   timeOffset=0.1\n   volume=0.3,\n   scale=false,\n   pitch=1.0,\n   loop=true\n};\nambient.playSoundFile(\"Sound\\\\test.mp3\", params)"
+        },
+        {
+          "paragraph": "Play an ambient voiceover."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string fileName: \nPath to sound file in VFS"
+        },
+        {
+          "code": "#string fileName"
+        },
+        {
+          "paragraph": "#string text: \nSubtitle text (optional)"
+        },
+        {
+          "code": "#string text"
+        }
+      ]
+    },
+    {
+      "header": "Usages:",
+      "content": [
+        {
+          "code": "-- play voiceover and print messagebox\nambient.say(\"Sound\\\\Vo\\\\Misc\\\\voice.mp3\", \"Subtitle text\")"
+        },
+        {
+          "code": "-- play voiceover and print messagebox\nambient.say(\"Sound\\\\Vo\\\\Misc\\\\voice.mp3\", \"Subtitle text\")"
+        },
+        {
+          "code": "-- play voiceover, without messagebox\nambient.say(\"Sound\\\\Vo\\\\Misc\\\\voice.mp3\")"
+        },
+        {
+          "code": "-- play voiceover, without messagebox\nambient.say(\"Sound\\\\Vo\\\\Misc\\\\voice.mp3\")"
+        },
+        {
+          "paragraph": "Stop to play current music"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "ambient.stopMusic();"
+        },
+        {
+          "code": "ambient.stopMusic();"
+        },
+        {
+          "paragraph": "Stop an ambient voiceover"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string fileName: \nPath to sound file in VFS"
+        },
+        {
+          "code": "#string fileName"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "ambient.stopSay();"
+        },
+        {
+          "code": "ambient.stopSay();"
+        },
+        {
+          "paragraph": "Stop a sound"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string soundId: \nID of Sound record to stop"
+        },
+        {
+          "code": "#string soundId"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "ambient.stopSound(\"shock bolt\");"
+        },
+        {
+          "code": "ambient.stopSound(\"shock bolt\");"
+        },
+        {
+          "paragraph": "Stop a sound file"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string fileName: \nPath to sound file in VFS"
+        },
+        {
+          "code": "#string fileName"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "ambient.stopSoundFile(\"Sound\\\\test.mp3\");"
+        },
+        {
+          "code": "ambient.stopSoundFile(\"Sound\\\\test.mp3\");"
+        },
+        {
+          "paragraph": "Play a sound file as a music track"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string fileName: \nPath to file in VFS"
+        },
+        {
+          "code": "#string fileName"
+        },
+        {
+          "paragraph": "#table options: \nAn optional table with additional optional arguments. Can contain:"
+        },
+        {
+          "code": "#table options"
+        },
+        {
+          "code": "fadeOut"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local params = {\n   fadeOut=2.0\n};\nambient.streamMusic(\"Music\\\\Test\\\\Test.mp3\", params)"
+        },
+        {
+          "code": "local params = {\n   fadeOut=2.0\n};\nambient.streamMusic(\"Music\\\\Test\\\\Test.mp3\", params)"
+        }
+      ]
+    },
+    {
+      "header": "TypeSound",
+      "content": [
+        {
+          "code": "Sound"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Check if an ambient voiceover is playing"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#boolean:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local isActive = isSayActive();"
+        },
+        {
+          "code": "local isActive = isSayActive();"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "title": "Teal\uf0c1",
+  "sections": [
+    {
+      "header": "What is Teal?\uf0c1",
+      "content": [
+        {
+          "paragraph": "Teal is a typed dialect of Lua.Teal\u2019s Github repository."
+        },
+        {
+          "paragraph": "Teal compiles into Lua, so you can use it in any Lua 5.1+ runtime. If you are familiar with TypeScript, Teal is to Lua what TypeScript is to JavaScript.\nYou can find the basics of the syntax and justification for typed Lua in theTeal tutorial."
+        },
+        {
+          "paragraph": "Teal\u2019s syntax is mostly the same as Lua, but with additional type declarations and annotations.\nIt will help you catch many mistakes before even running a script, and provide confidence about large code changes."
+        }
+      ]
+    },
+    {
+      "header": "Using the type checker\uf0c1",
+      "content": [
+        {
+          "paragraph": "To compile your.tlfiles into.luafiles, installCyan, Teal\u2019s build system."
+        },
+        {
+          "code": ".tl"
+        },
+        {
+          "code": ".lua"
+        },
+        {
+          "paragraph": "Create a directory for your project, with atlconfig.luafile inside.\nAll of your scripts (i. e. thescriptsdirectory) should be within this directory.tlconfig.luaconfigures the Teal build system and compiler, see thecomplete list here."
+        },
+        {
+          "code": "tlconfig.lua"
+        },
+        {
+          "code": "scripts"
+        },
+        {
+          "code": "tlconfig.lua"
+        },
+        {
+          "paragraph": "Note"
+        },
+        {
+          "paragraph": "You can usecyaninitto set up a directory for a Teal project automatically."
+        },
+        {
+          "code": "cyaninit"
+        },
+        {
+          "paragraph": "In addition to setting up a build process, you will need thedeclaration files for the OpenMW API.\nUnpack them into a directory of your choice, and add that path to theinclude_diroption in yourtlconfig.lua. Alternatively, you can add-I<my-dcelaration-directory-path>as an agument toCyancommands."
+        },
+        {
+          "code": "include_dir"
+        },
+        {
+          "code": "tlconfig.lua"
+        },
+        {
+          "code": "-I<my-dcelaration-directory-path>"
+        },
+        {
+          "code": "Cyan"
+        },
+        {
+          "paragraph": "After everything is ready, runcyanbuildin the same directory astlconfig.lua. It will find all the.tlfiles in thesource_dir, and put compiled.luafiles at the same relative paths insidebuild_dir.\nRunningcyanbuildwill also perform a type check, notifying you of any mismatches or mistakes."
+        },
+        {
+          "code": "cyanbuild"
+        },
+        {
+          "code": "tlconfig.lua"
+        },
+        {
+          "code": ".tl"
+        },
+        {
+          "code": "source_dir"
+        },
+        {
+          "code": ".lua"
+        },
+        {
+          "code": "build_dir"
+        },
+        {
+          "code": "cyanbuild"
+        },
+        {
+          "paragraph": "Note"
+        },
+        {
+          "paragraph": "source_dirandbuild_dircan be the same directory. In fact, that is the recommended arrangement, so that it\u2019s convenient to include the original sources with your scripts."
+        },
+        {
+          "code": "source_dir"
+        },
+        {
+          "code": "build_dir"
+        }
+      ]
+    },
+    {
+      "header": "IDE support\uf0c1",
+      "content": [
+        {
+          "paragraph": "Work onTeal Language Serveris still ongoing, so for now the only supported IDE isVisual Studio Code.\nIt\u2019s available on Windows, Linux and Mac, so most likely you can run it too.\nTeal\u2019s extension can be found here:VSCode Marketplace(or simply search for \u201cTeal\u201d in the extension UI)."
+        },
+        {
+          "paragraph": "Note"
+        },
+        {
+          "paragraph": "VSCode also has a web version, but the Teal extension isn\u2019t available there."
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

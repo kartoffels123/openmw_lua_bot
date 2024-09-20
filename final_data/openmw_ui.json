@@ -1,0 +1,1093 @@
+{
+  "title": "Package openmw.ui\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local ui = require('openmw.ui')"
+        },
+        {
+          "code": "local ui = require('openmw.ui')"
+        }
+      ]
+    },
+    {
+      "header": "Typeui",
+      "content": [
+        {
+          "code": "ui"
+        },
+        {
+          "paragraph": "Alignment values (left to right, top to bottom)"
+        },
+        {
+          "paragraph": "Predefined colors for console output"
+        },
+        {
+          "paragraph": "Widget types"
+        },
+        {
+          "paragraph": "Converts a given table of tables into anopenmw.ui#Content"
+        },
+        {
+          "paragraph": "Creates a UI element from the given layout table"
+        },
+        {
+          "paragraph": "Tools for working with layers"
+        },
+        {
+          "paragraph": "Print to the in-game console."
+        },
+        {
+          "paragraph": "Adds a settings page to main menu setting's Scripts tab."
+        },
+        {
+          "paragraph": "Removes the settings page"
+        },
+        {
+          "paragraph": "Returns the size of the OpenMW window in pixels as a 2D vector."
+        },
+        {
+          "paragraph": "Set mode of the in-game console."
+        },
+        {
+          "paragraph": "Set selected object for console."
+        },
+        {
+          "paragraph": "Shows given message at the bottom of the screen."
+        },
+        {
+          "paragraph": "Register a new texture resource."
+        },
+        {
+          "paragraph": "Update all existing UI elements."
+        }
+      ]
+    },
+    {
+      "header": "TypeALIGNMENT",
+      "content": [
+        {
+          "code": "ALIGNMENT"
+        }
+      ]
+    },
+    {
+      "header": "TypeCONSOLE_COLOR",
+      "content": [
+        {
+          "code": "CONSOLE_COLOR"
+        }
+      ]
+    },
+    {
+      "header": "TypeContent",
+      "content": [
+        {
+          "code": "Content"
+        },
+        {
+          "paragraph": "Content also acts as a map of names to Layouts"
+        },
+        {
+          "paragraph": "Adds the layout at the end of the Content\n(same as calling insert withlast index + 1)"
+        },
+        {
+          "code": "last index + 1"
+        },
+        {
+          "paragraph": "Finds the index of the given layout."
+        },
+        {
+          "paragraph": "Puts the layout at given index by shifting all the elements after it"
+        }
+      ]
+    },
+    {
+      "header": "TypeElement",
+      "content": [
+        {
+          "code": "Element"
+        },
+        {
+          "paragraph": "Destroys the element"
+        },
+        {
+          "paragraph": "Access or replace the element's layout\n  Note: Is reset tonilondestroy"
+        },
+        {
+          "code": "nil"
+        },
+        {
+          "code": "destroy"
+        },
+        {
+          "paragraph": "Refreshes the rendered element to match the current layout state."
+        }
+      ]
+    },
+    {
+      "header": "TypeLayer",
+      "content": [
+        {
+          "code": "Layer"
+        },
+        {
+          "paragraph": "Name of the layer"
+        },
+        {
+          "paragraph": "Size of the layer in pixels"
+        }
+      ]
+    },
+    {
+      "header": "TypeLayers",
+      "content": [
+        {
+          "code": "Layers"
+        },
+        {
+          "paragraph": "Index of the layer with the given name."
+        },
+        {
+          "paragraph": "Creates a layer and inserts it after another layer (shifts indexes of some other layers)."
+        },
+        {
+          "paragraph": "Creates a layer and inserts it before another layer (shifts indexes of some other layers)."
+        }
+      ]
+    },
+    {
+      "header": "TypeLayout",
+      "content": [
+        {
+          "code": "Layout"
+        },
+        {
+          "paragraph": "Optionalopenmw.ui#Contentof children layouts"
+        },
+        {
+          "paragraph": "Optional table of event callbacks"
+        },
+        {
+          "paragraph": "Optional table of external properties"
+        },
+        {
+          "paragraph": "Optional layout to display in. Only applies for the root widget.\n  Note: if the #Element isn't attached to anything, it won't be visible!"
+        },
+        {
+          "paragraph": "Optional name of the layout. Allows access by name from Content"
+        },
+        {
+          "paragraph": "Optional table of widget properties"
+        },
+        {
+          "paragraph": "Optional #Template"
+        },
+        {
+          "paragraph": "Type of the widget, one of the values in #TYPE. Must match the type in #Template if both are present"
+        },
+        {
+          "paragraph": "Arbitrary data for you to use, e. g. when receiving the layout in an event callback"
+        }
+      ]
+    },
+    {
+      "header": "TypeMouseEvent",
+      "content": [
+        {
+          "code": "MouseEvent"
+        },
+        {
+          "paragraph": "Mouse button which triggered the event.\n  Matches the arguments ofopenmw_input#input.isMouseButtonPressed(nilfor none, 1 for left, 3 for right)."
+        },
+        {
+          "code": "nil"
+        },
+        {
+          "paragraph": "Position of the mouse cursor relative to the widget"
+        },
+        {
+          "paragraph": "Absolute position of the mouse cursor"
+        }
+      ]
+    },
+    {
+      "header": "TypeSettingsPageOptions",
+      "content": [
+        {
+          "code": "SettingsPageOptions"
+        },
+        {
+          "paragraph": "The page's UI, which will be attached to the settings tab. The root widget has to have a fixed size. Set thesizefield inprops,relativeSizeis ignored."
+        },
+        {
+          "code": "size"
+        },
+        {
+          "code": "props"
+        },
+        {
+          "code": "relativeSize"
+        },
+        {
+          "paragraph": "Name of the page, displayed in the list, used for search"
+        },
+        {
+          "paragraph": "Additional keywords used in search, not displayed anywhere"
+        }
+      ]
+    },
+    {
+      "header": "TypeTYPE",
+      "content": [
+        {
+          "code": "TYPE"
+        },
+        {
+          "paragraph": "Automatically wraps around its contents"
+        },
+        {
+          "paragraph": "Aligns widgets in a row or column"
+        },
+        {
+          "paragraph": "Displays an image"
+        },
+        {
+          "paragraph": "Display text"
+        },
+        {
+          "paragraph": "Accepts user text input"
+        },
+        {
+          "paragraph": "Base widget type"
+        },
+        {
+          "paragraph": "Can be moved and resized by the user"
+        }
+      ]
+    },
+    {
+      "header": "TypeTemplate",
+      "content": [
+        {
+          "code": "Template"
+        },
+        {
+          "paragraph": "One of the values in #TYPE, serves as the default value for the #Layout"
+        }
+      ]
+    },
+    {
+      "header": "TypeTextureResourceOptions",
+      "content": [
+        {
+          "code": "TextureResourceOptions"
+        },
+        {
+          "paragraph": "Offset of this resource in the texture. (0, 0) by default"
+        },
+        {
+          "paragraph": "Path to the texture file. Required"
+        },
+        {
+          "paragraph": "Size of the resource in the texture. (0, 0) by default. 0 means the whole texture size is used."
+        }
+      ]
+    },
+    {
+      "header": "Typeui",
+      "content": [
+        {
+          "code": "ui"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Alignment values (left to right, top to bottom)"
+        },
+        {
+          "paragraph": "Predefined colors for console output"
+        },
+        {
+          "paragraph": "Widget types"
+        },
+        {
+          "paragraph": "Converts a given table of tables into anopenmw.ui#Content"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#table table:"
+        },
+        {
+          "code": "#table table"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Content:"
+        },
+        {
+          "paragraph": "Creates a UI element from the given layout table"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Layoutlayout:"
+        },
+        {
+          "code": "#Layoutlayout"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Element:"
+        },
+        {
+          "paragraph": "Tools for working with layers"
+        },
+        {
+          "paragraph": "Print to the in-game console."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string msg:"
+        },
+        {
+          "code": "#string msg"
+        },
+        {
+          "paragraph": "openmw.util#Colorcolor:"
+        },
+        {
+          "code": "openmw.util#Colorcolor"
+        },
+        {
+          "paragraph": "Adds a settings page to main menu setting's Scripts tab."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#SettingsPageOptionspage:"
+        },
+        {
+          "code": "#SettingsPageOptionspage"
+        },
+        {
+          "paragraph": "Removes the settings page"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#SettingsPageOptionspage: \nmust be the exact same table of options as the one passed to registerSettingsPage"
+        },
+        {
+          "code": "#SettingsPageOptionspage"
+        },
+        {
+          "paragraph": "Returns the size of the OpenMW window in pixels as a 2D vector."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector2:"
+        },
+        {
+          "paragraph": "Set mode of the in-game console."
+        },
+        {
+          "paragraph": "The mode can be any string, by default is empty.\nIf not empty, then the console doesn't handle mwscript commands and\ninstead passes user input to Lua scripts viaonConsoleCommandengine handler."
+        },
+        {
+          "code": "onConsoleCommand"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string mode:"
+        },
+        {
+          "code": "#string mode"
+        },
+        {
+          "paragraph": "Set selected object for console."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "openmw.core#GameObjectobj:"
+        },
+        {
+          "code": "openmw.core#GameObjectobj"
+        },
+        {
+          "paragraph": "Shows given message at the bottom of the screen."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string msg:"
+        },
+        {
+          "code": "#string msg"
+        },
+        {
+          "paragraph": "#table options: \nAn optional table with additional optional arguments. Can contain:"
+        },
+        {
+          "code": "#table options"
+        },
+        {
+          "code": "showInDialogue"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local params = {\n   showInDialogue=false\n};\nui.showMessage(\"Hello world\", params)"
+        },
+        {
+          "code": "local params = {\n   showInDialogue=false\n};\nui.showMessage(\"Hello world\", params)"
+        },
+        {
+          "paragraph": "Register a new texture resource."
+        },
+        {
+          "paragraph": "Can be used to manually atlas UI textures."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#TextureResourceOptionsoptions:"
+        },
+        {
+          "code": "#TextureResourceOptionsoptions"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#TextureResource:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local ui = require('openmw.ui')\nlocal vector2 = require('openmw.util').vector2\nlocal myAtlas = 'textures/my_atlas.dds' -- a 128x128 atlas\nlocal texture1 = ui.texture { -- texture in the top left corner of the atlas\n    path = myAtlas,\n    offset = vector2(0, 0),\n    size = vector2(64, 64),\n}\nlocal texture2 = ui.texture { -- texture in the top right corner of the atlas\n    path = myAtlas,\n    offset = vector2(64, 0),\n    size = vector2(64, 64),\n}"
+        },
+        {
+          "code": "local ui = require('openmw.ui')\nlocal vector2 = require('openmw.util').vector2\nlocal myAtlas = 'textures/my_atlas.dds' -- a 128x128 atlas\nlocal texture1 = ui.texture { -- texture in the top left corner of the atlas\n    path = myAtlas,\n    offset = vector2(0, 0),\n    size = vector2(64, 64),\n}\nlocal texture2 = ui.texture { -- texture in the top right corner of the atlas\n    path = myAtlas,\n    offset = vector2(64, 0),\n    size = vector2(64, 64),\n}"
+        },
+        {
+          "paragraph": "Update all existing UI elements."
+        },
+        {
+          "paragraph": "Potentially extremely slow, so only call this when necessary, e. g. after overriding a template."
+        }
+      ]
+    },
+    {
+      "header": "TypeALIGNMENT",
+      "content": [
+        {
+          "code": "ALIGNMENT"
+        },
+        {
+          "paragraph": "Alignment values (details depend on the specific property)."
+        },
+        {
+          "paragraph": "For horizontal alignment the order is left to right, for vertical alignment the order is top to bottom."
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "header": "TypeCONSOLE_COLOR",
+      "content": [
+        {
+          "code": "CONSOLE_COLOR"
+        },
+        {
+          "paragraph": "Predefined colors for console output"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "header": "TypeContent",
+      "content": [
+        {
+          "code": "Content"
+        },
+        {
+          "paragraph": "Content."
+        },
+        {
+          "paragraph": "An array-like container, which allows to reference elements by their name.\nImplementsiterables#Listof #Layout or #Element anditerables#Mapof #string to #Layout or #Element."
+        },
+        {
+          "paragraph": "Contentis a list of#any."
+        },
+        {
+          "code": "Content"
+        },
+        {
+          "code": "#any"
+        }
+      ]
+    },
+    {
+      "header": "Usages:",
+      "content": [
+        {
+          "code": "local content = ui.content {\n   { name = 'input' },\n}\n-- bad idea!\n-- content[1].name = 'otherInput'\n-- do this instead:\ncontent.input = { name = 'otherInput' }"
+        },
+        {
+          "code": "local content = ui.content {\n   { name = 'input' },\n}\n-- bad idea!\n-- content[1].name = 'otherInput'\n-- do this instead:\ncontent.input = { name = 'otherInput' }"
+        },
+        {
+          "code": "local content = ui.content {\n   { name = 'display' },\n   { name = 'submit' },\n}\n-- allowed, but shifts all the items after it \"up\" the array\ncontent.display = nil\n-- still no holes after this!"
+        },
+        {
+          "code": "local content = ui.content {\n   { name = 'display' },\n   { name = 'submit' },\n}\n-- allowed, but shifts all the items after it \"up\" the array\ncontent.display = nil\n-- still no holes after this!"
+        },
+        {
+          "code": "-- iterate over a Content\nfor i = 1, #content do\n   print('widget',content[i].name,'at',i)\nend"
+        },
+        {
+          "code": "-- iterate over a Content\nfor i = 1, #content do\n   print('widget',content[i].name,'at',i)\nend"
+        },
+        {
+          "code": "-- Note: layout names can collide with method names. Because of that you can't use a layout name such as \"insert\":\nlocal content = ui.content {\n    { name = 'insert '}\n}\ncontent.insert.content = ui.content {} -- fails here, content.insert is a function!"
+        },
+        {
+          "code": "-- Note: layout names can collide with method names. Because of that you can't use a layout name such as \"insert\":\nlocal content = ui.content {\n    { name = 'insert '}\n}\ncontent.insert.content = ui.content {} -- fails here, content.insert is a function!"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Content also acts as a map of names to Layouts"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string name:"
+        },
+        {
+          "code": "#string name"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#any:"
+        },
+        {
+          "paragraph": "Adds the layout at the end of the Content\n(same as calling insert withlast index + 1)"
+        },
+        {
+          "code": "last index + 1"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#any layoutOrElement:"
+        },
+        {
+          "code": "#any layoutOrElement"
+        },
+        {
+          "paragraph": "Finds the index of the given layout."
+        },
+        {
+          "paragraph": "If it is not in the container, returns nil"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#any layoutOrElement:"
+        },
+        {
+          "code": "#any layoutOrElement"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number, #nil:index"
+        },
+        {
+          "paragraph": "Puts the layout at given index by shifting all the elements after it"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number index:"
+        },
+        {
+          "code": "#number index"
+        },
+        {
+          "paragraph": "#any layoutOrElement:"
+        },
+        {
+          "code": "#any layoutOrElement"
+        }
+      ]
+    },
+    {
+      "header": "TypeElement",
+      "content": [
+        {
+          "code": "Element"
+        },
+        {
+          "paragraph": "Element."
+        },
+        {
+          "paragraph": "An element of the user interface"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Destroys the element"
+        },
+        {
+          "paragraph": "Access or replace the element's layout\n  Note: Is reset tonilondestroy"
+        },
+        {
+          "code": "nil"
+        },
+        {
+          "code": "destroy"
+        },
+        {
+          "paragraph": "Refreshes the rendered element to match the current layout state."
+        },
+        {
+          "paragraph": "Refreshes positions and sizes, but not the layout of the child Elements."
+        }
+      ]
+    },
+    {
+      "header": "TypeLayer",
+      "content": [
+        {
+          "code": "Layer"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Name of the layer"
+        },
+        {
+          "paragraph": "Size of the layer in pixels"
+        }
+      ]
+    },
+    {
+      "header": "TypeLayers",
+      "content": [
+        {
+          "code": "Layers"
+        },
+        {
+          "paragraph": "Layers."
+        },
+        {
+          "paragraph": "Implementsiterables#Listof #Layer."
+        },
+        {
+          "paragraph": "Layersis a list of#Layer."
+        },
+        {
+          "code": "Layers"
+        },
+        {
+          "code": "#Layer"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "ui.layers.insertAfter('HUD', 'NewLayer', { interactive = true })\nlocal fourthLayer = ui.layers[4]\nlocal windowsIndex = ui.layers.indexOf('Windows')\nfor i, layer in ipairs(ui.layers) do\n  print('layer', i, layer.name, layer.size)\nend"
+        },
+        {
+          "code": "ui.layers.insertAfter('HUD', 'NewLayer', { interactive = true })\nlocal fourthLayer = ui.layers[4]\nlocal windowsIndex = ui.layers.indexOf('Windows')\nfor i, layer in ipairs(ui.layers) do\n  print('layer', i, layer.name, layer.size)\nend"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Index of the layer with the given name."
+        },
+        {
+          "paragraph": "Returns nil if the layer doesn't exist"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string name: \nName of the layer"
+        },
+        {
+          "code": "#string name"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number, #nil:index"
+        },
+        {
+          "paragraph": "Creates a layer and inserts it after another layer (shifts indexes of some other layers)."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string afterName: \nName of the layer after which the new layer will be inserted"
+        },
+        {
+          "code": "#string afterName"
+        },
+        {
+          "paragraph": "#string name: \nName of the new layer"
+        },
+        {
+          "code": "#string name"
+        },
+        {
+          "paragraph": "#table options: \nTable with a booleaninteractivefield (default is true). Layers with interactive = false will ignore all mouse interactions."
+        },
+        {
+          "code": "#table options"
+        },
+        {
+          "code": "interactive"
+        },
+        {
+          "paragraph": "Creates a layer and inserts it before another layer (shifts indexes of some other layers)."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string beforeName: \nName of the layer before which the new layer will be inserted"
+        },
+        {
+          "code": "#string beforeName"
+        },
+        {
+          "paragraph": "#string name: \nName of the new layer"
+        },
+        {
+          "code": "#string name"
+        },
+        {
+          "paragraph": "#table options: \nTable with a booleaninteractivefield (default is true). Layers with interactive = false will ignore all mouse interactions."
+        },
+        {
+          "code": "#table options"
+        },
+        {
+          "code": "interactive"
+        }
+      ]
+    },
+    {
+      "header": "TypeLayout",
+      "content": [
+        {
+          "code": "Layout"
+        },
+        {
+          "paragraph": "Layout"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Optionalopenmw.ui#Contentof children layouts"
+        },
+        {
+          "paragraph": "Optional table of event callbacks"
+        },
+        {
+          "paragraph": "Optional table of external properties"
+        },
+        {
+          "paragraph": "Optional layout to display in. Only applies for the root widget.\n  Note: if the #Element isn't attached to anything, it won't be visible!"
+        },
+        {
+          "paragraph": "Optional name of the layout. Allows access by name from Content"
+        },
+        {
+          "paragraph": "Optional table of widget properties"
+        },
+        {
+          "paragraph": "Optional #Template"
+        },
+        {
+          "paragraph": "Type of the widget, one of the values in #TYPE. Must match the type in #Template if both are present"
+        },
+        {
+          "paragraph": "Arbitrary data for you to use, e. g. when receiving the layout in an event callback"
+        }
+      ]
+    },
+    {
+      "header": "TypeMouseEvent",
+      "content": [
+        {
+          "code": "MouseEvent"
+        },
+        {
+          "paragraph": "Mouse event, passed as an argument to relevant UI events"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Mouse button which triggered the event.\n  Matches the arguments ofopenmw_input#input.isMouseButtonPressed(nilfor none, 1 for left, 3 for right)."
+        },
+        {
+          "code": "nil"
+        },
+        {
+          "paragraph": "Position of the mouse cursor relative to the widget"
+        },
+        {
+          "paragraph": "Absolute position of the mouse cursor"
+        }
+      ]
+    },
+    {
+      "header": "TypeSettingsPageOptions",
+      "content": [
+        {
+          "code": "SettingsPageOptions"
+        },
+        {
+          "paragraph": "Table with settings page options, passed as an argument to ui.registerSettingsPage"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "The page's UI, which will be attached to the settings tab. The root widget has to have a fixed size. Set thesizefield inprops,relativeSizeis ignored."
+        },
+        {
+          "code": "size"
+        },
+        {
+          "code": "props"
+        },
+        {
+          "code": "relativeSize"
+        },
+        {
+          "paragraph": "Name of the page, displayed in the list, used for search"
+        },
+        {
+          "paragraph": "Additional keywords used in search, not displayed anywhere"
+        }
+      ]
+    },
+    {
+      "header": "TypeTYPE",
+      "content": [
+        {
+          "code": "TYPE"
+        },
+        {
+          "paragraph": "All available widget types"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Automatically wraps around its contents"
+        },
+        {
+          "paragraph": "Aligns widgets in a row or column"
+        },
+        {
+          "paragraph": "Displays an image"
+        },
+        {
+          "paragraph": "Display text"
+        },
+        {
+          "paragraph": "Accepts user text input"
+        },
+        {
+          "paragraph": "Base widget type"
+        },
+        {
+          "paragraph": "Can be moved and resized by the user"
+        }
+      ]
+    },
+    {
+      "header": "TypeTemplate",
+      "content": [
+        {
+          "code": "Template"
+        },
+        {
+          "paragraph": "Template"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "One of the values in #TYPE, serves as the default value for the #Layout"
+        }
+      ]
+    },
+    {
+      "header": "TypeTextureResource",
+      "content": [
+        {
+          "code": "TextureResource"
+        },
+        {
+          "paragraph": "A texture ready to be used by UI widgets"
+        }
+      ]
+    },
+    {
+      "header": "TypeTextureResourceOptions",
+      "content": [
+        {
+          "code": "TextureResourceOptions"
+        },
+        {
+          "paragraph": "Table with arguments passed to ui.texture."
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Offset of this resource in the texture. (0, 0) by default"
+        },
+        {
+          "paragraph": "Path to the texture file. Required"
+        },
+        {
+          "paragraph": "Size of the resource in the texture. (0, 0) by default. 0 means the whole texture size is used."
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

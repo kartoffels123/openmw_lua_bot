@@ -1,0 +1,2059 @@
+{
+  "title": "Package openmw.util\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local util = require('openmw.util')"
+        },
+        {
+          "code": "local util = require('openmw.util')"
+        }
+      ]
+    },
+    {
+      "header": "Typeutil",
+      "content": [
+        {
+          "code": "util"
+        },
+        {
+          "paragraph": "Bitwise And (supports any number of arguments)."
+        },
+        {
+          "paragraph": "Bitwise inversion."
+        },
+        {
+          "paragraph": "Bitwise Or (supports any number of arguments)."
+        },
+        {
+          "paragraph": "Bitwise Xor (supports any number of arguments)."
+        },
+        {
+          "paragraph": "Creates a new Box from a given transformation."
+        },
+        {
+          "paragraph": "Limits given value to the interval [from,to]."
+        },
+        {
+          "code": "from"
+        },
+        {
+          "code": "to"
+        },
+        {
+          "paragraph": "Methods for creating #Color values from different formats."
+        },
+        {
+          "paragraph": "Parses Lua code from string and returns as a function."
+        },
+        {
+          "paragraph": "Makes a table read only."
+        },
+        {
+          "paragraph": "Makes a table read only and overrides__indexwith the strict version that throws an error if the key is not found."
+        },
+        {
+          "code": "__index"
+        },
+        {
+          "paragraph": "Adds2pi*kand puts the angle in range[-pi, pi]."
+        },
+        {
+          "code": "2pi*k"
+        },
+        {
+          "code": "[-pi, pi]"
+        },
+        {
+          "paragraph": "Remaps the value from one range to another."
+        },
+        {
+          "paragraph": "Rounds the given value to the nearest whole number."
+        },
+        {
+          "paragraph": "3D transforms (scale/move/rotate) that can be applied to 3D vectors."
+        },
+        {
+          "paragraph": "Creates a new 2D vector."
+        },
+        {
+          "paragraph": "Creates a new 3D vector."
+        },
+        {
+          "paragraph": "Creates a new 4D vector."
+        }
+      ]
+    },
+    {
+      "header": "TypeBox",
+      "content": [
+        {
+          "code": "Box"
+        },
+        {
+          "paragraph": "The center of the box"
+        },
+        {
+          "paragraph": "The half sizes of the box along each axis"
+        },
+        {
+          "paragraph": "A transformation which encapsulates the boxes center pointer (translation), half sizes (scale), and rotation."
+        },
+        {
+          "paragraph": "Table of the 8 vertices which comprise the box, taking rotation into account"
+        }
+      ]
+    },
+    {
+      "header": "TypeCOLOR",
+      "content": [
+        {
+          "code": "COLOR"
+        },
+        {
+          "paragraph": "Parses a hex color string into a Color."
+        },
+        {
+          "paragraph": "Creates a Color from RGB format."
+        },
+        {
+          "paragraph": "Creates a Color from RGBA format"
+        }
+      ]
+    },
+    {
+      "header": "TypeColor",
+      "content": [
+        {
+          "code": "Color"
+        },
+        {
+          "paragraph": "Alpha (transparency) component"
+        },
+        {
+          "paragraph": "Converts the color into a HEX string."
+        },
+        {
+          "paragraph": "Returns a Vector3 with RGB components of the Color."
+        },
+        {
+          "paragraph": "Returns a Vector4 with RGBA components of the Color."
+        },
+        {
+          "paragraph": "Blue component"
+        },
+        {
+          "paragraph": "Green component"
+        },
+        {
+          "paragraph": "Red component"
+        }
+      ]
+    },
+    {
+      "header": "TypeTRANSFORM",
+      "content": [
+        {
+          "code": "TRANSFORM"
+        },
+        {
+          "paragraph": "Empty transform."
+        },
+        {
+          "paragraph": "Movement by given vector."
+        },
+        {
+          "paragraph": "Rotation around a vector (counterclockwise if the vector points to us)."
+        },
+        {
+          "paragraph": "X-axis rotation (equivalent torotate(angle, vector3(-1, 0, 0)))."
+        },
+        {
+          "code": "rotate(angle, vector3(-1, 0, 0))"
+        },
+        {
+          "paragraph": "Y-axis rotation (equivalent torotate(angle, vector3(0, -1, 0)))."
+        },
+        {
+          "code": "rotate(angle, vector3(0, -1, 0))"
+        },
+        {
+          "paragraph": "Z-axis rotation (equivalent torotate(angle, vector3(0, 0, -1)))."
+        },
+        {
+          "code": "rotate(angle, vector3(0, 0, -1))"
+        },
+        {
+          "paragraph": "Scale transform."
+        }
+      ]
+    },
+    {
+      "header": "TypeTransform",
+      "content": [
+        {
+          "code": "Transform"
+        },
+        {
+          "paragraph": "Combine transforms (will apply in reverse order)"
+        },
+        {
+          "paragraph": "Apply transform to a vector"
+        },
+        {
+          "paragraph": "Get Euler angles for XZ rotation order (pitch and yaw; radians)"
+        },
+        {
+          "paragraph": "Get Euler angles for ZYX rotation order (radians)"
+        },
+        {
+          "paragraph": "Get pitch angle (radians)"
+        },
+        {
+          "paragraph": "Get yaw angle (radians)"
+        },
+        {
+          "paragraph": "Returns the inverse transform."
+        }
+      ]
+    },
+    {
+      "header": "TypeVector2",
+      "content": [
+        {
+          "code": "Vector2"
+        },
+        {
+          "paragraph": "Dot product."
+        },
+        {
+          "paragraph": "Element-wise division"
+        },
+        {
+          "paragraph": "Element-wise multiplication"
+        },
+        {
+          "paragraph": "Length of the vector."
+        },
+        {
+          "paragraph": "Square of the length of the vector."
+        },
+        {
+          "paragraph": "Normalizes vector."
+        },
+        {
+          "paragraph": "Rotates 2D vector clockwise."
+        },
+        {
+          "paragraph": "swizzle support, any combination of fields can be used to construct a new vector including the 0/1 constants"
+        }
+      ]
+    },
+    {
+      "header": "TypeVector3",
+      "content": [
+        {
+          "code": "Vector3"
+        },
+        {
+          "paragraph": "Cross product."
+        },
+        {
+          "paragraph": "Dot product."
+        },
+        {
+          "paragraph": "Element-wise division"
+        },
+        {
+          "paragraph": "Element-wise multiplication"
+        },
+        {
+          "paragraph": "Length of the vector"
+        },
+        {
+          "paragraph": "Square of the length of the vector"
+        },
+        {
+          "paragraph": "Normalizes vector."
+        },
+        {
+          "paragraph": "swizzle support, any combination of fields can be used to construct a new vector including the 0/1 constants"
+        }
+      ]
+    },
+    {
+      "header": "TypeVector4",
+      "content": [
+        {
+          "code": "Vector4"
+        },
+        {
+          "paragraph": "Dot product."
+        },
+        {
+          "paragraph": "Element-wise division"
+        },
+        {
+          "paragraph": "Element-wise multiplication"
+        },
+        {
+          "paragraph": "Length of the vector"
+        },
+        {
+          "paragraph": "Square of the length of the vector"
+        },
+        {
+          "paragraph": "Normalizes vector."
+        },
+        {
+          "paragraph": "swizzle support, any combination of fields can be used to construct a new vector including the 0/1 constants"
+        }
+      ]
+    },
+    {
+      "header": "Typeutil",
+      "content": [
+        {
+          "code": "util"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Bitwise And (supports any number of arguments)."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number A: \nFirst argument (integer)."
+        },
+        {
+          "code": "#number A"
+        },
+        {
+          "paragraph": "#number B: \nSecond argument (integer)."
+        },
+        {
+          "code": "#number B"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:Bitwise And of A and B."
+        },
+        {
+          "paragraph": "Bitwise inversion."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number A: \nArgument (integer)."
+        },
+        {
+          "code": "#number A"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:Bitwise Not of A."
+        },
+        {
+          "paragraph": "Bitwise Or (supports any number of arguments)."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number A: \nFirst argument (integer)."
+        },
+        {
+          "code": "#number A"
+        },
+        {
+          "paragraph": "#number B: \nSecond argument (integer)."
+        },
+        {
+          "code": "#number B"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:Bitwise Or of A and B."
+        },
+        {
+          "paragraph": "Bitwise Xor (supports any number of arguments)."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number A: \nFirst argument (integer)."
+        },
+        {
+          "code": "#number A"
+        },
+        {
+          "paragraph": "#number B: \nSecond argument (integer)."
+        },
+        {
+          "code": "#number B"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:Bitwise Xor of A and B."
+        },
+        {
+          "paragraph": "Creates a new Box from a given transformation."
+        },
+        {
+          "paragraph": "Boxes are immutable and can not be changed after creation."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Transformtransform: \nA transformation which encapsulates the boxes center pointer (translation), half sizes (scale), and rotation."
+        },
+        {
+          "code": "#Transformtransform"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Box:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "-- Creates a 1x1x1 length box centered at the origin\nutil.box(util.transform.scale(util.vector3(0.5, 0.5, 0.5)))"
+        },
+        {
+          "code": "-- Creates a 1x1x1 length box centered at the origin\nutil.box(util.transform.scale(util.vector3(0.5, 0.5, 0.5)))"
+        },
+        {
+          "paragraph": "Limits given value to the interval [from,to]."
+        },
+        {
+          "code": "from"
+        },
+        {
+          "code": "to"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        },
+        {
+          "paragraph": "#number from:"
+        },
+        {
+          "code": "#number from"
+        },
+        {
+          "paragraph": "#number to:"
+        },
+        {
+          "code": "#number to"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:min(max(value, from), to)"
+        },
+        {
+          "paragraph": "Methods for creating #Color values from different formats."
+        },
+        {
+          "paragraph": "Parses Lua code from string and returns as a function."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string code: \nLua code."
+        },
+        {
+          "code": "#string code"
+        },
+        {
+          "paragraph": "#table table: \nEnvironment to run the code in."
+        },
+        {
+          "code": "#table table"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#function:The loaded code."
+        },
+        {
+          "paragraph": "Makes a table read only."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#table table: \nAny table."
+        },
+        {
+          "code": "#table table"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#table:The same table wrapped with read only userdata."
+        },
+        {
+          "paragraph": "Makes a table read only and overrides__indexwith the strict version that throws an error if the key is not found."
+        },
+        {
+          "code": "__index"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#table table: \nAny table."
+        },
+        {
+          "code": "#table table"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#table:The same table wrapped with read only userdata."
+        },
+        {
+          "paragraph": "Adds2pi*kand puts the angle in range[-pi, pi]."
+        },
+        {
+          "code": "2pi*k"
+        },
+        {
+          "code": "[-pi, pi]"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number angle: \nAngle in radians"
+        },
+        {
+          "code": "#number angle"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:Angle in range[-pi, pi]"
+        },
+        {
+          "code": "[-pi, pi]"
+        },
+        {
+          "paragraph": "Remaps the value from one range to another."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        },
+        {
+          "paragraph": "#number min:"
+        },
+        {
+          "code": "#number min"
+        },
+        {
+          "paragraph": "#number max:"
+        },
+        {
+          "code": "#number max"
+        },
+        {
+          "paragraph": "#number newMin:"
+        },
+        {
+          "code": "#number newMin"
+        },
+        {
+          "paragraph": "#number newMax:"
+        },
+        {
+          "code": "#number newMax"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:The remapped value."
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local util = require('openmw.util')\nlocal newValue = util.remap(3, 0, 10, 0, 100)\nprint(newValue) -- prints 30"
+        },
+        {
+          "code": "local util = require('openmw.util')\nlocal newValue = util.remap(3, 0, 10, 0, 100)\nprint(newValue) -- prints 30"
+        },
+        {
+          "paragraph": "Rounds the given value to the nearest whole number."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number value:"
+        },
+        {
+          "code": "#number value"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:The rounded value."
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local util = require('openmw.util')\nlocal roundedValue = util.round(3.141592)\nprint(roundedValue) -- prints 3"
+        },
+        {
+          "code": "local util = require('openmw.util')\nlocal roundedValue = util.round(3.141592)\nprint(roundedValue) -- prints 3"
+        },
+        {
+          "paragraph": "3D transforms (scale/move/rotate) that can be applied to 3D vectors."
+        },
+        {
+          "paragraph": "Several transforms can be combined and applied to a vector using multiplication.\nCombined transforms apply in reverse order (from right to left)."
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local util = require('openmw.util')\nlocal trans = util.transform\nlocal fromActorSpace = trans.move(actor.position) * trans.rotateZ(actor.rotation:getYaw())\n\n-- rotation is applied first, movement is second\nlocal posBehindActor = fromActorSpace * util.vector3(0, -100, 0)\n\n-- equivalent to trans.rotateZ(-actor.rotation:getYaw()) * trans.move(-actor.position)\nlocal toActorSpace = fromActorSpace:inverse()\nlocal relativeTargetPos = toActorSpace * target.position\nlocal deltaAngle = math.atan2(relativeTargetPos.y, relativeTargetPos.x)"
+        },
+        {
+          "code": "local util = require('openmw.util')\nlocal trans = util.transform\nlocal fromActorSpace = trans.move(actor.position) * trans.rotateZ(actor.rotation:getYaw())\n\n-- rotation is applied first, movement is second\nlocal posBehindActor = fromActorSpace * util.vector3(0, -100, 0)\n\n-- equivalent to trans.rotateZ(-actor.rotation:getYaw()) * trans.move(-actor.position)\nlocal toActorSpace = fromActorSpace:inverse()\nlocal relativeTargetPos = toActorSpace * target.position\nlocal deltaAngle = math.atan2(relativeTargetPos.y, relativeTargetPos.x)"
+        },
+        {
+          "paragraph": "Creates a new 2D vector."
+        },
+        {
+          "paragraph": "Vectors are immutable and can not be changed after creation."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number x:"
+        },
+        {
+          "code": "#number x"
+        },
+        {
+          "paragraph": "#number y:"
+        },
+        {
+          "code": "#number y"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector2:"
+        },
+        {
+          "paragraph": "Creates a new 3D vector."
+        },
+        {
+          "paragraph": "Vectors are immutable and can not be changed after creation."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number x:"
+        },
+        {
+          "code": "#number x"
+        },
+        {
+          "paragraph": "#number y:"
+        },
+        {
+          "code": "#number y"
+        },
+        {
+          "paragraph": "#number z:"
+        },
+        {
+          "code": "#number z"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:"
+        },
+        {
+          "paragraph": "Creates a new 4D vector."
+        },
+        {
+          "paragraph": "Vectors are immutable and can not be changed after creation."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number x:"
+        },
+        {
+          "code": "#number x"
+        },
+        {
+          "paragraph": "#number y:"
+        },
+        {
+          "code": "#number y"
+        },
+        {
+          "paragraph": "#number z:"
+        },
+        {
+          "code": "#number z"
+        },
+        {
+          "paragraph": "#number w:"
+        },
+        {
+          "code": "#number w"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector4:"
+        }
+      ]
+    },
+    {
+      "header": "TypeBox",
+      "content": [
+        {
+          "code": "Box"
+        },
+        {
+          "paragraph": "Immutable box."
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "The center of the box"
+        },
+        {
+          "paragraph": "The half sizes of the box along each axis"
+        },
+        {
+          "paragraph": "A transformation which encapsulates the boxes center pointer (translation), half sizes (scale), and rotation."
+        },
+        {
+          "paragraph": "Table of the 8 vertices which comprise the box, taking rotation into account"
+        }
+      ]
+    },
+    {
+      "header": "TypeCOLOR",
+      "content": [
+        {
+          "code": "COLOR"
+        },
+        {
+          "paragraph": "Methods for creating #Color values from different formats."
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Parses a hex color string into a Color."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string hex: \nA hex color string in RRGGBB format (e. g. \"ff0000\")."
+        },
+        {
+          "code": "#string hex"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Color:"
+        },
+        {
+          "paragraph": "Creates a Color from RGB format."
+        },
+        {
+          "paragraph": "Equivalent to calling util.rgba with a = 1."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number r:"
+        },
+        {
+          "code": "#number r"
+        },
+        {
+          "paragraph": "#number g:"
+        },
+        {
+          "code": "#number g"
+        },
+        {
+          "paragraph": "#number b:"
+        },
+        {
+          "code": "#number b"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Color:"
+        },
+        {
+          "paragraph": "Creates a Color from RGBA format"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number r:"
+        },
+        {
+          "code": "#number r"
+        },
+        {
+          "paragraph": "#number g:"
+        },
+        {
+          "code": "#number g"
+        },
+        {
+          "paragraph": "#number b:"
+        },
+        {
+          "code": "#number b"
+        },
+        {
+          "paragraph": "#number a:"
+        },
+        {
+          "code": "#number a"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Color:"
+        }
+      ]
+    },
+    {
+      "header": "TypeColor",
+      "content": [
+        {
+          "code": "Color"
+        },
+        {
+          "paragraph": "Color in RGBA format."
+        },
+        {
+          "paragraph": "All of the component values are in the range [0, 1]."
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Alpha (transparency) component"
+        },
+        {
+          "paragraph": "Converts the color into a HEX string."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#string:"
+        },
+        {
+          "paragraph": "Returns a Vector3 with RGB components of the Color."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:"
+        },
+        {
+          "paragraph": "Returns a Vector4 with RGBA components of the Color."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector4:"
+        },
+        {
+          "paragraph": "Blue component"
+        },
+        {
+          "paragraph": "Green component"
+        },
+        {
+          "paragraph": "Red component"
+        }
+      ]
+    },
+    {
+      "header": "TypeTRANSFORM",
+      "content": [
+        {
+          "code": "TRANSFORM"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Empty transform."
+        },
+        {
+          "paragraph": "Movement by given vector."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector3offset:"
+        },
+        {
+          "code": "#Vector3offset"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Transform:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "-- Accepts either 3 numbers or a 3D vector\nutil.transform.move(x, y, z)\nutil.transform.move(util.vector3(x, y, z))"
+        },
+        {
+          "code": "-- Accepts either 3 numbers or a 3D vector\nutil.transform.move(x, y, z)\nutil.transform.move(util.vector3(x, y, z))"
+        },
+        {
+          "paragraph": "Rotation around a vector (counterclockwise if the vector points to us)."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number angle:"
+        },
+        {
+          "code": "#number angle"
+        },
+        {
+          "paragraph": "#Vector3axis:"
+        },
+        {
+          "code": "#Vector3axis"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Transform:"
+        },
+        {
+          "paragraph": "X-axis rotation (equivalent torotate(angle, vector3(-1, 0, 0)))."
+        },
+        {
+          "code": "rotate(angle, vector3(-1, 0, 0))"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number angle:"
+        },
+        {
+          "code": "#number angle"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Transform:"
+        },
+        {
+          "paragraph": "Y-axis rotation (equivalent torotate(angle, vector3(0, -1, 0)))."
+        },
+        {
+          "code": "rotate(angle, vector3(0, -1, 0))"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number angle:"
+        },
+        {
+          "code": "#number angle"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Transform:"
+        },
+        {
+          "paragraph": "Z-axis rotation (equivalent torotate(angle, vector3(0, 0, -1)))."
+        },
+        {
+          "code": "rotate(angle, vector3(0, 0, -1))"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number angle:"
+        },
+        {
+          "code": "#number angle"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Transform:"
+        },
+        {
+          "paragraph": "Scale transform."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number scaleX:"
+        },
+        {
+          "code": "#number scaleX"
+        },
+        {
+          "paragraph": "#number scaleY:"
+        },
+        {
+          "code": "#number scaleY"
+        },
+        {
+          "paragraph": "#number scaleZ:"
+        },
+        {
+          "code": "#number scaleZ"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Transform:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "-- Accepts either 3 numbers or a 3D vector\nutil.transform.scale(x, y, z)\nutil.transform.scale(util.vector3(x, y, z))"
+        },
+        {
+          "code": "-- Accepts either 3 numbers or a 3D vector\nutil.transform.scale(x, y, z)\nutil.transform.scale(util.vector3(x, y, z))"
+        }
+      ]
+    },
+    {
+      "header": "TypeTransform",
+      "content": [
+        {
+          "code": "Transform"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Combine transforms (will apply in reverse order)"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Transformt:"
+        },
+        {
+          "code": "#Transformt"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Transform:"
+        },
+        {
+          "paragraph": "Apply transform to a vector"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector3v:"
+        },
+        {
+          "code": "#Vector3v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:"
+        },
+        {
+          "paragraph": "Get Euler angles for XZ rotation order (pitch and yaw; radians)"
+        }
+      ]
+    },
+    {
+      "header": "Return values",
+      "content": [
+        {
+          "paragraph": "#number:pitch (rotation around X axis)"
+        },
+        {
+          "paragraph": "#number:yaw (rotation around Z axis)"
+        },
+        {
+          "paragraph": "Get Euler angles for ZYX rotation order (radians)"
+        }
+      ]
+    },
+    {
+      "header": "Return values",
+      "content": [
+        {
+          "paragraph": "#number:rotation around Z axis (first rotation)"
+        },
+        {
+          "paragraph": "#number:rotation around Y axis (second rotation)"
+        },
+        {
+          "paragraph": "#number:rotation around X axis (third rotation)"
+        },
+        {
+          "paragraph": "Get pitch angle (radians)"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Get yaw angle (radians)"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Returns the inverse transform."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Transform:"
+        }
+      ]
+    },
+    {
+      "header": "TypeVector2",
+      "content": [
+        {
+          "code": "Vector2"
+        },
+        {
+          "paragraph": "Immutable 2D vector"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "v = util.vector2(3, 4)\nv.x, v.y       -- 3.0, 4.0\nstr(v)         -- \"(3.0, 4.0)\"\nv:length()     -- 5.0    length\nv:length2()    -- 25.0   square of the length\nv:normalize()  -- vector2(3/5, 4/5)\nv:rotate(radians)    -- rotate counterclockwise (returns rotated vector)\nv1:dot(v2)     -- dot product (returns a number)\nv1 * v2        -- dot product\nv1 + v2        -- vector addition\nv1 - v2        -- vector subtraction\nv1 * x         -- multiplication by a number\nv1 / x         -- division by a number\nv1.xx, v1.xyx  -- swizzle with standard fields\nv1.y1y, v1.x00 -- swizzle with 0/1 constant\nv1['0xy']      -- swizzle with 0/1 constant starting with 0 or 1"
+        },
+        {
+          "code": "v = util.vector2(3, 4)\nv.x, v.y       -- 3.0, 4.0\nstr(v)         -- \"(3.0, 4.0)\"\nv:length()     -- 5.0    length\nv:length2()    -- 25.0   square of the length\nv:normalize()  -- vector2(3/5, 4/5)\nv:rotate(radians)    -- rotate counterclockwise (returns rotated vector)\nv1:dot(v2)     -- dot product (returns a number)\nv1 * v2        -- dot product\nv1 + v2        -- vector addition\nv1 - v2        -- vector subtraction\nv1 * x         -- multiplication by a number\nv1 / x         -- division by a number\nv1.xx, v1.xyx  -- swizzle with standard fields\nv1.y1y, v1.x00 -- swizzle with 0/1 constant\nv1['0xy']      -- swizzle with 0/1 constant starting with 0 or 1"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector2v:"
+        },
+        {
+          "code": "#Vector2v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector2:sum of the vectors"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number k:"
+        },
+        {
+          "code": "#number k"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector2:vector divided by a number"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number k:"
+        },
+        {
+          "code": "#number k"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector2:vector multiplied by a number"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector2v:"
+        },
+        {
+          "code": "#Vector2v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector2:difference of the vectors"
+        },
+        {
+          "paragraph": "Dot product."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector2v:"
+        },
+        {
+          "code": "#Vector2v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Element-wise division"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector2v:"
+        },
+        {
+          "code": "#Vector2v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector2:"
+        },
+        {
+          "paragraph": "Element-wise multiplication"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector2v:"
+        },
+        {
+          "code": "#Vector2v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector2:"
+        },
+        {
+          "paragraph": "Length of the vector."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Square of the length of the vector."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Normalizes vector."
+        },
+        {
+          "paragraph": "It doesn't change the original vector."
+        }
+      ]
+    },
+    {
+      "header": "Return values",
+      "content": [
+        {
+          "paragraph": "#Vector2:normalized vector"
+        },
+        {
+          "paragraph": "#number:the length of the original vector"
+        },
+        {
+          "paragraph": "Rotates 2D vector clockwise."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number angle: \nAngle in radians"
+        },
+        {
+          "code": "#number angle"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector2:Rotated vector."
+        },
+        {
+          "paragraph": "swizzle support, any combination of fields can be used to construct a new vector including the 0/1 constants"
+        }
+      ]
+    },
+    {
+      "header": "TypeVector3",
+      "content": [
+        {
+          "code": "Vector3"
+        },
+        {
+          "paragraph": "Immutable 3D vector"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "v = util.vector3(3, 4, 5)\nv.x, v.y, v.z  -- 3.0, 4.0, 5.0\nstr(v)         -- \"(3.0, 4.0, 4.5)\"\nv:length()     -- length\nv:length2()    -- square of the length\nv:normalize()  -- normalized vector\nv1:dot(v2)     -- dot product (returns a number)\nv1 * v2        -- dot product (returns a number)\nv1:cross(v2)   -- cross product (returns a vector)\nv1 ^ v2        -- cross product (returns a vector)\nv1 + v2        -- vector addition\nv1 - v2        -- vector subtraction\nv1 * x         -- multiplication by a number\nv1 / x         -- division by a number\nv1.zyz, v1.yx  -- swizzle with standard fields\nv1.w1y, v1.z0z -- swizzle with 0/1 constant\nv1['0xy']      -- swizzle with 0/1 constant starting with 0 or 1"
+        },
+        {
+          "code": "v = util.vector3(3, 4, 5)\nv.x, v.y, v.z  -- 3.0, 4.0, 5.0\nstr(v)         -- \"(3.0, 4.0, 4.5)\"\nv:length()     -- length\nv:length2()    -- square of the length\nv:normalize()  -- normalized vector\nv1:dot(v2)     -- dot product (returns a number)\nv1 * v2        -- dot product (returns a number)\nv1:cross(v2)   -- cross product (returns a vector)\nv1 ^ v2        -- cross product (returns a vector)\nv1 + v2        -- vector addition\nv1 - v2        -- vector subtraction\nv1 * x         -- multiplication by a number\nv1 / x         -- division by a number\nv1.zyz, v1.yx  -- swizzle with standard fields\nv1.w1y, v1.z0z -- swizzle with 0/1 constant\nv1['0xy']      -- swizzle with 0/1 constant starting with 0 or 1"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector3v:"
+        },
+        {
+          "code": "#Vector3v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:sum of the vectors"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number k:"
+        },
+        {
+          "code": "#number k"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:vector divided by a number"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number k:"
+        },
+        {
+          "code": "#number k"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:vector multiplied by a number"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector3v:"
+        },
+        {
+          "code": "#Vector3v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:difference of the vectors"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#string:"
+        },
+        {
+          "paragraph": "Cross product."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector3v:"
+        },
+        {
+          "code": "#Vector3v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:"
+        },
+        {
+          "paragraph": "Dot product."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector3v:"
+        },
+        {
+          "code": "#Vector3v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Element-wise division"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector3v:"
+        },
+        {
+          "code": "#Vector3v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:"
+        },
+        {
+          "paragraph": "Element-wise multiplication"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector3v:"
+        },
+        {
+          "code": "#Vector3v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector3:"
+        },
+        {
+          "paragraph": "Length of the vector"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Square of the length of the vector"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Normalizes vector."
+        },
+        {
+          "paragraph": "It doesn't change the original vector."
+        }
+      ]
+    },
+    {
+      "header": "Return values",
+      "content": [
+        {
+          "paragraph": "#Vector3:normalized vector"
+        },
+        {
+          "paragraph": "#number:the length of the original vector"
+        },
+        {
+          "paragraph": "swizzle support, any combination of fields can be used to construct a new vector including the 0/1 constants"
+        }
+      ]
+    },
+    {
+      "header": "TypeVector4",
+      "content": [
+        {
+          "code": "Vector4"
+        },
+        {
+          "paragraph": "Immutable 4D vector."
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "v = util.vector4(3, 4, 5, 6)\nv.x, v.y, v.z, v.w  -- 3.0, 4.0, 5.0, 6.0\nstr(v)           -- \"(3.0, 4.0, 5.0, 6.0)\"\nv:length()       -- length\nv:length2()      -- square of the length\nv:normalize()    -- normalized vector\nv1:dot(v2)       -- dot product (returns a number)\nv1 * v2          -- dot product (returns a number)\nv1 + v2          -- vector addition\nv1 - v2          -- vector subtraction\nv1 * x           -- multiplication by a number\nv1 / x           -- division by a number\nv1.zyz, v1.wwwx  -- swizzle with standard fields\nv1.w1, v1.z000   -- swizzle with 0/1 constant\nv1['000w']       -- swizzle with 0/1 constant starting with 0 or 1"
+        },
+        {
+          "code": "v = util.vector4(3, 4, 5, 6)\nv.x, v.y, v.z, v.w  -- 3.0, 4.0, 5.0, 6.0\nstr(v)           -- \"(3.0, 4.0, 5.0, 6.0)\"\nv:length()       -- length\nv:length2()      -- square of the length\nv:normalize()    -- normalized vector\nv1:dot(v2)       -- dot product (returns a number)\nv1 * v2          -- dot product (returns a number)\nv1 + v2          -- vector addition\nv1 - v2          -- vector subtraction\nv1 * x           -- multiplication by a number\nv1 / x           -- division by a number\nv1.zyz, v1.wwwx  -- swizzle with standard fields\nv1.w1, v1.z000   -- swizzle with 0/1 constant\nv1['000w']       -- swizzle with 0/1 constant starting with 0 or 1"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector4v:"
+        },
+        {
+          "code": "#Vector4v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector4:sum of the vectors"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number k:"
+        },
+        {
+          "code": "#number k"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector4:vector divided by a number"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number k:"
+        },
+        {
+          "code": "#number k"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector4:vector multiplied by a number"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector4v:"
+        },
+        {
+          "code": "#Vector4v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector4:difference of the vectors"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#string:"
+        },
+        {
+          "paragraph": "Dot product."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector4v:"
+        },
+        {
+          "code": "#Vector4v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Element-wise division"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector4v:"
+        },
+        {
+          "code": "#Vector4v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector4:"
+        },
+        {
+          "paragraph": "Element-wise multiplication"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#Vector4v:"
+        },
+        {
+          "code": "#Vector4v"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#Vector4:"
+        },
+        {
+          "paragraph": "Length of the vector"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Square of the length of the vector"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Normalizes vector."
+        },
+        {
+          "paragraph": "It doesn't change the original vector."
+        }
+      ]
+    },
+    {
+      "header": "Return values",
+      "content": [
+        {
+          "paragraph": "#Vector4:normalized vector"
+        },
+        {
+          "paragraph": "#number:the length of the original vector"
+        },
+        {
+          "paragraph": "swizzle support, any combination of fields can be used to construct a new vector including the 0/1 constants"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

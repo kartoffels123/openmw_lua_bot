@@ -1,0 +1,75 @@
+{
+  "title": "Interface GamepadControls\uf0c1",
+  "sections": [
+    {
+      "header": "TypeGamepadControls",
+      "content": [
+        {
+          "code": "GamepadControls"
+        },
+        {
+          "paragraph": "Checks if the gamepad cursor is active."
+        },
+        {
+          "paragraph": "Sets if the gamepad cursor is active."
+        },
+        {
+          "paragraph": "Interface version"
+        }
+      ]
+    },
+    {
+      "header": "TypeGamepadControls",
+      "content": [
+        {
+          "code": "GamepadControls"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Checks if the gamepad cursor is active."
+        },
+        {
+          "paragraph": "If it is active, the left stick can move the cursor, and A will be interpreted as a mouse click."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#boolean:"
+        },
+        {
+          "paragraph": "Sets if the gamepad cursor is active."
+        },
+        {
+          "paragraph": "If it is active, the left stick can move the cursor, and A will be interpreted as a mouse click."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#boolean value:"
+        },
+        {
+          "code": "#boolean value"
+        },
+        {
+          "paragraph": "Interface version"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

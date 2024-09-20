@@ -1,0 +1,431 @@
+{
+  "title": "Interface SkillProgression\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local I = require('openmw.interfaces')\n\n-- Forbid increasing destruction skill past 50\nI.SkillProgression.addSkillLevelUpHandler(function(skillid, options) \n    if skillid == 'destruction' and types.NPC.stats.skills.destruction(self).base >= 50 then\n        return false\n    end\nend)\n\n-- Scale sneak skill progression based on active invisibility effects\nI.SkillProgression.addSkillUsedHandler(function(skillid, params)\n    if skillid == 'sneak' and params.useType == I.SkillProgression.SKILL_USE_TYPES.Sneak_AvoidNotice then\n        local activeEffects = Actor.activeEffects(self)\n        local visibility = activeEffects:getEffect(core.magic.EFFECT_TYPE.Chameleon).magnitude / 100\n        visibility = visibility + activeEffects:getEffect(core.magic.EFFECT_TYPE.Invisibility).magnitude\n        visibility = 1 - math.min(1, math.max(0, visibility))\n        local oldSkillGain = params.skillGain\n        params.skillGain = oldSkillGain * visibility\n    end\nend)"
+        },
+        {
+          "code": "local I = require('openmw.interfaces')\n\n-- Forbid increasing destruction skill past 50\nI.SkillProgression.addSkillLevelUpHandler(function(skillid, options) \n    if skillid == 'destruction' and types.NPC.stats.skills.destruction(self).base >= 50 then\n        return false\n    end\nend)\n\n-- Scale sneak skill progression based on active invisibility effects\nI.SkillProgression.addSkillUsedHandler(function(skillid, params)\n    if skillid == 'sneak' and params.useType == I.SkillProgression.SKILL_USE_TYPES.Sneak_AvoidNotice then\n        local activeEffects = Actor.activeEffects(self)\n        local visibility = activeEffects:getEffect(core.magic.EFFECT_TYPE.Chameleon).magnitude / 100\n        visibility = visibility + activeEffects:getEffect(core.magic.EFFECT_TYPE.Invisibility).magnitude\n        visibility = 1 - math.min(1, math.max(0, visibility))\n        local oldSkillGain = params.skillGain\n        params.skillGain = oldSkillGain * visibility\n    end\nend)"
+        }
+      ]
+    },
+    {
+      "header": "TypeSkillProgression",
+      "content": [
+        {
+          "code": "SkillProgression"
+        },
+        {
+          "paragraph": "#SkillLevelUpSource"
+        },
+        {
+          "paragraph": "#SkillUseType"
+        },
+        {
+          "paragraph": "Add new skill level up handler for this actor."
+        },
+        {
+          "paragraph": "Add new skillUsed handler for this actor."
+        },
+        {
+          "paragraph": "Compute the total skill gain required to level up a skill based on its current level, and other modifying factors such as major skills and specialization."
+        },
+        {
+          "paragraph": "Trigger a skill level up, activating relevant handlers"
+        },
+        {
+          "paragraph": "Trigger a skill use, activating relevant handlers"
+        },
+        {
+          "paragraph": "Interface version"
+        }
+      ]
+    },
+    {
+      "header": "TypeSkillLevelUpSource",
+      "content": [
+        {
+          "code": "SkillLevelUpSource"
+        },
+        {
+          "paragraph": "book"
+        },
+        {
+          "paragraph": "trainer"
+        },
+        {
+          "paragraph": "usage"
+        }
+      ]
+    },
+    {
+      "header": "TypeSkillUseType",
+      "content": [
+        {
+          "code": "SkillUseType"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "3"
+        },
+        {
+          "paragraph": "2"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        }
+      ]
+    },
+    {
+      "header": "TypeSkillProgression",
+      "content": [
+        {
+          "code": "SkillProgression"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "#SkillLevelUpSource"
+        },
+        {
+          "paragraph": "#SkillUseType"
+        },
+        {
+          "paragraph": "Add new skill level up handler for this actor."
+        },
+        {
+          "paragraph": "For load order consistency, handlers should be added in the body if your script.\nIfhandler(skillid, source, options)returns false, other handlers (including the default skill level up handler) \nwill be skipped. Where skillid and source are the parameters passed toSkillProgression.skillLevelUp, and options is\na modifiable table of skill level up values, and can be modified to change the behavior of later handlers. \nThese values are calculated based on vanilla mechanics. Setting any value to nil will cause that mechanic to be skipped. By default contains these values:"
+        },
+        {
+          "code": "handler(skillid, source, options)"
+        },
+        {
+          "code": "skillIncreaseValue"
+        },
+        {
+          "code": "levelUpProgress"
+        },
+        {
+          "code": "levelUpAttribute"
+        },
+        {
+          "code": "levelUpAttributeIncreaseValue"
+        },
+        {
+          "code": "levelUpSpecialization"
+        },
+        {
+          "code": "levelUpSpecializationIncreaseValue"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#function handler: \nThe handler."
+        },
+        {
+          "code": "#function handler"
+        },
+        {
+          "paragraph": "Add new skillUsed handler for this actor."
+        },
+        {
+          "paragraph": "For load order consistency, handlers should be added in the body of your script.\nIfhandler(skillid, options)returns false, other handlers (including the default skill progress handler) \nwill be skipped. Where options is a modifiable table of skill progression values, and can be modified to change the behavior of later handlers. \nContains askillGainvalue as well as a shallow copy of the options passed toSkillProgression.skillUsed."
+        },
+        {
+          "code": "handler(skillid, options)"
+        },
+        {
+          "code": "skillGain"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#function handler: \nThe handler."
+        },
+        {
+          "code": "#function handler"
+        },
+        {
+          "paragraph": "Compute the total skill gain required to level up a skill based on its current level, and other modifying factors such as major skills and specialization."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string skillid: \nThe id of the skill to compute skill progress requirement for"
+        },
+        {
+          "code": "#string skillid"
+        },
+        {
+          "paragraph": "Trigger a skill level up, activating relevant handlers"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string skillid: \nThe id of the skill to level up."
+        },
+        {
+          "code": "#string skillid"
+        },
+        {
+          "paragraph": "#SkillLevelUpSourcesource: \nThe source of the skill increase."
+        },
+        {
+          "code": "#SkillLevelUpSourcesource"
+        },
+        {
+          "paragraph": "Trigger a skill use, activating relevant handlers"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string skillid: \nThe if of the skill that was used"
+        },
+        {
+          "code": "#string skillid"
+        },
+        {
+          "paragraph": "options: \nA table of parameters. Must contain one ofskillGainoruseType. It's best to always includeuseTypeif applicable, even if you setskillGain, as it may be used\nby handlers to make decisions. See the addSkillUsedHandler example at the top of this page."
+        },
+        {
+          "code": "options"
+        },
+        {
+          "code": "skillGain"
+        },
+        {
+          "code": "useType"
+        },
+        {
+          "code": "useType"
+        },
+        {
+          "code": "skillGain"
+        },
+        {
+          "code": "skillGain"
+        },
+        {
+          "code": "useType"
+        },
+        {
+          "paragraph": "And may contain the following optional parameter:"
+        },
+        {
+          "code": "scale"
+        },
+        {
+          "code": "skillGain"
+        },
+        {
+          "paragraph": "Note that a copy of this table is passed to skill used handlers, so any parameters passed to this method will also be passed to the handlers. This can be used to provide additional information to\ncustom handlers when making custom skill progressions."
+        },
+        {
+          "paragraph": "Interface version"
+        }
+      ]
+    },
+    {
+      "header": "TypeSkillLevelUpSource",
+      "content": [
+        {
+          "code": "SkillLevelUpSource"
+        },
+        {
+          "paragraph": "Table of all existing sources for skill increases."
+        },
+        {
+          "paragraph": "Any sources not listed below will be treated as equal to Trainer."
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "book"
+        },
+        {
+          "paragraph": "trainer"
+        },
+        {
+          "paragraph": "usage"
+        }
+      ]
+    },
+    {
+      "header": "TypeSkillUseType",
+      "content": [
+        {
+          "code": "SkillUseType"
+        },
+        {
+          "paragraph": "Table of skill use types defined by morrowind."
+        },
+        {
+          "paragraph": "Each entry corresponds to an index into the available skill gain values\nof aopenmw.core#SkillRecord"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "3"
+        },
+        {
+          "paragraph": "2"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "1"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "0"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

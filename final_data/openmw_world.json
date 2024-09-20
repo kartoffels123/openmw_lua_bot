@@ -1,0 +1,752 @@
+{
+  "title": "Package openmw.world\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local world = require('openmw.world')"
+        },
+        {
+          "code": "local world = require('openmw.world')"
+        }
+      ]
+    },
+    {
+      "header": "Typeworld",
+      "content": [
+        {
+          "code": "world"
+        },
+        {
+          "paragraph": "List of currently active actors."
+        },
+        {
+          "paragraph": "List of all cells"
+        },
+        {
+          "paragraph": "Create a new instance of the given record."
+        },
+        {
+          "paragraph": "Creates a custom record in the world database."
+        },
+        {
+          "paragraph": "Loads a cell by ID provided"
+        },
+        {
+          "paragraph": "Loads a named cell"
+        },
+        {
+          "paragraph": "Loads an exterior cell by grid indices"
+        },
+        {
+          "paragraph": "Game time in seconds."
+        },
+        {
+          "paragraph": "The scale of game time relative to simulation time."
+        },
+        {
+          "paragraph": "Return an object by RefNum/FormId."
+        },
+        {
+          "paragraph": "The tags that are currently pausing the game."
+        },
+        {
+          "paragraph": "Simulation time in seconds."
+        },
+        {
+          "paragraph": "The scale of simulation time relative to real time."
+        },
+        {
+          "paragraph": "Whether the world is paused (onUpdate doesn't work when the world is paused)."
+        },
+        {
+          "paragraph": "Functions related to MWScript (see#MWScriptFunctions)."
+        },
+        {
+          "paragraph": "Pause the game starting from the next frame."
+        },
+        {
+          "paragraph": "List of players."
+        },
+        {
+          "paragraph": "Set the ratio of game time speed to simulation time speed."
+        },
+        {
+          "paragraph": "Set the simulation time scale."
+        },
+        {
+          "paragraph": "Remove given tag from the list of pause tags."
+        },
+        {
+          "paragraph": "#VFX: Visual effects"
+        }
+      ]
+    },
+    {
+      "header": "TypeMWScript",
+      "content": [
+        {
+          "code": "MWScript"
+        },
+        {
+          "paragraph": "Whether the script is currently running"
+        },
+        {
+          "paragraph": "The object the script is attached to."
+        },
+        {
+          "paragraph": "The player the script refers to."
+        },
+        {
+          "paragraph": "Id of the script"
+        },
+        {
+          "paragraph": "Local variables of the script (mutable)"
+        }
+      ]
+    },
+    {
+      "header": "TypeMWScriptFunctions",
+      "content": [
+        {
+          "code": "MWScriptFunctions"
+        },
+        {
+          "paragraph": "Returns global mwscript with given recordId."
+        },
+        {
+          "paragraph": "Returns mutable global variables."
+        },
+        {
+          "paragraph": "Returns local mwscript onobject."
+        },
+        {
+          "code": "object"
+        }
+      ]
+    },
+    {
+      "header": "TypeVFX",
+      "content": [
+        {
+          "code": "VFX"
+        },
+        {
+          "paragraph": "Spawn a VFX at the given location in the world."
+        }
+      ]
+    },
+    {
+      "header": "Typeworld",
+      "content": [
+        {
+          "code": "world"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "List of currently active actors."
+        },
+        {
+          "paragraph": "List of all cells"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "for i, cell in ipairs(world.cells) do print(cell) end"
+        },
+        {
+          "code": "for i, cell in ipairs(world.cells) do print(cell) end"
+        },
+        {
+          "paragraph": "Create a new instance of the given record."
+        },
+        {
+          "paragraph": "After creation the object is in the disabled state. Use :teleport to place to the world or :moveInto to put it into a container or an inventory.\nNote that dynamically created creatures, NPCs, and container inventories will not respawn."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string recordId: \nRecord ID in lowercase"
+        },
+        {
+          "code": "#string recordId"
+        },
+        {
+          "paragraph": "#number count: \n(optional, 1 by default) The number of objects in stack"
+        },
+        {
+          "code": "#number count"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.core#GameObject:"
+        }
+      ]
+    },
+    {
+      "header": "Usages:",
+      "content": [
+        {
+          "code": "-- put 100 gold on the ground at the position of `actor`\nmoney = world.createObject('gold_001', 100)\nmoney:teleport(actor.cell.name, actor.position)"
+        },
+        {
+          "code": "-- put 100 gold on the ground at the position of `actor`\nmoney = world.createObject('gold_001', 100)\nmoney:teleport(actor.cell.name, actor.position)"
+        },
+        {
+          "code": "-- put 50 gold into the actor's inventory\nmoney = world.createObject('gold_001', 50)\nmoney:moveInto(types.Actor.inventory(actor))"
+        },
+        {
+          "code": "-- put 50 gold into the actor's inventory\nmoney = world.createObject('gold_001', 50)\nmoney:moveInto(types.Actor.inventory(actor))"
+        },
+        {
+          "paragraph": "Creates a custom record in the world database."
+        },
+        {
+          "paragraph": "Eventually meant to support all records, but the current\nset of supported types is limited to:"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#any record: \nA record to be registered in the database. Must be one of the supported types."
+        },
+        {
+          "code": "#any record"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#any:A new record added to the database. The type is the same as the input's."
+        },
+        {
+          "paragraph": "Loads a cell by ID provided"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string cellId:"
+        },
+        {
+          "code": "#string cellId"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.core#Cell:"
+        },
+        {
+          "paragraph": "Loads a named cell"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string cellName:"
+        },
+        {
+          "code": "#string cellName"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.core#Cell:"
+        },
+        {
+          "paragraph": "Loads an exterior cell by grid indices"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#number gridX:"
+        },
+        {
+          "code": "#number gridX"
+        },
+        {
+          "paragraph": "#number gridY:"
+        },
+        {
+          "code": "#number gridY"
+        },
+        {
+          "paragraph": "#any cellOrName: \n(optional) other cell or cell name in the same exterior world space"
+        },
+        {
+          "code": "#any cellOrName"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.core#Cell:"
+        },
+        {
+          "paragraph": "Game time in seconds."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "The scale of game time relative to simulation time."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Return an object by RefNum/FormId."
+        },
+        {
+          "paragraph": "Note: the function always returnsopenmw.core#GameObjectand doesn't validate that\nthe object exists in the game world. If it doesn't exist or not yet loaded to memory),\nthenobj:isValid()will befalse."
+        },
+        {
+          "code": "obj:isValid()"
+        },
+        {
+          "code": "false"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string formId: \nString returned bycore.getFormId"
+        },
+        {
+          "code": "#string formId"
+        },
+        {
+          "code": "core.getFormId"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.core#GameObject:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local obj = world.getObjectByFormId(core.getFormId('Morrowind.esm', 128964))"
+        },
+        {
+          "code": "local obj = world.getObjectByFormId(core.getFormId('Morrowind.esm', 128964))"
+        },
+        {
+          "paragraph": "The tags that are currently pausing the game."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#table:"
+        },
+        {
+          "paragraph": "Simulation time in seconds."
+        },
+        {
+          "paragraph": "The number of simulation seconds passed in the game world since starting a new game."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "The scale of simulation time relative to real time."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#number:"
+        },
+        {
+          "paragraph": "Whether the world is paused (onUpdate doesn't work when the world is paused)."
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#boolean:"
+        },
+        {
+          "paragraph": "Functions related to MWScript (see#MWScriptFunctions)."
+        },
+        {
+          "paragraph": "Pause the game starting from the next frame."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string tag: \n(optional, empty string by default) The game will be paused untilunpauseis called with the same tag."
+        },
+        {
+          "code": "#string tag"
+        },
+        {
+          "code": "unpause"
+        },
+        {
+          "paragraph": "List of players."
+        },
+        {
+          "paragraph": "Currently (since multiplayer is not yet implemented) always has one element."
+        },
+        {
+          "paragraph": "Set the ratio of game time speed to simulation time speed."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number ratio:"
+        },
+        {
+          "code": "#number ratio"
+        },
+        {
+          "paragraph": "Set the simulation time scale."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#number scale:"
+        },
+        {
+          "code": "#number scale"
+        },
+        {
+          "paragraph": "Remove given tag from the list of pause tags."
+        },
+        {
+          "paragraph": "Resume the game starting from the next frame if the list became empty."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string tag: \n(optional, empty string by default) Needed to undopausecalled with this tag."
+        },
+        {
+          "code": "#string tag"
+        },
+        {
+          "code": "pause"
+        },
+        {
+          "paragraph": "#VFX: Visual effects"
+        }
+      ]
+    },
+    {
+      "header": "TypeMWScript",
+      "content": [
+        {
+          "code": "MWScript"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "for _, script in ipairs(world.mwscript.getLocalScripts(object)) do\n  -- print the value of local variable 'something' (0 if there is no such variable)\n  print(script.variables.something)\n  -- set the variable 'something' (raises an error if there is no such variable)\n  script.variables.something = 5\nend"
+        },
+        {
+          "code": "for _, script in ipairs(world.mwscript.getLocalScripts(object)) do\n  -- print the value of local variable 'something' (0 if there is no such variable)\n  print(script.variables.something)\n  -- set the variable 'something' (raises an error if there is no such variable)\n  script.variables.something = 5\nend"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Whether the script is currently running"
+        },
+        {
+          "paragraph": "The object the script is attached to."
+        },
+        {
+          "paragraph": "The player the script refers to."
+        },
+        {
+          "paragraph": "Id of the script"
+        },
+        {
+          "paragraph": "Local variables of the script (mutable)"
+        }
+      ]
+    },
+    {
+      "header": "TypeMWScriptFunctions",
+      "content": [
+        {
+          "code": "MWScriptFunctions"
+        },
+        {
+          "paragraph": "Functions related to MWScript."
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Returns global mwscript with given recordId."
+        },
+        {
+          "paragraph": "Returnsnilif the script doesn't exist or is not started.\nCurrently there can be only one instance of each mwscript, but in multiplayer it will be possible to have a separate instance per player."
+        },
+        {
+          "code": "nil"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string recordId:"
+        },
+        {
+          "code": "#string recordId"
+        },
+        {
+          "paragraph": "openmw.core#GameObjectplayer: \n(optional) Will be used in multiplayer mode to get the script if there is a separate instance for each player. Currently has no effect."
+        },
+        {
+          "code": "openmw.core#GameObjectplayer"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#MWScript, #nil:"
+        },
+        {
+          "paragraph": "Returns mutable global variables."
+        },
+        {
+          "paragraph": "In multiplayer, these may be specific to the provided player."
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "openmw.core#GameObjectplayer: \n(optional) Will be used in multiplayer mode to get the globals if there is a separate instance for each player. Currently has no effect."
+        },
+        {
+          "code": "openmw.core#GameObjectplayer"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#MWScriptVariables:"
+        },
+        {
+          "paragraph": "Returns local mwscript onobject."
+        },
+        {
+          "code": "object"
+        },
+        {
+          "paragraph": "Returnsnilif the script doesn't exist or is not started."
+        },
+        {
+          "code": "nil"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "openmw.core#GameObjectobject:"
+        },
+        {
+          "code": "openmw.core#GameObjectobject"
+        },
+        {
+          "paragraph": "openmw.core#GameObjectplayer: \n(optional) Will be used in multiplayer mode to get the script if there is a separate instance for each player. Currently has no effect."
+        },
+        {
+          "code": "openmw.core#GameObjectplayer"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#MWScript, #nil:"
+        }
+      ]
+    },
+    {
+      "header": "TypeMWScriptVariables",
+      "content": [
+        {
+          "code": "MWScriptVariables"
+        },
+        {
+          "paragraph": "MWScriptVariablesis a map of#stringto#number."
+        },
+        {
+          "code": "MWScriptVariables"
+        },
+        {
+          "code": "#string"
+        },
+        {
+          "code": "#number"
+        }
+      ]
+    },
+    {
+      "header": "TypeVFX",
+      "content": [
+        {
+          "code": "VFX"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Spawn a VFX at the given location in the world."
+        },
+        {
+          "paragraph": "Best invoked through the SpawnVfx global event"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "#string model: \nstring model path (normally taken from a record such asopenmw.types#StaticRecord.modelor similar)"
+        },
+        {
+          "code": "#string model"
+        },
+        {
+          "paragraph": "openmw.util#Vector3position:"
+        },
+        {
+          "code": "openmw.util#Vector3position"
+        },
+        {
+          "paragraph": "#table options: \noptional table of parameters. Can contain:"
+        },
+        {
+          "code": "#table options"
+        },
+        {
+          "code": "mwMagicVfx"
+        },
+        {
+          "code": "particleTextureOverride"
+        },
+        {
+          "code": "scale"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "-- Spawn a sanctuary effect near the player\nlocal effect = core.magic.effects.records[core.magic.EFFECT_TYPE.Sanctuary]\nlocal pos = self.position + util.vector3(0, 100, 0)\nlocal model = types.Static.record(effect.castingStatic).model\ncore.sendGlobalEvent('SpawnVfx', {model = model, position = pos})"
+        },
+        {
+          "code": "-- Spawn a sanctuary effect near the player\nlocal effect = core.magic.effects.records[core.magic.EFFECT_TYPE.Sanctuary]\nlocal pos = self.position + util.vector3(0, 100, 0)\nlocal model = types.Static.record(effect.castingStatic).model\ncore.sendGlobalEvent('SpawnVfx', {model = model, position = pos})"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

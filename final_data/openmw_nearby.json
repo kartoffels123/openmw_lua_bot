@@ -1,0 +1,1113 @@
+{
+  "title": "Package openmw.nearby\uf0c1",
+  "sections": [
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local nearby = require('openmw.nearby')"
+        },
+        {
+          "code": "local nearby = require('openmw.nearby')"
+        }
+      ]
+    },
+    {
+      "header": "Typenearby",
+      "content": [
+        {
+          "code": "nearby"
+        },
+        {
+          "paragraph": "Collision types that are used incastRay."
+        },
+        {
+          "code": "castRay"
+        },
+        {
+          "paragraph": "List of nearby activators."
+        },
+        {
+          "paragraph": "List of nearby actors."
+        },
+        {
+          "paragraph": "Asynchronously cast ray from one point to another and find the first visual intersection with anything in the scene."
+        },
+        {
+          "paragraph": "Finds a nearest to the ray target position starting from the initial position with resulting curve drawn on the\nnavigation mesh surface."
+        },
+        {
+          "paragraph": "Cast ray from one point to another and return the first collision."
+        },
+        {
+          "paragraph": "Cast ray from one point to another and find the first visual intersection with anything in the scene."
+        },
+        {
+          "paragraph": "List of nearby containers."
+        },
+        {
+          "paragraph": "List of nearby doors."
+        },
+        {
+          "paragraph": "Finds a nearest position on navigation mesh to the given position within given search area."
+        },
+        {
+          "paragraph": "Find path over navigation mesh from source to destination with given options."
+        },
+        {
+          "paragraph": "Returns random location on navigation mesh within the reach of specified location."
+        },
+        {
+          "paragraph": "Return an object by RefNum/FormId."
+        },
+        {
+          "paragraph": "Everything nearby that is derived fromopenmw.types#Item."
+        },
+        {
+          "paragraph": "List of nearby players."
+        }
+      ]
+    },
+    {
+      "header": "TypeAgentBounds",
+      "content": [
+        {
+          "code": "AgentBounds"
+        }
+      ]
+    },
+    {
+      "header": "TypeAreaCosts",
+      "content": [
+        {
+          "code": "AreaCosts"
+        },
+        {
+          "paragraph": "Value >= 0, used in combination withNAVIGATOR_FLAGS.OpenDoor(default: 2)."
+        },
+        {
+          "paragraph": "Value >= 0, used in combination withNAVIGATOR_FLAGS.Walk(default: 1)."
+        },
+        {
+          "paragraph": "Value >= 0, used in combination withNAVIGATOR_FLAGS.UsePathgrid(default: 1)."
+        },
+        {
+          "paragraph": "Value >= 0, used in combination withNAVIGATOR_FLAGS.Swim(default: 1)."
+        }
+      ]
+    },
+    {
+      "header": "TypeCOLLISION_SHAPE_TYPE",
+      "content": [
+        {
+          "code": "COLLISION_SHAPE_TYPE"
+        },
+        {
+          "paragraph": "Axis-Aligned Bounding Box is used for NPC and symmetric\nCreatures."
+        },
+        {
+          "paragraph": "is used for NPC and symmetric Creatures."
+        },
+        {
+          "paragraph": "is used for Creatures with big difference in width and\nheight."
+        }
+      ]
+    },
+    {
+      "header": "TypeCOLLISION_TYPE",
+      "content": [
+        {
+          "code": "COLLISION_TYPE"
+        },
+        {
+          "paragraph": "World+Door+Actor+HeightMap+Projectile+Water"
+        },
+        {
+          "paragraph": "Objects that should collide only with camera"
+        },
+        {
+          "paragraph": "Used by default: World+Door+Actor+HeightMap"
+        },
+        {
+          "paragraph": "Objects that were not intended to be part of the physics world"
+        }
+      ]
+    },
+    {
+      "header": "TypeCastRayOptions",
+      "content": [
+        {
+          "code": "CastRayOptions"
+        },
+        {
+          "paragraph": "Object types to work with (seeopenmw.nearby#COLLISION_TYPE)"
+        },
+        {
+          "paragraph": "An object to ignore (specify here the source of the ray)"
+        },
+        {
+          "paragraph": "The radius of the ray (zero by default). If not zero then castRay actually casts a sphere with given radius.\n NOTE: currentlyignoreis not supported ifradius>0."
+        },
+        {
+          "code": "ignore"
+        },
+        {
+          "code": "radius>0"
+        }
+      ]
+    },
+    {
+      "header": "TypeCastRenderingRayOptions",
+      "content": [
+        {
+          "code": "CastRenderingRayOptions"
+        },
+        {
+          "paragraph": "A list ofopenmw.core#GameObjectto ignore while doing the ray cast"
+        }
+      ]
+    },
+    {
+      "header": "TypeFIND_PATH_STATUS",
+      "content": [
+        {
+          "code": "FIND_PATH_STATUS"
+        },
+        {
+          "paragraph": "destinationposition is too far from available\nnavigation mesh. The status may appear when navigation mesh is not fully generated or position is outside of covered\narea;"
+        },
+        {
+          "code": "destination"
+        },
+        {
+          "paragraph": "Path over navigation mesh fromsourcetodestinationdoes not exist or navigation mesh is not fully generated to provide the path;"
+        },
+        {
+          "code": "source"
+        },
+        {
+          "code": "destination"
+        },
+        {
+          "paragraph": "Couldn't map path over polygons into world\ncoordinates."
+        },
+        {
+          "paragraph": "Couldn't initialize required data due to bad input\nor bad navigation mesh data."
+        },
+        {
+          "paragraph": "Found path couldn't be smoothed due to imperfect\nalgorithm implementation or bad navigation mesh data;"
+        },
+        {
+          "paragraph": "ProvidedagentBoundsdon't have corresponding navigation\nmesh. For interior cells it means an agent with suchagentBoundsis present on the scene. For exterior cells only\ndefaultagentBoundsis supported;"
+        },
+        {
+          "code": "agentBounds"
+        },
+        {
+          "code": "agentBounds"
+        },
+        {
+          "code": "agentBounds"
+        },
+        {
+          "paragraph": "Last path point is not a destination but a nearest position\namong found;"
+        },
+        {
+          "paragraph": "sourceposition is too far from available\nnavigation mesh. The status may appear when navigation mesh is not fully generated or position is outside of covered\narea;"
+        },
+        {
+          "code": "source"
+        },
+        {
+          "paragraph": "Path is found."
+        },
+        {
+          "paragraph": "adjusteddestinationposition is too far from\navailable navigation mesh. The status may appear when navigation mesh is not fully generated or position is outside\nof covered area;"
+        },
+        {
+          "code": "destination"
+        }
+      ]
+    },
+    {
+      "header": "TypeFindNearestNavMeshPositionOptions",
+      "content": [
+        {
+          "code": "FindNearestNavMeshPositionOptions"
+        },
+        {
+          "paragraph": "Identifies which navmesh to use."
+        },
+        {
+          "paragraph": "Allowed areas for agent to move, a sum of#NAVIGATOR_FLAGSvalues (default:NAVIGATOR_FLAGS.Walk+NAVIGATOR_FLAGS.Swim+NAVIGATOR_FLAGS.OpenDoor+NAVIGATOR_FLAGS.UsePathgrid)."
+        },
+        {
+          "paragraph": "Defines AABB like area half extents around\ngiven position (default: (1 + 2 * CellGridRadius) * CellSize * (1, 1, 1) where CellGridRadius and depends on cell\ntype to cover the whole active grid)."
+        }
+      ]
+    },
+    {
+      "header": "TypeFindPathOptions",
+      "content": [
+        {
+          "code": "FindPathOptions"
+        },
+        {
+          "paragraph": "identifies which navmesh to use."
+        },
+        {
+          "paragraph": "a table defining relative cost for each type of area."
+        },
+        {
+          "paragraph": "a floating point number representing maximum allowed\ndistance between destination and a nearest point on the navigation mesh in addition to agent size (default: 1)."
+        },
+        {
+          "paragraph": "allowed areas for agent to move, a sum of#NAVIGATOR_FLAGSvalues (default:NAVIGATOR_FLAGS.Walk+NAVIGATOR_FLAGS.Swim+NAVIGATOR_FLAGS.OpenDoor+NAVIGATOR_FLAGS.UsePathgrid)."
+        }
+      ]
+    },
+    {
+      "header": "TypeNAVIGATOR_FLAGS",
+      "content": [
+        {
+          "code": "NAVIGATOR_FLAGS"
+        },
+        {
+          "paragraph": "Allow agent to open doors on the way."
+        },
+        {
+          "paragraph": "Allow agent to swim on the water surface."
+        },
+        {
+          "paragraph": "Allow agent to use predefined pathgrid imported from ESM files."
+        },
+        {
+          "paragraph": "Allow agent to walk on the ground area."
+        }
+      ]
+    },
+    {
+      "header": "TypeNavMeshOptions",
+      "content": [
+        {
+          "code": "NavMeshOptions"
+        },
+        {
+          "paragraph": "Identifies which navmesh to use."
+        },
+        {
+          "paragraph": "Allowed areas for agent to move, a sum of#NAVIGATOR_FLAGSvalues (default:NAVIGATOR_FLAGS.Walk+NAVIGATOR_FLAGS.Swim+NAVIGATOR_FLAGS.OpenDoor+NAVIGATOR_FLAGS.UsePathgrid)."
+        }
+      ]
+    },
+    {
+      "header": "TypeRayCastingResult",
+      "content": [
+        {
+          "code": "RayCastingResult"
+        },
+        {
+          "paragraph": "Is there a collision? (true/false)"
+        },
+        {
+          "paragraph": "Normal to the surface in the collision point (nil if no collision)"
+        },
+        {
+          "paragraph": "The object the ray has collided with (can be nil)"
+        },
+        {
+          "paragraph": "Position of the collision point (nil if no collision)"
+        }
+      ]
+    },
+    {
+      "header": "Typenearby",
+      "content": [
+        {
+          "code": "nearby"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Collision types that are used incastRay."
+        },
+        {
+          "code": "castRay"
+        },
+        {
+          "paragraph": "Several types can be combined withopenmw_util#util.bitOr."
+        },
+        {
+          "paragraph": "List of nearby activators."
+        },
+        {
+          "paragraph": "List of nearby actors."
+        },
+        {
+          "paragraph": "Asynchronously cast ray from one point to another and find the first visual intersection with anything in the scene."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "openmw.async#Callbackcallback: \nThe callback to pass the result to (should accept a single argumentopenmw.nearby#RayCastingResult)."
+        },
+        {
+          "code": "openmw.async#Callbackcallback"
+        },
+        {
+          "paragraph": "openmw.util#Vector3from: \nStart point of the ray."
+        },
+        {
+          "code": "openmw.util#Vector3from"
+        },
+        {
+          "paragraph": "openmw.util#Vector3to: \nEnd point of the ray."
+        },
+        {
+          "code": "openmw.util#Vector3to"
+        },
+        {
+          "paragraph": "Finds a nearest to the ray target position starting from the initial position with resulting curve drawn on the\nnavigation mesh surface."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3from: \nInitial ray position."
+        },
+        {
+          "code": "openmw.util#Vector3from"
+        },
+        {
+          "paragraph": "openmw.util#Vector3to: \nTarget ray position."
+        },
+        {
+          "code": "openmw.util#Vector3to"
+        },
+        {
+          "paragraph": "#NavMeshOptionsoptions: \nAn optional table with additional optional arguments."
+        },
+        {
+          "code": "#NavMeshOptionsoptions"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3, #nil:"
+        }
+      ]
+    },
+    {
+      "header": "Usages:",
+      "content": [
+        {
+          "code": "local position = nearby.castNavigationRay(from, to)"
+        },
+        {
+          "code": "local position = nearby.castNavigationRay(from, to)"
+        },
+        {
+          "code": "local position = nearby.castNavigationRay(from, to, {\n    includeFlags = nearby.NAVIGATOR_FLAGS.Swim,\n})"
+        },
+        {
+          "code": "local position = nearby.castNavigationRay(from, to, {\n    includeFlags = nearby.NAVIGATOR_FLAGS.Swim,\n})"
+        },
+        {
+          "code": "local position = nearby.castNavigationRay(from, to, {\n    agentBounds = Actor.getPathfindingAgentBounds(self),\n})"
+        },
+        {
+          "code": "local position = nearby.castNavigationRay(from, to, {\n    agentBounds = Actor.getPathfindingAgentBounds(self),\n})"
+        },
+        {
+          "paragraph": "Cast ray from one point to another and return the first collision."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3from: \nStart point of the ray."
+        },
+        {
+          "code": "openmw.util#Vector3from"
+        },
+        {
+          "paragraph": "openmw.util#Vector3to: \nEnd point of the ray."
+        },
+        {
+          "code": "openmw.util#Vector3to"
+        },
+        {
+          "paragraph": "#CastRayOptionsoptions: \nAn optional table with additional optional arguments"
+        },
+        {
+          "code": "#CastRayOptionsoptions"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#RayCastingResult:"
+        }
+      ]
+    },
+    {
+      "header": "Usages:",
+      "content": [
+        {
+          "code": "if nearby.castRay(pointA, pointB).hit then print('obstacle between A and B') end"
+        },
+        {
+          "code": "if nearby.castRay(pointA, pointB).hit then print('obstacle between A and B') end"
+        },
+        {
+          "code": "local res = nearby.castRay(self.position, enemy.position, {ignore=self})\nif res.hitObject and res.hitObject ~= enemy then obstacle = res.hitObject end"
+        },
+        {
+          "code": "local res = nearby.castRay(self.position, enemy.position, {ignore=self})\nif res.hitObject and res.hitObject ~= enemy then obstacle = res.hitObject end"
+        },
+        {
+          "code": "local res = nearby.castRay(self.position, targetPos, {\n    collisionType=nearby.COLLISION_TYPE.HeightMap + nearby.COLLISION_TYPE.Water,\n    radius = 10,\n})"
+        },
+        {
+          "code": "local res = nearby.castRay(self.position, targetPos, {\n    collisionType=nearby.COLLISION_TYPE.HeightMap + nearby.COLLISION_TYPE.Water,\n    radius = 10,\n})"
+        },
+        {
+          "paragraph": "Cast ray from one point to another and find the first visual intersection with anything in the scene."
+        },
+        {
+          "paragraph": "As opposite tocastRaycan find an intersection with an object without collisions.\nIn order to avoid threading issues can be used only in player scripts only inonFrameor\nin engine handlers for user input. In other cases useasyncCastRenderingRayinstead."
+        },
+        {
+          "code": "castRay"
+        },
+        {
+          "code": "onFrame"
+        },
+        {
+          "code": "asyncCastRenderingRay"
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3from: \nStart point of the ray."
+        },
+        {
+          "code": "openmw.util#Vector3from"
+        },
+        {
+          "paragraph": "openmw.util#Vector3to: \nEnd point of the ray."
+        },
+        {
+          "code": "openmw.util#Vector3to"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "#RayCastingResult:"
+        },
+        {
+          "paragraph": "List of nearby containers."
+        },
+        {
+          "paragraph": "List of nearby doors."
+        },
+        {
+          "paragraph": "Finds a nearest position on navigation mesh to the given position within given search area."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3position: \nSearch area center."
+        },
+        {
+          "code": "openmw.util#Vector3position"
+        },
+        {
+          "paragraph": "#FindNearestNavMeshPositionOptionsoptions: \nAn optional table with additional optional arguments."
+        },
+        {
+          "code": "#FindNearestNavMeshPositionOptionsoptions"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3, #nil:"
+        }
+      ]
+    },
+    {
+      "header": "Usages:",
+      "content": [
+        {
+          "code": "local navMeshPosition = nearby.findNearestNavMeshPosition(position)"
+        },
+        {
+          "code": "local navMeshPosition = nearby.findNearestNavMeshPosition(position)"
+        },
+        {
+          "code": "local navMeshPosition = nearby.findNearestNavMeshPosition(position, {\n    includeFlags = nearby.NAVIGATOR_FLAGS.Swim,\n})"
+        },
+        {
+          "code": "local navMeshPosition = nearby.findNearestNavMeshPosition(position, {\n    includeFlags = nearby.NAVIGATOR_FLAGS.Swim,\n})"
+        },
+        {
+          "code": "local navMeshPosition = nearby.findNearestNavMeshPosition(position, {\n    agentBounds = Actor.getPathfindingAgentBounds(self),\n})"
+        },
+        {
+          "code": "local navMeshPosition = nearby.findNearestNavMeshPosition(position, {\n    agentBounds = Actor.getPathfindingAgentBounds(self),\n})"
+        },
+        {
+          "code": "local navMeshPosition = nearby.findNearestNavMeshPosition(position, {\n    searchAreaHalfExtents = util.vector3(1000, 1000, 1000),\n    includeFlags = nearby.NAVIGATOR_FLAGS.Walk,\n})"
+        },
+        {
+          "code": "local navMeshPosition = nearby.findNearestNavMeshPosition(position, {\n    searchAreaHalfExtents = util.vector3(1000, 1000, 1000),\n    includeFlags = nearby.NAVIGATOR_FLAGS.Walk,\n})"
+        },
+        {
+          "paragraph": "Find path over navigation mesh from source to destination with given options."
+        },
+        {
+          "paragraph": "Result is unstable since navigation\nmesh generation is asynchronous."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3source: \nInitial path position."
+        },
+        {
+          "code": "openmw.util#Vector3source"
+        },
+        {
+          "paragraph": "openmw.util#Vector3destination: \nFinal path position."
+        },
+        {
+          "code": "openmw.util#Vector3destination"
+        },
+        {
+          "paragraph": "#FindPathOptionsoptions: \nAn optional table with additional optional arguments."
+        },
+        {
+          "code": "#FindPathOptionsoptions"
+        }
+      ]
+    },
+    {
+      "header": "Return values",
+      "content": [
+        {
+          "paragraph": "#FINDPATHSTATUS:"
+        },
+        {
+          "paragraph": "#list<openmw.util#Vector3>:"
+        }
+      ]
+    },
+    {
+      "header": "Usages:",
+      "content": [
+        {
+          "code": "local status, path = nearby.findPath(source, destination)"
+        },
+        {
+          "code": "local status, path = nearby.findPath(source, destination)"
+        },
+        {
+          "code": "local status, path = nearby.findPath(source, destination, {\n    includeFlags = nearby.NAVIGATOR_FLAGS.Walk + nearby.NAVIGATOR_FLAGS.OpenDoor,\n    areaCosts = {\n        door = 1.5,\n    },\n})"
+        },
+        {
+          "code": "local status, path = nearby.findPath(source, destination, {\n    includeFlags = nearby.NAVIGATOR_FLAGS.Walk + nearby.NAVIGATOR_FLAGS.OpenDoor,\n    areaCosts = {\n        door = 1.5,\n    },\n})"
+        },
+        {
+          "code": "local status, path = nearby.findPath(source, destination, {\n    agentBounds = Actor.getPathfindingAgentBounds(self),\n})"
+        },
+        {
+          "code": "local status, path = nearby.findPath(source, destination, {\n    agentBounds = Actor.getPathfindingAgentBounds(self),\n})"
+        },
+        {
+          "paragraph": "Returns random location on navigation mesh within the reach of specified location."
+        },
+        {
+          "paragraph": "The location is not exactly constrained by the circle, but it limits the area."
+        }
+      ]
+    },
+    {
+      "header": "Parameters",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3position: \nCenter of the search circle."
+        },
+        {
+          "code": "openmw.util#Vector3position"
+        },
+        {
+          "paragraph": "#number maxRadius: \nApproximate maximum search distance."
+        },
+        {
+          "code": "#number maxRadius"
+        },
+        {
+          "paragraph": "#NavMeshOptionsoptions: \nAn optional table with additional optional arguments."
+        },
+        {
+          "code": "#NavMeshOptionsoptions"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.util#Vector3, #nil:"
+        }
+      ]
+    },
+    {
+      "header": "Usages:",
+      "content": [
+        {
+          "code": "local position = nearby.findRandomPointAroundCircle(position, maxRadius)"
+        },
+        {
+          "code": "local position = nearby.findRandomPointAroundCircle(position, maxRadius)"
+        },
+        {
+          "code": "local position = nearby.findRandomPointAroundCircle(position, maxRadius, {\n    includeFlags = nearby.NAVIGATOR_FLAGS.Walk,\n})"
+        },
+        {
+          "code": "local position = nearby.findRandomPointAroundCircle(position, maxRadius, {\n    includeFlags = nearby.NAVIGATOR_FLAGS.Walk,\n})"
+        },
+        {
+          "code": "local position = nearby.findRandomPointAroundCircle(position, maxRadius, {\n    agentBounds = Actor.getPathfindingAgentBounds(self),\n})"
+        },
+        {
+          "code": "local position = nearby.findRandomPointAroundCircle(position, maxRadius, {\n    agentBounds = Actor.getPathfindingAgentBounds(self),\n})"
+        },
+        {
+          "paragraph": "Return an object by RefNum/FormId."
+        },
+        {
+          "paragraph": "Note: the function always returnsopenmw.core#GameObjectand doesn't validate that\nthe object exists in the game world. If it doesn't exist or not yet loaded to memory),\nthenobj:isValid()will befalse."
+        },
+        {
+          "code": "obj:isValid()"
+        },
+        {
+          "code": "false"
+        }
+      ]
+    },
+    {
+      "header": "Parameter",
+      "content": [
+        {
+          "paragraph": "#string formId: \nString returned bycore.getFormId"
+        },
+        {
+          "code": "#string formId"
+        },
+        {
+          "code": "core.getFormId"
+        }
+      ]
+    },
+    {
+      "header": "Return value",
+      "content": [
+        {
+          "paragraph": "openmw.core#GameObject:"
+        }
+      ]
+    },
+    {
+      "header": "Usage:",
+      "content": [
+        {
+          "code": "local obj = nearby.getObjectByFormId(core.getFormId('Morrowind.esm', 128964))"
+        },
+        {
+          "code": "local obj = nearby.getObjectByFormId(core.getFormId('Morrowind.esm', 128964))"
+        },
+        {
+          "paragraph": "Everything nearby that is derived fromopenmw.types#Item."
+        },
+        {
+          "paragraph": "List of nearby players."
+        },
+        {
+          "paragraph": "Currently (since multiplayer is not yet implemented) always has one element."
+        }
+      ]
+    },
+    {
+      "header": "TypeAgentBounds",
+      "content": [
+        {
+          "code": "AgentBounds"
+        },
+        {
+          "paragraph": "A table of parameters identifying navmesh"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "header": "TypeAreaCosts",
+      "content": [
+        {
+          "code": "AreaCosts"
+        },
+        {
+          "paragraph": "A table of parameters to specify relative path cost per each area type"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Value >= 0, used in combination withNAVIGATOR_FLAGS.OpenDoor(default: 2)."
+        },
+        {
+          "paragraph": "Value >= 0, used in combination withNAVIGATOR_FLAGS.Walk(default: 1)."
+        },
+        {
+          "paragraph": "Value >= 0, used in combination withNAVIGATOR_FLAGS.UsePathgrid(default: 1)."
+        },
+        {
+          "paragraph": "Value >= 0, used in combination withNAVIGATOR_FLAGS.Swim(default: 1)."
+        }
+      ]
+    },
+    {
+      "header": "TypeCOLLISION_SHAPE_TYPE",
+      "content": [
+        {
+          "code": "COLLISION_SHAPE_TYPE"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Axis-Aligned Bounding Box is used for NPC and symmetric\nCreatures."
+        },
+        {
+          "paragraph": "is used for NPC and symmetric Creatures."
+        },
+        {
+          "paragraph": "is used for Creatures with big difference in width and\nheight."
+        }
+      ]
+    },
+    {
+      "header": "TypeCOLLISION_TYPE",
+      "content": [
+        {
+          "code": "COLLISION_TYPE"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "World+Door+Actor+HeightMap+Projectile+Water"
+        },
+        {
+          "paragraph": "Objects that should collide only with camera"
+        },
+        {
+          "paragraph": "Used by default: World+Door+Actor+HeightMap"
+        },
+        {
+          "paragraph": "Objects that were not intended to be part of the physics world"
+        }
+      ]
+    },
+    {
+      "header": "TypeCastRayOptions",
+      "content": [
+        {
+          "code": "CastRayOptions"
+        },
+        {
+          "paragraph": "A table of parameters fornearby.castRay"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Object types to work with (seeopenmw.nearby#COLLISION_TYPE)"
+        },
+        {
+          "paragraph": "An object to ignore (specify here the source of the ray)"
+        },
+        {
+          "paragraph": "The radius of the ray (zero by default). If not zero then castRay actually casts a sphere with given radius.\n NOTE: currentlyignoreis not supported ifradius>0."
+        },
+        {
+          "code": "ignore"
+        },
+        {
+          "code": "radius>0"
+        }
+      ]
+    },
+    {
+      "header": "TypeCastRenderingRayOptions",
+      "content": [
+        {
+          "code": "CastRenderingRayOptions"
+        },
+        {
+          "paragraph": "A table of parameters fornearby.castRenderingRayandnearby.asyncCastRenderingRay"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "A list ofopenmw.core#GameObjectto ignore while doing the ray cast"
+        }
+      ]
+    },
+    {
+      "header": "TypeFIND_PATH_STATUS",
+      "content": [
+        {
+          "code": "FIND_PATH_STATUS"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "destinationposition is too far from available\nnavigation mesh. The status may appear when navigation mesh is not fully generated or position is outside of covered\narea;"
+        },
+        {
+          "code": "destination"
+        },
+        {
+          "paragraph": "Path over navigation mesh fromsourcetodestinationdoes not exist or navigation mesh is not fully generated to provide the path;"
+        },
+        {
+          "code": "source"
+        },
+        {
+          "code": "destination"
+        },
+        {
+          "paragraph": "Couldn't map path over polygons into world\ncoordinates."
+        },
+        {
+          "paragraph": "Couldn't initialize required data due to bad input\nor bad navigation mesh data."
+        },
+        {
+          "paragraph": "Found path couldn't be smoothed due to imperfect\nalgorithm implementation or bad navigation mesh data;"
+        },
+        {
+          "paragraph": "ProvidedagentBoundsdon't have corresponding navigation\nmesh. For interior cells it means an agent with suchagentBoundsis present on the scene. For exterior cells only\ndefaultagentBoundsis supported;"
+        },
+        {
+          "code": "agentBounds"
+        },
+        {
+          "code": "agentBounds"
+        },
+        {
+          "code": "agentBounds"
+        },
+        {
+          "paragraph": "Last path point is not a destination but a nearest position\namong found;"
+        },
+        {
+          "paragraph": "sourceposition is too far from available\nnavigation mesh. The status may appear when navigation mesh is not fully generated or position is outside of covered\narea;"
+        },
+        {
+          "code": "source"
+        },
+        {
+          "paragraph": "Path is found."
+        },
+        {
+          "paragraph": "adjusteddestinationposition is too far from\navailable navigation mesh. The status may appear when navigation mesh is not fully generated or position is outside\nof covered area;"
+        },
+        {
+          "code": "destination"
+        }
+      ]
+    },
+    {
+      "header": "TypeFindNearestNavMeshPositionOptions",
+      "content": [
+        {
+          "code": "FindNearestNavMeshPositionOptions"
+        },
+        {
+          "paragraph": "A table of parameters fornearby.findNearestNavMeshPosition"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Identifies which navmesh to use."
+        },
+        {
+          "paragraph": "Allowed areas for agent to move, a sum of#NAVIGATOR_FLAGSvalues (default:NAVIGATOR_FLAGS.Walk+NAVIGATOR_FLAGS.Swim+NAVIGATOR_FLAGS.OpenDoor+NAVIGATOR_FLAGS.UsePathgrid)."
+        },
+        {
+          "paragraph": "Defines AABB like area half extents around\ngiven position (default: (1 + 2 * CellGridRadius) * CellSize * (1, 1, 1) where CellGridRadius and depends on cell\ntype to cover the whole active grid)."
+        }
+      ]
+    },
+    {
+      "header": "TypeFindPathOptions",
+      "content": [
+        {
+          "code": "FindPathOptions"
+        },
+        {
+          "paragraph": "A table of parameters fornearby.findPath"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "identifies which navmesh to use."
+        },
+        {
+          "paragraph": "a table defining relative cost for each type of area."
+        },
+        {
+          "paragraph": "a floating point number representing maximum allowed\ndistance between destination and a nearest point on the navigation mesh in addition to agent size (default: 1)."
+        },
+        {
+          "paragraph": "allowed areas for agent to move, a sum of#NAVIGATOR_FLAGSvalues (default:NAVIGATOR_FLAGS.Walk+NAVIGATOR_FLAGS.Swim+NAVIGATOR_FLAGS.OpenDoor+NAVIGATOR_FLAGS.UsePathgrid)."
+        }
+      ]
+    },
+    {
+      "header": "TypeNAVIGATOR_FLAGS",
+      "content": [
+        {
+          "code": "NAVIGATOR_FLAGS"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Allow agent to open doors on the way."
+        },
+        {
+          "paragraph": "Allow agent to swim on the water surface."
+        },
+        {
+          "paragraph": "Allow agent to use predefined pathgrid imported from ESM files."
+        },
+        {
+          "paragraph": "Allow agent to walk on the ground area."
+        }
+      ]
+    },
+    {
+      "header": "TypeNavMeshOptions",
+      "content": [
+        {
+          "code": "NavMeshOptions"
+        },
+        {
+          "paragraph": "A table of parameters fornearby.findRandomPointAroundCircleandnearby.castNavigationRay"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Identifies which navmesh to use."
+        },
+        {
+          "paragraph": "Allowed areas for agent to move, a sum of#NAVIGATOR_FLAGSvalues (default:NAVIGATOR_FLAGS.Walk+NAVIGATOR_FLAGS.Swim+NAVIGATOR_FLAGS.OpenDoor+NAVIGATOR_FLAGS.UsePathgrid)."
+        }
+      ]
+    },
+    {
+      "header": "TypeRayCastingResult",
+      "content": [
+        {
+          "code": "RayCastingResult"
+        },
+        {
+          "paragraph": "Result of raycasing"
+        }
+      ]
+    },
+    {
+      "header": "Field(s)",
+      "content": [
+        {
+          "paragraph": "Is there a collision? (true/false)"
+        },
+        {
+          "paragraph": "Normal to the surface in the collision point (nil if no collision)"
+        },
+        {
+          "paragraph": "The object the ray has collided with (can be nil)"
+        },
+        {
+          "paragraph": "Position of the collision point (nil if no collision)"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

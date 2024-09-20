@@ -1,0 +1,45 @@
+{
+  "title": "Iterable types\uf0c1",
+  "sections": [
+    {
+      "header": "List Iterable\uf0c1",
+      "content": [
+        {
+          "paragraph": "An iterable with defined size and order."
+        },
+        {
+          "code": "-- can iterate over the list with pairsfori,vinpairs(list)do-- ...end"
+        },
+        {
+          "code": "-- can iterate over the list with ipairsfori,vinipairs(list)do-- ...end"
+        },
+        {
+          "code": "-- can get total size with the size # operatorlocallength=#list"
+        },
+        {
+          "code": "-- can index the list with numbersfori=1,lengthdolist[i]end"
+        }
+      ]
+    },
+    {
+      "header": "Map Iterable\uf0c1",
+      "content": [
+        {
+          "paragraph": "An iterable with undefined order."
+        },
+        {
+          "code": "-- can iterate over the map with pairsfork,vinpairs(map)do-- ...end"
+        },
+        {
+          "code": "-- can index the map by keymap[key]"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

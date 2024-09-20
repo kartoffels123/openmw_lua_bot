@@ -1,0 +1,358 @@
+{
+  "title": "Built-in AI packages\uf0c1",
+  "sections": [
+    {
+      "header": "Starting an AI package\uf0c1",
+      "content": [
+        {
+          "paragraph": "There are two ways to start AI package:"
+        },
+        {
+          "code": "-- from local script add package to selflocalAI=require('openmw.interfaces').AIAI.startPackage(options)-- via event to any actoractor:sendEvent('StartAIPackage',options)"
+        },
+        {
+          "paragraph": "optionsis Lua table with arguments of the AI package."
+        },
+        {
+          "code": "options"
+        },
+        {
+          "paragraph": "Common arguments that can be used with any AI package"
+        },
+        {
+          "paragraph": "name"
+        },
+        {
+          "paragraph": "type"
+        },
+        {
+          "paragraph": "description"
+        },
+        {
+          "paragraph": "type"
+        },
+        {
+          "paragraph": "string [required]"
+        },
+        {
+          "paragraph": "the name of the package (see packages listed below)"
+        },
+        {
+          "paragraph": "cancelOther"
+        },
+        {
+          "paragraph": "boolean [default=true]"
+        },
+        {
+          "paragraph": "whether to cancel all other AI packages"
+        }
+      ]
+    },
+    {
+      "header": "Combat\uf0c1",
+      "content": [
+        {
+          "paragraph": "Attack another actor."
+        },
+        {
+          "paragraph": "Arguments"
+        },
+        {
+          "paragraph": "name"
+        },
+        {
+          "paragraph": "type"
+        },
+        {
+          "paragraph": "description"
+        },
+        {
+          "paragraph": "target"
+        },
+        {
+          "paragraph": "GameObject[required]"
+        },
+        {
+          "paragraph": "the actor to attack"
+        },
+        {
+          "paragraph": "Examples"
+        },
+        {
+          "code": "-- from local script add package to selflocalAI=require('openmw.interfaces').AIAI.startPackage({type='Combat',target=anotherActor})-- via event to any actoractor:sendEvent('StartAIPackage',{type='Combat',target=anotherActor})"
+        }
+      ]
+    },
+    {
+      "header": "Pursue\uf0c1",
+      "content": [
+        {
+          "paragraph": "Pursue another actor."
+        },
+        {
+          "paragraph": "Arguments"
+        },
+        {
+          "paragraph": "name"
+        },
+        {
+          "paragraph": "type"
+        },
+        {
+          "paragraph": "description"
+        },
+        {
+          "paragraph": "target"
+        },
+        {
+          "paragraph": "GameObject[required]"
+        },
+        {
+          "paragraph": "the actor to pursue"
+        }
+      ]
+    },
+    {
+      "header": "Follow\uf0c1",
+      "content": [
+        {
+          "paragraph": "Follow another actor."
+        },
+        {
+          "paragraph": "Arguments"
+        },
+        {
+          "paragraph": "name"
+        },
+        {
+          "paragraph": "type"
+        },
+        {
+          "paragraph": "description"
+        },
+        {
+          "paragraph": "target"
+        },
+        {
+          "paragraph": "GameObject[required]"
+        },
+        {
+          "paragraph": "the actor to follow"
+        },
+        {
+          "paragraph": "destCell"
+        },
+        {
+          "paragraph": "Cell [optional]"
+        },
+        {
+          "paragraph": "the destination cell"
+        },
+        {
+          "paragraph": "duration"
+        },
+        {
+          "paragraph": "number [optional]"
+        },
+        {
+          "paragraph": "duration in game time (will be rounded up to the next hour)"
+        },
+        {
+          "paragraph": "destPosition"
+        },
+        {
+          "paragraph": "3d vector[optional]"
+        },
+        {
+          "paragraph": "the destination point"
+        },
+        {
+          "paragraph": "isRepeat"
+        },
+        {
+          "paragraph": "boolean [optional]"
+        },
+        {
+          "paragraph": "Will the package repeat (true or false)"
+        }
+      ]
+    },
+    {
+      "header": "Escort\uf0c1",
+      "content": [
+        {
+          "paragraph": "Escort another actor to the given location."
+        },
+        {
+          "paragraph": "Arguments"
+        },
+        {
+          "paragraph": "name"
+        },
+        {
+          "paragraph": "type"
+        },
+        {
+          "paragraph": "description"
+        },
+        {
+          "paragraph": "target"
+        },
+        {
+          "paragraph": "GameObject[required]"
+        },
+        {
+          "paragraph": "the actor to follow"
+        },
+        {
+          "paragraph": "destPosition"
+        },
+        {
+          "paragraph": "3d vector[required]"
+        },
+        {
+          "paragraph": "the destination point"
+        },
+        {
+          "paragraph": "destCell"
+        },
+        {
+          "paragraph": "Cell [optional]"
+        },
+        {
+          "paragraph": "the destination cell"
+        },
+        {
+          "paragraph": "duration"
+        },
+        {
+          "paragraph": "number [optional]"
+        },
+        {
+          "paragraph": "duration in game time (will be rounded up to the next hour)"
+        },
+        {
+          "paragraph": "isRepeat"
+        },
+        {
+          "paragraph": "boolean [optional]"
+        },
+        {
+          "paragraph": "Will the package repeat (true or false)"
+        },
+        {
+          "paragraph": "Example"
+        },
+        {
+          "code": "actor:sendEvent('StartAIPackage',{type='Escort',target=object.self,destPosition=util.vector3(x,y,z),duration=3*time.hour,isRepeat=true})"
+        }
+      ]
+    },
+    {
+      "header": "Wander\uf0c1",
+      "content": [
+        {
+          "paragraph": "Wander nearby current position."
+        },
+        {
+          "paragraph": "Arguments"
+        },
+        {
+          "paragraph": "name"
+        },
+        {
+          "paragraph": "type"
+        },
+        {
+          "paragraph": "description"
+        },
+        {
+          "paragraph": "distance"
+        },
+        {
+          "paragraph": "float [default=0]"
+        },
+        {
+          "paragraph": "the actor to follow"
+        },
+        {
+          "paragraph": "duration"
+        },
+        {
+          "paragraph": "number [optional]"
+        },
+        {
+          "paragraph": "duration in game time (will be rounded up to the next hour)"
+        },
+        {
+          "paragraph": "idle"
+        },
+        {
+          "paragraph": "table [optional]"
+        },
+        {
+          "paragraph": "Idle chance values, up to 8"
+        },
+        {
+          "paragraph": "isRepeat"
+        },
+        {
+          "paragraph": "boolean [optional]"
+        },
+        {
+          "paragraph": "Will the package repeat (true or false)"
+        },
+        {
+          "paragraph": "Example"
+        },
+        {
+          "code": "localidleTable={idle2=60,idle3=50,idle4=40,idle5=30,idle6=20,idle7=10,idle8=0,idle9=25}actor:sendEvent('StartAIPackage',{type='Wander',distance=5000,duration=5*time.hour,idle=idleTable,isRepeat=true})"
+        }
+      ]
+    },
+    {
+      "header": "Travel\uf0c1",
+      "content": [
+        {
+          "paragraph": "Go to given location."
+        },
+        {
+          "paragraph": "Arguments"
+        },
+        {
+          "paragraph": "name"
+        },
+        {
+          "paragraph": "type"
+        },
+        {
+          "paragraph": "description"
+        },
+        {
+          "paragraph": "destPosition"
+        },
+        {
+          "paragraph": "3d vector[required]"
+        },
+        {
+          "paragraph": "the point to travel to"
+        },
+        {
+          "paragraph": "isRepeat"
+        },
+        {
+          "paragraph": "boolean [optional]"
+        },
+        {
+          "paragraph": "Will the package repeat (true or false)"
+        },
+        {
+          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+        },
+        {
+          "code": "7d84b85d"
+        }
+      ]
+    }
+  ]
+}

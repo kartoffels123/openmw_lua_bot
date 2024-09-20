@@ -1,0 +1,6 @@
+{
+  "folder_name": "Crassified Navigation",
+  "lua_files": {
+    "Crassified Navigation-53756-1-1-1706140211\\crassified navigation\\Scripts\\S3\\crassifiednavigation.lua": "local storage = require(\"openmw.storage\")\nlocal mapCode = storage.playerSection('crassNav')\nlocal util = require('openmw.util')\n\n\nreturn {\n  engineHandlers =\n    {\n      onInit = function(d)\n        util.loadCode(d.c, {I = require('openmw.interfaces')})()\n        mapCode:set(\"navCode\", d.c)\n      end,\n      onLoad = function()\n        util.loadCode(mapCode:get(\"navCode\"), {I = require('openmw.interfaces')})()\n      end\n    }\n}\n"
+  }
+}
