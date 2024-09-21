@@ -1,981 +1,676 @@
 {
   "title": "Package openmw.animation\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw.animationdefines functions that allow control of character animations\nNote that for some methods, such asopenmw.animation#playBlendedyou should use the associated methods on theAnimationControllerinterface rather than invoking this API directly."
+    },
+    {
+      "code": "openmw.animation"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local anim = require('openmw.animation')"
-        },
-        {
-          "code": "local anim = require('openmw.animation')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local anim = require('openmw.animation')"
+    },
+    {
+      "code": "local anim = require('openmw.animation')"
     },
     {
       "header": "Typeanimation",
-      "content": [
-        {
-          "code": "animation"
-        },
-        {
-          "paragraph": "Possible#BlendMaskvalues"
-        },
-        {
-          "paragraph": "Possible#BoneGroupvalues"
-        },
-        {
-          "paragraph": "Possible#Priorityvalues"
-        },
-        {
-          "paragraph": "Plays a VFX on the actor."
-        },
-        {
-          "paragraph": "Cancels and removes the animation group from the list of active animations\nCan be used only in local scripts on self."
-        },
-        {
-          "paragraph": "Clears all animations currently in the animation queue."
-        },
-        {
-          "paragraph": "Get the current active animation for a bone group"
-        },
-        {
-          "paragraph": "Returns the completion of the animation, or nil if the animation group is not active."
-        },
-        {
-          "paragraph": "Get the current absolute time of the given animation group if it is playing, or -1 if it is not playing."
-        },
-        {
-          "paragraph": "Returns the remaining number of loops, not counting the current loop, or nil if the animation group is not active."
-        },
-        {
-          "paragraph": "Get the current playback speed of an animation group, or nil if the animation group is not active."
-        },
-        {
-          "paragraph": "Get the absolute position within the animation track of the given text key"
-        },
-        {
-          "paragraph": "Check if the object has an animation object or not"
-        },
-        {
-          "paragraph": "Check if the actor's skeleton has the given bone or not"
-        },
-        {
-          "paragraph": "Check if the actor's animation has the given animation group or not."
-        },
-        {
-          "paragraph": "Check whether the animation is a looping animation or not."
-        },
-        {
-          "paragraph": "Check if the given animation group is currently playing"
-        },
-        {
-          "paragraph": "Play an animation directly."
-        },
-        {
-          "paragraph": "Acts as a slightly extended version of MWScript's LoopGroup."
-        },
-        {
-          "paragraph": "Removes all vfx from the actor\nCan be used only in local scripts on self."
-        },
-        {
-          "paragraph": "Removes a specific VFX\nCan be used only in local scripts on self."
-        },
-        {
-          "paragraph": "Enables or disables looping for the given animation group."
-        },
-        {
-          "paragraph": "Modifies the playback speed of an animation group."
-        },
-        {
-          "paragraph": "Skips animations for one frame, equivalent to mwscript's SkipAnim\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "animation"
+    },
+    {
+      "paragraph": "Possible#BlendMaskvalues Possible#BoneGroupvalues Possible#Priorityvalues Plays a VFX on the actor. Cancels and removes the animation group from the list of active animations\nCan be used only in local scripts on self. Clears all animations currently in the animation queue. Get the current active animation for a bone group Returns the completion of the animation, or nil if the animation group is not active. Get the current absolute time of the given animation group if it is playing, or -1 if it is not playing. Returns the remaining number of loops, not counting the current loop, or nil if the animation group is not active. Get the current playback speed of an animation group, or nil if the animation group is not active. Get the absolute position within the animation track of the given text key Check if the object has an animation object or not Check if the actor's skeleton has the given bone or not Check if the actor's animation has the given animation group or not. Check whether the animation is a looping animation or not. Check if the given animation group is currently playing Play an animation directly. Acts as a slightly extended version of MWScript's LoopGroup. Removes all vfx from the actor\nCan be used only in local scripts on self. Removes a specific VFX\nCan be used only in local scripts on self. Enables or disables looping for the given animation group. Modifies the playback speed of an animation group. Skips animations for one frame, equivalent to mwscript's SkipAnim\nCan be used only in local scripts on self."
     },
     {
       "header": "TypeBlendMask",
-      "content": [
-        {
-          "code": "BlendMask"
-        },
-        {
-          "paragraph": "\"15\" All bones"
-        },
-        {
-          "paragraph": "\"4\" All bones from 'Bip01 L Clavicle' and out"
-        },
-        {
-          "paragraph": "\"1\" All bones from 'Bip01 pelvis' and below"
-        },
-        {
-          "paragraph": "\"8\" All bones from 'Bip01 R Clavicle' and out"
-        },
-        {
-          "paragraph": "\"2\" All bones from 'Bip01 Spine1' and up, excluding arms"
-        },
-        {
-          "paragraph": "\"14\" All bones from 'Bip01 Spine1' and up, including arms"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "BlendMask"
+    },
+    {
+      "paragraph": "\"15\" All bones \"4\" All bones from 'Bip01 L Clavicle' and out \"1\" All bones from 'Bip01 pelvis' and below \"8\" All bones from 'Bip01 R Clavicle' and out \"2\" All bones from 'Bip01 Spine1' and up, excluding arms \"14\" All bones from 'Bip01 Spine1' and up, including arms"
     },
     {
       "header": "TypeBoneGroup",
-      "content": [
-        {
-          "code": "BoneGroup"
-        },
-        {
-          "paragraph": "\"3\" All bones from 'Bip01 L Clavicle' and out"
-        },
-        {
-          "paragraph": "\"1\" All bones from 'Bip01 pelvis' and below"
-        },
-        {
-          "paragraph": "\"4\" All bones from 'Bip01 R Clavicle' and out"
-        },
-        {
-          "paragraph": "\"2\" All bones from 'Bip01 Spine1' and up, excluding arms"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "BoneGroup"
+    },
+    {
+      "paragraph": "\"3\" All bones from 'Bip01 L Clavicle' and out \"1\" All bones from 'Bip01 pelvis' and below \"4\" All bones from 'Bip01 R Clavicle' and out \"2\" All bones from 'Bip01 Spine1' and up, excluding arms"
     },
     {
       "header": "TypePriority",
-      "content": [
-        {
-          "code": "Priority"
-        },
-        {
-          "paragraph": "\"8\""
-        },
-        {
-          "paragraph": "\"12\""
-        },
-        {
-          "paragraph": "\"0\""
-        },
-        {
-          "paragraph": "\"6\""
-        },
-        {
-          "paragraph": "\"4\""
-        },
-        {
-          "paragraph": "\"9\""
-        },
-        {
-          "paragraph": "\"5\""
-        },
-        {
-          "paragraph": "\"13\" Special priority used by scripted animations. When any animation with this priority is present, all animations without this priority are paused."
-        },
-        {
-          "paragraph": "\"2\""
-        },
-        {
-          "paragraph": "\"11\""
-        },
-        {
-          "paragraph": "\"3\""
-        },
-        {
-          "paragraph": "\"10\""
-        },
-        {
-          "paragraph": "\"7\""
-        },
-        {
-          "paragraph": "\"1\""
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Priority"
+    },
+    {
+      "paragraph": "\"8\" \"12\" \"0\" \"6\" \"4\" \"9\" \"5\" \"13\" Special priority used by scripted animations. When any animation with this priority is present, all animations without this priority are paused. \"2\" \"11\" \"3\" \"10\" \"7\" \"1\""
     },
     {
       "header": "Typeanimation",
-      "content": [
-        {
-          "code": "animation"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "animation"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Possible#BlendMaskvalues"
-        },
-        {
-          "paragraph": "Possible#BoneGroupvalues"
-        },
-        {
-          "paragraph": "Possible#Priorityvalues"
-        },
-        {
-          "paragraph": "Plays a VFX on the actor."
-        },
-        {
-          "paragraph": "Can be used only in local scripts on self. Can also be evoked by sending an AddVfx event to the target actor."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Possible#BlendMaskvalues Possible#BoneGroupvalues Possible#Priorityvalues Plays a VFX on the actor. Can be used only in local scripts on self. Can also be evoked by sending an AddVfx event to the target actor."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string model:"
-        },
-        {
-          "code": "#string model"
-        },
-        {
-          "paragraph": "#table options: \noptional table of parameters. Can contain:"
-        },
-        {
-          "code": "#table options"
-        },
-        {
-          "code": "loop"
-        },
-        {
-          "code": "boneName"
-        },
-        {
-          "code": "particleTextureOverride"
-        },
-        {
-          "code": "vfxId"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string model:"
+    },
+    {
+      "code": "#string model"
+    },
+    {
+      "paragraph": "#table options: \noptional table of parameters. Can contain:"
+    },
+    {
+      "code": "#table options"
+    },
+    {
+      "code": "loop"
+    },
+    {
+      "code": "boneName"
+    },
+    {
+      "code": "particleTextureOverride"
+    },
+    {
+      "code": "vfxId"
     },
     {
       "header": "Usages:",
-      "content": [
-        {
-          "code": "local mgef = core.magic.effects.records[myEffectName]\nanim.addVfx(self, 'VFX_Hands', {boneName = 'Bip01 L Hand', particleTextureOverride = mgef.particle, loop = mgef.continuousVfx, vfxId = mgef.id..'_myuniquenamehere'})\n-- later:\nanim.removeVfx(self, mgef.id..'_myuniquenamehere')"
-        },
-        {
-          "code": "local mgef = core.magic.effects.records[myEffectName]\nanim.addVfx(self, 'VFX_Hands', {boneName = 'Bip01 L Hand', particleTextureOverride = mgef.particle, loop = mgef.continuousVfx, vfxId = mgef.id..'_myuniquenamehere'})\n-- later:\nanim.removeVfx(self, mgef.id..'_myuniquenamehere')"
-        },
-        {
-          "code": "-- Add vfx to another actor using an event\nlocal mgef = core.magic.effects.records[myEffectName]\ntarget:sendEvent('AddVfx', {\n  model = types.Static.record(mgef.hitStatic).model,\n  options = {\n    vfxId = mgef.id,\n    particuleTextureOverride = mgef.particle,\n    loop = false,\n  }\n})"
-        },
-        {
-          "code": "-- Add vfx to another actor using an event\nlocal mgef = core.magic.effects.records[myEffectName]\ntarget:sendEvent('AddVfx', {\n  model = types.Static.record(mgef.hitStatic).model,\n  options = {\n    vfxId = mgef.id,\n    particuleTextureOverride = mgef.particle,\n    loop = false,\n  }\n})"
-        },
-        {
-          "paragraph": "Cancels and removes the animation group from the list of active animations\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local mgef = core.magic.effects.records[myEffectName]\nanim.addVfx(self, 'VFX_Hands', {boneName = 'Bip01 L Hand', particleTextureOverride = mgef.particle, loop = mgef.continuousVfx, vfxId = mgef.id..'_myuniquenamehere'})\n-- later:\nanim.removeVfx(self, mgef.id..'_myuniquenamehere')"
+    },
+    {
+      "code": "local mgef = core.magic.effects.records[myEffectName]\nanim.addVfx(self, 'VFX_Hands', {boneName = 'Bip01 L Hand', particleTextureOverride = mgef.particle, loop = mgef.continuousVfx, vfxId = mgef.id..'_myuniquenamehere'})\n-- later:\nanim.removeVfx(self, mgef.id..'_myuniquenamehere')"
+    },
+    {
+      "code": "-- Add vfx to another actor using an event\nlocal mgef = core.magic.effects.records[myEffectName]\ntarget:sendEvent('AddVfx', {\n  model = types.Static.record(mgef.hitStatic).model,\n  options = {\n    vfxId = mgef.id,\n    particuleTextureOverride = mgef.particle,\n    loop = false,\n  }\n})"
+    },
+    {
+      "code": "-- Add vfx to another actor using an event\nlocal mgef = core.magic.effects.records[myEffectName]\ntarget:sendEvent('AddVfx', {\n  model = types.Static.record(mgef.hitStatic).model,\n  options = {\n    vfxId = mgef.id,\n    particuleTextureOverride = mgef.particle,\n    loop = false,\n  }\n})"
+    },
+    {
+      "paragraph": "Cancels and removes the animation group from the list of active animations\nCan be used only in local scripts on self."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        },
-        {
-          "paragraph": "Clears all animations currently in the animation queue."
-        },
-        {
-          "paragraph": "This affects animations played by mwscript,openmw.animation#playQueued, and ai packages, but does not affect animations played usingopenmw.animation#playBlended.\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
+    },
+    {
+      "paragraph": "Clears all animations currently in the animation queue. This affects animations played by mwscript,openmw.animation#playQueued, and ai packages, but does not affect animations played usingopenmw.animation#playBlended.\nCan be used only in local scripts on self."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#boolean clearScripted: \nwhether to keep animation with priority Scripted or not."
-        },
-        {
-          "code": "#boolean clearScripted"
-        },
-        {
-          "paragraph": "Get the current active animation for a bone group"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#boolean clearScripted: \nwhether to keep animation with priority Scripted or not."
+    },
+    {
+      "code": "#boolean clearScripted"
+    },
+    {
+      "paragraph": "Get the current active animation for a bone group"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#number boneGroup: \nBone group enum, seeopenmw.animation#BONE_GROUP"
-        },
-        {
-          "code": "#number boneGroup"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#number boneGroup: \nBone group enum, seeopenmw.animation#BONE_GROUP"
+    },
+    {
+      "code": "#number boneGroup"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#string:"
-        },
-        {
-          "paragraph": "Returns the completion of the animation, or nil if the animation group is not active."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string: Returns the completion of the animation, or nil if the animation group is not active."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number, #nil:"
-        },
-        {
-          "paragraph": "Get the current absolute time of the given animation group if it is playing, or -1 if it is not playing."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number, #nil: Get the current absolute time of the given animation group if it is playing, or -1 if it is not playing."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:"
-        },
-        {
-          "paragraph": "Returns the remaining number of loops, not counting the current loop, or nil if the animation group is not active."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number: Returns the remaining number of loops, not counting the current loop, or nil if the animation group is not active."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number, #nil:"
-        },
-        {
-          "paragraph": "Get the current playback speed of an animation group, or nil if the animation group is not active."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number, #nil: Get the current playback speed of an animation group, or nil if the animation group is not active."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number, #nil:"
-        },
-        {
-          "paragraph": "Get the absolute position within the animation track of the given text key"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number, #nil: Get the absolute position within the animation track of the given text key"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string text: \nkey"
-        },
-        {
-          "code": "#string text"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string text: \nkey"
+    },
+    {
+      "code": "#string text"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:"
-        },
-        {
-          "paragraph": "Check if the object has an animation object or not"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number: Check if the object has an animation object or not"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Check if the actor's skeleton has the given bone or not"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Check if the actor's skeleton has the given bone or not"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string boneName:"
-        },
-        {
-          "code": "#string boneName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string boneName:"
+    },
+    {
+      "code": "#string boneName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Check if the actor's animation has the given animation group or not."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Check if the actor's animation has the given animation group or not."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Check whether the animation is a looping animation or not."
-        },
-        {
-          "paragraph": "This is determined by a combination \nof groupName, some of which are hardcoded to be looping, and the presence of loop start/stop keys.\nThe groupNames that are hardcoded as looping are the following, as well as per-weapon-type suffixed variants of each.\n\"walkforward\", \"walkback\", \"walkleft\", \"walkright\", \"swimwalkforward\", \"swimwalkback\", \"swimwalkleft\", \"swimwalkright\", \n\"runforward\", \"runback\", \"runleft\", \"runright\", \"swimrunforward\", \"swimrunback\", \"swimrunleft\", \"swimrunright\", \n\"sneakforward\", \"sneakback\", \"sneakleft\", \"sneakright\", \"turnleft\", \"turnright\", \"swimturnleft\", \"swimturnright\",\n\"spellturnleft\", \"spellturnright\", \"torch\", \"idle\", \"idle2\", \"idle3\", \"idle4\", \"idle5\", \"idle6\", \"idle7\", \"idle8\", \n\"idle9\", \"idlesneak\", \"idlestorm\", \"idleswim\", \"jump\", \"inventoryhandtohand\", \"inventoryweapononehand\", \n\"inventoryweapontwohand\", \"inventoryweapontwowide\""
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Check whether the animation is a looping animation or not. This is determined by a combination \nof groupName, some of which are hardcoded to be looping, and the presence of loop start/stop keys.\nThe groupNames that are hardcoded as looping are the following, as well as per-weapon-type suffixed variants of each.\n\"walkforward\", \"walkback\", \"walkleft\", \"walkright\", \"swimwalkforward\", \"swimwalkback\", \"swimwalkleft\", \"swimwalkright\", \n\"runforward\", \"runback\", \"runleft\", \"runright\", \"swimrunforward\", \"swimrunback\", \"swimrunleft\", \"swimrunright\", \n\"sneakforward\", \"sneakback\", \"sneakleft\", \"sneakright\", \"turnleft\", \"turnright\", \"swimturnleft\", \"swimturnright\",\n\"spellturnleft\", \"spellturnright\", \"torch\", \"idle\", \"idle2\", \"idle3\", \"idle4\", \"idle5\", \"idle6\", \"idle7\", \"idle8\", \n\"idle9\", \"idlesneak\", \"idlestorm\", \"idleswim\", \"jump\", \"inventoryhandtohand\", \"inventoryweapononehand\", \n\"inventoryweapontwohand\", \"inventoryweapontwowide\""
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Check if the given animation group is currently playing"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Check if the given animation group is currently playing"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Play an animation directly."
-        },
-        {
-          "paragraph": "You probably want to use theAnimationControllerinterface, which will trigger relevant handlers, \ninstead of calling this directly. Note that the still hardcoded character controller may at any time and for any reason alter\nor cancel currently playing animations, so making your own calls to this function either directly or through theAnimationControllerinterface may be of limited utility. For now, use openmw.animation#playQueued to script your own animations.\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Play an animation directly. You probably want to use theAnimationControllerinterface, which will trigger relevant handlers, \ninstead of calling this directly. Note that the still hardcoded character controller may at any time and for any reason alter\nor cancel currently playing animations, so making your own calls to this function either directly or through theAnimationControllerinterface may be of limited utility. For now, use openmw.animation#playQueued to script your own animations.\nCan be used only in local scripts on self."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        },
-        {
-          "paragraph": "#table options: \nA table of play options. Can contain:"
-        },
-        {
-          "code": "#table options"
-        },
-        {
-          "code": "loops"
-        },
-        {
-          "code": "priority"
-        },
-        {
-          "code": "blendMask"
-        },
-        {
-          "code": "autoDisable"
-        },
-        {
-          "code": "speed"
-        },
-        {
-          "code": "startKey"
-        },
-        {
-          "code": "stopKey"
-        },
-        {
-          "code": "startPoint"
-        },
-        {
-          "code": "forceLoop"
-        },
-        {
-          "paragraph": "Acts as a slightly extended version of MWScript's LoopGroup."
-        },
-        {
-          "paragraph": "Plays this animation exclusively\nuntil it ends, or the queue is cleared using #clearAnimationQueue. Use #clearAnimationQueue and thestartkeyoption\nto imitate the behavior of LoopGroup's play modes.\nCan be used only in local scripts on self."
-        },
-        {
-          "code": "startkey"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
+    },
+    {
+      "paragraph": "#table options: \nA table of play options. Can contain:"
+    },
+    {
+      "code": "#table options"
+    },
+    {
+      "code": "loops"
+    },
+    {
+      "code": "priority"
+    },
+    {
+      "code": "blendMask"
+    },
+    {
+      "code": "autoDisable"
+    },
+    {
+      "code": "speed"
+    },
+    {
+      "code": "startKey"
+    },
+    {
+      "code": "stopKey"
+    },
+    {
+      "code": "startPoint"
+    },
+    {
+      "code": "forceLoop"
+    },
+    {
+      "paragraph": "Acts as a slightly extended version of MWScript's LoopGroup. Plays this animation exclusively\nuntil it ends, or the queue is cleared using #clearAnimationQueue. Use #clearAnimationQueue and thestartkeyoption\nto imitate the behavior of LoopGroup's play modes.\nCan be used only in local scripts on self."
+    },
+    {
+      "code": "startkey"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        },
-        {
-          "paragraph": "#table options: \nA table of play options.  Can contain:"
-        },
-        {
-          "code": "#table options"
-        },
-        {
-          "code": "loops"
-        },
-        {
-          "code": "speed"
-        },
-        {
-          "code": "startKey"
-        },
-        {
-          "code": "stopKey"
-        },
-        {
-          "code": "forceLoop"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
+    },
+    {
+      "paragraph": "#table options: \nA table of play options.  Can contain:"
+    },
+    {
+      "code": "#table options"
+    },
+    {
+      "code": "loops"
+    },
+    {
+      "code": "speed"
+    },
+    {
+      "code": "startKey"
+    },
+    {
+      "code": "stopKey"
+    },
+    {
+      "code": "forceLoop"
     },
     {
       "header": "Usages:",
-      "content": [
-        {
-          "code": "-- Play death1 without waiting. Equivalent to playgroup, death1, 1\nanim.clearAnimationQueue(self, false)\nanim.playQueued(self, 'death1')"
-        },
-        {
-          "code": "-- Play death1 without waiting. Equivalent to playgroup, death1, 1\nanim.clearAnimationQueue(self, false)\nanim.playQueued(self, 'death1')"
-        },
-        {
-          "code": "-- Play an animation group with custom start/stop keys\nanim.clearAnimationQueue(self, false)\nanim.playQueued(self, 'spellcast', { startKey = 'self start', stopKey = 'self stop' })"
-        },
-        {
-          "code": "-- Play an animation group with custom start/stop keys\nanim.clearAnimationQueue(self, false)\nanim.playQueued(self, 'spellcast', { startKey = 'self start', stopKey = 'self stop' })"
-        },
-        {
-          "paragraph": "Removes all vfx from the actor\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- Play death1 without waiting. Equivalent to playgroup, death1, 1\nanim.clearAnimationQueue(self, false)\nanim.playQueued(self, 'death1')"
+    },
+    {
+      "code": "-- Play death1 without waiting. Equivalent to playgroup, death1, 1\nanim.clearAnimationQueue(self, false)\nanim.playQueued(self, 'death1')"
+    },
+    {
+      "code": "-- Play an animation group with custom start/stop keys\nanim.clearAnimationQueue(self, false)\nanim.playQueued(self, 'spellcast', { startKey = 'self start', stopKey = 'self stop' })"
+    },
+    {
+      "code": "-- Play an animation group with custom start/stop keys\nanim.clearAnimationQueue(self, false)\nanim.playQueued(self, 'spellcast', { startKey = 'self start', stopKey = 'self stop' })"
+    },
+    {
+      "paragraph": "Removes all vfx from the actor\nCan be used only in local scripts on self."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "Removes a specific VFX\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "Removes a specific VFX\nCan be used only in local scripts on self."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#number vfxId: \nan integer ID that uniquely identifies the VFX to remove"
-        },
-        {
-          "code": "#number vfxId"
-        },
-        {
-          "paragraph": "Enables or disables looping for the given animation group."
-        },
-        {
-          "paragraph": "Looping is enabled by default.\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#number vfxId: \nan integer ID that uniquely identifies the VFX to remove"
+    },
+    {
+      "code": "#number vfxId"
+    },
+    {
+      "paragraph": "Enables or disables looping for the given animation group. Looping is enabled by default.\nCan be used only in local scripts on self."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        },
-        {
-          "paragraph": "#boolean enabled:"
-        },
-        {
-          "code": "#boolean enabled"
-        },
-        {
-          "paragraph": "Modifies the playback speed of an animation group."
-        },
-        {
-          "paragraph": "Note that this is not sticky and only affects the speed until the currently playing sequence ends.\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
+    },
+    {
+      "paragraph": "#boolean enabled:"
+    },
+    {
+      "code": "#boolean enabled"
+    },
+    {
+      "paragraph": "Modifies the playback speed of an animation group. Note that this is not sticky and only affects the speed until the currently playing sequence ends.\nCan be used only in local scripts on self."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        },
-        {
-          "paragraph": "#string groupName:"
-        },
-        {
-          "code": "#string groupName"
-        },
-        {
-          "paragraph": "#number speed: \nThe new animation speed, where speed=1 is normal speed."
-        },
-        {
-          "code": "#number speed"
-        },
-        {
-          "paragraph": "Skips animations for one frame, equivalent to mwscript's SkipAnim\nCan be used only in local scripts on self."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
+    },
+    {
+      "paragraph": "#string groupName:"
+    },
+    {
+      "code": "#string groupName"
+    },
+    {
+      "paragraph": "#number speed: \nThe new animation speed, where speed=1 is normal speed."
+    },
+    {
+      "code": "#number speed"
+    },
+    {
+      "paragraph": "Skips animations for one frame, equivalent to mwscript's SkipAnim\nCan be used only in local scripts on self."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectactor:"
-        },
-        {
-          "code": "openmw.core#GameObjectactor"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectactor:"
+    },
+    {
+      "code": "openmw.core#GameObject\nactor"
     },
     {
       "header": "TypeBlendMask",
-      "content": [
-        {
-          "code": "BlendMask"
-        },
-        {
-          "paragraph": "animation.BLEND_MASK"
-        },
-        {
-          "code": "animation.BLEND_MASK"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "BlendMask"
+    },
+    {
+      "paragraph": "animation.BLEND_MASK"
+    },
+    {
+      "code": "animation.BLEND_MASK"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "\"15\" All bones"
-        },
-        {
-          "paragraph": "\"4\" All bones from 'Bip01 L Clavicle' and out"
-        },
-        {
-          "paragraph": "\"1\" All bones from 'Bip01 pelvis' and below"
-        },
-        {
-          "paragraph": "\"8\" All bones from 'Bip01 R Clavicle' and out"
-        },
-        {
-          "paragraph": "\"2\" All bones from 'Bip01 Spine1' and up, excluding arms"
-        },
-        {
-          "paragraph": "\"14\" All bones from 'Bip01 Spine1' and up, including arms"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "\"15\" All bones \"4\" All bones from 'Bip01 L Clavicle' and out \"1\" All bones from 'Bip01 pelvis' and below \"8\" All bones from 'Bip01 R Clavicle' and out \"2\" All bones from 'Bip01 Spine1' and up, excluding arms \"14\" All bones from 'Bip01 Spine1' and up, including arms"
     },
     {
       "header": "TypeBoneGroup",
-      "content": [
-        {
-          "code": "BoneGroup"
-        },
-        {
-          "paragraph": "animation.BONE_GROUP"
-        },
-        {
-          "code": "animation.BONE_GROUP"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "BoneGroup"
+    },
+    {
+      "paragraph": "animation.BONE_GROUP"
+    },
+    {
+      "code": "animation.BONE_GROUP"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "\"3\" All bones from 'Bip01 L Clavicle' and out"
-        },
-        {
-          "paragraph": "\"1\" All bones from 'Bip01 pelvis' and below"
-        },
-        {
-          "paragraph": "\"4\" All bones from 'Bip01 R Clavicle' and out"
-        },
-        {
-          "paragraph": "\"2\" All bones from 'Bip01 Spine1' and up, excluding arms"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "\"3\" All bones from 'Bip01 L Clavicle' and out \"1\" All bones from 'Bip01 pelvis' and below \"4\" All bones from 'Bip01 R Clavicle' and out \"2\" All bones from 'Bip01 Spine1' and up, excluding arms"
     },
     {
       "header": "TypePriority",
-      "content": [
-        {
-          "code": "Priority"
-        },
-        {
-          "paragraph": "animation.PRIORITY"
-        },
-        {
-          "code": "animation.PRIORITY"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Priority"
+    },
+    {
+      "paragraph": "animation.PRIORITY"
+    },
+    {
+      "code": "animation.PRIORITY"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "\"8\""
-        },
-        {
-          "paragraph": "\"12\""
-        },
-        {
-          "paragraph": "\"0\""
-        },
-        {
-          "paragraph": "\"6\""
-        },
-        {
-          "paragraph": "\"4\""
-        },
-        {
-          "paragraph": "\"9\""
-        },
-        {
-          "paragraph": "\"5\""
-        },
-        {
-          "paragraph": "\"13\" Special priority used by scripted animations. When any animation with this priority is present, all animations without this priority are paused."
-        },
-        {
-          "paragraph": "\"2\""
-        },
-        {
-          "paragraph": "\"11\""
-        },
-        {
-          "paragraph": "\"3\""
-        },
-        {
-          "paragraph": "\"10\""
-        },
-        {
-          "paragraph": "\"7\""
-        },
-        {
-          "paragraph": "\"1\""
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "\"8\" \"12\" \"0\" \"6\" \"4\" \"9\" \"5\" \"13\" Special priority used by scripted animations. When any animation with this priority is present, all animations without this priority are paused. \"2\" \"11\" \"3\" \"10\" \"7\" \"1\" \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

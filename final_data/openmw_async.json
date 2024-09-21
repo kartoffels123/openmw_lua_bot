@@ -1,291 +1,280 @@
 {
   "title": "Package openmw.async\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw.asynccontains timers and coroutine utils."
+    },
+    {
+      "code": "openmw.async"
+    },
+    {
+      "paragraph": "All functions require\nthe package itself as a first argument."
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local async = require('openmw.async')"
-        },
-        {
-          "code": "local async = require('openmw.async')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local async = require('openmw.async')"
+    },
+    {
+      "code": "local async = require('openmw.async')"
     },
     {
       "header": "Typeasync",
-      "content": [
-        {
-          "code": "async"
-        },
-        {
-          "paragraph": "Wraps Lua function withCallbackobject that can be used in async API calls."
-        },
-        {
-          "code": "Callback"
-        },
-        {
-          "paragraph": "Calls callback(arg) indelaygame seconds."
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Calls callback(arg) indelaysimulation seconds."
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Callsfunc()indelaygame seconds."
-        },
-        {
-          "code": "func()"
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Callsfunc()indelaysimulation seconds."
-        },
-        {
-          "code": "func()"
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Register a function as a timer callback."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "async"
+    },
+    {
+      "paragraph": "Wraps Lua function withCallbackobject that can be used in async API calls."
+    },
+    {
+      "code": "Callback"
+    },
+    {
+      "paragraph": "Calls callback(arg) indelaygame seconds."
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Calls callback(arg) indelaysimulation seconds."
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Callsfunc()indelaygame seconds."
+    },
+    {
+      "code": "func()"
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Callsfunc()indelaysimulation seconds."
+    },
+    {
+      "code": "func()"
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Register a function as a timer callback."
     },
     {
       "header": "Typeasync",
-      "content": [
-        {
-          "code": "async"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "async"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Wraps Lua function withCallbackobject that can be used in async API calls."
-        },
-        {
-          "code": "Callback"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Wraps Lua function withCallbackobject that can be used in async API calls."
+    },
+    {
+      "code": "Callback"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#function func:"
-        },
-        {
-          "code": "#function func"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#function func:"
+    },
+    {
+      "code": "#function func"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#Callback:"
-        },
-        {
-          "paragraph": "Calls callback(arg) indelaygame seconds."
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Callback must be registered in advance."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#Callback: Calls callback(arg) indelaygame seconds."
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Callback must be registered in advance."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#number delay:"
-        },
-        {
-          "code": "#number delay"
-        },
-        {
-          "paragraph": "#TimerCallbackcallback: \nA callback returned byregisterTimerCallback"
-        },
-        {
-          "code": "#TimerCallbackcallback"
-        },
-        {
-          "code": "registerTimerCallback"
-        },
-        {
-          "paragraph": "arg: \nAn argument forcallback; can benil."
-        },
-        {
-          "code": "arg"
-        },
-        {
-          "code": "callback"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "Calls callback(arg) indelaysimulation seconds."
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Callback must be registered in advance."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number delay:"
+    },
+    {
+      "code": "#number delay"
+    },
+    {
+      "paragraph": "#TimerCallbackcallback: \nA callback returned byregisterTimerCallback"
+    },
+    {
+      "code": "#TimerCallback\ncallback"
+    },
+    {
+      "code": "registerTimerCallback"
+    },
+    {
+      "paragraph": "arg: \nAn argument forcallback; can benil."
+    },
+    {
+      "code": "arg"
+    },
+    {
+      "code": "callback"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "Calls callback(arg) indelaysimulation seconds."
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Callback must be registered in advance."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#number delay:"
-        },
-        {
-          "code": "#number delay"
-        },
-        {
-          "paragraph": "#TimerCallbackcallback: \nA callback returned byregisterTimerCallback"
-        },
-        {
-          "code": "#TimerCallbackcallback"
-        },
-        {
-          "code": "registerTimerCallback"
-        },
-        {
-          "paragraph": "arg: \nAn argument forcallback; can benil."
-        },
-        {
-          "code": "arg"
-        },
-        {
-          "code": "callback"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "Callsfunc()indelaygame seconds."
-        },
-        {
-          "code": "func()"
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "The timer will be lost if the game is saved and loaded."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number delay:"
+    },
+    {
+      "code": "#number delay"
+    },
+    {
+      "paragraph": "#TimerCallbackcallback: \nA callback returned byregisterTimerCallback"
+    },
+    {
+      "code": "#TimerCallback\ncallback"
+    },
+    {
+      "code": "registerTimerCallback"
+    },
+    {
+      "paragraph": "arg: \nAn argument forcallback; can benil."
+    },
+    {
+      "code": "arg"
+    },
+    {
+      "code": "callback"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "Callsfunc()indelaygame seconds."
+    },
+    {
+      "code": "func()"
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "The timer will be lost if the game is saved and loaded."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#number delay:"
-        },
-        {
-          "code": "#number delay"
-        },
-        {
-          "paragraph": "#function func:"
-        },
-        {
-          "code": "#function func"
-        },
-        {
-          "paragraph": "Callsfunc()indelaysimulation seconds."
-        },
-        {
-          "code": "func()"
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "The timer will be lost if the game is saved and loaded."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number delay:"
+    },
+    {
+      "code": "#number delay"
+    },
+    {
+      "paragraph": "#function func:"
+    },
+    {
+      "code": "#function func"
+    },
+    {
+      "paragraph": "Callsfunc()indelaysimulation seconds."
+    },
+    {
+      "code": "func()"
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "The timer will be lost if the game is saved and loaded."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#number delay:"
-        },
-        {
-          "code": "#number delay"
-        },
-        {
-          "paragraph": "#function func:"
-        },
-        {
-          "code": "#function func"
-        },
-        {
-          "paragraph": "Register a function as a timer callback."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number delay:"
+    },
+    {
+      "code": "#number delay"
+    },
+    {
+      "paragraph": "#function func:"
+    },
+    {
+      "code": "#function func"
+    },
+    {
+      "paragraph": "Register a function as a timer callback."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name:"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#function func:"
-        },
-        {
-          "code": "#function func"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name:"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#function func:"
+    },
+    {
+      "code": "#function func"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#TimerCallback:"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#TimerCallback:"
     },
     {
       "header": "TypeCallback",
-      "content": [
-        {
-          "code": "Callback"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Callback"
     },
     {
       "header": "TypeTimerCallback",
-      "content": [
-        {
-          "code": "TimerCallback"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "TimerCallback"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

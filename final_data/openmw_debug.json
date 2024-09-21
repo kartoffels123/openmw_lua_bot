@@ -1,219 +1,139 @@
 {
   "title": "Package openmw.debug\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw.debugis an interface to the engine debug utils."
+    },
+    {
+      "code": "openmw.debug"
+    },
+    {
+      "paragraph": "Can be used only by local scripts, that are attached to a player."
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local debug = require('openmw.debug')"
-        },
-        {
-          "code": "local debug = require('openmw.debug')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local debug = require('openmw.debug')"
+    },
+    {
+      "code": "local debug = require('openmw.debug')"
     },
     {
       "header": "TypeDebug",
-      "content": [
-        {
-          "code": "Debug"
-        },
-        {
-          "paragraph": "Navigation mesh rendering mode values"
-        },
-        {
-          "paragraph": "Rendering mode values"
-        },
-        {
-          "paragraph": "Is AI enabled"
-        },
-        {
-          "paragraph": "Is player collision enabled"
-        },
-        {
-          "paragraph": "Is god mode enabled"
-        },
-        {
-          "paragraph": "Is MWScripts enabled"
-        },
-        {
-          "paragraph": "Reloads all Lua scripts"
-        },
-        {
-          "paragraph": "Sets navigation mesh rendering mode"
-        },
-        {
-          "paragraph": "Enable/disable automatic reload of modified shaders"
-        },
-        {
-          "paragraph": "Toggles AI"
-        },
-        {
-          "paragraph": "Toggles collisions"
-        },
-        {
-          "paragraph": "Toggles god mode"
-        },
-        {
-          "paragraph": "Toggles MWScripts"
-        },
-        {
-          "paragraph": "Toggles rendering mode"
-        },
-        {
-          "paragraph": "To reload modified shaders"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Debug"
+    },
+    {
+      "paragraph": "Navigation mesh rendering mode values Rendering mode values Is AI enabled Is player collision enabled Is god mode enabled Is MWScripts enabled Reloads all Lua scripts Sets navigation mesh rendering mode Enable/disable automatic reload of modified shaders Toggles AI Toggles collisions Toggles god mode Toggles MWScripts Toggles rendering mode To reload modified shaders"
     },
     {
       "header": "TypeNAV_MESH_RENDER_MODE",
-      "content": [
-        {
-          "code": "NAV_MESH_RENDER_MODE"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "NAV_MESH_RENDER_MODE"
     },
     {
       "header": "TypeRENDER_MODE",
-      "content": [
-        {
-          "code": "RENDER_MODE"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "RENDER_MODE"
     },
     {
       "header": "TypeDebug",
-      "content": [
-        {
-          "code": "Debug"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Debug"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Navigation mesh rendering mode values"
-        },
-        {
-          "paragraph": "Rendering mode values"
-        },
-        {
-          "paragraph": "Is AI enabled"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Navigation mesh rendering mode values Rendering mode values Is AI enabled"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Is player collision enabled"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Is player collision enabled"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Is god mode enabled"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Is god mode enabled"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Is MWScripts enabled"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Is MWScripts enabled"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Reloads all Lua scripts"
-        },
-        {
-          "paragraph": "Sets navigation mesh rendering mode"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Reloads all Lua scripts Sets navigation mesh rendering mode"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#NAVMESHRENDER_MODEvalue:"
-        },
-        {
-          "code": "#NAVMESHRENDER_MODEvalue"
-        },
-        {
-          "paragraph": "Enable/disable automatic reload of modified shaders"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#NAVMESHRENDER_MODEvalue:"
+    },
+    {
+      "code": "#NAV\nMESH\nRENDER_MODE\nvalue"
+    },
+    {
+      "paragraph": "Enable/disable automatic reload of modified shaders"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#boolean value:"
-        },
-        {
-          "code": "#boolean value"
-        },
-        {
-          "paragraph": "Toggles AI"
-        },
-        {
-          "paragraph": "Toggles collisions"
-        },
-        {
-          "paragraph": "Toggles god mode"
-        },
-        {
-          "paragraph": "Toggles MWScripts"
-        },
-        {
-          "paragraph": "Toggles rendering mode"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean value:"
+    },
+    {
+      "code": "#boolean value"
+    },
+    {
+      "paragraph": "Toggles AI Toggles collisions Toggles god mode Toggles MWScripts Toggles rendering mode"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#RENDER_MODEvalue:"
-        },
-        {
-          "code": "#RENDER_MODEvalue"
-        },
-        {
-          "paragraph": "To reload modified shaders"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#RENDER_MODEvalue:"
+    },
+    {
+      "code": "#RENDER_MODE\nvalue"
+    },
+    {
+      "paragraph": "To reload modified shaders"
     },
     {
       "header": "TypeNAV_MESH_RENDER_MODE",
-      "content": [
-        {
-          "code": "NAV_MESH_RENDER_MODE"
-        },
-        {
-          "paragraph": "Navigation mesh rendering modes"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "NAV_MESH_RENDER_MODE"
+    },
+    {
+      "paragraph": "Navigation mesh rendering modes"
     },
     {
       "header": "Field(s)",
@@ -221,25 +141,20 @@
     },
     {
       "header": "TypeRENDER_MODE",
-      "content": [
-        {
-          "code": "RENDER_MODE"
-        },
-        {
-          "paragraph": "Rendering modes"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "RENDER_MODE"
+    },
+    {
+      "paragraph": "Rendering modes"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

@@ -1,319 +1,243 @@
 {
   "title": "Interface UI\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "require('openmw.interfaces').UI"
-        },
-        {
-          "code": "require('openmw.interfaces').UI"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "require('openmw.interfaces').UI"
+    },
+    {
+      "code": "require('openmw.interfaces').UI"
     },
     {
       "header": "TypeUI",
-      "content": [
-        {
-          "code": "UI"
-        },
-        {
-          "paragraph": "All available UI modes."
-        },
-        {
-          "paragraph": "All windows."
-        },
-        {
-          "paragraph": "Add mode to stack without dropping other active modes."
-        },
-        {
-          "paragraph": "Get current mode (nil if all windows are closed), equivalent toI.UI.modes[#I.UI.modes]"
-        },
-        {
-          "code": "I.UI.modes[#I.UI.modes]"
-        },
-        {
-          "paragraph": "Returns windows that can be shown in given mode."
-        },
-        {
-          "paragraph": "Returns if the player HUD is visible or not"
-        },
-        {
-          "paragraph": "Stack of currently active modes"
-        },
-        {
-          "paragraph": "Register new implementation for the window with given name; overrides previous implementation."
-        },
-        {
-          "paragraph": "Remove the specified mode from active modes."
-        },
-        {
-          "paragraph": "Set whether the UI should be visible."
-        },
-        {
-          "paragraph": "Drop all active modes and set mode."
-        },
-        {
-          "paragraph": "Set whether the mode should pause the game."
-        },
-        {
-          "paragraph": "Interface version"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "UI"
+    },
+    {
+      "paragraph": "All available UI modes. All windows. Add mode to stack without dropping other active modes. Get current mode (nil if all windows are closed), equivalent toI.UI.modes[#I.UI.modes]"
+    },
+    {
+      "code": "I.UI.modes[#I.UI.modes]"
+    },
+    {
+      "paragraph": "Returns windows that can be shown in given mode. Returns if the player HUD is visible or not Stack of currently active modes Register new implementation for the window with given name; overrides previous implementation. Remove the specified mode from active modes. Set whether the UI should be visible. Drop all active modes and set mode. Set whether the mode should pause the game. Interface version"
     },
     {
       "header": "TypeUI",
-      "content": [
-        {
-          "code": "UI"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "UI"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "All available UI modes."
-        },
-        {
-          "paragraph": "Useview(I.UI.MODE)inluapconsole mode to see the list."
-        },
-        {
-          "code": "view(I.UI.MODE)"
-        },
-        {
-          "code": "luap"
-        },
-        {
-          "paragraph": "All windows."
-        },
-        {
-          "paragraph": "Useview(I.UI.WINDOW)inluapconsole mode to see the list."
-        },
-        {
-          "code": "view(I.UI.WINDOW)"
-        },
-        {
-          "code": "luap"
-        },
-        {
-          "paragraph": "Add mode to stack without dropping other active modes."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "All available UI modes. Useview(I.UI.MODE)inluapconsole mode to see the list."
+    },
+    {
+      "code": "view(I.UI.MODE)"
+    },
+    {
+      "code": "luap"
+    },
+    {
+      "paragraph": "All windows. Useview(I.UI.WINDOW)inluapconsole mode to see the list."
+    },
+    {
+      "code": "view(I.UI.WINDOW)"
+    },
+    {
+      "code": "luap"
+    },
+    {
+      "paragraph": "Add mode to stack without dropping other active modes."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string mode: \nNew mode"
-        },
-        {
-          "code": "#string mode"
-        },
-        {
-          "paragraph": "#table options: \n(optional) Table with keys 'windows' and/or 'target' (see example)."
-        },
-        {
-          "code": "#table options"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string mode: \nNew mode"
+    },
+    {
+      "code": "#string mode"
+    },
+    {
+      "paragraph": "#table options: \n(optional) Table with keys 'windows' and/or 'target' (see example)."
+    },
+    {
+      "code": "#table options"
     },
     {
       "header": "Usages:",
-      "content": [
-        {
-          "code": "I.UI.addMode('Journal') -- open journal without dropping active modes."
-        },
-        {
-          "code": "I.UI.addMode('Journal') -- open journal without dropping active modes."
-        },
-        {
-          "code": "-- Open barter with an NPC\nI.UI.addMode('Barter', {target = actor})"
-        },
-        {
-          "code": "-- Open barter with an NPC\nI.UI.addMode('Barter', {target = actor})"
-        },
-        {
-          "paragraph": "Get current mode (nil if all windows are closed), equivalent toI.UI.modes[#I.UI.modes]"
-        },
-        {
-          "code": "I.UI.modes[#I.UI.modes]"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "I.UI.addMode('Journal') -- open journal without dropping active modes."
+    },
+    {
+      "code": "I.UI.addMode('Journal') -- open journal without dropping active modes."
+    },
+    {
+      "code": "-- Open barter with an NPC\nI.UI.addMode('Barter', {target = actor})"
+    },
+    {
+      "code": "-- Open barter with an NPC\nI.UI.addMode('Barter', {target = actor})"
+    },
+    {
+      "paragraph": "Get current mode (nil if all windows are closed), equivalent toI.UI.modes[#I.UI.modes]"
+    },
+    {
+      "code": "I.UI.modes[#I.UI.modes]"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#string:"
-        },
-        {
-          "paragraph": "Returns windows that can be shown in given mode."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string: Returns windows that can be shown in given mode."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string mode:"
-        },
-        {
-          "code": "#string mode"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string mode:"
+    },
+    {
+      "code": "#string mode"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#table:"
-        },
-        {
-          "paragraph": "Returns if the player HUD is visible or not"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#table: Returns if the player HUD is visible or not"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Stack of currently active modes"
-        },
-        {
-          "paragraph": "Register new implementation for the window with given name; overrides previous implementation."
-        },
-        {
-          "paragraph": "Adding new windows is not supported yet. At the moment it is only possible to override built-in windows."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Stack of currently active modes Register new implementation for the window with given name; overrides previous implementation. Adding new windows is not supported yet. At the moment it is only possible to override built-in windows."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string windowName:"
-        },
-        {
-          "code": "#string windowName"
-        },
-        {
-          "paragraph": "#function showFn: \nCallback that will be called when the window should become visible"
-        },
-        {
-          "code": "#function showFn"
-        },
-        {
-          "paragraph": "#function hideFn: \nCallback that will be called when the window should be hidden"
-        },
-        {
-          "code": "#function hideFn"
-        },
-        {
-          "paragraph": "Remove the specified mode from active modes."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string windowName:"
+    },
+    {
+      "code": "#string windowName"
+    },
+    {
+      "paragraph": "#function showFn: \nCallback that will be called when the window should become visible"
+    },
+    {
+      "code": "#function showFn"
+    },
+    {
+      "paragraph": "#function hideFn: \nCallback that will be called when the window should be hidden"
+    },
+    {
+      "code": "#function hideFn"
+    },
+    {
+      "paragraph": "Remove the specified mode from active modes."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string mode: \nMode to drop"
-        },
-        {
-          "code": "#string mode"
-        },
-        {
-          "paragraph": "Set whether the UI should be visible."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string mode: \nMode to drop"
+    },
+    {
+      "code": "#string mode"
+    },
+    {
+      "paragraph": "Set whether the UI should be visible."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#boolean showHud:"
-        },
-        {
-          "code": "#boolean showHud"
-        },
-        {
-          "paragraph": "Drop all active modes and set mode."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean showHud:"
+    },
+    {
+      "code": "#boolean showHud"
+    },
+    {
+      "paragraph": "Drop all active modes and set mode."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string mode: \n(optional) New mode"
-        },
-        {
-          "code": "#string mode"
-        },
-        {
-          "paragraph": "#table options: \n(optional) Table with keys 'windows' and/or 'target' (see example)."
-        },
-        {
-          "code": "#table options"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string mode: \n(optional) New mode"
+    },
+    {
+      "code": "#string mode"
+    },
+    {
+      "paragraph": "#table options: \n(optional) Table with keys 'windows' and/or 'target' (see example)."
+    },
+    {
+      "code": "#table options"
     },
     {
       "header": "Usages:",
-      "content": [
-        {
-          "code": "I.UI.setMode() -- drop all modes"
-        },
-        {
-          "code": "I.UI.setMode() -- drop all modes"
-        },
-        {
-          "code": "I.UI.setMode('Interface') -- drop all modes and open interface"
-        },
-        {
-          "code": "I.UI.setMode('Interface') -- drop all modes and open interface"
-        },
-        {
-          "code": "-- Drop all modes, open interface, but show only the map window.\nI.UI.setMode('Interface', {windows = {'Map'}})"
-        },
-        {
-          "code": "-- Drop all modes, open interface, but show only the map window.\nI.UI.setMode('Interface', {windows = {'Map'}})"
-        },
-        {
-          "paragraph": "Set whether the mode should pause the game."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "I.UI.setMode() -- drop all modes"
+    },
+    {
+      "code": "I.UI.setMode() -- drop all modes"
+    },
+    {
+      "code": "I.UI.setMode('Interface') -- drop all modes and open interface"
+    },
+    {
+      "code": "I.UI.setMode('Interface') -- drop all modes and open interface"
+    },
+    {
+      "code": "-- Drop all modes, open interface, but show only the map window.\nI.UI.setMode('Interface', {windows = {'Map'}})"
+    },
+    {
+      "code": "-- Drop all modes, open interface, but show only the map window.\nI.UI.setMode('Interface', {windows = {'Map'}})"
+    },
+    {
+      "paragraph": "Set whether the mode should pause the game."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string mode: \nMode to configure"
-        },
-        {
-          "code": "#string mode"
-        },
-        {
-          "paragraph": "#boolean shouldPause:"
-        },
-        {
-          "code": "#boolean shouldPause"
-        },
-        {
-          "paragraph": "Interface version"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string mode: \nMode to configure"
+    },
+    {
+      "code": "#string mode"
+    },
+    {
+      "paragraph": "#boolean shouldPause:"
+    },
+    {
+      "code": "#boolean shouldPause"
+    },
+    {
+      "paragraph": "Interface version \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

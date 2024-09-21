@@ -1,119 +1,77 @@
 {
   "title": "Interface Settings\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "-- In a player script\nlocal storage = require('openmw.storage')\nlocal I = require('openmw.interfaces')\nI.Settings.registerPage {\n    key = 'MyModPage',\n    l10n = 'MyMod',\n    name = 'My Mod Name',\n    description = 'My Mod Description',\n}\nI.Settings.registerGroup {\n    key = 'SettingsPlayerMyMod',\n    page = 'MyModPage',\n    l10n = 'MyMod',\n    name = 'My Group Name',\n    description = 'My Group Description',\n    permanentStorage = false,\n    settings = {\n        {\n            key = 'Greeting',\n            renderer = 'textLine',\n            name = 'Greeting',\n            description = 'Text to display when the game starts',\n            default = 'Hello, world!',\n        },\n    },\n}\nlocal playerSettings = storage.playerSection('SettingsPlayerMyMod')\n...\nui.showMessage(playerSettings:get('Greeting'))\n-- ...\n-- access a setting page registered by a global script\nlocal globalSettings = storage.globalSection('SettingsGlobalMyMod')"
-        },
-        {
-          "code": "-- In a player script\nlocal storage = require('openmw.storage')\nlocal I = require('openmw.interfaces')\nI.Settings.registerPage {\n    key = 'MyModPage',\n    l10n = 'MyMod',\n    name = 'My Mod Name',\n    description = 'My Mod Description',\n}\nI.Settings.registerGroup {\n    key = 'SettingsPlayerMyMod',\n    page = 'MyModPage',\n    l10n = 'MyMod',\n    name = 'My Group Name',\n    description = 'My Group Description',\n    permanentStorage = false,\n    settings = {\n        {\n            key = 'Greeting',\n            renderer = 'textLine',\n            name = 'Greeting',\n            description = 'Text to display when the game starts',\n            default = 'Hello, world!',\n        },\n    },\n}\nlocal playerSettings = storage.playerSection('SettingsPlayerMyMod')\n...\nui.showMessage(playerSettings:get('Greeting'))\n-- ...\n-- access a setting page registered by a global script\nlocal globalSettings = storage.globalSection('SettingsGlobalMyMod')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- In a player script\nlocal storage = require('openmw.storage')\nlocal I = require('openmw.interfaces')\nI.Settings.registerPage {\n    key = 'MyModPage',\n    l10n = 'MyMod',\n    name = 'My Mod Name',\n    description = 'My Mod Description',\n}\nI.Settings.registerGroup {\n    key = 'SettingsPlayerMyMod',\n    page = 'MyModPage',\n    l10n = 'MyMod',\n    name = 'My Group Name',\n    description = 'My Group Description',\n    permanentStorage = false,\n    settings = {\n        {\n            key = 'Greeting',\n            renderer = 'textLine',\n            name = 'Greeting',\n            description = 'Text to display when the game starts',\n            default = 'Hello, world!',\n        },\n    },\n}\nlocal playerSettings = storage.playerSection('SettingsPlayerMyMod')\n...\nui.showMessage(playerSettings:get('Greeting'))\n-- ...\n-- access a setting page registered by a global script\nlocal globalSettings = storage.globalSection('SettingsGlobalMyMod')"
+    },
+    {
+      "code": "-- In a player script\nlocal storage = require('openmw.storage')\nlocal I = require('openmw.interfaces')\nI.Settings.registerPage {\n    key = 'MyModPage',\n    l10n = 'MyMod',\n    name = 'My Mod Name',\n    description = 'My Mod Description',\n}\nI.Settings.registerGroup {\n    key = 'SettingsPlayerMyMod',\n    page = 'MyModPage',\n    l10n = 'MyMod',\n    name = 'My Group Name',\n    description = 'My Group Description',\n    permanentStorage = false,\n    settings = {\n        {\n            key = 'Greeting',\n            renderer = 'textLine',\n            name = 'Greeting',\n            description = 'Text to display when the game starts',\n            default = 'Hello, world!',\n        },\n    },\n}\nlocal playerSettings = storage.playerSection('SettingsPlayerMyMod')\n...\nui.showMessage(playerSettings:get('Greeting'))\n-- ...\n-- access a setting page registered by a global script\nlocal globalSettings = storage.globalSection('SettingsGlobalMyMod')"
     },
     {
       "header": "TypeSettings",
-      "content": [
-        {
-          "code": "Settings"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Settings"
     },
     {
       "header": "TypeGroupOptions",
-      "content": [
-        {
-          "code": "GroupOptions"
-        },
-        {
-          "paragraph": "A key from the localization context (optional, can benil)"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "A unique key, starts with \"Settings\" by convention"
-        },
-        {
-          "paragraph": "A localization context (an argument of core.l10n)"
-        },
-        {
-          "paragraph": "A key from the localization context"
-        },
-        {
-          "paragraph": "Groups within the same page are sorted by this number, or their key for equal values.\n  Defaults to 0."
-        },
-        {
-          "paragraph": "Key of a page which will contain this group"
-        },
-        {
-          "paragraph": "Whether the group should be stored in permanent storage, or in the save file"
-        },
-        {
-          "paragraph": "Aiterables#Listtable of #SettingOptions"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "GroupOptions"
+    },
+    {
+      "paragraph": "A key from the localization context (optional, can benil)"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "A unique key, starts with \"Settings\" by convention A localization context (an argument of core.l10n) A key from the localization context Groups within the same page are sorted by this number, or their key for equal values.\n  Defaults to 0. Key of a page which will contain this group Whether the group should be stored in permanent storage, or in the save file Aiterables#Listtable of #SettingOptions"
     },
     {
       "header": "TypePageOptions",
-      "content": [
-        {
-          "code": "PageOptions"
-        },
-        {
-          "paragraph": "A key from the localization context (optional, can benil)"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "A unique key"
-        },
-        {
-          "paragraph": "A localization context (an argument of core.l10n)"
-        },
-        {
-          "paragraph": "A key from the localization context"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "PageOptions"
+    },
+    {
+      "paragraph": "A key from the localization context (optional, can benil)"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "A unique key A localization context (an argument of core.l10n) A key from the localization context"
     },
     {
       "header": "TypeSettingOptions",
-      "content": [
-        {
-          "code": "SettingOptions"
-        },
-        {
-          "paragraph": "An argument for the renderer"
-        },
-        {
-          "paragraph": "A default value"
-        },
-        {
-          "paragraph": "A key from the localization context (optional, can benil)"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "A unique key"
-        },
-        {
-          "paragraph": "A key from the localization context"
-        },
-        {
-          "paragraph": "A renderer key (see the \"Built-in Setting Renderers\" page)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "SettingOptions"
+    },
+    {
+      "paragraph": "An argument for the renderer A default value A key from the localization context (optional, can benil)"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "A unique key A key from the localization context A renderer key (see the \"Built-in Setting Renderers\" page)"
     },
     {
       "header": "TypeSettings",
-      "content": [
-        {
-          "code": "Settings"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Settings"
     },
     {
       "header": "Field(s)",
@@ -121,209 +79,154 @@
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#GroupOptionsoptions:"
-        },
-        {
-          "code": "#GroupOptionsoptions"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#GroupOptionsoptions:"
+    },
+    {
+      "code": "#GroupOptions\noptions"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "I.Settings.registerGroup {\n    key = 'SettingsTest',\n    page = 'test',\n    l10n = 'test',\n    name = 'Player',\n    description = 'Player settings group',\n    permanentStorage = false,\n    settings = {\n        {\n            key = 'Greeting',\n            default = 'Hi',\n            renderer = 'textLine',\n            name = 'Text Input',\n            description = 'Short text input',\n        },\n        {\n            key = 'Flag',\n            default = false,\n            renderer = 'checkbox',\n            name = 'Flag',\n            description = 'Flag toggle',\n        },\n    }\n}"
-        },
-        {
-          "code": "I.Settings.registerGroup {\n    key = 'SettingsTest',\n    page = 'test',\n    l10n = 'test',\n    name = 'Player',\n    description = 'Player settings group',\n    permanentStorage = false,\n    settings = {\n        {\n            key = 'Greeting',\n            default = 'Hi',\n            renderer = 'textLine',\n            name = 'Text Input',\n            description = 'Short text input',\n        },\n        {\n            key = 'Flag',\n            default = false,\n            renderer = 'checkbox',\n            name = 'Flag',\n            description = 'Flag toggle',\n        },\n    }\n}"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "I.Settings.registerGroup {\n    key = 'SettingsTest',\n    page = 'test',\n    l10n = 'test',\n    name = 'Player',\n    description = 'Player settings group',\n    permanentStorage = false,\n    settings = {\n        {\n            key = 'Greeting',\n            default = 'Hi',\n            renderer = 'textLine',\n            name = 'Text Input',\n            description = 'Short text input',\n        },\n        {\n            key = 'Flag',\n            default = false,\n            renderer = 'checkbox',\n            name = 'Flag',\n            description = 'Flag toggle',\n        },\n    }\n}"
+    },
+    {
+      "code": "I.Settings.registerGroup {\n    key = 'SettingsTest',\n    page = 'test',\n    l10n = 'test',\n    name = 'Player',\n    description = 'Player settings group',\n    permanentStorage = false,\n    settings = {\n        {\n            key = 'Greeting',\n            default = 'Hi',\n            renderer = 'textLine',\n            name = 'Text Input',\n            description = 'Short text input',\n        },\n        {\n            key = 'Flag',\n            default = false,\n            renderer = 'checkbox',\n            name = 'Flag',\n            description = 'Flag toggle',\n        },\n    }\n}"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#PageOptionsoptions:"
-        },
-        {
-          "code": "#PageOptionsoptions"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#PageOptionsoptions:"
+    },
+    {
+      "code": "#PageOptions\noptions"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "I.Settings.registerPage({\n  key = 'MyModName',\n  l10n = 'MyModName',\n  name = 'MyModName',\n  description = 'MyModDescription',\n})---"
-        },
-        {
-          "code": "I.Settings.registerPage({\n  key = 'MyModName',\n  l10n = 'MyModName',\n  name = 'MyModName',\n  description = 'MyModDescription',\n})---"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "I.Settings.registerPage({\n  key = 'MyModName',\n  l10n = 'MyModName',\n  name = 'MyModName',\n  description = 'MyModDescription',\n})---"
+    },
+    {
+      "code": "I.Settings.registerPage({\n  key = 'MyModName',\n  l10n = 'MyModName',\n  name = 'MyModName',\n  description = 'MyModDescription',\n})---"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        },
-        {
-          "paragraph": "#function renderer: \nA renderer function, receives setting's value,\n  a function to change it and an argument from the setting options"
-        },
-        {
-          "code": "#function renderer"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
+    },
+    {
+      "paragraph": "#function renderer: \nA renderer function, receives setting's value,\n  a function to change it and an argument from the setting options"
+    },
+    {
+      "code": "#function renderer"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "I.Settings.registerRenderer('text', function(value, set, arg)\n  return {\n    type = ui.TYPE.TextEdit,\n    props = {\n      size = util.vector2(arg and arg.size or 150, 30),\n      text = value,\n      textColor = util.color.rgb(1, 1, 1),\n      textSize = 15,\n      textAlignV = ui.ALIGNMENT.End,\n    },\n    events = {\n      textChanged = async:callback(function(s) set(s) end),\n    },\n  }\nend)"
-        },
-        {
-          "code": "I.Settings.registerRenderer('text', function(value, set, arg)\n  return {\n    type = ui.TYPE.TextEdit,\n    props = {\n      size = util.vector2(arg and arg.size or 150, 30),\n      text = value,\n      textColor = util.color.rgb(1, 1, 1),\n      textSize = 15,\n      textAlignV = ui.ALIGNMENT.End,\n    },\n    events = {\n      textChanged = async:callback(function(s) set(s) end),\n    },\n  }\nend)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "I.Settings.registerRenderer('text', function(value, set, arg)\n  return {\n    type = ui.TYPE.TextEdit,\n    props = {\n      size = util.vector2(arg and arg.size or 150, 30),\n      text = value,\n      textColor = util.color.rgb(1, 1, 1),\n      textSize = 15,\n      textAlignV = ui.ALIGNMENT.End,\n    },\n    events = {\n      textChanged = async:callback(function(s) set(s) end),\n    },\n  }\nend)"
+    },
+    {
+      "code": "I.Settings.registerRenderer('text', function(value, set, arg)\n  return {\n    type = ui.TYPE.TextEdit,\n    props = {\n      size = util.vector2(arg and arg.size or 150, 30),\n      text = value,\n      textColor = util.color.rgb(1, 1, 1),\n      textSize = 15,\n      textAlignV = ui.ALIGNMENT.End,\n    },\n    events = {\n      textChanged = async:callback(function(s) set(s) end),\n    },\n  }\nend)"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string groupKey: \nA settings group key"
-        },
-        {
-          "code": "#string groupKey"
-        },
-        {
-          "paragraph": "#string settingKey: \nA setting key"
-        },
-        {
-          "code": "#string settingKey"
-        },
-        {
-          "paragraph": "argument: \nA renderer argument"
-        },
-        {
-          "code": "argument"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string groupKey: \nA settings group key"
+    },
+    {
+      "code": "#string groupKey"
+    },
+    {
+      "paragraph": "#string settingKey: \nA setting key"
+    },
+    {
+      "code": "#string settingKey"
+    },
+    {
+      "paragraph": "argument: \nA renderer argument"
+    },
+    {
+      "code": "argument"
     },
     {
       "header": "TypeGroupOptions",
-      "content": [
-        {
-          "code": "GroupOptions"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "GroupOptions"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "A key from the localization context (optional, can benil)"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "A unique key, starts with \"Settings\" by convention"
-        },
-        {
-          "paragraph": "A localization context (an argument of core.l10n)"
-        },
-        {
-          "paragraph": "A key from the localization context"
-        },
-        {
-          "paragraph": "Groups within the same page are sorted by this number, or their key for equal values.\n  Defaults to 0."
-        },
-        {
-          "paragraph": "Key of a page which will contain this group"
-        },
-        {
-          "paragraph": "Whether the group should be stored in permanent storage, or in the save file"
-        },
-        {
-          "paragraph": "Aiterables#Listtable of #SettingOptions"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "A key from the localization context (optional, can benil)"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "A unique key, starts with \"Settings\" by convention A localization context (an argument of core.l10n) A key from the localization context Groups within the same page are sorted by this number, or their key for equal values.\n  Defaults to 0. Key of a page which will contain this group Whether the group should be stored in permanent storage, or in the save file Aiterables#Listtable of #SettingOptions"
     },
     {
       "header": "TypePageOptions",
-      "content": [
-        {
-          "code": "PageOptions"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "PageOptions"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "A key from the localization context (optional, can benil)"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "A unique key"
-        },
-        {
-          "paragraph": "A localization context (an argument of core.l10n)"
-        },
-        {
-          "paragraph": "A key from the localization context"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "A key from the localization context (optional, can benil)"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "A unique key A localization context (an argument of core.l10n) A key from the localization context"
     },
     {
       "header": "TypeSettingOptions",
-      "content": [
-        {
-          "code": "SettingOptions"
-        },
-        {
-          "paragraph": "Table of setting options"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "SettingOptions"
+    },
+    {
+      "paragraph": "Table of setting options"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "An argument for the renderer"
-        },
-        {
-          "paragraph": "A default value"
-        },
-        {
-          "paragraph": "A key from the localization context (optional, can benil)"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "A unique key"
-        },
-        {
-          "paragraph": "A key from the localization context"
-        },
-        {
-          "paragraph": "A renderer key (see the \"Built-in Setting Renderers\" page)"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "An argument for the renderer A default value A key from the localization context (optional, can benil)"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "A unique key A key from the localization context A renderer key (see the \"Built-in Setting Renderers\" page) \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

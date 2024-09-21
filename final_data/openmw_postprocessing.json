@@ -1,440 +1,374 @@
 {
   "title": "Package openmw.postprocessing\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw.postprocessingis an interface to postprocessing shaders."
+    },
+    {
+      "code": "openmw.postprocessing"
+    },
+    {
+      "paragraph": "Can be used only by local scripts, that are attached to a player."
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local postprocessing = require('openmw.postprocessing')"
-        },
-        {
-          "code": "local postprocessing = require('openmw.postprocessing')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local postprocessing = require('openmw.postprocessing')"
+    },
+    {
+      "code": "local postprocessing = require('openmw.postprocessing')"
     },
     {
       "header": "Typepostprocessing",
-      "content": [
-        {
-          "code": "postprocessing"
-        },
-        {
-          "paragraph": "Load a shader and return its handle."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "postprocessing"
+    },
+    {
+      "paragraph": "Load a shader and return its handle."
     },
     {
       "header": "TypeShader",
-      "content": [
-        {
-          "code": "Shader"
-        },
-        {
-          "paragraph": "Deactivate the shader."
-        },
-        {
-          "paragraph": "Enable the shader."
-        },
-        {
-          "paragraph": "Check if the shader is enabled."
-        },
-        {
-          "paragraph": "Set a non static bool shader variable."
-        },
-        {
-          "paragraph": "Set a non static float shader variable."
-        },
-        {
-          "paragraph": "Set a non static float array shader variable."
-        },
-        {
-          "paragraph": "Set a non static integer shader variable."
-        },
-        {
-          "paragraph": "Set a non static integer array shader variable."
-        },
-        {
-          "paragraph": "Set a non static Vector2 shader variable."
-        },
-        {
-          "paragraph": "Set a non static Vector2 array shader variable."
-        },
-        {
-          "paragraph": "Set a non static Vector3 shader variable."
-        },
-        {
-          "paragraph": "Set a non static Vector3 array shader variable."
-        },
-        {
-          "paragraph": "Set a non static Vector4 shader variable."
-        },
-        {
-          "paragraph": "Set a non static Vector4 array shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Shader"
+    },
+    {
+      "paragraph": "Deactivate the shader. Enable the shader. Check if the shader is enabled. Set a non static bool shader variable. Set a non static float shader variable. Set a non static float array shader variable. Set a non static integer shader variable. Set a non static integer array shader variable. Set a non static Vector2 shader variable. Set a non static Vector2 array shader variable. Set a non static Vector3 shader variable. Set a non static Vector3 array shader variable. Set a non static Vector4 shader variable. Set a non static Vector4 array shader variable."
     },
     {
       "header": "Typepostprocessing",
-      "content": [
-        {
-          "code": "postprocessing"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "postprocessing"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Load a shader and return its handle."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Load a shader and return its handle."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of the shader without its extension"
-        },
-        {
-          "code": "#string name"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of the shader without its extension"
+    },
+    {
+      "code": "#string name"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#Shader:"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#Shader:"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "-- If the shader exists and compiles, the shader will still be off by default.\n-- It must be enabled to see its effect.\nlocal vignetteShader = postprocessing.load('vignette')"
-        },
-        {
-          "code": "-- If the shader exists and compiles, the shader will still be off by default.\n-- It must be enabled to see its effect.\nlocal vignetteShader = postprocessing.load('vignette')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- If the shader exists and compiles, the shader will still be off by default.\n-- It must be enabled to see its effect.\nlocal vignetteShader = postprocessing.load('vignette')"
+    },
+    {
+      "code": "-- If the shader exists and compiles, the shader will still be off by default.\n-- It must be enabled to see its effect.\nlocal vignetteShader = postprocessing.load('vignette')"
     },
     {
       "header": "TypeShader",
-      "content": [
-        {
-          "code": "Shader"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Shader"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Deactivate the shader."
-        },
-        {
-          "paragraph": "Has no effect if the shader is already deactivated or does not exist.\nWill not apply until the next frame."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Deactivate the shader. Has no effect if the shader is already deactivated or does not exist.\nWill not apply until the next frame."
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local vignetteShader = shader.postprocessing('vignette')\nvignetteShader:disable() -- shader will be toggled off"
-        },
-        {
-          "code": "local vignetteShader = shader.postprocessing('vignette')\nvignetteShader:disable() -- shader will be toggled off"
-        },
-        {
-          "paragraph": "Enable the shader."
-        },
-        {
-          "paragraph": "Has no effect if the shader is already enabled or does\nnot exist. Will not apply until the next frame."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local vignetteShader = shader.postprocessing('vignette')\nvignetteShader:disable() -- shader will be toggled off"
+    },
+    {
+      "code": "local vignetteShader = shader.postprocessing('vignette')\nvignetteShader:disable() -- shader will be toggled off"
+    },
+    {
+      "paragraph": "Enable the shader. Has no effect if the shader is already enabled or does\nnot exist. Will not apply until the next frame."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#number position: \noptional position to place the shader. If left out the shader will be inserted at the end of the chain."
-        },
-        {
-          "code": "#number position"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number position: \noptional position to place the shader. If left out the shader will be inserted at the end of the chain."
+    },
+    {
+      "code": "#number position"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "-- Load shader\nlocal vignetteShader = postprocessing.load('vignette')\n-- Toggle shader on\nvignetteShader:enable()"
-        },
-        {
-          "code": "-- Load shader\nlocal vignetteShader = postprocessing.load('vignette')\n-- Toggle shader on\nvignetteShader:enable()"
-        },
-        {
-          "paragraph": "Check if the shader is enabled."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- Load shader\nlocal vignetteShader = postprocessing.load('vignette')\n-- Toggle shader on\nvignetteShader:enable()"
+    },
+    {
+      "code": "-- Load shader\nlocal vignetteShader = postprocessing.load('vignette')\n-- Toggle shader on\nvignetteShader:enable()"
+    },
+    {
+      "paragraph": "Check if the shader is enabled."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:True if shader is enabled and was compiled successfully."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean:True if shader is enabled and was compiled successfully."
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local vignetteShader = shader.postprocessing('vignette')\nvignetteShader:enable() -- shader will be toggled on"
-        },
-        {
-          "code": "local vignetteShader = shader.postprocessing('vignette')\nvignetteShader:enable() -- shader will be toggled on"
-        },
-        {
-          "paragraph": "Set a non static bool shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local vignetteShader = shader.postprocessing('vignette')\nvignetteShader:enable() -- shader will be toggled on"
+    },
+    {
+      "code": "local vignetteShader = shader.postprocessing('vignette')\nvignetteShader:enable() -- shader will be toggled on"
+    },
+    {
+      "paragraph": "Set a non static bool shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#boolean value: \nValue of uniform."
-        },
-        {
-          "code": "#boolean value"
-        },
-        {
-          "paragraph": "Set a non static float shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#boolean value: \nValue of uniform."
+    },
+    {
+      "code": "#boolean value"
+    },
+    {
+      "paragraph": "Set a non static float shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#number value: \nValue of uniform."
-        },
-        {
-          "code": "#number value"
-        },
-        {
-          "paragraph": "Set a non static float array shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#number value: \nValue of uniform."
+    },
+    {
+      "code": "#number value"
+    },
+    {
+      "paragraph": "Set a non static float array shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#table array: \nContains equal number of #number elements as the uniform array."
-        },
-        {
-          "code": "#table array"
-        },
-        {
-          "paragraph": "Set a non static integer shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#table array: \nContains equal number of #number elements as the uniform array."
+    },
+    {
+      "code": "#table array"
+    },
+    {
+      "paragraph": "Set a non static integer shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#number value: \nValue of uniform."
-        },
-        {
-          "code": "#number value"
-        },
-        {
-          "paragraph": "Set a non static integer array shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#number value: \nValue of uniform."
+    },
+    {
+      "code": "#number value"
+    },
+    {
+      "paragraph": "Set a non static integer array shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#table array: \nContains equal number of #number elements as the uniform array."
-        },
-        {
-          "code": "#table array"
-        },
-        {
-          "paragraph": "Set a non static Vector2 shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#table array: \nContains equal number of #number elements as the uniform array."
+    },
+    {
+      "code": "#table array"
+    },
+    {
+      "paragraph": "Set a non static Vector2 shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "openmw.util#Vector2value: \nValue of uniform."
-        },
-        {
-          "code": "openmw.util#Vector2value"
-        },
-        {
-          "paragraph": "Set a non static Vector2 array shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "openmw.util#Vector2value: \nValue of uniform."
+    },
+    {
+      "code": "openmw.util#Vector2\nvalue"
+    },
+    {
+      "paragraph": "Set a non static Vector2 array shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#table array: \nContains equal number ofopenmw.util#Vector2elements as the uniform array."
-        },
-        {
-          "code": "#table array"
-        },
-        {
-          "paragraph": "Set a non static Vector3 shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#table array: \nContains equal number ofopenmw.util#Vector2elements as the uniform array."
+    },
+    {
+      "code": "#table array"
+    },
+    {
+      "paragraph": "Set a non static Vector3 shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "openmw.util#Vector3value: \nValue of uniform."
-        },
-        {
-          "code": "openmw.util#Vector3value"
-        },
-        {
-          "paragraph": "Set a non static Vector3 array shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "openmw.util#Vector3value: \nValue of uniform."
+    },
+    {
+      "code": "openmw.util#Vector3\nvalue"
+    },
+    {
+      "paragraph": "Set a non static Vector3 array shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#table array: \nContains equal number ofopenmw.util#Vector3elements as the uniform array."
-        },
-        {
-          "code": "#table array"
-        },
-        {
-          "paragraph": "Set a non static Vector4 shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#table array: \nContains equal number ofopenmw.util#Vector3elements as the uniform array."
+    },
+    {
+      "code": "#table array"
+    },
+    {
+      "paragraph": "Set a non static Vector4 shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "openmw.util#Vector4value: \nValue of uniform."
-        },
-        {
-          "code": "openmw.util#Vector4value"
-        },
-        {
-          "paragraph": "Set a non static Vector4 array shader variable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "openmw.util#Vector4value: \nValue of uniform."
+    },
+    {
+      "code": "openmw.util#Vector4\nvalue"
+    },
+    {
+      "paragraph": "Set a non static Vector4 array shader variable."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name: \nName of uniform"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#table array: \nContains equal number ofopenmw.util#Vector4elements as the uniform array."
-        },
-        {
-          "code": "#table array"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name: \nName of uniform"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#table array: \nContains equal number ofopenmw.util#Vector4elements as the uniform array."
+    },
+    {
+      "code": "#table array"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "-- Setting an array\nlocal shader = postprocessing.load('godrays')\n-- Toggle shader on\nshader:enable()\n-- Set new array uniform which was defined with length 2\nshader:setVector4Array('myArray', { util.vector4(1,0,0,1), util.vector4(1,0,1,1) })"
-        },
-        {
-          "code": "-- Setting an array\nlocal shader = postprocessing.load('godrays')\n-- Toggle shader on\nshader:enable()\n-- Set new array uniform which was defined with length 2\nshader:setVector4Array('myArray', { util.vector4(1,0,0,1), util.vector4(1,0,1,1) })"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- Setting an array\nlocal shader = postprocessing.load('godrays')\n-- Toggle shader on\nshader:enable()\n-- Set new array uniform which was defined with length 2\nshader:setVector4Array('myArray', { util.vector4(1,0,0,1), util.vector4(1,0,1,1) })"
+    },
+    {
+      "code": "-- Setting an array\nlocal shader = postprocessing.load('godrays')\n-- Toggle shader on\nshader:enable()\n-- Set new array uniform which was defined with length 2\nshader:setVector4Array('myArray', { util.vector4(1,0,0,1), util.vector4(1,0,1,1) })"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

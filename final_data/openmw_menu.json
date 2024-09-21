@@ -1,224 +1,167 @@
 {
   "title": "Package openmw.menu\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw.menucan be used only in menu scripts."
+    },
+    {
+      "code": "openmw.menu"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local menu = require('openmw.menu')"
-        },
-        {
-          "code": "local menu = require('openmw.menu')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local menu = require('openmw.menu')"
+    },
+    {
+      "code": "local menu = require('openmw.menu')"
     },
     {
       "header": "Typemenu",
-      "content": [
-        {
-          "code": "menu"
-        },
-        {
-          "paragraph": "All possible game states returned bymenu.getState"
-        },
-        {
-          "paragraph": "Delete a saved game"
-        },
-        {
-          "paragraph": "List of all available saves, grouped by directory"
-        },
-        {
-          "paragraph": "Current save directory"
-        },
-        {
-          "paragraph": "All the saves for the given directory"
-        },
-        {
-          "paragraph": "Current game state"
-        },
-        {
-          "paragraph": "Load the game from a save slot"
-        },
-        {
-          "paragraph": "Start a new game"
-        },
-        {
-          "paragraph": "Exit the game"
-        },
-        {
-          "paragraph": "Save the game"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "menu"
+    },
+    {
+      "paragraph": "All possible game states returned bymenu.getState Delete a saved game List of all available saves, grouped by directory Current save directory All the saves for the given directory Current game state Load the game from a save slot Start a new game Exit the game Save the game"
     },
     {
       "header": "TypeSTATE",
-      "content": [
-        {
-          "code": "STATE"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "STATE"
     },
     {
       "header": "TypeSaveInfo",
-      "content": [
-        {
-          "code": "SaveInfo"
-        },
-        {
-          "paragraph": "Time at which the game was saved, as a timestamp in seconds. Can be passed as the second argument toos.data."
-        },
-        {
-          "code": "os.data"
-        },
-        {
-          "paragraph": "Gameplay time for this saved game. Note: available even withtime playedturned off"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "SaveInfo"
+    },
+    {
+      "paragraph": "Time at which the game was saved, as a timestamp in seconds. Can be passed as the second argument toos.data."
+    },
+    {
+      "code": "os.data"
+    },
+    {
+      "paragraph": "Gameplay time for this saved game. Note: available even withtime playedturned off"
     },
     {
       "header": "Typemenu",
-      "content": [
-        {
-          "code": "menu"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "menu"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "All possible game states returned bymenu.getState"
-        },
-        {
-          "paragraph": "Delete a saved game"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "All possible game states returned bymenu.getState Delete a saved game"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string directory: \nname of the save directory (e. g. character)"
-        },
-        {
-          "code": "#string directory"
-        },
-        {
-          "paragraph": "#string slotName: \nname of the save slot"
-        },
-        {
-          "code": "#string slotName"
-        },
-        {
-          "paragraph": "List of all available saves, grouped by directory"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string directory: \nname of the save directory (e. g. character)"
+    },
+    {
+      "code": "#string directory"
+    },
+    {
+      "paragraph": "#string slotName: \nname of the save slot"
+    },
+    {
+      "code": "#string slotName"
+    },
+    {
+      "paragraph": "List of all available saves, grouped by directory"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#map<#string,#map<#string,#SaveInfo>>:map with directory names as keys, returning maps with save filenames as keys"
-        },
-        {
-          "paragraph": "Current save directory"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#map<#string,#map<#string,#SaveInfo>>:map with directory names as keys, returning maps with save filenames as keys Current save directory"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#string:"
-        },
-        {
-          "paragraph": "All the saves for the given directory"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string: All the saves for the given directory"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string directory: \nname of the save directory (e. g. character)"
-        },
-        {
-          "code": "#string directory"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string directory: \nname of the save directory (e. g. character)"
+    },
+    {
+      "code": "#string directory"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#map<#string,#SaveInfo>:map with save filenames as keys"
-        },
-        {
-          "paragraph": "Current game state"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#map<#string,#SaveInfo>:map with save filenames as keys Current game state"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#STATE:"
-        },
-        {
-          "paragraph": "Load the game from a save slot"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#STATE: Load the game from a save slot"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string directory: \nname of the save directory (e. g. character)"
-        },
-        {
-          "code": "#string directory"
-        },
-        {
-          "paragraph": "#string slotName: \nname of the save slot"
-        },
-        {
-          "code": "#string slotName"
-        },
-        {
-          "paragraph": "Start a new game"
-        },
-        {
-          "paragraph": "Exit the game"
-        },
-        {
-          "paragraph": "Save the game"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string directory: \nname of the save directory (e. g. character)"
+    },
+    {
+      "code": "#string directory"
+    },
+    {
+      "paragraph": "#string slotName: \nname of the save slot"
+    },
+    {
+      "code": "#string slotName"
+    },
+    {
+      "paragraph": "Start a new game Exit the game Save the game"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string description: \nhuman readable description of the save"
-        },
-        {
-          "code": "#string description"
-        },
-        {
-          "paragraph": "#string slotName: \nname of the save slot"
-        },
-        {
-          "code": "#string slotName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string description: \nhuman readable description of the save"
+    },
+    {
+      "code": "#string description"
+    },
+    {
+      "paragraph": "#string slotName: \nname of the save slot"
+    },
+    {
+      "code": "#string slotName"
     },
     {
       "header": "TypeSTATE",
-      "content": [
-        {
-          "code": "STATE"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "STATE"
     },
     {
       "header": "Field(s)",
@@ -226,31 +169,23 @@
     },
     {
       "header": "TypeSaveInfo",
-      "content": [
-        {
-          "code": "SaveInfo"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "SaveInfo"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Time at which the game was saved, as a timestamp in seconds. Can be passed as the second argument toos.data."
-        },
-        {
-          "code": "os.data"
-        },
-        {
-          "paragraph": "Gameplay time for this saved game. Note: available even withtime playedturned off"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Time at which the game was saved, as a timestamp in seconds. Can be passed as the second argument toos.data."
+    },
+    {
+      "code": "os.data"
+    },
+    {
+      "paragraph": "Gameplay time for this saved game. Note: available even withtime playedturned off \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

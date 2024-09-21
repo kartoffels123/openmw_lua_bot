@@ -1,118 +1,105 @@
 {
   "title": "Package openmw.markup\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw.markupallows to work with markup languages."
+    },
+    {
+      "code": "openmw.markup"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local markup = require('openmw.markup')"
-        },
-        {
-          "code": "local markup = require('openmw.markup')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local markup = require('openmw.markup')"
+    },
+    {
+      "code": "local markup = require('openmw.markup')"
     },
     {
       "header": "Typemarkup",
-      "content": [
-        {
-          "code": "markup"
-        },
-        {
-          "paragraph": "Convert YAML data to Lua object"
-        },
-        {
-          "paragraph": "Load YAML file from VFS to Lua object."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "markup"
+    },
+    {
+      "paragraph": "Convert YAML data to Lua object Load YAML file from VFS to Lua object."
     },
     {
       "header": "Typemarkup",
-      "content": [
-        {
-          "code": "markup"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "markup"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Convert YAML data to Lua object"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Convert YAML data to Lua object"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string inputData: \nData to decode. It has such limitations:"
-        },
-        {
-          "code": "#string inputData"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string inputData: \nData to decode. It has such limitations:"
+    },
+    {
+      "code": "#string inputData"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#any:Lua object (can be table or scalar value)."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#any:Lua object (can be table or scalar value)."
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local result = markup.decodeYaml('{ \"x\": 1 }');\n-- prints 1\nprint(result[\"x\"])"
-        },
-        {
-          "code": "local result = markup.decodeYaml('{ \"x\": 1 }');\n-- prints 1\nprint(result[\"x\"])"
-        },
-        {
-          "paragraph": "Load YAML file from VFS to Lua object."
-        },
-        {
-          "paragraph": "Conventions are the same as inmarkup.decodeYaml."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local result = markup.decodeYaml('{ \"x\": 1 }');\n-- prints 1\nprint(result[\"x\"])"
+    },
+    {
+      "code": "local result = markup.decodeYaml('{ \"x\": 1 }');\n-- prints 1\nprint(result[\"x\"])"
+    },
+    {
+      "paragraph": "Load YAML file from VFS to Lua object. Conventions are the same as inmarkup.decodeYaml."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string fileName: \nYAML file path in VFS."
-        },
-        {
-          "code": "#string fileName"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string fileName: \nYAML file path in VFS."
+    },
+    {
+      "code": "#string fileName"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#any:Lua object (can be table or scalar value)."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#any:Lua object (can be table or scalar value)."
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "-- file contains '{ \"x\": 1 }' data\nlocal result = markup.loadYaml('test.yaml');\n-- prints 1\nprint(result[\"x\"])"
-        },
-        {
-          "code": "-- file contains '{ \"x\": 1 }' data\nlocal result = markup.loadYaml('test.yaml');\n-- prints 1\nprint(result[\"x\"])"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- file contains '{ \"x\": 1 }' data\nlocal result = markup.loadYaml('test.yaml');\n-- prints 1\nprint(result[\"x\"])"
+    },
+    {
+      "code": "-- file contains '{ \"x\": 1 }' data\nlocal result = markup.loadYaml('test.yaml');\n-- prints 1\nprint(result[\"x\"])"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

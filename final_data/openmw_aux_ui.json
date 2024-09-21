@@ -1,96 +1,91 @@
 {
   "title": "Package openmw_aux.ui\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw_aux.uidefines utility functions for UI."
+    },
+    {
+      "code": "openmw_aux.ui"
+    },
+    {
+      "paragraph": "Implementation can be found inresources/vfs/openmw_aux/ui.lua."
+    },
+    {
+      "code": "resources/vfs/openmw_aux/ui.lua"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local auxUi = require('openmw_aux.ui')"
-        },
-        {
-          "code": "local auxUi = require('openmw_aux.ui')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local auxUi = require('openmw_aux.ui')"
+    },
+    {
+      "code": "local auxUi = require('openmw_aux.ui')"
     },
     {
       "header": "Typeui",
-      "content": [
-        {
-          "code": "ui"
-        },
-        {
-          "paragraph": "Recursively destroys all elements in the passed layout or element"
-        },
-        {
-          "paragraph": "Recursively updates all elements in the passed layout or element"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ui"
+    },
+    {
+      "paragraph": "Recursively destroys all elements in the passed layout or element Recursively updates all elements in the passed layout or element"
     },
     {
       "header": "Typeui",
-      "content": [
-        {
-          "code": "ui"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ui"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Recursively destroys all elements in the passed layout or element"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Recursively destroys all elements in the passed layout or element"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#any elementOrLayout:openmw.ui#Layoutoropenmw.ui#Element"
-        },
-        {
-          "code": "#any elementOrLayout"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#any elementOrLayout:openmw.ui#Layoutoropenmw.ui#Element"
+    },
+    {
+      "code": "#any elementOrLayout"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#table layout:"
-        },
-        {
-          "code": "#table layout"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#table layout:"
+    },
+    {
+      "code": "#table layout"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#table:copied layout"
-        },
-        {
-          "paragraph": "Recursively updates all elements in the passed layout or element"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#table:copied layout Recursively updates all elements in the passed layout or element"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#any elementOrLayout:openmw.ui#Layoutoropenmw.ui#Element"
-        },
-        {
-          "code": "#any elementOrLayout"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#any elementOrLayout:openmw.ui#Layoutoropenmw.ui#Element"
+    },
+    {
+      "code": "#any elementOrLayout"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

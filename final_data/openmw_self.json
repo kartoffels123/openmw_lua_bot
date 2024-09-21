@@ -1,84 +1,64 @@
 {
   "title": "Package openmw.self\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw.selfprovides full access to the object the script is attached to."
+    },
+    {
+      "code": "openmw.self"
+    },
+    {
+      "paragraph": "Can be used only from local scripts. All fields and function ofGameObjectare also available foropenmw.self."
+    },
+    {
+      "code": "GameObject"
+    },
+    {
+      "code": "openmw.self"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local self = require('openmw.self')\nlocal types = require('openmw.types')\nif self.type == types.Player then  -- All fields and functions of `GameObject` are available.\n    self:sendEvent(\"something\", self.position)\nend"
-        },
-        {
-          "code": "local self = require('openmw.self')\nlocal types = require('openmw.types')\nif self.type == types.Player then  -- All fields and functions of `GameObject` are available.\n    self:sendEvent(\"something\", self.position)\nend"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local self = require('openmw.self')\nlocal types = require('openmw.types')\nif self.type == types.Player then  -- All fields and functions of `GameObject` are available.\n    self:sendEvent(\"something\", self.position)\nend"
+    },
+    {
+      "code": "local self = require('openmw.self')\nlocal types = require('openmw.types')\nif self.type == types.Player then  -- All fields and functions of `GameObject` are available.\n    self:sendEvent(\"something\", self.position)\nend"
     },
     {
       "header": "Typeself",
-      "content": [
-        {
-          "code": "self"
-        },
-        {
-          "paragraph": "Movement controls (only for actors)"
-        },
-        {
-          "paragraph": "Enables or disables standard AI (enabled by default)."
-        },
-        {
-          "paragraph": "Returns true if the script isActive (the object it is attached to is in an active cell)."
-        },
-        {
-          "paragraph": "The object the script is attached to (readonly)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "self"
+    },
+    {
+      "paragraph": "Movement controls (only for actors) Enables or disables standard AI (enabled by default). Returns true if the script isActive (the object it is attached to is in an active cell). The object the script is attached to (readonly)"
     },
     {
       "header": "TypeATTACK_TYPE",
-      "content": [
-        {
-          "code": "ATTACK_TYPE"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ATTACK_TYPE"
     },
     {
       "header": "TypeActorControls",
-      "content": [
-        {
-          "code": "ActorControls"
-        },
-        {
-          "paragraph": "If true - initiate a jump"
-        },
-        {
-          "paragraph": "+1 - move forward, -1 - move backward"
-        },
-        {
-          "paragraph": "Look down (radians); if negative - look up"
-        },
-        {
-          "paragraph": "true - run, false - walk"
-        },
-        {
-          "paragraph": "+1 - move right, -1 - move left"
-        },
-        {
-          "paragraph": "If true - sneak"
-        },
-        {
-          "paragraph": "Activates the readied weapon/spell according to a provided value. For weapons, keeping this value modified will charge the attack until set toATTACK_TYPE.NoAttack. If an#ATTACK_TYPEnot appropriate for a currently equipped weapon provided - an appropriate#ATTACK_TYPEwill be used instead."
-        },
-        {
-          "paragraph": "Turn right (radians); if negative - turn left"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ActorControls"
+    },
+    {
+      "paragraph": "If true - initiate a jump +1 - move forward, -1 - move backward Look down (radians); if negative - look up true - run, false - walk +1 - move right, -1 - move left If true - sneak Activates the readied weapon/spell according to a provided value. For weapons, keeping this value modified will charge the attack until set toATTACK_TYPE.NoAttack. If an#ATTACK_TYPEnot appropriate for a currently equipped weapon provided - an appropriate#ATTACK_TYPEwill be used instead. Turn right (radians); if negative - turn left"
     },
     {
       "header": "Typeself",
-      "content": [
-        {
-          "code": "self"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "self"
     },
     {
       "header": "Extendsopenmw.core#GameObject",
@@ -86,53 +66,40 @@
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Movement controls (only for actors)"
-        },
-        {
-          "paragraph": "Enables or disables standard AI (enabled by default)."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Movement controls (only for actors) Enables or disables standard AI (enabled by default)."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#boolean v:"
-        },
-        {
-          "code": "#boolean v"
-        },
-        {
-          "paragraph": "Returns true if the script isActive (the object it is attached to is in an active cell)."
-        },
-        {
-          "paragraph": "If it is not active, thenopenmw.nearbycan not be used."
-        },
-        {
-          "code": "openmw.nearby"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean v:"
+    },
+    {
+      "code": "#boolean v"
+    },
+    {
+      "paragraph": "Returns true if the script isActive (the object it is attached to is in an active cell). If it is not active, thenopenmw.nearbycan not be used."
+    },
+    {
+      "code": "openmw.nearby"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "The object the script is attached to (readonly)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: The object the script is attached to (readonly)"
     },
     {
       "header": "TypeATTACK_TYPE",
-      "content": [
-        {
-          "code": "ATTACK_TYPE"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ATTACK_TYPE"
     },
     {
       "header": "Field(s)",
@@ -140,52 +107,20 @@
     },
     {
       "header": "TypeActorControls",
-      "content": [
-        {
-          "code": "ActorControls"
-        },
-        {
-          "paragraph": "Allows to view and/or modify controls of an actor."
-        },
-        {
-          "paragraph": "All fields are mutable."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ActorControls"
+    },
+    {
+      "paragraph": "Allows to view and/or modify controls of an actor. All fields are mutable."
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "If true - initiate a jump"
-        },
-        {
-          "paragraph": "+1 - move forward, -1 - move backward"
-        },
-        {
-          "paragraph": "Look down (radians); if negative - look up"
-        },
-        {
-          "paragraph": "true - run, false - walk"
-        },
-        {
-          "paragraph": "+1 - move right, -1 - move left"
-        },
-        {
-          "paragraph": "If true - sneak"
-        },
-        {
-          "paragraph": "Activates the readied weapon/spell according to a provided value. For weapons, keeping this value modified will charge the attack until set toATTACK_TYPE.NoAttack. If an#ATTACK_TYPEnot appropriate for a currently equipped weapon provided - an appropriate#ATTACK_TYPEwill be used instead."
-        },
-        {
-          "paragraph": "Turn right (radians); if negative - turn left"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "If true - initiate a jump +1 - move forward, -1 - move backward Look down (radians); if negative - look up true - run, false - walk +1 - move right, -1 - move left If true - sneak Activates the readied weapon/spell according to a provided value. For weapons, keeping this value modified will charge the attack until set toATTACK_TYPE.NoAttack. If an#ATTACK_TYPEnot appropriate for a currently equipped weapon provided - an appropriate#ATTACK_TYPEwill be used instead. Turn right (radians); if negative - turn left \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

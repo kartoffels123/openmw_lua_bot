@@ -1,156 +1,133 @@
 {
   "title": "Interface AnimationController\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "Animation controller interface"
+    },
     {
       "header": "Usages:",
-      "content": [
-        {
-          "code": "local anim = require('openmw.animation')\nlocal I = require('openmw.interfaces')\n\n-- play spellcast animation \nI.AnimationController.playBlendedAnimation('spellcast', { startkey = 'self start', stopkey = 'self stop', priority = {\n     [anim.BONE_GROUP.RightArm] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.LeftArm] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.Torso] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.LowerBody] = anim.PRIORITY.WeaponLowerBody\n     } })"
-        },
-        {
-          "code": "local anim = require('openmw.animation')\nlocal I = require('openmw.interfaces')\n\n-- play spellcast animation \nI.AnimationController.playBlendedAnimation('spellcast', { startkey = 'self start', stopkey = 'self stop', priority = {\n     [anim.BONE_GROUP.RightArm] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.LeftArm] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.Torso] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.LowerBody] = anim.PRIORITY.WeaponLowerBody\n     } })"
-        },
-        {
-          "code": "-- react to the spellcast release textkey\nI.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)\n    -- Note, Lua is 1-indexed so have to subtract 1 less than the length of 'release'\n    if key.sub(key, #key - 6) == 'release' then\n        print('Abra kadabra!')\n    end\nend)"
-        },
-        {
-          "code": "-- react to the spellcast release textkey\nI.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)\n    -- Note, Lua is 1-indexed so have to subtract 1 less than the length of 'release'\n    if key.sub(key, #key - 6) == 'release' then\n        print('Abra kadabra!')\n    end\nend)"
-        },
-        {
-          "code": "-- Add a text key handler that will react to all keys\nI.AnimationController.addTextKeyHandler('', function(groupname, key)\n    if key.sub(key, #key - 2) == 'hit' and not key.sub(key, #key - 7) == ' min hit' then\n        print('Hit!')\n    end\nend)"
-        },
-        {
-          "code": "-- Add a text key handler that will react to all keys\nI.AnimationController.addTextKeyHandler('', function(groupname, key)\n    if key.sub(key, #key - 2) == 'hit' and not key.sub(key, #key - 7) == ' min hit' then\n        print('Hit!')\n    end\nend)"
-        },
-        {
-          "code": "-- Make a handler that changes player attack speed based on current fatigue\nI.AnimationController.addPlayBlendedAnimationHandler(function (groupname, options)\n    local stop = options.stopkey\n    if #stop > 10 and stop.sub(stop, #stop - 10) == ' max attack' then\n        -- This is an attack wind up animation, scale its speed by attack \n        local fatigue = Actor.stats.dynamic.fatigue(self)\n        local factor = 1 - fatigue.current / fatigue.base\n        speed = 1 - factor * 0.8\n        options.speed = speed\n    end\nend)"
-        },
-        {
-          "code": "-- Make a handler that changes player attack speed based on current fatigue\nI.AnimationController.addPlayBlendedAnimationHandler(function (groupname, options)\n    local stop = options.stopkey\n    if #stop > 10 and stop.sub(stop, #stop - 10) == ' max attack' then\n        -- This is an attack wind up animation, scale its speed by attack \n        local fatigue = Actor.stats.dynamic.fatigue(self)\n        local factor = 1 - fatigue.current / fatigue.base\n        speed = 1 - factor * 0.8\n        options.speed = speed\n    end\nend)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local anim = require('openmw.animation')\nlocal I = require('openmw.interfaces')\n\n-- play spellcast animation \nI.AnimationController.playBlendedAnimation('spellcast', { startkey = 'self start', stopkey = 'self stop', priority = {\n     [anim.BONE_GROUP.RightArm] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.LeftArm] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.Torso] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.LowerBody] = anim.PRIORITY.WeaponLowerBody\n     } })"
+    },
+    {
+      "code": "local anim = require('openmw.animation')\nlocal I = require('openmw.interfaces')\n\n-- play spellcast animation \nI.AnimationController.playBlendedAnimation('spellcast', { startkey = 'self start', stopkey = 'self stop', priority = {\n     [anim.BONE_GROUP.RightArm] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.LeftArm] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.Torso] = anim.PRIORITY.Weapon,\n     [anim.BONE_GROUP.LowerBody] = anim.PRIORITY.WeaponLowerBody\n     } })"
+    },
+    {
+      "code": "-- react to the spellcast release textkey\nI.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)\n    -- Note, Lua is 1-indexed so have to subtract 1 less than the length of 'release'\n    if key.sub(key, #key - 6) == 'release' then\n        print('Abra kadabra!')\n    end\nend)"
+    },
+    {
+      "code": "-- react to the spellcast release textkey\nI.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)\n    -- Note, Lua is 1-indexed so have to subtract 1 less than the length of 'release'\n    if key.sub(key, #key - 6) == 'release' then\n        print('Abra kadabra!')\n    end\nend)"
+    },
+    {
+      "code": "-- Add a text key handler that will react to all keys\nI.AnimationController.addTextKeyHandler('', function(groupname, key)\n    if key.sub(key, #key - 2) == 'hit' and not key.sub(key, #key - 7) == ' min hit' then\n        print('Hit!')\n    end\nend)"
+    },
+    {
+      "code": "-- Add a text key handler that will react to all keys\nI.AnimationController.addTextKeyHandler('', function(groupname, key)\n    if key.sub(key, #key - 2) == 'hit' and not key.sub(key, #key - 7) == ' min hit' then\n        print('Hit!')\n    end\nend)"
+    },
+    {
+      "code": "-- Make a handler that changes player attack speed based on current fatigue\nI.AnimationController.addPlayBlendedAnimationHandler(function (groupname, options)\n    local stop = options.stopkey\n    if #stop > 10 and stop.sub(stop, #stop - 10) == ' max attack' then\n        -- This is an attack wind up animation, scale its speed by attack \n        local fatigue = Actor.stats.dynamic.fatigue(self)\n        local factor = 1 - fatigue.current / fatigue.base\n        speed = 1 - factor * 0.8\n        options.speed = speed\n    end\nend)"
+    },
+    {
+      "code": "-- Make a handler that changes player attack speed based on current fatigue\nI.AnimationController.addPlayBlendedAnimationHandler(function (groupname, options)\n    local stop = options.stopkey\n    if #stop > 10 and stop.sub(stop, #stop - 10) == ' max attack' then\n        -- This is an attack wind up animation, scale its speed by attack \n        local fatigue = Actor.stats.dynamic.fatigue(self)\n        local factor = 1 - fatigue.current / fatigue.base\n        speed = 1 - factor * 0.8\n        options.speed = speed\n    end\nend)"
     },
     {
       "header": "TypeAnimationController",
-      "content": [
-        {
-          "code": "AnimationController"
-        },
-        {
-          "paragraph": "Add new playBlendedAnimation handler for this actor\nIfhandler(groupname, options)returns false, other handlers for\nthe call will be skipped."
-        },
-        {
-          "code": "handler(groupname, options)"
-        },
-        {
-          "paragraph": "Add new text key handler for this actor\nWhile playing, some animations emit text key events."
-        },
-        {
-          "paragraph": "Make this actor play an animation."
-        },
-        {
-          "paragraph": "Interface version"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "AnimationController"
+    },
+    {
+      "paragraph": "Add new playBlendedAnimation handler for this actor\nIfhandler(groupname, options)returns false, other handlers for\nthe call will be skipped."
+    },
+    {
+      "code": "handler(groupname, options)"
+    },
+    {
+      "paragraph": "Add new text key handler for this actor\nWhile playing, some animations emit text key events. Make this actor play an animation. Interface version"
     },
     {
       "header": "TypeAnimationController",
-      "content": [
-        {
-          "code": "AnimationController"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "AnimationController"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Add new playBlendedAnimation handler for this actor\nIfhandler(groupname, options)returns false, other handlers for\nthe call will be skipped."
-        },
-        {
-          "code": "handler(groupname, options)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Add new playBlendedAnimation handler for this actor\nIfhandler(groupname, options)returns false, other handlers for\nthe call will be skipped."
+    },
+    {
+      "code": "handler(groupname, options)"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#function handler: \nThe handler."
-        },
-        {
-          "code": "#function handler"
-        },
-        {
-          "paragraph": "Add new text key handler for this actor\nWhile playing, some animations emit text key events."
-        },
-        {
-          "paragraph": "Register a handle to listen for all\ntext key events associated with this actor's animations.\nIfhandler(groupname, key)returns false, other handlers for\nthe call will be skipped."
-        },
-        {
-          "code": "handler(groupname, key)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#function handler: \nThe handler."
+    },
+    {
+      "code": "#function handler"
+    },
+    {
+      "paragraph": "Add new text key handler for this actor\nWhile playing, some animations emit text key events. Register a handle to listen for all\ntext key events associated with this actor's animations.\nIfhandler(groupname, key)returns false, other handlers for\nthe call will be skipped."
+    },
+    {
+      "code": "handler(groupname, key)"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string groupname: \nName of the animation group to listen to keys for. If the empty string or nil, all keys will be received"
-        },
-        {
-          "code": "#string groupname"
-        },
-        {
-          "paragraph": "#function handler: \nThe handler."
-        },
-        {
-          "code": "#function handler"
-        },
-        {
-          "paragraph": "Make this actor play an animation."
-        },
-        {
-          "paragraph": "Makes a call toopenmw.animation#playBlended, after invoking handlers added through addPlayBlendedAnimationHandler"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string groupname: \nName of the animation group to listen to keys for. If the empty string or nil, all keys will be received"
+    },
+    {
+      "code": "#string groupname"
+    },
+    {
+      "paragraph": "#function handler: \nThe handler."
+    },
+    {
+      "code": "#function handler"
+    },
+    {
+      "paragraph": "Make this actor play an animation. Makes a call toopenmw.animation#playBlended, after invoking handlers added through addPlayBlendedAnimationHandler"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string groupname: \nThe animation group to be played"
-        },
-        {
-          "code": "#string groupname"
-        },
-        {
-          "paragraph": "#table options: \nThe table of play options that will be passed toopenmw.animation#playBlended"
-        },
-        {
-          "code": "#table options"
-        },
-        {
-          "paragraph": "Interface version"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string groupname: \nThe animation group to be played"
+    },
+    {
+      "code": "#string groupname"
+    },
+    {
+      "paragraph": "#table options: \nThe table of play options that will be passed toopenmw.animation#playBlended"
+    },
+    {
+      "code": "#table options"
+    },
+    {
+      "paragraph": "Interface version"
     },
     {
       "header": "TypePackage",
-      "content": [
-        {
-          "code": "Package"
-        },
-        {
-          "paragraph": "AnimationController Package"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Package"
+    },
+    {
+      "paragraph": "AnimationController Package \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

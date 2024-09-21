@@ -1,137 +1,113 @@
 {
   "title": "Built-in events\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "Actor events\uf0c1",
-      "content": [
-        {
-          "paragraph": "Died"
-        },
-        {
-          "paragraph": "This event is sent to an actor\u2019s local script when that actor dies."
-        },
-        {
-          "code": "eventHandlers={Died=function()print('Alas, ye hardly knew me!')end}"
-        },
-        {
-          "paragraph": "StartAIPackage, RemoveAIPackages"
-        },
-        {
-          "paragraph": "Any script can send to any actor (except player, for player will be ignored) eventsStartAIPackageandRemoveAIPackages.\nThe effect is equivalent to callinginterfaces.AI.startPackageorinterfaces.AI.removePackagesin a local script on this actor."
-        },
-        {
-          "code": "StartAIPackage"
-        },
-        {
-          "code": "RemoveAIPackages"
-        },
-        {
-          "code": "interfaces.AI.startPackage"
-        },
-        {
-          "code": "interfaces.AI.removePackages"
-        },
-        {
-          "paragraph": "Examples:"
-        },
-        {
-          "code": "actor:sendEvent('StartAIPackage',{type='Combat',target=self.object})actor:sendEvent('RemoveAIPackages','Pursue')"
-        },
-        {
-          "paragraph": "UseItem"
-        },
-        {
-          "paragraph": "Any script can send global eventUseItemwith argumentsobject,actor, and optional booleanforce.\nThe actor will use (e.g. equip or consume) the object. The object should be in the actor\u2019s inventory."
-        },
-        {
-          "code": "UseItem"
-        },
-        {
-          "code": "object"
-        },
-        {
-          "code": "actor"
-        },
-        {
-          "code": "force"
-        },
-        {
-          "paragraph": "Example:"
-        },
-        {
-          "code": "core.sendGlobalEvent('UseItem',{object=potion,actor=player,force=true})"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Died This event is sent to an actor\u2019s local script when that actor dies."
+    },
+    {
+      "code": "eventHandlers\n=\n{\nDied\n=\nfunction\n()\nprint\n(\n'Alas, ye hardly knew me!'\n)\nend\n}"
+    },
+    {
+      "paragraph": "StartAIPackage, RemoveAIPackages Any script can send to any actor (except player, for player will be ignored) eventsStartAIPackageandRemoveAIPackages.\nThe effect is equivalent to callinginterfaces.AI.startPackageorinterfaces.AI.removePackagesin a local script on this actor."
+    },
+    {
+      "code": "StartAIPackage"
+    },
+    {
+      "code": "RemoveAIPackages"
+    },
+    {
+      "code": "interfaces.AI.startPackage"
+    },
+    {
+      "code": "interfaces.AI.removePackages"
+    },
+    {
+      "paragraph": "Examples:"
+    },
+    {
+      "code": "actor\n:\nsendEvent\n(\n'StartAIPackage'\n,\n{\ntype\n=\n'Combat'\n,\ntarget\n=\nself\n.\nobject\n})\nactor\n:\nsendEvent\n(\n'RemoveAIPackages'\n,\n'Pursue'\n)"
+    },
+    {
+      "paragraph": "UseItem Any script can send global eventUseItemwith argumentsobject,actor, and optional booleanforce.\nThe actor will use (e.g. equip or consume) the object. The object should be in the actor\u2019s inventory."
+    },
+    {
+      "code": "UseItem"
+    },
+    {
+      "code": "object"
+    },
+    {
+      "code": "actor"
+    },
+    {
+      "code": "force"
+    },
+    {
+      "paragraph": "Example:"
+    },
+    {
+      "code": "core\n.\nsendGlobalEvent\n(\n'UseItem'\n,\n{\nobject\n=\npotion\n,\nactor\n=\nplayer\n,\nforce\n=\ntrue\n})"
     },
     {
       "header": "UI events\uf0c1",
-      "content": [
-        {
-          "paragraph": "UiModeChanged"
-        },
-        {
-          "paragraph": "Every time UI mode is changed built-in scripts send to player the eventUiModeChangedwith argumentsoldMode,``newMode(same asI.UI.getMode())\nandarg(for example in the modeBookthe argument is the book the player is reading)."
-        },
-        {
-          "code": "UiModeChanged"
-        },
-        {
-          "code": "oldMode,``newMode"
-        },
-        {
-          "code": "I.UI.getMode()"
-        },
-        {
-          "code": "arg"
-        },
-        {
-          "code": "Book"
-        },
-        {
-          "code": "eventHandlers={UiModeChanged=function(data)print('UiModeChanged from',data.oldMode,'to',data.newMode,'('..tostring(data.arg)..')')end}"
-        },
-        {
-          "paragraph": "AddUiMode"
-        },
-        {
-          "paragraph": "Equivalent toI.UI.addMode, but can be sent from another object or global script."
-        },
-        {
-          "code": "I.UI.addMode"
-        },
-        {
-          "code": "player:sendEvent('AddUiMode',{mode='Book',target=book})"
-        },
-        {
-          "paragraph": "SetUiMode"
-        },
-        {
-          "paragraph": "Equivalent toI.UI.setMode, but can be sent from another object or global script."
-        },
-        {
-          "code": "I.UI.setMode"
-        },
-        {
-          "code": "player:sendEvent('SetUiMode',{mode='Book',target=book})"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "UiModeChanged Every time UI mode is changed built-in scripts send to player the eventUiModeChangedwith argumentsoldMode,``newMode(same asI.UI.getMode())\nandarg(for example in the modeBookthe argument is the book the player is reading)."
+    },
+    {
+      "code": "UiModeChanged"
+    },
+    {
+      "code": "oldMode,\n``newMode"
+    },
+    {
+      "code": "I.UI.getMode()"
+    },
+    {
+      "code": "arg"
+    },
+    {
+      "code": "Book"
+    },
+    {
+      "code": "eventHandlers\n=\n{\nUiModeChanged\n=\nfunction\n(\ndata\n)\nprint\n(\n'UiModeChanged from'\n,\ndata\n.\noldMode\n,\n'to'\n,\ndata\n.\nnewMode\n,\n'('\n..\ntostring\n(\ndata\n.\narg\n)\n..\n')'\n)\nend\n}"
+    },
+    {
+      "paragraph": "AddUiMode Equivalent toI.UI.addMode, but can be sent from another object or global script."
+    },
+    {
+      "code": "I.UI.addMode"
+    },
+    {
+      "code": "player\n:\nsendEvent\n(\n'AddUiMode'\n,\n{\nmode\n=\n'Book'\n,\ntarget\n=\nbook\n})"
+    },
+    {
+      "paragraph": "SetUiMode Equivalent toI.UI.setMode, but can be sent from another object or global script."
+    },
+    {
+      "code": "I.UI.setMode"
+    },
+    {
+      "code": "player\n:\nsendEvent\n(\n'SetUiMode'\n,\n{\nmode\n=\n'Book'\n,\ntarget\n=\nbook\n})"
     },
     {
       "header": "World events\uf0c1",
-      "content": [
-        {
-          "paragraph": "Global events that just call the corresponding function inopenmw.world."
-        },
-        {
-          "code": "-- world.pause(tag)core.sendGlobalEvent('Pause',tag)-- world.unpause(tag)core.sendGlobalEvent('Unpause',tag)-- world.setGameTimeScale(scale)core.sendGlobalEvent('SetGameTimeScale',scale)-- world.setSimulationTimeScale(scale)core.sendGlobalEvent('SetSimulationTimeScale',scale)"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Global events that just call the corresponding function inopenmw.world."
+    },
+    {
+      "code": "-- world.pause(tag)\ncore\n.\nsendGlobalEvent\n(\n'Pause'\n,\ntag\n)\n-- world.unpause(tag)\ncore\n.\nsendGlobalEvent\n(\n'Unpause'\n,\ntag\n)\n-- world.setGameTimeScale(scale)\ncore\n.\nsendGlobalEvent\n(\n'SetGameTimeScale'\n,\nscale\n)\n-- world.setSimulationTimeScale(scale)\ncore\n.\nsendGlobalEvent\n(\n'SetSimulationTimeScale'\n,\nscale\n)"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

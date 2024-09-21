@@ -1,404 +1,296 @@
 {
   "title": "Package openmw.storage\uf0c1",
-  "sections": [
+  "content": [
     {
-      "header": "Usage:",
-      "content": [
-        {
-          "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:set(\"someVariable\", 1.0)\nmyModData:set(\"anotherVariable\", { exampleStr='abc', exampleBool=true })\nlocal async = require('openmw.async')\nmyModData:subscribe(async:callback(function(section, key)\n    if key then\n        print('Value is changed:', key, '=', myModData:get(key))\n    else\n        print('All values are changed')\n    end\nend))"
-        },
-        {
-          "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:set(\"someVariable\", 1.0)\nmyModData:set(\"anotherVariable\", { exampleStr='abc', exampleBool=true })\nlocal async = require('openmw.async')\nmyModData:subscribe(async:callback(function(section, key)\n    if key then\n        print('Value is changed:', key, '=', myModData:get(key))\n    else\n        print('All values are changed')\n    end\nend))"
-        }
-      ]
+      "paragraph": "openmw.storagecontains functions to work with permanent Lua storage."
     },
     {
-      "header": "Typestorage",
-      "content": [
-        {
-          "code": "storage"
-        },
-        {
-          "paragraph": "Possible#LifeTimevalues"
-        },
-        {
-          "paragraph": "Get all global sections as a table; can be used by global scripts only."
-        },
-        {
-          "paragraph": "Get all player sections as a table; can only be used by player and menu scripts."
-        },
-        {
-          "paragraph": "Get a section of the global storage; can be used by any script, but only global scripts can change values."
-        },
-        {
-          "paragraph": "Get a section of the player storage; can only be used by player and menu scripts."
-        }
-      ]
-    },
-    {
-      "header": "TypeLifeTime",
-      "content": [
-        {
-          "code": "LifeTime"
-        },
-        {
-          "paragraph": "\"1\" Data is stored for the whole game session"
-        },
-        {
-          "paragraph": "\"0\" Data is stored for the whole game session and remains on disk after quitting the game"
-        },
-        {
-          "paragraph": "\"2\" Data is stored until script context reset"
-        }
-      ]
-    },
-    {
-      "header": "TypeStorageSection",
-      "content": [
-        {
-          "code": "StorageSection"
-        },
-        {
-          "paragraph": "Copy all values and return them as a table."
-        },
-        {
-          "paragraph": "Get value by a string key; if value is a table makes it readonly."
-        },
-        {
-          "paragraph": "Get value by a string key; if value is a table returns a copy."
-        },
-        {
-          "paragraph": "(DEPRECATED, usesetLifeTime(openmw.storage.LIFE_TIME.Temporary)) Make the whole section temporary: will be removed on exit or when load a save."
-        },
-        {
-          "code": "setLifeTime(openmw.storage.LIFE_TIME.Temporary)"
-        },
-        {
-          "paragraph": "Remove all existing values and assign values from given (the arg is optional) table."
-        },
-        {
-          "paragraph": "Set value by a string key; can not be used for global storage from a local script."
-        },
-        {
-          "paragraph": "Set the life time of given storage section."
-        },
-        {
-          "paragraph": "Subscribe to changes in this section."
-        }
-      ]
-    },
-    {
-      "header": "Typestorage",
-      "content": [
-        {
-          "code": "storage"
-        }
-      ]
-    },
-    {
-      "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Possible#LifeTimevalues"
-        },
-        {
-          "paragraph": "Get all global sections as a table; can be used by global scripts only."
-        },
-        {
-          "paragraph": "Note that adding/removing items to the returned table doesn't create or remove sections."
-        }
-      ]
-    },
-    {
-      "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#table:"
-        },
-        {
-          "paragraph": "Get all player sections as a table; can only be used by player and menu scripts."
-        },
-        {
-          "paragraph": "Note that adding/removing items to the returned table doesn't create or remove sections."
-        }
-      ]
-    },
-    {
-      "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#table:"
-        },
-        {
-          "paragraph": "Get a section of the global storage; can be used by any script, but only global scripts can change values."
-        },
-        {
-          "paragraph": "Menu scripts can only access it when a game is running.\nCreates the section if it doesn't exist."
-        }
-      ]
-    },
-    {
-      "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string sectionName:"
-        },
-        {
-          "code": "#string sectionName"
-        }
-      ]
-    },
-    {
-      "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#StorageSection:"
-        },
-        {
-          "paragraph": "Get a section of the player storage; can only be used by player and menu scripts."
-        },
-        {
-          "paragraph": "Creates the section if it doesn't exist."
-        }
-      ]
-    },
-    {
-      "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string sectionName:"
-        },
-        {
-          "code": "#string sectionName"
-        }
-      ]
-    },
-    {
-      "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#StorageSection:"
-        }
-      ]
-    },
-    {
-      "header": "TypeLifeTime",
-      "content": [
-        {
-          "code": "LifeTime"
-        },
-        {
-          "paragraph": "storage.LIFE_TIME"
-        },
-        {
-          "code": "storage.LIFE_TIME"
-        }
-      ]
-    },
-    {
-      "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "\"1\" Data is stored for the whole game session"
-        },
-        {
-          "paragraph": "\"0\" Data is stored for the whole game session and remains on disk after quitting the game"
-        },
-        {
-          "paragraph": "\"2\" Data is stored until script context reset"
-        }
-      ]
-    },
-    {
-      "header": "TypeStorageSection",
-      "content": [
-        {
-          "code": "StorageSection"
-        },
-        {
-          "paragraph": "A mapkey -> valuethat represents a storage section."
-        },
-        {
-          "code": "key -> value"
-        }
-      ]
-    },
-    {
-      "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Copy all values and return them as a table."
-        }
-      ]
-    },
-    {
-      "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#table:"
-        },
-        {
-          "paragraph": "Get value by a string key; if value is a table makes it readonly."
-        }
-      ]
-    },
-    {
-      "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        }
-      ]
-    },
-    {
-      "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#any:"
-        },
-        {
-          "paragraph": "Get value by a string key; if value is a table returns a copy."
-        }
-      ]
-    },
-    {
-      "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        }
-      ]
-    },
-    {
-      "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#any:"
-        },
-        {
-          "paragraph": "(DEPRECATED, usesetLifeTime(openmw.storage.LIFE_TIME.Temporary)) Make the whole section temporary: will be removed on exit or when load a save."
-        },
-        {
-          "code": "setLifeTime(openmw.storage.LIFE_TIME.Temporary)"
-        },
-        {
-          "paragraph": "Temporary sections have the same interface to get/set values, the only difference is they will not\nbe saved to the permanent storage on exit.\nThis function can be used for a global storage section from a global script or for a player storage section from a player or menu script."
-        }
-      ]
+      "code": "openmw.storage"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:removeOnExit()"
-        },
-        {
-          "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:removeOnExit()"
-        },
-        {
-          "paragraph": "Remove all existing values and assign values from given (the arg is optional) table."
-        },
-        {
-          "paragraph": "This function can not be used for a global storage section from a local script.\nNote:section:reset()removes the section."
-        },
-        {
-          "code": "section:reset()"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:set(\"someVariable\", 1.0)\nmyModData:set(\"anotherVariable\", { exampleStr='abc', exampleBool=true })\nlocal async = require('openmw.async')\nmyModData:subscribe(async:callback(function(section, key)\n    if key then\n        print('Value is changed:', key, '=', myModData:get(key))\n    else\n        print('All values are changed')\n    end\nend))"
+    },
+    {
+      "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:set(\"someVariable\", 1.0)\nmyModData:set(\"anotherVariable\", { exampleStr='abc', exampleBool=true })\nlocal async = require('openmw.async')\nmyModData:subscribe(async:callback(function(section, key)\n    if key then\n        print('Value is changed:', key, '=', myModData:get(key))\n    else\n        print('All values are changed')\n    end\nend))"
+    },
+    {
+      "header": "Typestorage",
+      "content": []
+    },
+    {
+      "code": "storage"
+    },
+    {
+      "paragraph": "Possible#LifeTimevalues Get all global sections as a table; can be used by global scripts only. Get all player sections as a table; can only be used by player and menu scripts. Get a section of the global storage; can be used by any script, but only global scripts can change values. Get a section of the player storage; can only be used by player and menu scripts."
+    },
+    {
+      "header": "TypeLifeTime",
+      "content": []
+    },
+    {
+      "code": "LifeTime"
+    },
+    {
+      "paragraph": "\"1\" Data is stored for the whole game session \"0\" Data is stored for the whole game session and remains on disk after quitting the game \"2\" Data is stored until script context reset"
+    },
+    {
+      "header": "TypeStorageSection",
+      "content": []
+    },
+    {
+      "code": "StorageSection"
+    },
+    {
+      "paragraph": "Copy all values and return them as a table. Get value by a string key; if value is a table makes it readonly. Get value by a string key; if value is a table returns a copy. (DEPRECATED, usesetLifeTime(openmw.storage.LIFE_TIME.Temporary)) Make the whole section temporary: will be removed on exit or when load a save."
+    },
+    {
+      "code": "setLifeTime(openmw.storage.LIFE_TIME.Temporary)"
+    },
+    {
+      "paragraph": "Remove all existing values and assign values from given (the arg is optional) table. Set value by a string key; can not be used for global storage from a local script. Set the life time of given storage section. Subscribe to changes in this section."
+    },
+    {
+      "header": "Typestorage",
+      "content": []
+    },
+    {
+      "code": "storage"
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "paragraph": "Possible#LifeTimevalues Get all global sections as a table; can be used by global scripts only. Note that adding/removing items to the returned table doesn't create or remove sections."
+    },
+    {
+      "header": "Return value",
+      "content": []
+    },
+    {
+      "paragraph": "#table: Get all player sections as a table; can only be used by player and menu scripts. Note that adding/removing items to the returned table doesn't create or remove sections."
+    },
+    {
+      "header": "Return value",
+      "content": []
+    },
+    {
+      "paragraph": "#table: Get a section of the global storage; can be used by any script, but only global scripts can change values. Menu scripts can only access it when a game is running.\nCreates the section if it doesn't exist."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#table values: \n(optional) New values"
-        },
-        {
-          "code": "#table values"
-        },
-        {
-          "paragraph": "Set value by a string key; can not be used for global storage from a local script."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string sectionName:"
+    },
+    {
+      "code": "#string sectionName"
+    },
+    {
+      "header": "Return value",
+      "content": []
+    },
+    {
+      "paragraph": "#StorageSection: Get a section of the player storage; can only be used by player and menu scripts. Creates the section if it doesn't exist."
+    },
+    {
+      "header": "Parameter",
+      "content": []
+    },
+    {
+      "paragraph": "#string sectionName:"
+    },
+    {
+      "code": "#string sectionName"
+    },
+    {
+      "header": "Return value",
+      "content": []
+    },
+    {
+      "paragraph": "#StorageSection:"
+    },
+    {
+      "header": "TypeLifeTime",
+      "content": []
+    },
+    {
+      "code": "LifeTime"
+    },
+    {
+      "paragraph": "storage.LIFE_TIME"
+    },
+    {
+      "code": "storage.LIFE_TIME"
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "paragraph": "\"1\" Data is stored for the whole game session \"0\" Data is stored for the whole game session and remains on disk after quitting the game \"2\" Data is stored until script context reset"
+    },
+    {
+      "header": "TypeStorageSection",
+      "content": []
+    },
+    {
+      "code": "StorageSection"
+    },
+    {
+      "paragraph": "A mapkey -> valuethat represents a storage section."
+    },
+    {
+      "code": "key -> value"
+    },
+    {
+      "header": "Field(s)",
+      "content": []
+    },
+    {
+      "paragraph": "Copy all values and return them as a table."
+    },
+    {
+      "header": "Return value",
+      "content": []
+    },
+    {
+      "paragraph": "#table: Get value by a string key; if value is a table makes it readonly."
+    },
+    {
+      "header": "Parameter",
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
+    },
+    {
+      "header": "Return value",
+      "content": []
+    },
+    {
+      "paragraph": "#any: Get value by a string key; if value is a table returns a copy."
+    },
+    {
+      "header": "Parameter",
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
+    },
+    {
+      "header": "Return value",
+      "content": []
+    },
+    {
+      "paragraph": "#any: (DEPRECATED, usesetLifeTime(openmw.storage.LIFE_TIME.Temporary)) Make the whole section temporary: will be removed on exit or when load a save."
+    },
+    {
+      "code": "setLifeTime(openmw.storage.LIFE_TIME.Temporary)"
+    },
+    {
+      "paragraph": "Temporary sections have the same interface to get/set values, the only difference is they will not\nbe saved to the permanent storage on exit.\nThis function can be used for a global storage section from a global script or for a player storage section from a player or menu script."
+    },
+    {
+      "header": "Usage:",
+      "content": []
+    },
+    {
+      "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:removeOnExit()"
+    },
+    {
+      "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:removeOnExit()"
+    },
+    {
+      "paragraph": "Remove all existing values and assign values from given (the arg is optional) table. This function can not be used for a global storage section from a local script.\nNote:section:reset()removes the section."
+    },
+    {
+      "code": "section:reset()"
+    },
+    {
+      "header": "Parameter",
+      "content": []
+    },
+    {
+      "paragraph": "#table values: \n(optional) New values"
+    },
+    {
+      "code": "#table values"
+    },
+    {
+      "paragraph": "Set value by a string key; can not be used for global storage from a local script."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        },
-        {
-          "paragraph": "#any value:"
-        },
-        {
-          "code": "#any value"
-        },
-        {
-          "paragraph": "Set the life time of given storage section."
-        },
-        {
-          "paragraph": "New sections initially have a Persistent life time.\nThis function can be used for a global storage section from a global script or for a player storage section from a player or menu script."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
+    },
+    {
+      "paragraph": "#any value:"
+    },
+    {
+      "code": "#any value"
+    },
+    {
+      "paragraph": "Set the life time of given storage section. New sections initially have a Persistent life time.\nThis function can be used for a global storage section from a global script or for a player storage section from a player or menu script."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#LifeTimelifeTime: \nSection life time"
-        },
-        {
-          "code": "#LifeTimelifeTime"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#LifeTimelifeTime: \nSection life time"
+    },
+    {
+      "code": "#LifeTime\nlifeTime"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:setLifeTime(storage.LIFE_TIME.Temporary)"
-        },
-        {
-          "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:setLifeTime(storage.LIFE_TIME.Temporary)"
-        },
-        {
-          "paragraph": "Subscribe to changes in this section."
-        },
-        {
-          "paragraph": "First argument of the callback is the name of the section (so one callback can be used for different sections).\nThe second argument is the changed key (ornilifresetwas used and all values were changed at the same time)"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "code": "reset"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:setLifeTime(storage.LIFE_TIME.Temporary)"
+    },
+    {
+      "code": "local storage = require('openmw.storage')\nlocal myModData = storage.globalSection('MyModExample')\nmyModData:setLifeTime(storage.LIFE_TIME.Temporary)"
+    },
+    {
+      "paragraph": "Subscribe to changes in this section. First argument of the callback is the name of the section (so one callback can be used for different sections).\nThe second argument is the changed key (ornilifresetwas used and all values were changed at the same time)"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "code": "reset"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "openmw.async#Callbackcallback:"
-        },
-        {
-          "code": "openmw.async#Callbackcallback"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.async#Callbackcallback:"
+    },
+    {
+      "code": "openmw.async#Callback\ncallback"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

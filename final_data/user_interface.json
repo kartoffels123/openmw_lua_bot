@@ -1,84 +1,40 @@
 {
   "title": "User interface reference\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "Layouts\uf0c1",
-      "content": [
-        {
-          "paragraph": "Every widget is defined by a layout, which is a Lua table with the following fields (all of them are optional):"
-        },
-        {
-          "paragraph": "type: One of the available widget types fromopenmw.ui.TYPE."
-        },
-        {
-          "paragraph": "content: a Content (openmw.ui.content), which contains layouts for the children of this widget."
-        },
-        {
-          "paragraph": "layer: only applies for the root widget. (Windows, HUD, etc)"
-        },
-        {
-          "paragraph": "template: a Lua table which pre-defines a layout for this widget. See Templates below for more details."
-        },
-        {
-          "paragraph": "external: similar to properties, but they affect how other widgets interact with this one. See the widget pages for details."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Every widget is defined by a layout, which is a Lua table with the following fields (all of them are optional): type: One of the available widget types fromopenmw.ui.TYPE. content: a Content (openmw.ui.content), which contains layouts for the children of this widget. layer: only applies for the root widget. (Windows, HUD, etc) template: a Lua table which pre-defines a layout for this widget. See Templates below for more details. external: similar to properties, but they affect how other widgets interact with this one. See the widget pages for details."
     },
     {
       "header": "Layers\uf0c1",
-      "content": [
-        {
-          "paragraph": "Layers control how widgets overlap - layers with higher indexes render over layers with lower indexes.\nWidgets within the same layer which were added later overlap the ones created earlier.\nA layer can also be set as non-interactive, which prevents all mouse interactions with the widgets in that layer."
-        },
-        {
-          "paragraph": "Pre-defined OpenMW layers:"
-        },
-        {
-          "paragraph": "HUDinteractive"
-        },
-        {
-          "paragraph": "Windowsinteractive"
-        },
-        {
-          "paragraph": "Notificationnon-interactive"
-        },
-        {
-          "paragraph": "MessageBoxinteractive"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Layers control how widgets overlap - layers with higher indexes render over layers with lower indexes.\nWidgets within the same layer which were added later overlap the ones created earlier.\nA layer can also be set as non-interactive, which prevents all mouse interactions with the widgets in that layer. Pre-defined OpenMW layers: HUDinteractive Windowsinteractive Notificationnon-interactive MessageBoxinteractive"
     },
     {
       "header": "Elements\uf0c1",
-      "content": [
-        {
-          "paragraph": "Element is the root widget of a layout.\nIt is an independent part of the UI, connected only to a specific layer, but not any other layouts.\nCreating or destroying an element also creates/destroys all of its children."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Element is the root widget of a layout.\nIt is an independent part of the UI, connected only to a specific layer, but not any other layouts.\nCreating or destroying an element also creates/destroys all of its children."
     },
     {
       "header": "Content\uf0c1",
-      "content": [
-        {
-          "paragraph": "A container holding all the widget\u2019s children. It has a few important differences from a Lua table:"
-        },
-        {
-          "paragraph": "All the keys are integers, i. e. it is an \u201carray\u201d"
-        },
-        {
-          "paragraph": "Holes are not allowed. At any point all keys from1to the highestnmust contain a value."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "A container holding all the widget\u2019s children. It has a few important differences from a Lua table: All the keys are integers, i. e. it is an \u201carray\u201d Holes are not allowed. At any point all keys from1to the highestnmust contain a value."
     },
     {
       "header": "Templates\uf0c1",
-      "content": [
-        {
-          "paragraph": "Templates are Lua tables with the following (optional) fields:"
-        },
-        {
-          "paragraph": "props: Same as in layouts, defines the behaviour of this widget. Can be overwritten bypropsvalues in the layout."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Templates are Lua tables with the following (optional) fields: props: Same as in layouts, defines the behaviour of this widget. Can be overwritten bypropsvalues in the layout."
     },
     {
       "header": "Events\uf0c1",
@@ -90,26 +46,22 @@
     },
     {
       "header": "Example\uf0c1",
-      "content": [
-        {
-          "paragraph": "scripts/clock.lua"
-        },
-        {
-          "code": "localui=require('openmw.ui')localutil=require('openmw.util')localcalendar=require('openmw_aux.calendar')localtime=require('openmw_aux.time')localelement=ui.create{-- important not to forget the layer-- by default widgets are not attached to any layer and are not visiblelayer='HUD',type=ui.TYPE.Text,props={-- position in the top right cornerrelativePosition=util.vector2(1,0),-- position is for the top left corner of the widget by default-- change it to align exactly to the top right corner of the screenanchor=util.vector2(1,0),text=calendar.formatGameTime('%H:%M'),textSize=24,-- default black text color isn't always visibletextColor=util.color.rgb(0,1,0),},}localfunctionupdateTime()-- formatGameTime uses current time by default-- otherwise we could get it by calling `core.getGameTime()`element.layout.props.text=calendar.formatGameTime('%H:%M')-- the layout changes won't affect the widget unless we request an updateelement:update()end-- we are showing game time in hours and minutes-- so no need to update more often than once a game minutetime.runRepeatedly(updateTime,1*time.minute,{type=time.GameTime})"
-        },
-        {
-          "paragraph": "clock.omwscripts"
-        },
-        {
-          "code": "PLAYER:scripts/clock.lua"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "scripts/clock.lua"
+    },
+    {
+      "code": "local\nui\n=\nrequire\n(\n'openmw.ui'\n)\nlocal\nutil\n=\nrequire\n(\n'openmw.util'\n)\nlocal\ncalendar\n=\nrequire\n(\n'openmw_aux.calendar'\n)\nlocal\ntime\n=\nrequire\n(\n'openmw_aux.time'\n)\nlocal\nelement\n=\nui\n.\ncreate\n{\n-- important not to forget the layer\n-- by default widgets are not attached to any layer and are not visible\nlayer\n=\n'HUD'\n,\ntype\n=\nui\n.\nTYPE\n.\nText\n,\nprops\n=\n{\n-- position in the top right corner\nrelativePosition\n=\nutil\n.\nvector2\n(\n1\n,\n0\n),\n-- position is for the top left corner of the widget by default\n-- change it to align exactly to the top right corner of the screen\nanchor\n=\nutil\n.\nvector2\n(\n1\n,\n0\n),\ntext\n=\ncalendar\n.\nformatGameTime\n(\n'%H:%M'\n),\ntextSize\n=\n24\n,\n-- default black text color isn't always visible\ntextColor\n=\nutil\n.\ncolor\n.\nrgb\n(\n0\n,\n1\n,\n0\n),\n},\n}\nlocal\nfunction\nupdateTime\n()\n-- formatGameTime uses current time by default\n-- otherwise we could get it by calling `core.getGameTime()`\nelement\n.\nlayout\n.\nprops\n.\ntext\n=\ncalendar\n.\nformatGameTime\n(\n'%H:%M'\n)\n-- the layout changes won't affect the widget unless we request an update\nelement\n:\nupdate\n()\nend\n-- we are showing game time in hours and minutes\n-- so no need to update more often than once a game minute\ntime\n.\nrunRepeatedly\n(\nupdateTime\n,\n1\n*\ntime\n.\nminute\n,\n{\ntype\n=\ntime\n.\nGameTime\n})"
+    },
+    {
+      "paragraph": "clock.omwscripts"
+    },
+    {
+      "code": "PLAYER\n:\nscripts\n/\nclock\n.\nlua"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

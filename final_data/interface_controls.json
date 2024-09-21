@@ -1,112 +1,84 @@
 {
   "title": "Interface Controls\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "require('openmw.interfaces').Controls"
-        },
-        {
-          "code": "require('openmw.interfaces').Controls"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "require('openmw.interfaces').Controls"
+    },
+    {
+      "code": "require('openmw.interfaces').Controls"
     },
     {
       "header": "TypeControls",
-      "content": [
-        {
-          "code": "Controls"
-        },
-        {
-          "paragraph": "When set to true then the controls \"attack\", \"toggle spell\", \"toggle weapon\" are not processed and can be handled by another script."
-        },
-        {
-          "paragraph": "When set to true then the movement controls including jump and sneak are not processed and can be handled by another script."
-        },
-        {
-          "paragraph": "When set to true then the controls \"open inventory\", \"open journal\" and so on are not processed and can be handled by another script."
-        },
-        {
-          "paragraph": "Interface version"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Controls"
+    },
+    {
+      "paragraph": "When set to true then the controls \"attack\", \"toggle spell\", \"toggle weapon\" are not processed and can be handled by another script. When set to true then the movement controls including jump and sneak are not processed and can be handled by another script. When set to true then the controls \"open inventory\", \"open journal\" and so on are not processed and can be handled by another script. Interface version"
     },
     {
       "header": "TypeControls",
-      "content": [
-        {
-          "code": "Controls"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Controls"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "When set to true then the controls \"attack\", \"toggle spell\", \"toggle weapon\" are not processed and can be handled by another script."
-        },
-        {
-          "paragraph": "If combat should be disallowed completely, consider to usetypes.Player.setControlSwitchinstead."
-        },
-        {
-          "code": "types.Player.setControlSwitch"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "When set to true then the controls \"attack\", \"toggle spell\", \"toggle weapon\" are not processed and can be handled by another script. If combat should be disallowed completely, consider to usetypes.Player.setControlSwitchinstead."
+    },
+    {
+      "code": "types.Player.setControlSwitch"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#boolean value:"
-        },
-        {
-          "code": "#boolean value"
-        },
-        {
-          "paragraph": "When set to true then the movement controls including jump and sneak are not processed and can be handled by another script."
-        },
-        {
-          "paragraph": "If movement should be disallowed completely, consider to usetypes.Player.setControlSwitchinstead."
-        },
-        {
-          "code": "types.Player.setControlSwitch"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean value:"
+    },
+    {
+      "code": "#boolean value"
+    },
+    {
+      "paragraph": "When set to true then the movement controls including jump and sneak are not processed and can be handled by another script. If movement should be disallowed completely, consider to usetypes.Player.setControlSwitchinstead."
+    },
+    {
+      "code": "types.Player.setControlSwitch"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#boolean value:"
-        },
-        {
-          "code": "#boolean value"
-        },
-        {
-          "paragraph": "When set to true then the controls \"open inventory\", \"open journal\" and so on are not processed and can be handled by another script."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean value:"
+    },
+    {
+      "code": "#boolean value"
+    },
+    {
+      "paragraph": "When set to true then the controls \"open inventory\", \"open journal\" and so on are not processed and can be handled by another script."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#boolean value:"
-        },
-        {
-          "code": "#boolean value"
-        },
-        {
-          "paragraph": "Interface version"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean value:"
+    },
+    {
+      "code": "#boolean value"
+    },
+    {
+      "paragraph": "Interface version \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

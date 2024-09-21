@@ -1,110 +1,86 @@
 {
   "title": "Interface Activation\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "require('openmw.interfaces').Activation"
-        },
-        {
-          "code": "require('openmw.interfaces').Activation"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "require('openmw.interfaces').Activation"
+    },
+    {
+      "code": "require('openmw.interfaces').Activation"
     },
     {
       "header": "TypeActivation",
-      "content": [
-        {
-          "code": "Activation"
-        },
-        {
-          "paragraph": "Add new activation handler for a specific object."
-        },
-        {
-          "paragraph": "Add new activation handler for a type of objects."
-        },
-        {
-          "paragraph": "Interface version"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Activation"
+    },
+    {
+      "paragraph": "Add new activation handler for a specific object. Add new activation handler for a type of objects. Interface version"
     },
     {
       "header": "TypeActivation",
-      "content": [
-        {
-          "code": "Activation"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Activation"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Add new activation handler for a specific object."
-        },
-        {
-          "paragraph": "Ifhandler(object, actor)returns false, other handlers for\nthe same object (including type handlers) will be skipped."
-        },
-        {
-          "code": "handler(object, actor)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Add new activation handler for a specific object. Ifhandler(object, actor)returns false, other handlers for\nthe same object (including type handlers) will be skipped."
+    },
+    {
+      "code": "handler(object, actor)"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectobj: \nThe object."
-        },
-        {
-          "code": "openmw.core#GameObjectobj"
-        },
-        {
-          "paragraph": "#function handler: \nThe handler."
-        },
-        {
-          "code": "#function handler"
-        },
-        {
-          "paragraph": "Add new activation handler for a type of objects."
-        },
-        {
-          "paragraph": "Ifhandler(object, actor)returns false, other handlers for\nthe same object (including type handlers) will be skipped."
-        },
-        {
-          "code": "handler(object, actor)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectobj: \nThe object."
+    },
+    {
+      "code": "openmw.core#GameObject\nobj"
+    },
+    {
+      "paragraph": "#function handler: \nThe handler."
+    },
+    {
+      "code": "#function handler"
+    },
+    {
+      "paragraph": "Add new activation handler for a type of objects. Ifhandler(object, actor)returns false, other handlers for\nthe same object (including type handlers) will be skipped."
+    },
+    {
+      "code": "handler(object, actor)"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#any type: \nA type from theopenmw.typespackage."
-        },
-        {
-          "code": "#any type"
-        },
-        {
-          "code": "openmw.types"
-        },
-        {
-          "paragraph": "#function handler: \nThe handler."
-        },
-        {
-          "code": "#function handler"
-        },
-        {
-          "paragraph": "Interface version"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#any type: \nA type from theopenmw.typespackage."
+    },
+    {
+      "code": "#any type"
+    },
+    {
+      "code": "openmw.types"
+    },
+    {
+      "paragraph": "#function handler: \nThe handler."
+    },
+    {
+      "code": "#function handler"
+    },
+    {
+      "paragraph": "Interface version \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

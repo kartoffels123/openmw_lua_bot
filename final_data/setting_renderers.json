@@ -1,284 +1,47 @@
 {
   "title": "Built-in Setting Renderers\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "textLine\uf0c1",
-      "content": [
-        {
-          "paragraph": "Single line text input"
-        },
-        {
-          "paragraph": "Argument"
-        },
-        {
-          "paragraph": "Table with the following optional fields:"
-        },
-        {
-          "paragraph": "name"
-        },
-        {
-          "paragraph": "type (default)"
-        },
-        {
-          "paragraph": "description"
-        },
-        {
-          "paragraph": "disabled"
-        },
-        {
-          "paragraph": "bool (false)"
-        },
-        {
-          "paragraph": "Disables changing the setting from the UI"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Single line text input Argument Table with the following optional fields: name type (default) description disabled bool (false) Disables changing the setting from the UI"
     },
     {
       "header": "checkbox\uf0c1",
-      "content": [
-        {
-          "paragraph": "True / false (yes/no) toggle"
-        },
-        {
-          "paragraph": "Argument"
-        },
-        {
-          "paragraph": "Table with the following optional fields:"
-        },
-        {
-          "paragraph": "name"
-        },
-        {
-          "paragraph": "type (default)"
-        },
-        {
-          "paragraph": "description"
-        },
-        {
-          "paragraph": "disabled"
-        },
-        {
-          "paragraph": "bool (false)"
-        },
-        {
-          "paragraph": "Disables changing the setting from the UI"
-        },
-        {
-          "paragraph": "l10n"
-        },
-        {
-          "paragraph": "string (\u2018Interface\u2019)"
-        },
-        {
-          "paragraph": "Localization context with display values for the true/false values"
-        },
-        {
-          "paragraph": "trueLabel"
-        },
-        {
-          "paragraph": "string (\u2018Yes\u2019)"
-        },
-        {
-          "paragraph": "Localization key to display for the true value"
-        },
-        {
-          "paragraph": "falseLabel"
-        },
-        {
-          "paragraph": "string (\u2018No\u2019)"
-        },
-        {
-          "paragraph": "Localization key to display for the false value"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "True / false (yes/no) toggle Argument Table with the following optional fields: name type (default) description disabled bool (false) Disables changing the setting from the UI l10n string (\u2018Interface\u2019) Localization context with display values for the true/false values trueLabel string (\u2018Yes\u2019) Localization key to display for the true value falseLabel string (\u2018No\u2019) Localization key to display for the false value"
     },
     {
       "header": "number\uf0c1",
-      "content": [
-        {
-          "paragraph": "Numeric input"
-        },
-        {
-          "paragraph": "Argument"
-        },
-        {
-          "paragraph": "Table with the following optional fields:"
-        },
-        {
-          "paragraph": "name"
-        },
-        {
-          "paragraph": "type (default)"
-        },
-        {
-          "paragraph": "description"
-        },
-        {
-          "paragraph": "disabled"
-        },
-        {
-          "paragraph": "bool (false)"
-        },
-        {
-          "paragraph": "Disables changing the setting from the UI"
-        },
-        {
-          "paragraph": "integer"
-        },
-        {
-          "paragraph": "bool (false)"
-        },
-        {
-          "paragraph": "Only allow integer values"
-        },
-        {
-          "paragraph": "min"
-        },
-        {
-          "paragraph": "number (nil)"
-        },
-        {
-          "paragraph": "If set, restricts setting values to numbers larger than min"
-        },
-        {
-          "paragraph": "max"
-        },
-        {
-          "paragraph": "number (nil)"
-        },
-        {
-          "paragraph": "If set, restricts setting values to numbers smaller than max"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Numeric input Argument Table with the following optional fields: name type (default) description disabled bool (false) Disables changing the setting from the UI integer bool (false) Only allow integer values min number (nil) If set, restricts setting values to numbers larger than min max number (nil) If set, restricts setting values to numbers smaller than max"
     },
     {
       "header": "select\uf0c1",
-      "content": [
-        {
-          "paragraph": "A small selection box with two next / previous arrows on the sides"
-        },
-        {
-          "paragraph": "Argument"
-        },
-        {
-          "paragraph": "Table with the following optional fields:"
-        },
-        {
-          "paragraph": "name"
-        },
-        {
-          "paragraph": "type (default)"
-        },
-        {
-          "paragraph": "description"
-        },
-        {
-          "paragraph": "disabled"
-        },
-        {
-          "paragraph": "bool (false)"
-        },
-        {
-          "paragraph": "Disables changing the setting from the UI"
-        },
-        {
-          "paragraph": "l10n"
-        },
-        {
-          "paragraph": "string (required)"
-        },
-        {
-          "paragraph": "Localization context with display values for items"
-        },
-        {
-          "paragraph": "items"
-        },
-        {
-          "paragraph": "#list<string> ({})"
-        },
-        {
-          "paragraph": "List of options to choose from, all the viable values of the setting"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "A small selection box with two next / previous arrows on the sides Argument Table with the following optional fields: name type (default) description disabled bool (false) Disables changing the setting from the UI l10n string (required) Localization context with display values for items items #list<string> ({}) List of options to choose from, all the viable values of the setting"
     },
     {
       "header": "color\uf0c1",
-      "content": [
-        {
-          "paragraph": "Hex-code color input with a preview"
-        },
-        {
-          "paragraph": "Argument"
-        },
-        {
-          "paragraph": "Table with the following optional fields:"
-        },
-        {
-          "paragraph": "name"
-        },
-        {
-          "paragraph": "type (default)"
-        },
-        {
-          "paragraph": "description"
-        },
-        {
-          "paragraph": "disabled"
-        },
-        {
-          "paragraph": "bool (false)"
-        },
-        {
-          "paragraph": "Disables changing the setting from the UI"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Hex-code color input with a preview Argument Table with the following optional fields: name type (default) description disabled bool (false) Disables changing the setting from the UI"
     },
     {
       "header": "inputBinding\uf0c1",
-      "content": [
-        {
-          "paragraph": "Allows the user to bind inputs to an action or trigger"
-        },
-        {
-          "paragraph": "Argument"
-        },
-        {
-          "paragraph": "Table with the following fields:"
-        },
-        {
-          "paragraph": "name"
-        },
-        {
-          "paragraph": "type (default)"
-        },
-        {
-          "paragraph": "description"
-        },
-        {
-          "paragraph": "key"
-        },
-        {
-          "paragraph": "#string"
-        },
-        {
-          "paragraph": "Key of the action or trigger to which the input is bound"
-        },
-        {
-          "paragraph": "type"
-        },
-        {
-          "paragraph": "\u2018action\u2019, \u2018trigger\u2019"
-        },
-        {
-          "paragraph": "Type of the key"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Allows the user to bind inputs to an action or trigger Argument Table with the following fields: name type (default) description key #string Key of the action or trigger to which the input is bound type \u2018action\u2019, \u2018trigger\u2019 Type of the key \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

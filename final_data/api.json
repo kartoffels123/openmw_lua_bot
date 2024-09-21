@@ -1,4 +1,23 @@
 {
   "title": "Lua API reference\uf0c1",
-  "sections": []
+  "content": [
+    {
+      "paragraph": "Engine handlers reference User interface reference Game object reference Cell reference Built-in AI packages Built-in events API packages API packages provide functions that can be called by scripts. I.e. it is a script-to-engine interaction.\nA package can be loaded withrequire('<packagename>').\nIt can not be overloaded even if there is a lua file with the same name.\nThe list of available packages is different for global and for local scripts.\nPlayer scripts are local scripts that are attached to a player."
+    },
+    {
+      "code": "require('<package\nname>')"
+    },
+    {
+      "paragraph": "Package Can be used Description openmw.interfaces everywhere openmw.util everywhere openmw.storage everywhere openmw.core everywhere openmw.types everywhere openmw.animation everywhere openmw.async everywhere openmw.vfs everywhere openmw.markup everywhere openmw.world by global scripts openmw.self by local scripts openmw.nearby by local scripts openmw.ambient by player scripts openmw.input by player scripts openmw.ui by player scripts openmw.menu by menu scripts openmw.camera by player scripts openmw.postprocessing by player scripts openmw.debug by player scripts openmw_aux openmw_aux.*are built-in libraries that are itself implemented in Lua. They can not do anything that is not possible with the basic API, they only make it more convenient.\nSources can be found inresources/vfs/openmw_aux. In theory mods can override them, but it is not recommended."
+    },
+    {
+      "code": "openmw_aux.*"
+    },
+    {
+      "code": "resources/vfs/openmw_aux"
+    },
+    {
+      "paragraph": "Built-in library Can be used Description openmw_aux.calendar everywhere openmw_aux.util everywhere openmw_aux.time everywhere openmw_aux.ui by player scripts Interfaces of built-in scripts Interface Can be used Description Activation by global scripts Allows to extend or override built-in activation mechanics. AI by local scripts Control basic AI of NPCs and creatures. AnimationController by local scripts Control animations of NPCs and creatures. Camera by player scripts Controls by player scripts Controls by player scripts ItemUsage by global scripts SkillProgression by local scripts Settings by player and global scripts Save, display and track changes of setting values. MWUI by player scripts Morrowind-style UI templates. UI by player scripts \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+    }
+  ]
 }

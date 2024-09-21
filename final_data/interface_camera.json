@@ -1,348 +1,238 @@
 {
   "title": "Interface Camera\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "require('openmw.interfaces').Camera"
-        },
-        {
-          "code": "require('openmw.interfaces').Camera"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "require('openmw.interfaces').Camera"
+    },
+    {
+      "code": "require('openmw.interfaces').Camera"
     },
     {
       "header": "TypeCamera",
-      "content": [
-        {
-          "code": "Camera"
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        },
-        {
-          "paragraph": "Undo disableHeadBobbing"
-        },
-        {
-          "paragraph": "Undo disableModeControl"
-        },
-        {
-          "paragraph": "Undo disableStandingPreview"
-        },
-        {
-          "paragraph": "Undo disableThirdPersonOffsetControl"
-        },
-        {
-          "paragraph": "Undo disableZoom"
-        },
-        {
-          "paragraph": "Get base third person distance (without applying angle and speed modifiers)."
-        },
-        {
-          "paragraph": "Return primary mode (MODE.FirstPerson or MODE.ThirdPerson)."
-        },
-        {
-          "paragraph": "Get the desired third person distance if there would be no obstacles (with angle and speed modifiers)"
-        },
-        {
-          "paragraph": "Whether head bobbing is enabled."
-        },
-        {
-          "paragraph": "Whether the built-in mode control logic is enabled."
-        },
-        {
-          "paragraph": "Whether the built-in standing preview logic is enabled."
-        },
-        {
-          "paragraph": "Whether the the third person offset can be changed by the built-in camera script."
-        },
-        {
-          "paragraph": "Whether the built-in zooming is enabled."
-        },
-        {
-          "paragraph": "Set base third person distance"
-        },
-        {
-          "paragraph": "Interface version is 1"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Camera"
+    },
+    {
+      "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag. Disable with (optional) tag until the corresponding enable function is called with the same tag. Disable with (optional) tag until the corresponding enable function is called with the same tag. Disable with (optional) tag until the corresponding enable function is called with the same tag. Disable with (optional) tag until the corresponding enable function is called with the same tag. Undo disableHeadBobbing Undo disableModeControl Undo disableStandingPreview Undo disableThirdPersonOffsetControl Undo disableZoom Get base third person distance (without applying angle and speed modifiers). Return primary mode (MODE.FirstPerson or MODE.ThirdPerson). Get the desired third person distance if there would be no obstacles (with angle and speed modifiers) Whether head bobbing is enabled. Whether the built-in mode control logic is enabled. Whether the built-in standing preview logic is enabled. Whether the the third person offset can be changed by the built-in camera script. Whether the built-in zooming is enabled. Set base third person distance Interface version is 1"
     },
     {
       "header": "TypeCamera",
-      "content": [
-        {
-          "code": "Camera"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "Camera"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Disable with (optional) tag until the corresponding enable function is called with the same tag."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Undo disableHeadBobbing"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default) Will be disabled until the enabling function is called with the same tag"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Undo disableHeadBobbing"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default)"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Undo disableModeControl"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default)"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Undo disableModeControl"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default)"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Undo disableStandingPreview"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default)"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Undo disableStandingPreview"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default)"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Undo disableThirdPersonOffsetControl"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default)"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Undo disableThirdPersonOffsetControl"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default)"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Undo disableZoom"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default)"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Undo disableZoom"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string tag: \n(optional, empty string by default)"
-        },
-        {
-          "code": "#string tag"
-        },
-        {
-          "paragraph": "Get base third person distance (without applying angle and speed modifiers)."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string tag: \n(optional, empty string by default)"
+    },
+    {
+      "code": "#string tag"
+    },
+    {
+      "paragraph": "Get base third person distance (without applying angle and speed modifiers)."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:"
-        },
-        {
-          "paragraph": "Return primary mode (MODE.FirstPerson or MODE.ThirdPerson)."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number: Return primary mode (MODE.FirstPerson or MODE.ThirdPerson)."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:openmw.camera#MODE"
-        },
-        {
-          "paragraph": "Get the desired third person distance if there would be no obstacles (with angle and speed modifiers)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number:openmw.camera#MODE Get the desired third person distance if there would be no obstacles (with angle and speed modifiers)"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:"
-        },
-        {
-          "paragraph": "Whether head bobbing is enabled."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number: Whether head bobbing is enabled."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Whether the built-in mode control logic is enabled."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Whether the built-in mode control logic is enabled."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Whether the built-in standing preview logic is enabled."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Whether the built-in standing preview logic is enabled."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Whether the the third person offset can be changed by the built-in camera script."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Whether the the third person offset can be changed by the built-in camera script."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Whether the built-in zooming is enabled."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Whether the built-in zooming is enabled."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Set base third person distance"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Set base third person distance"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#number value:"
-        },
-        {
-          "code": "#number value"
-        },
-        {
-          "paragraph": "Interface version is 1"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number value:"
+    },
+    {
+      "code": "#number value"
+    },
+    {
+      "paragraph": "Interface version is 1 \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

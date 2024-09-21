@@ -1,45 +1,40 @@
 {
   "title": "Iterable types\uf0c1",
-  "sections": [
+  "content": [
     {
       "header": "List Iterable\uf0c1",
-      "content": [
-        {
-          "paragraph": "An iterable with defined size and order."
-        },
-        {
-          "code": "-- can iterate over the list with pairsfori,vinpairs(list)do-- ...end"
-        },
-        {
-          "code": "-- can iterate over the list with ipairsfori,vinipairs(list)do-- ...end"
-        },
-        {
-          "code": "-- can get total size with the size # operatorlocallength=#list"
-        },
-        {
-          "code": "-- can index the list with numbersfori=1,lengthdolist[i]end"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "An iterable with defined size and order."
+    },
+    {
+      "code": "-- can iterate over the list with pairs\nfor\ni\n,\nv\nin\npairs\n(\nlist\n)\ndo\n-- ...\nend"
+    },
+    {
+      "code": "-- can iterate over the list with ipairs\nfor\ni\n,\nv\nin\nipairs\n(\nlist\n)\ndo\n-- ...\nend"
+    },
+    {
+      "code": "-- can get total size with the size # operator\nlocal\nlength\n=\n#\nlist"
+    },
+    {
+      "code": "-- can index the list with numbers\nfor\ni\n=\n1\n,\nlength\ndo\nlist\n[\ni\n]\nend"
     },
     {
       "header": "Map Iterable\uf0c1",
-      "content": [
-        {
-          "paragraph": "An iterable with undefined order."
-        },
-        {
-          "code": "-- can iterate over the map with pairsfork,vinpairs(map)do-- ...end"
-        },
-        {
-          "code": "-- can index the map by keymap[key]"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "An iterable with undefined order."
+    },
+    {
+      "code": "-- can iterate over the map with pairs\nfor\nk\n,\nv\nin\npairs\n(\nmap\n)\ndo\n-- ...\nend"
+    },
+    {
+      "code": "-- can index the map by key\nmap\n[\nkey\n]"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

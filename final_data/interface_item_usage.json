@@ -1,110 +1,89 @@
 {
   "title": "Interface ItemUsage\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "Allows to extend or override built-in item usage mechanics. Note: at the moment it can override item usage in inventory\n(dragging an item on the character's model), but"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local I = require('openmw.interfaces')\n\n-- Override Use action (global script).\n-- Forbid equipping armor with weight > 5\nI.ItemUsage.addHandlerForType(types.Armor, function(armor, actor)\n    if types.Armor.record(armor).weight > 5 then\n        return false -- disable other handlers\n    end\nend)\n\n-- Call Use action (any script).\ncore.sendGlobalEvent('UseItem', {object = armor, actor = player})"
-        },
-        {
-          "code": "local I = require('openmw.interfaces')\n\n-- Override Use action (global script).\n-- Forbid equipping armor with weight > 5\nI.ItemUsage.addHandlerForType(types.Armor, function(armor, actor)\n    if types.Armor.record(armor).weight > 5 then\n        return false -- disable other handlers\n    end\nend)\n\n-- Call Use action (any script).\ncore.sendGlobalEvent('UseItem', {object = armor, actor = player})"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local I = require('openmw.interfaces')\n\n-- Override Use action (global script).\n-- Forbid equipping armor with weight > 5\nI.ItemUsage.addHandlerForType(types.Armor, function(armor, actor)\n    if types.Armor.record(armor).weight > 5 then\n        return false -- disable other handlers\n    end\nend)\n\n-- Call Use action (any script).\ncore.sendGlobalEvent('UseItem', {object = armor, actor = player})"
+    },
+    {
+      "code": "local I = require('openmw.interfaces')\n\n-- Override Use action (global script).\n-- Forbid equipping armor with weight > 5\nI.ItemUsage.addHandlerForType(types.Armor, function(armor, actor)\n    if types.Armor.record(armor).weight > 5 then\n        return false -- disable other handlers\n    end\nend)\n\n-- Call Use action (any script).\ncore.sendGlobalEvent('UseItem', {object = armor, actor = player})"
     },
     {
       "header": "TypeItemUsage",
-      "content": [
-        {
-          "code": "ItemUsage"
-        },
-        {
-          "paragraph": "Add new use action handler for a specific object."
-        },
-        {
-          "paragraph": "Add new use action handler for a type of objects."
-        },
-        {
-          "paragraph": "Interface version"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ItemUsage"
+    },
+    {
+      "paragraph": "Add new use action handler for a specific object. Add new use action handler for a type of objects. Interface version"
     },
     {
       "header": "TypeItemUsage",
-      "content": [
-        {
-          "code": "ItemUsage"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ItemUsage"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Add new use action handler for a specific object."
-        },
-        {
-          "paragraph": "Ifhandler(object, actor, options)returns false, other handlers for\nthe same object (including type handlers) will be skipped."
-        },
-        {
-          "code": "handler(object, actor, options)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Add new use action handler for a specific object. Ifhandler(object, actor, options)returns false, other handlers for\nthe same object (including type handlers) will be skipped."
+    },
+    {
+      "code": "handler(object, actor, options)"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "openmw.core#GameObjectobj: \nThe object."
-        },
-        {
-          "code": "openmw.core#GameObjectobj"
-        },
-        {
-          "paragraph": "#function handler: \nThe handler."
-        },
-        {
-          "code": "#function handler"
-        },
-        {
-          "paragraph": "Add new use action handler for a type of objects."
-        },
-        {
-          "paragraph": "Ifhandler(object, actor, options)returns false, other handlers for\nthe same object (including type handlers) will be skipped."
-        },
-        {
-          "code": "handler(object, actor, options)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.core#GameObjectobj: \nThe object."
+    },
+    {
+      "code": "openmw.core#GameObject\nobj"
+    },
+    {
+      "paragraph": "#function handler: \nThe handler."
+    },
+    {
+      "code": "#function handler"
+    },
+    {
+      "paragraph": "Add new use action handler for a type of objects. Ifhandler(object, actor, options)returns false, other handlers for\nthe same object (including type handlers) will be skipped."
+    },
+    {
+      "code": "handler(object, actor, options)"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#any type: \nA type from theopenmw.typespackage."
-        },
-        {
-          "code": "#any type"
-        },
-        {
-          "code": "openmw.types"
-        },
-        {
-          "paragraph": "#function handler: \nThe handler."
-        },
-        {
-          "code": "#function handler"
-        },
-        {
-          "paragraph": "Interface version"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#any type: \nA type from theopenmw.typespackage."
+    },
+    {
+      "code": "#any type"
+    },
+    {
+      "code": "openmw.types"
+    },
+    {
+      "paragraph": "#function handler: \nThe handler."
+    },
+    {
+      "code": "#function handler"
+    },
+    {
+      "paragraph": "Interface version \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

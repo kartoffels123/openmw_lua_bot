@@ -1,4 +1,77 @@
 {
   "title": "Engine handlers reference\uf0c1",
-  "sections": []
+  "content": [
+    {
+      "paragraph": "Engine handler is a function defined by a script, that can be called by the engine. Can be defined by any script onInterfaceOverride(base)"
+    },
+    {
+      "code": "base"
+    },
+    {
+      "paragraph": "Can be defined by any non-menu script onInit(initData)"
+    },
+    {
+      "code": "onInterfaceOverride"
+    },
+    {
+      "code": "onInit"
+    },
+    {
+      "paragraph": "onUpdate(dt) onSave() -> savedData onLoad(savedData, initData)"
+    },
+    {
+      "code": "onSave"
+    },
+    {
+      "code": "initData"
+    },
+    {
+      "code": "onInit"
+    },
+    {
+      "code": "onLoad"
+    },
+    {
+      "code": "onInit"
+    },
+    {
+      "paragraph": "Only for global scripts onNewGame() New game is started. onPlayerAdded(player) onObjectActive(object) Object becomes active. onActorActive(actor) Actor (NPC or Creature) becomes active. onItemActive(item) onActivate(object, actor) Object is activated by an actor. onNewExterior(cell) A new exterior cell not defined by a content file has been generated. Only for local scripts onActive() onInactive() onTeleported() Object was teleported. onActivated(actor) onConsume(item) Only menu scripts and local scripts attached to a player onFrame(dt) onKeyPress(key)"
+    },
+    {
+      "code": "if\nkey.symbol\n==\n'z'\nand\nkey.withShift\nthen\n..."
+    },
+    {
+      "paragraph": "onKeyRelease(key)"
+    },
+    {
+      "code": "if\nkey.symbol\n==\n'z'\nand\nkey.withShift\nthen\n..."
+    },
+    {
+      "paragraph": "onControllerButtonPress(id)"
+    },
+    {
+      "code": "if\nid\n==\ninput.CONTROLLER_BUTTON.LeftStick\nthen\n..."
+    },
+    {
+      "paragraph": "onControllerButtonRelease(id)"
+    },
+    {
+      "code": "if\nid\n==\ninput.CONTROLLER_BUTTON.LeftStick\nthen\n..."
+    },
+    {
+      "paragraph": "onInputAction(id)"
+    },
+    {
+      "code": "if\nid\n==\ninput.ACTION.ToggleWeapon\nthen\n..."
+    },
+    {
+      "paragraph": "onTouchPress(touchEvent) onTouchRelease(touchEvent) onTouchMove(touchEvent) onMouseButtonPress(button) onMouseButtonRelease(button) onMouseWheel(vertical, horizontal) Only for local scripts attached to a player onKeyPress(key)"
+    },
+    {
+      "code": "if\nkey.symbol\n==\n'z'\nand\nkey.withShift\nthen\n..."
+    },
+    {
+      "paragraph": "onQuestUpdate(questId, stage) Only for menu scripts onStateChanged() \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
+    }
+  ]
 }

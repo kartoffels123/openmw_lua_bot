@@ -1,252 +1,241 @@
 {
   "title": "Package openmw_aux.util\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw_aux.utildefines utility functions that are implemented in Lua rather than in C++."
+    },
+    {
+      "code": "openmw_aux.util"
+    },
+    {
+      "paragraph": "Implementation can be found inresources/vfs/openmw_aux/util.lua."
+    },
+    {
+      "code": "resources/vfs/openmw_aux/util.lua"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local aux_util = require('openmw_aux.util')"
-        },
-        {
-          "code": "local aux_util = require('openmw_aux.util')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local aux_util = require('openmw_aux.util')"
+    },
+    {
+      "code": "local aux_util = require('openmw_aux.util')"
     },
     {
       "header": "Typeutil",
-      "content": [
-        {
-          "code": "util"
-        },
-        {
-          "paragraph": "Works liketostringbut shows also content of tables."
-        },
-        {
-          "code": "tostring"
-        },
-        {
-          "paragraph": "Finds the element the minimizesscoreFn."
-        },
-        {
-          "code": "scoreFn"
-        },
-        {
-          "paragraph": "ComputesscoreFnfor each element ofarrayand filters out elements with false and nil results."
-        },
-        {
-          "code": "scoreFn"
-        },
-        {
-          "code": "array"
-        },
-        {
-          "paragraph": "Filters and sortsarrayby the scores calculated byscoreFn."
-        },
-        {
-          "code": "array"
-        },
-        {
-          "code": "scoreFn"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "util"
+    },
+    {
+      "paragraph": "Works liketostringbut shows also content of tables."
+    },
+    {
+      "code": "tostring"
+    },
+    {
+      "paragraph": "Finds the element the minimizesscoreFn."
+    },
+    {
+      "code": "scoreFn"
+    },
+    {
+      "paragraph": "ComputesscoreFnfor each element ofarrayand filters out elements with false and nil results."
+    },
+    {
+      "code": "scoreFn"
+    },
+    {
+      "code": "array"
+    },
+    {
+      "paragraph": "Filters and sortsarrayby the scores calculated byscoreFn."
+    },
+    {
+      "code": "array"
+    },
+    {
+      "code": "scoreFn"
     },
     {
       "header": "Typeutil",
-      "content": [
-        {
-          "code": "util"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "util"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Works liketostringbut shows also content of tables."
-        },
-        {
-          "code": "tostring"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Works liketostringbut shows also content of tables."
+    },
+    {
+      "code": "tostring"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#any value: \nThe value to convert to string"
-        },
-        {
-          "code": "#any value"
-        },
-        {
-          "paragraph": "#number maxDepth: \nMax depth of tables unpacking (optional, 1 by default)"
-        },
-        {
-          "code": "#number maxDepth"
-        },
-        {
-          "paragraph": "Finds the element the minimizesscoreFn."
-        },
-        {
-          "code": "scoreFn"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#any value: \nThe value to convert to string"
+    },
+    {
+      "code": "#any value"
+    },
+    {
+      "paragraph": "#number maxDepth: \nMax depth of tables unpacking (optional, 1 by default)"
+    },
+    {
+      "code": "#number maxDepth"
+    },
+    {
+      "paragraph": "Finds the element the minimizesscoreFn."
+    },
+    {
+      "code": "scoreFn"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#table array: \nAny array"
-        },
-        {
-          "code": "#table array"
-        },
-        {
-          "paragraph": "#function scoreFn: \nFunction that returns either nil/false or a number for each element of the array"
-        },
-        {
-          "code": "#function scoreFn"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#table array: \nAny array"
+    },
+    {
+      "code": "#table array"
+    },
+    {
+      "paragraph": "#function scoreFn: \nFunction that returns either nil/false or a number for each element of the array"
+    },
+    {
+      "code": "#function scoreFn"
     },
     {
       "header": "Return values",
-      "content": [
-        {
-          "paragraph": "element The element the minimizesscoreFn"
-        },
-        {
-          "code": "scoreFn"
-        },
-        {
-          "paragraph": "#number:score The output ofscoreFn(element)"
-        },
-        {
-          "code": "scoreFn(element)"
-        },
-        {
-          "paragraph": "#number:index The index of the chosen element in the array"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "element The element the minimizesscoreFn"
+    },
+    {
+      "code": "scoreFn"
+    },
+    {
+      "paragraph": "#number:score The output ofscoreFn(element)"
+    },
+    {
+      "code": "scoreFn(element)"
+    },
+    {
+      "paragraph": "#number:index The index of the chosen element in the array"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "-- Find the nearest NPC\nlocal nearestNPC, distToNPC = aux_util.findMinScore(\n    nearby.actors,\n    function(actor)\n        return actor.type == types.NPC and (self.position - actor.position):length()\n    end)"
-        },
-        {
-          "code": "-- Find the nearest NPC\nlocal nearestNPC, distToNPC = aux_util.findMinScore(\n    nearby.actors,\n    function(actor)\n        return actor.type == types.NPC and (self.position - actor.position):length()\n    end)"
-        },
-        {
-          "paragraph": "ComputesscoreFnfor each element ofarrayand filters out elements with false and nil results."
-        },
-        {
-          "code": "scoreFn"
-        },
-        {
-          "code": "array"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- Find the nearest NPC\nlocal nearestNPC, distToNPC = aux_util.findMinScore(\n    nearby.actors,\n    function(actor)\n        return actor.type == types.NPC and (self.position - actor.position):length()\n    end)"
+    },
+    {
+      "code": "-- Find the nearest NPC\nlocal nearestNPC, distToNPC = aux_util.findMinScore(\n    nearby.actors,\n    function(actor)\n        return actor.type == types.NPC and (self.position - actor.position):length()\n    end)"
+    },
+    {
+      "paragraph": "ComputesscoreFnfor each element ofarrayand filters out elements with false and nil results."
+    },
+    {
+      "code": "scoreFn"
+    },
+    {
+      "code": "array"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#table array: \nAny array"
-        },
-        {
-          "code": "#table array"
-        },
-        {
-          "paragraph": "#function scoreFn: \nFilter function"
-        },
-        {
-          "code": "#function scoreFn"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#table array: \nAny array"
+    },
+    {
+      "code": "#table array"
+    },
+    {
+      "paragraph": "#function scoreFn: \nFilter function"
+    },
+    {
+      "code": "#function scoreFn"
     },
     {
       "header": "Return values",
-      "content": [
-        {
-          "paragraph": "#table:Output array"
-        },
-        {
-          "paragraph": "#table:Array of the same size with corresponding scores"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#table:Output array #table:Array of the same size with corresponding scores"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "-- Find all NPCs in `nearby.actors`\nlocal NPCs = aux_util.mapFilter(\n    nearby.actors,\n    function(actor) return actor.type == types.NPC end)"
-        },
-        {
-          "code": "-- Find all NPCs in `nearby.actors`\nlocal NPCs = aux_util.mapFilter(\n    nearby.actors,\n    function(actor) return actor.type == types.NPC end)"
-        },
-        {
-          "paragraph": "Filters and sortsarrayby the scores calculated byscoreFn."
-        },
-        {
-          "code": "array"
-        },
-        {
-          "code": "scoreFn"
-        },
-        {
-          "paragraph": "The same asaux_util.mapFilter, but the result is sorted."
-        },
-        {
-          "code": "aux_util.mapFilter"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- Find all NPCs in `nearby.actors`\nlocal NPCs = aux_util.mapFilter(\n    nearby.actors,\n    function(actor) return actor.type == types.NPC end)"
+    },
+    {
+      "code": "-- Find all NPCs in `nearby.actors`\nlocal NPCs = aux_util.mapFilter(\n    nearby.actors,\n    function(actor) return actor.type == types.NPC end)"
+    },
+    {
+      "paragraph": "Filters and sortsarrayby the scores calculated byscoreFn."
+    },
+    {
+      "code": "array"
+    },
+    {
+      "code": "scoreFn"
+    },
+    {
+      "paragraph": "The same asaux_util.mapFilter, but the result is sorted."
+    },
+    {
+      "code": "aux_util.mapFilter"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#table array: \nAny array"
-        },
-        {
-          "code": "#table array"
-        },
-        {
-          "paragraph": "#function scoreFn: \nFilter function"
-        },
-        {
-          "code": "#function scoreFn"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#table array: \nAny array"
+    },
+    {
+      "code": "#table array"
+    },
+    {
+      "paragraph": "#function scoreFn: \nFilter function"
+    },
+    {
+      "code": "#function scoreFn"
     },
     {
       "header": "Return values",
-      "content": [
-        {
-          "paragraph": "#table:Output array"
-        },
-        {
-          "paragraph": "#table:Array of the same size with corresponding scores"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#table:Output array #table:Array of the same size with corresponding scores"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "-- Find all NPCs in `nearby.actors` and sort them by distances\nlocal NPCs, distances = aux_util.mapFilterSort(\n    nearby.actors,\n    function(actor)\n        return actor.type == types.NPC and (self.position - actor.position):length()\n    end)"
-        },
-        {
-          "code": "-- Find all NPCs in `nearby.actors` and sort them by distances\nlocal NPCs, distances = aux_util.mapFilterSort(\n    nearby.actors,\n    function(actor)\n        return actor.type == types.NPC and (self.position - actor.position):length()\n    end)"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "-- Find all NPCs in `nearby.actors` and sort them by distances\nlocal NPCs, distances = aux_util.mapFilterSort(\n    nearby.actors,\n    function(actor)\n        return actor.type == types.NPC and (self.position - actor.position):length()\n    end)"
+    },
+    {
+      "code": "-- Find all NPCs in `nearby.actors` and sort them by distances\nlocal NPCs, distances = aux_util.mapFilterSort(\n    nearby.actors,\n    function(actor)\n        return actor.type == types.NPC and (self.position - actor.position):length()\n    end)"
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

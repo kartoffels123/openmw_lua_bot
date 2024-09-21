@@ -1,855 +1,568 @@
 {
   "title": "Package openmw.input\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw.inputcan be used only in menu scripts and scripts attached to a player."
+    },
+    {
+      "code": "openmw.input"
+    },
+    {
+      "paragraph": "Most mods should prefer to use the actions/triggers API over the direct input device methods.\nActions have one value on each frame (resolved just before theonFrameengine handler),\n while Triggers don't have a value, but can occur multiple times on each frame.\nPrefer to use built-in methods of binding actions, such as theinputBinding setting renderer"
+    },
+    {
+      "code": "onFrame"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local input = require('openmw.input')\n-- Example of Action usage\ninput.registerAction {\n    key = 'MyAction',\n    type = input.ACTION_TYPE.Boolean,\n    l10n = 'MyLocalizationContext',\n    name = 'MyAction_name',\n    description = 'MyAction_full_description',\n    defaultValue = false,\n}\nreturn {\n    onFrame = function()\n        local myAction = input.getBooleanActionValue('MyAction')\n        if (myAction) then print('My action is active!') end\n    end,\n}\n-- Example of Trigger usage\ninput.registerTrigger {\n    key = 'MyTrigger',\n    l10n = 'MyLocalizationContext',\n    name = 'MyTrigger_name',\n    description = 'MyTrigger_full_description',\n}\ninput.registerTriggerHandler('MyTrigger', async:callback(function() print('MyTrigger') end))"
-        },
-        {
-          "code": "local input = require('openmw.input')\n-- Example of Action usage\ninput.registerAction {\n    key = 'MyAction',\n    type = input.ACTION_TYPE.Boolean,\n    l10n = 'MyLocalizationContext',\n    name = 'MyAction_name',\n    description = 'MyAction_full_description',\n    defaultValue = false,\n}\nreturn {\n    onFrame = function()\n        local myAction = input.getBooleanActionValue('MyAction')\n        if (myAction) then print('My action is active!') end\n    end,\n}\n-- Example of Trigger usage\ninput.registerTrigger {\n    key = 'MyTrigger',\n    l10n = 'MyLocalizationContext',\n    name = 'MyTrigger_name',\n    description = 'MyTrigger_full_description',\n}\ninput.registerTriggerHandler('MyTrigger', async:callback(function() print('MyTrigger') end))"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local input = require('openmw.input')\n-- Example of Action usage\ninput.registerAction {\n    key = 'MyAction',\n    type = input.ACTION_TYPE.Boolean,\n    l10n = 'MyLocalizationContext',\n    name = 'MyAction_name',\n    description = 'MyAction_full_description',\n    defaultValue = false,\n}\nreturn {\n    onFrame = function()\n        local myAction = input.getBooleanActionValue('MyAction')\n        if (myAction) then print('My action is active!') end\n    end,\n}\n-- Example of Trigger usage\ninput.registerTrigger {\n    key = 'MyTrigger',\n    l10n = 'MyLocalizationContext',\n    name = 'MyTrigger_name',\n    description = 'MyTrigger_full_description',\n}\ninput.registerTriggerHandler('MyTrigger', async:callback(function() print('MyTrigger') end))"
+    },
+    {
+      "code": "local input = require('openmw.input')\n-- Example of Action usage\ninput.registerAction {\n    key = 'MyAction',\n    type = input.ACTION_TYPE.Boolean,\n    l10n = 'MyLocalizationContext',\n    name = 'MyAction_name',\n    description = 'MyAction_full_description',\n    defaultValue = false,\n}\nreturn {\n    onFrame = function()\n        local myAction = input.getBooleanActionValue('MyAction')\n        if (myAction) then print('My action is active!') end\n    end,\n}\n-- Example of Trigger usage\ninput.registerTrigger {\n    key = 'MyTrigger',\n    l10n = 'MyLocalizationContext',\n    name = 'MyTrigger_name',\n    description = 'MyTrigger_full_description',\n}\ninput.registerTriggerHandler('MyTrigger', async:callback(function() print('MyTrigger') end))"
     },
     {
       "header": "Typeinput",
-      "content": [
-        {
-          "code": "input"
-        },
-        {
-          "paragraph": "(DEPRECATED, use getBooleanActionValue) Values that can be used with isActionPressed."
-        },
-        {
-          "paragraph": "Values that can be used in registerAction"
-        },
-        {
-          "paragraph": "Values that can be used with getAxisValue."
-        },
-        {
-          "paragraph": "Values that can be passed to onControllerButtonPress/onControllerButtonRelease engine handlers."
-        },
-        {
-          "paragraph": "[Deprecated, moved to types.Player] Values that can be used with getControlSwitch/setControlSwitch."
-        },
-        {
-          "paragraph": "Key codes."
-        },
-        {
-          "paragraph": "Map of all currently registered actions"
-        },
-        {
-          "paragraph": "Activates the trigger with the given key"
-        },
-        {
-          "paragraph": "Provides a function computing the value of given input action."
-        },
-        {
-          "paragraph": "Get value of an axis of a game controller."
-        },
-        {
-          "paragraph": "Returns the value of a Boolean action"
-        },
-        {
-          "paragraph": "[Deprecated, moved to types.Player] Get state of a control switch."
-        },
-        {
-          "paragraph": "Returns a human readable name for the given key code"
-        },
-        {
-          "paragraph": "Horizontal mouse movement during the last frame."
-        },
-        {
-          "paragraph": "Vertical mouse movement during the last frame."
-        },
-        {
-          "paragraph": "Returns the value of a Number action"
-        },
-        {
-          "paragraph": "Returns the value of a Range action"
-        },
-        {
-          "paragraph": "(DEPRECATED, use getBooleanActionValue) Input bindings can be changed ingame using Options/Controls menu."
-        },
-        {
-          "paragraph": "IsAltkey pressed."
-        },
-        {
-          "code": "Alt"
-        },
-        {
-          "paragraph": "Is a controller button currently pressed."
-        },
-        {
-          "paragraph": "IsCtrlkey pressed."
-        },
-        {
-          "code": "Ctrl"
-        },
-        {
-          "paragraph": "Is player idle."
-        },
-        {
-          "paragraph": "Is a keyboard button currently pressed."
-        },
-        {
-          "paragraph": "Is a mouse button currently pressed."
-        },
-        {
-          "paragraph": "IsShiftkey pressed."
-        },
-        {
-          "code": "Shift"
-        },
-        {
-          "paragraph": "IsSuper/Winkey pressed."
-        },
-        {
-          "code": "Super"
-        },
-        {
-          "code": "Win"
-        },
-        {
-          "paragraph": "Registers a new input action."
-        },
-        {
-          "paragraph": "Registers a function to be called whenever the action's value changes"
-        },
-        {
-          "paragraph": "Registers a new input trigger."
-        },
-        {
-          "paragraph": "Registers a function to be called whenever the trigger activates"
-        },
-        {
-          "paragraph": "[Deprecated, moved to types.Player] Set state of a control switch."
-        },
-        {
-          "paragraph": "Map of all currently registered triggers"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "input"
+    },
+    {
+      "paragraph": "(DEPRECATED, use getBooleanActionValue) Values that can be used with isActionPressed. Values that can be used in registerAction Values that can be used with getAxisValue. Values that can be passed to onControllerButtonPress/onControllerButtonRelease engine handlers. [Deprecated, moved to types.Player] Values that can be used with getControlSwitch/setControlSwitch. Key codes. Map of all currently registered actions Activates the trigger with the given key Provides a function computing the value of given input action. Get value of an axis of a game controller. Returns the value of a Boolean action [Deprecated, moved to types.Player] Get state of a control switch. Returns a human readable name for the given key code Horizontal mouse movement during the last frame. Vertical mouse movement during the last frame. Returns the value of a Number action Returns the value of a Range action (DEPRECATED, use getBooleanActionValue) Input bindings can be changed ingame using Options/Controls menu. IsAltkey pressed."
+    },
+    {
+      "code": "Alt"
+    },
+    {
+      "paragraph": "Is a controller button currently pressed. IsCtrlkey pressed."
+    },
+    {
+      "code": "Ctrl"
+    },
+    {
+      "paragraph": "Is player idle. Is a keyboard button currently pressed. Is a mouse button currently pressed. IsShiftkey pressed."
+    },
+    {
+      "code": "Shift"
+    },
+    {
+      "paragraph": "IsSuper/Winkey pressed."
+    },
+    {
+      "code": "Super"
+    },
+    {
+      "code": "Win"
+    },
+    {
+      "paragraph": "Registers a new input action. Registers a function to be called whenever the action's value changes Registers a new input trigger. Registers a function to be called whenever the trigger activates [Deprecated, moved to types.Player] Set state of a control switch. Map of all currently registered triggers"
     },
     {
       "header": "TypeACTION",
-      "content": [
-        {
-          "code": "ACTION"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ACTION"
     },
     {
       "header": "TypeACTION_TYPE",
-      "content": [
-        {
-          "code": "ACTION_TYPE"
-        },
-        {
-          "paragraph": "Input action with value of true or false"
-        },
-        {
-          "paragraph": "Input action with a numeric value"
-        },
-        {
-          "paragraph": "Input action with a numeric value between 0 and 1 (inclusive)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ACTION_TYPE"
+    },
+    {
+      "paragraph": "Input action with value of true or false Input action with a numeric value Input action with a numeric value between 0 and 1 (inclusive)"
     },
     {
       "header": "TypeActionInfo",
-      "content": [
-        {
-          "code": "ActionInfo"
-        },
-        {
-          "paragraph": "initial value of the action"
-        },
-        {
-          "paragraph": "Localization key of the action's description"
-        },
-        {
-          "paragraph": "Localization context containing the name and description keys"
-        },
-        {
-          "paragraph": "Localization key of the action's name"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ActionInfo"
+    },
+    {
+      "paragraph": "initial value of the action Localization key of the action's description Localization context containing the name and description keys Localization key of the action's name"
     },
     {
       "header": "TypeCONTROLLER_AXIS",
-      "content": [
-        {
-          "code": "CONTROLLER_AXIS"
-        },
-        {
-          "paragraph": "Left stick horizontal axis (from -1 to 1)"
-        },
-        {
-          "paragraph": "Left stick vertical axis (from -1 to 1)"
-        },
-        {
-          "paragraph": "(DEPRECATED, use the LookLeftRight action) View direction horizontal axis (RightX by default, can be mapped to another axis in Options/Controls menu)"
-        },
-        {
-          "paragraph": "(DEPRECATED, use the LookUpDown action) View direction vertical axis (RightY by default, can be mapped to another axis in Options/Controls menu)"
-        },
-        {
-          "paragraph": "(DEPRECATED, use the MoveForwardBackward action) Movement forward/backward (LeftY by default, can be mapped to another axis in Options/Controls menu)"
-        },
-        {
-          "paragraph": "(DEPRECATED, use the MoveLeftRight action) Side movement (LeftX by default, can be mapped to another axis in Options/Controls menu)"
-        },
-        {
-          "paragraph": "Right stick horizontal axis (from -1 to 1)"
-        },
-        {
-          "paragraph": "Right stick vertical axis (from -1 to 1)"
-        },
-        {
-          "paragraph": "Left trigger (from 0 to 1)"
-        },
-        {
-          "paragraph": "Right trigger (from 0 to 1)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "CONTROLLER_AXIS"
+    },
+    {
+      "paragraph": "Left stick horizontal axis (from -1 to 1) Left stick vertical axis (from -1 to 1) (DEPRECATED, use the LookLeftRight action) View direction horizontal axis (RightX by default, can be mapped to another axis in Options/Controls menu) (DEPRECATED, use the LookUpDown action) View direction vertical axis (RightY by default, can be mapped to another axis in Options/Controls menu) (DEPRECATED, use the MoveForwardBackward action) Movement forward/backward (LeftY by default, can be mapped to another axis in Options/Controls menu) (DEPRECATED, use the MoveLeftRight action) Side movement (LeftX by default, can be mapped to another axis in Options/Controls menu) Right stick horizontal axis (from -1 to 1) Right stick vertical axis (from -1 to 1) Left trigger (from 0 to 1) Right trigger (from 0 to 1)"
     },
     {
       "header": "TypeCONTROLLER_BUTTON",
-      "content": [
-        {
-          "code": "CONTROLLER_BUTTON"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "CONTROLLER_BUTTON"
     },
     {
       "header": "TypeCONTROL_SWITCH",
-      "content": [
-        {
-          "code": "CONTROL_SWITCH"
-        },
-        {
-          "paragraph": "Ability to move"
-        },
-        {
-          "paragraph": "Ability to attack"
-        },
-        {
-          "paragraph": "Ability to jump"
-        },
-        {
-          "paragraph": "Ability to change view direction"
-        },
-        {
-          "paragraph": "Ability to use magic"
-        },
-        {
-          "paragraph": "Vanity view if player doesn't touch controls for a long time"
-        },
-        {
-          "paragraph": "Ability to toggle 1st/3rd person view"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "CONTROL_SWITCH"
+    },
+    {
+      "paragraph": "Ability to move Ability to attack Ability to jump Ability to change view direction Ability to use magic Vanity view if player doesn't touch controls for a long time Ability to toggle 1st/3rd person view"
     },
     {
       "header": "TypeKEY",
-      "content": [
-        {
-          "code": "KEY"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "KEY"
     },
     {
       "header": "TypeKeyboardEvent",
-      "content": [
-        {
-          "code": "KeyboardEvent"
-        },
-        {
-          "paragraph": "Key code."
-        },
-        {
-          "paragraph": "The pressed symbol (1-symbol string if can be represented or an empty string otherwise)."
-        },
-        {
-          "paragraph": "IsAltkey pressed."
-        },
-        {
-          "code": "Alt"
-        },
-        {
-          "paragraph": "IsControlkey pressed."
-        },
-        {
-          "code": "Control"
-        },
-        {
-          "paragraph": "IsShiftkey pressed."
-        },
-        {
-          "code": "Shift"
-        },
-        {
-          "paragraph": "IsSuper/Winkey pressed."
-        },
-        {
-          "code": "Super"
-        },
-        {
-          "code": "Win"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "KeyboardEvent"
+    },
+    {
+      "paragraph": "Key code. The pressed symbol (1-symbol string if can be represented or an empty string otherwise). IsAltkey pressed."
+    },
+    {
+      "code": "Alt"
+    },
+    {
+      "paragraph": "IsControlkey pressed."
+    },
+    {
+      "code": "Control"
+    },
+    {
+      "paragraph": "IsShiftkey pressed."
+    },
+    {
+      "code": "Shift"
+    },
+    {
+      "paragraph": "IsSuper/Winkey pressed."
+    },
+    {
+      "code": "Super"
+    },
+    {
+      "code": "Win"
     },
     {
       "header": "TypeTouchEvent",
-      "content": [
-        {
-          "code": "TouchEvent"
-        },
-        {
-          "paragraph": "Device id (there might be multiple touch devices connected). Note: the specific device ids are not guaranteed. Always use previous user input (onTouch... handlers) to get a valid device id (e. g. in your script's settings page)."
-        },
-        {
-          "paragraph": "Finger id (the device might support multitouch)."
-        },
-        {
-          "paragraph": "Relative position on the touch device (0 to 1 from top left corner),"
-        },
-        {
-          "paragraph": "Pressure of the finger."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "TouchEvent"
+    },
+    {
+      "paragraph": "Device id (there might be multiple touch devices connected). Note: the specific device ids are not guaranteed. Always use previous user input (onTouch... handlers) to get a valid device id (e. g. in your script's settings page). Finger id (the device might support multitouch). Relative position on the touch device (0 to 1 from top left corner), Pressure of the finger."
     },
     {
       "header": "TypeTriggerInfo",
-      "content": [
-        {
-          "code": "TriggerInfo"
-        },
-        {
-          "paragraph": "Localization key of the trigger's description"
-        },
-        {
-          "paragraph": "Localization context containing the name and description keys"
-        },
-        {
-          "paragraph": "Localization key of the trigger's name"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "TriggerInfo"
+    },
+    {
+      "paragraph": "Localization key of the trigger's description Localization context containing the name and description keys Localization key of the trigger's name"
     },
     {
       "header": "Typeinput",
-      "content": [
-        {
-          "code": "input"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "input"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "(DEPRECATED, use getBooleanActionValue) Values that can be used with isActionPressed."
-        },
-        {
-          "paragraph": "Values that can be used in registerAction"
-        },
-        {
-          "paragraph": "Values that can be used with getAxisValue."
-        },
-        {
-          "paragraph": "Values that can be passed to onControllerButtonPress/onControllerButtonRelease engine handlers."
-        },
-        {
-          "paragraph": "[Deprecated, moved to types.Player] Values that can be used with getControlSwitch/setControlSwitch."
-        },
-        {
-          "paragraph": "Key codes."
-        },
-        {
-          "paragraph": "Map of all currently registered actions"
-        },
-        {
-          "paragraph": "Activates the trigger with the given key"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "(DEPRECATED, use getBooleanActionValue) Values that can be used with isActionPressed. Values that can be used in registerAction Values that can be used with getAxisValue. Values that can be passed to onControllerButtonPress/onControllerButtonRelease engine handlers. [Deprecated, moved to types.Player] Values that can be used with getControlSwitch/setControlSwitch. Key codes. Map of all currently registered actions Activates the trigger with the given key"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        },
-        {
-          "paragraph": "Provides a function computing the value of given input action."
-        },
-        {
-          "paragraph": "The callback is called once a frame, after the values of dependency actions are resolved.\n  Throws an error if a cyclic action dependency is detected."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
+    },
+    {
+      "paragraph": "Provides a function computing the value of given input action. The callback is called once a frame, after the values of dependency actions are resolved.\n  Throws an error if a cyclic action dependency is detected."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        },
-        {
-          "paragraph": "openmw.async#Callbackcallback: \nreturning the new value of the action, and taking as arguments:\n  frame time in seconds,\n  value of the function,\n  value of the first dependency action,\n  ..."
-        },
-        {
-          "code": "openmw.async#Callbackcallback"
-        },
-        {
-          "paragraph": "#list<#string> dependencies:"
-        },
-        {
-          "code": "#list<#string> dependencies"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
+    },
+    {
+      "paragraph": "openmw.async#Callbackcallback: \nreturning the new value of the action, and taking as arguments:\n  frame time in seconds,\n  value of the function,\n  value of the first dependency action,\n  ..."
+    },
+    {
+      "code": "openmw.async#Callback\ncallback"
+    },
+    {
+      "paragraph": "#list<#string> dependencies:"
+    },
+    {
+      "code": "#list<#string> dependencies"
     },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "input.bindAction('Activate', async:callback(function(dt, use, sneak, run)\n      -- while sneaking, only activate things while holding the run binding\n      return use and (run or not sneak)\n  end), { 'Sneak', 'Run' })"
-        },
-        {
-          "code": "input.bindAction('Activate', async:callback(function(dt, use, sneak, run)\n      -- while sneaking, only activate things while holding the run binding\n      return use and (run or not sneak)\n  end), { 'Sneak', 'Run' })"
-        },
-        {
-          "paragraph": "Get value of an axis of a game controller."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "input.bindAction('Activate', async:callback(function(dt, use, sneak, run)\n      -- while sneaking, only activate things while holding the run binding\n      return use and (run or not sneak)\n  end), { 'Sneak', 'Run' })"
+    },
+    {
+      "code": "input.bindAction('Activate', async:callback(function(dt, use, sneak, run)\n      -- while sneaking, only activate things while holding the run binding\n      return use and (run or not sneak)\n  end), { 'Sneak', 'Run' })"
+    },
+    {
+      "paragraph": "Get value of an axis of a game controller."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#number axisId: \nIndex of a controller axis, one ofopenmw.input#CONTROLLER_AXIS."
-        },
-        {
-          "code": "#number axisId"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number axisId: \nIndex of a controller axis, one ofopenmw.input#CONTROLLER_AXIS."
+    },
+    {
+      "code": "#number axisId"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:Value in range [-1, 1]."
-        },
-        {
-          "paragraph": "Returns the value of a Boolean action"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number:Value in range [-1, 1]. Returns the value of a Boolean action"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "[Deprecated, moved to types.Player] Get state of a control switch."
-        },
-        {
-          "paragraph": "I.e. is player able to move/fight/jump/etc."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: [Deprecated, moved to types.Player] Get state of a control switch. I.e. is player able to move/fight/jump/etc."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#ControlSwitchkey: \nControl type (seeopenmw.input#CONTROL_SWITCH)"
-        },
-        {
-          "code": "#ControlSwitchkey"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#ControlSwitchkey: \nControl type (seeopenmw.input#CONTROL_SWITCH)"
+    },
+    {
+      "code": "#ControlSwitch\nkey"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Returns a human readable name for the given key code"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Returns a human readable name for the given key code"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#KeyCodecode: \nA key code (seeopenmw.input#KEY)"
-        },
-        {
-          "code": "#KeyCodecode"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#KeyCodecode: \nA key code (seeopenmw.input#KEY)"
+    },
+    {
+      "code": "#KeyCode\ncode"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#string:"
-        },
-        {
-          "paragraph": "Horizontal mouse movement during the last frame."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string: Horizontal mouse movement during the last frame."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:"
-        },
-        {
-          "paragraph": "Vertical mouse movement during the last frame."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number: Vertical mouse movement during the last frame."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:"
-        },
-        {
-          "paragraph": "Returns the value of a Number action"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number: Returns the value of a Number action"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:"
-        },
-        {
-          "paragraph": "Returns the value of a Range action"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number: Returns the value of a Range action"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#number:"
-        },
-        {
-          "paragraph": "(DEPRECATED, use getBooleanActionValue) Input bindings can be changed ingame using Options/Controls menu."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number: (DEPRECATED, use getBooleanActionValue) Input bindings can be changed ingame using Options/Controls menu."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#number actionId: \nOne ofopenmw.input#ACTION"
-        },
-        {
-          "code": "#number actionId"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number actionId: \nOne ofopenmw.input#ACTION"
+    },
+    {
+      "code": "#number actionId"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "IsAltkey pressed."
-        },
-        {
-          "code": "Alt"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: IsAltkey pressed."
+    },
+    {
+      "code": "Alt"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Is a controller button currently pressed."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Is a controller button currently pressed."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#number buttonId: \nButton index (seeopenmw.input#CONTROLLER_BUTTON)"
-        },
-        {
-          "code": "#number buttonId"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number buttonId: \nButton index (seeopenmw.input#CONTROLLER_BUTTON)"
+    },
+    {
+      "code": "#number buttonId"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "IsCtrlkey pressed."
-        },
-        {
-          "code": "Ctrl"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: IsCtrlkey pressed."
+    },
+    {
+      "code": "Ctrl"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Is player idle."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Is player idle."
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Is a keyboard button currently pressed."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Is a keyboard button currently pressed."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#KeyCodekeyCode: \nKey code (seeopenmw.input#KEY)"
-        },
-        {
-          "code": "#KeyCodekeyCode"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#KeyCodekeyCode: \nKey code (seeopenmw.input#KEY)"
+    },
+    {
+      "code": "#KeyCode\nkeyCode"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Is a mouse button currently pressed."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Is a mouse button currently pressed."
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#number buttonId: \nButton index (1 - left, 2 - middle, 3 - right, 4 - X1, 5 - X2)"
-        },
-        {
-          "code": "#number buttonId"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number buttonId: \nButton index (1 - left, 2 - middle, 3 - right, 4 - X1, 5 - X2)"
+    },
+    {
+      "code": "#number buttonId"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "IsShiftkey pressed."
-        },
-        {
-          "code": "Shift"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: IsShiftkey pressed."
+    },
+    {
+      "code": "Shift"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "IsSuper/Winkey pressed."
-        },
-        {
-          "code": "Super"
-        },
-        {
-          "code": "Win"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: IsSuper/Winkey pressed."
+    },
+    {
+      "code": "Super"
+    },
+    {
+      "code": "Win"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#boolean:"
-        },
-        {
-          "paragraph": "Registers a new input action."
-        },
-        {
-          "paragraph": "The key must be unique"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#boolean: Registers a new input action. The key must be unique"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#ActionInfoinfo:"
-        },
-        {
-          "code": "#ActionInfoinfo"
-        },
-        {
-          "paragraph": "Registers a function to be called whenever the action's value changes"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#ActionInfoinfo:"
+    },
+    {
+      "code": "#ActionInfo\ninfo"
+    },
+    {
+      "paragraph": "Registers a function to be called whenever the action's value changes"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        },
-        {
-          "paragraph": "openmw.async#Callbackcallback: \ntakes the new action value as the only argument"
-        },
-        {
-          "code": "openmw.async#Callbackcallback"
-        },
-        {
-          "paragraph": "Registers a new input trigger."
-        },
-        {
-          "paragraph": "The key must be unique"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
+    },
+    {
+      "paragraph": "openmw.async#Callbackcallback: \ntakes the new action value as the only argument"
+    },
+    {
+      "code": "openmw.async#Callback\ncallback"
+    },
+    {
+      "paragraph": "Registers a new input trigger. The key must be unique"
     },
     {
       "header": "Parameter",
-      "content": [
-        {
-          "paragraph": "#TriggerInfoinfo:"
-        },
-        {
-          "code": "#TriggerInfoinfo"
-        },
-        {
-          "paragraph": "Registers a function to be called whenever the trigger activates"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#TriggerInfoinfo:"
+    },
+    {
+      "code": "#TriggerInfo\ninfo"
+    },
+    {
+      "paragraph": "Registers a function to be called whenever the trigger activates"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string key:"
-        },
-        {
-          "code": "#string key"
-        },
-        {
-          "paragraph": "openmw.async#Callbackcallback: \ntakes the new action value as the only argument"
-        },
-        {
-          "code": "openmw.async#Callbackcallback"
-        },
-        {
-          "paragraph": "[Deprecated, moved to types.Player] Set state of a control switch."
-        },
-        {
-          "paragraph": "I.e. forbid or allow player to move/fight/jump/etc."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string key:"
+    },
+    {
+      "code": "#string key"
+    },
+    {
+      "paragraph": "openmw.async#Callbackcallback: \ntakes the new action value as the only argument"
+    },
+    {
+      "code": "openmw.async#Callback\ncallback"
+    },
+    {
+      "paragraph": "[Deprecated, moved to types.Player] Set state of a control switch. I.e. forbid or allow player to move/fight/jump/etc."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#ControlSwitchkey: \nControl type (seeopenmw.input#CONTROL_SWITCH)"
-        },
-        {
-          "code": "#ControlSwitchkey"
-        },
-        {
-          "paragraph": "#boolean value:"
-        },
-        {
-          "code": "#boolean value"
-        },
-        {
-          "paragraph": "Map of all currently registered triggers"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#ControlSwitchkey: \nControl type (seeopenmw.input#CONTROL_SWITCH)"
+    },
+    {
+      "code": "#ControlSwitch\nkey"
+    },
+    {
+      "paragraph": "#boolean value:"
+    },
+    {
+      "code": "#boolean value"
+    },
+    {
+      "paragraph": "Map of all currently registered triggers"
     },
     {
       "header": "TypeACTION",
-      "content": [
-        {
-          "code": "ACTION"
-        },
-        {
-          "paragraph": "(DEPRECATED, use actions with matching keys)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ACTION"
+    },
+    {
+      "paragraph": "(DEPRECATED, use actions with matching keys)"
     },
     {
       "header": "Field(s)",
@@ -857,115 +570,62 @@
     },
     {
       "header": "TypeACTION_TYPE",
-      "content": [
-        {
-          "code": "ACTION_TYPE"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ACTION_TYPE"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Input action with value of true or false"
-        },
-        {
-          "paragraph": "Input action with a numeric value"
-        },
-        {
-          "paragraph": "Input action with a numeric value between 0 and 1 (inclusive)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Input action with value of true or false Input action with a numeric value Input action with a numeric value between 0 and 1 (inclusive)"
     },
     {
       "header": "TypeActionInfo",
-      "content": [
-        {
-          "code": "ActionInfo"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ActionInfo"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "initial value of the action"
-        },
-        {
-          "paragraph": "Localization key of the action's description"
-        },
-        {
-          "paragraph": "Localization context containing the name and description keys"
-        },
-        {
-          "paragraph": "Localization key of the action's name"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "initial value of the action Localization key of the action's description Localization context containing the name and description keys Localization key of the action's name"
     },
     {
       "header": "TypeActionType",
-      "content": [
-        {
-          "code": "ActionType"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ActionType"
     },
     {
       "header": "TypeCONTROLLER_AXIS",
-      "content": [
-        {
-          "code": "CONTROLLER_AXIS"
-        },
-        {
-          "paragraph": "Ids of game controller axises."
-        },
-        {
-          "paragraph": "Used as an argument in getAxisValue."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "CONTROLLER_AXIS"
+    },
+    {
+      "paragraph": "Ids of game controller axises. Used as an argument in getAxisValue."
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Left stick horizontal axis (from -1 to 1)"
-        },
-        {
-          "paragraph": "Left stick vertical axis (from -1 to 1)"
-        },
-        {
-          "paragraph": "(DEPRECATED, use the LookLeftRight action) View direction horizontal axis (RightX by default, can be mapped to another axis in Options/Controls menu)"
-        },
-        {
-          "paragraph": "(DEPRECATED, use the LookUpDown action) View direction vertical axis (RightY by default, can be mapped to another axis in Options/Controls menu)"
-        },
-        {
-          "paragraph": "(DEPRECATED, use the MoveForwardBackward action) Movement forward/backward (LeftY by default, can be mapped to another axis in Options/Controls menu)"
-        },
-        {
-          "paragraph": "(DEPRECATED, use the MoveLeftRight action) Side movement (LeftX by default, can be mapped to another axis in Options/Controls menu)"
-        },
-        {
-          "paragraph": "Right stick horizontal axis (from -1 to 1)"
-        },
-        {
-          "paragraph": "Right stick vertical axis (from -1 to 1)"
-        },
-        {
-          "paragraph": "Left trigger (from 0 to 1)"
-        },
-        {
-          "paragraph": "Right trigger (from 0 to 1)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Left stick horizontal axis (from -1 to 1) Left stick vertical axis (from -1 to 1) (DEPRECATED, use the LookLeftRight action) View direction horizontal axis (RightX by default, can be mapped to another axis in Options/Controls menu) (DEPRECATED, use the LookUpDown action) View direction vertical axis (RightY by default, can be mapped to another axis in Options/Controls menu) (DEPRECATED, use the MoveForwardBackward action) Movement forward/backward (LeftY by default, can be mapped to another axis in Options/Controls menu) (DEPRECATED, use the MoveLeftRight action) Side movement (LeftX by default, can be mapped to another axis in Options/Controls menu) Right stick horizontal axis (from -1 to 1) Right stick vertical axis (from -1 to 1) Left trigger (from 0 to 1) Right trigger (from 0 to 1)"
     },
     {
       "header": "TypeCONTROLLER_BUTTON",
-      "content": [
-        {
-          "code": "CONTROLLER_BUTTON"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "CONTROLLER_BUTTON"
     },
     {
       "header": "Field(s)",
@@ -973,56 +633,34 @@
     },
     {
       "header": "TypeCONTROL_SWITCH",
-      "content": [
-        {
-          "code": "CONTROL_SWITCH"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "CONTROL_SWITCH"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Ability to move"
-        },
-        {
-          "paragraph": "Ability to attack"
-        },
-        {
-          "paragraph": "Ability to jump"
-        },
-        {
-          "paragraph": "Ability to change view direction"
-        },
-        {
-          "paragraph": "Ability to use magic"
-        },
-        {
-          "paragraph": "Vanity view if player doesn't touch controls for a long time"
-        },
-        {
-          "paragraph": "Ability to toggle 1st/3rd person view"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Ability to move Ability to attack Ability to jump Ability to change view direction Ability to use magic Vanity view if player doesn't touch controls for a long time Ability to toggle 1st/3rd person view"
     },
     {
       "header": "TypeControlSwitch",
-      "content": [
-        {
-          "code": "ControlSwitch"
-        },
-        {
-          "paragraph": "String id of a#CONTROL_SWITCH"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "ControlSwitch"
+    },
+    {
+      "paragraph": "String id of a#CONTROL_SWITCH"
     },
     {
       "header": "TypeKEY",
-      "content": [
-        {
-          "code": "KEY"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "KEY"
     },
     {
       "header": "Field(s)",
@@ -1030,125 +668,91 @@
     },
     {
       "header": "TypeKeyCode",
-      "content": [
-        {
-          "code": "KeyCode"
-        },
-        {
-          "paragraph": "Numeric id of a#KEY"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "KeyCode"
+    },
+    {
+      "paragraph": "Numeric id of a#KEY"
     },
     {
       "header": "TypeKeyboardEvent",
-      "content": [
-        {
-          "code": "KeyboardEvent"
-        },
-        {
-          "paragraph": "The argument ofonKeyPress/onKeyReleaseengine handlers."
-        },
-        {
-          "code": "onKeyPress"
-        },
-        {
-          "code": "onKeyRelease"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "KeyboardEvent"
+    },
+    {
+      "paragraph": "The argument ofonKeyPress/onKeyReleaseengine handlers."
+    },
+    {
+      "code": "onKeyPress"
+    },
+    {
+      "code": "onKeyRelease"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Key code."
-        },
-        {
-          "paragraph": "The pressed symbol (1-symbol string if can be represented or an empty string otherwise)."
-        },
-        {
-          "paragraph": "IsAltkey pressed."
-        },
-        {
-          "code": "Alt"
-        },
-        {
-          "paragraph": "IsControlkey pressed."
-        },
-        {
-          "code": "Control"
-        },
-        {
-          "paragraph": "IsShiftkey pressed."
-        },
-        {
-          "code": "Shift"
-        },
-        {
-          "paragraph": "IsSuper/Winkey pressed."
-        },
-        {
-          "code": "Super"
-        },
-        {
-          "code": "Win"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Key code. The pressed symbol (1-symbol string if can be represented or an empty string otherwise). IsAltkey pressed."
+    },
+    {
+      "code": "Alt"
+    },
+    {
+      "paragraph": "IsControlkey pressed."
+    },
+    {
+      "code": "Control"
+    },
+    {
+      "paragraph": "IsShiftkey pressed."
+    },
+    {
+      "code": "Shift"
+    },
+    {
+      "paragraph": "IsSuper/Winkey pressed."
+    },
+    {
+      "code": "Super"
+    },
+    {
+      "code": "Win"
     },
     {
       "header": "TypeTouchEvent",
-      "content": [
-        {
-          "code": "TouchEvent"
-        },
-        {
-          "paragraph": "The argument of onTouchPress/onTouchRelease/onTouchMove engine handlers."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "TouchEvent"
+    },
+    {
+      "paragraph": "The argument of onTouchPress/onTouchRelease/onTouchMove engine handlers."
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Device id (there might be multiple touch devices connected). Note: the specific device ids are not guaranteed. Always use previous user input (onTouch... handlers) to get a valid device id (e. g. in your script's settings page)."
-        },
-        {
-          "paragraph": "Finger id (the device might support multitouch)."
-        },
-        {
-          "paragraph": "Relative position on the touch device (0 to 1 from top left corner),"
-        },
-        {
-          "paragraph": "Pressure of the finger."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Device id (there might be multiple touch devices connected). Note: the specific device ids are not guaranteed. Always use previous user input (onTouch... handlers) to get a valid device id (e. g. in your script's settings page). Finger id (the device might support multitouch). Relative position on the touch device (0 to 1 from top left corner), Pressure of the finger."
     },
     {
       "header": "TypeTriggerInfo",
-      "content": [
-        {
-          "code": "TriggerInfo"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "TriggerInfo"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Localization key of the trigger's description"
-        },
-        {
-          "paragraph": "Localization context containing the name and description keys"
-        },
-        {
-          "paragraph": "Localization key of the trigger's name"
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Localization key of the trigger's description Localization context containing the name and description keys Localization key of the trigger's name \u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }

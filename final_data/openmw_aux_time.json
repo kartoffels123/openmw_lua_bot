@@ -1,261 +1,250 @@
 {
   "title": "Package openmw_aux.time\uf0c1",
-  "sections": [
+  "content": [
+    {
+      "paragraph": "openmw_aux.timedefines utility functions for timers."
+    },
+    {
+      "code": "openmw_aux.time"
+    },
+    {
+      "paragraph": "Implementation can be found inresources/vfs/openmw_aux/time.lua."
+    },
+    {
+      "code": "resources/vfs/openmw_aux/time.lua"
+    },
     {
       "header": "Usage:",
-      "content": [
-        {
-          "code": "local time = require('openmw_aux.time')"
-        },
-        {
-          "code": "local time = require('openmw_aux.time')"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local time = require('openmw_aux.time')"
+    },
+    {
+      "code": "local time = require('openmw_aux.time')"
     },
     {
       "header": "Typetime",
-      "content": [
-        {
-          "code": "time"
-        },
-        {
-          "paragraph": "Alias of async:newSimulationTimer ; call callback(arg) indelaygame seconds."
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Alias of async:newSimulationTimer ; call callback(arg) indelaysimulation seconds."
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Alias of async:registerTimerCallback ; register a function as a timer callback."
-        },
-        {
-          "paragraph": "Run given function repeatedly."
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "time"
+    },
+    {
+      "paragraph": "Alias of async:newSimulationTimer ; call callback(arg) indelaygame seconds."
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Alias of async:newSimulationTimer ; call callback(arg) indelaysimulation seconds."
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Alias of async:registerTimerCallback ; register a function as a timer callback. Run given function repeatedly."
     },
     {
       "header": "Typetime",
-      "content": [
-        {
-          "code": "time"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "time"
     },
     {
       "header": "Field(s)",
-      "content": [
-        {
-          "paragraph": "Alias of async:newSimulationTimer ; call callback(arg) indelaygame seconds."
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Callback must be registered in advance."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "Alias of async:newSimulationTimer ; call callback(arg) indelaygame seconds."
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Callback must be registered in advance."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#number delay:"
-        },
-        {
-          "code": "#number delay"
-        },
-        {
-          "paragraph": "openmw.async#TimerCallbackcallback: \nA callback returned byregisterTimerCallback"
-        },
-        {
-          "code": "openmw.async#TimerCallbackcallback"
-        },
-        {
-          "code": "registerTimerCallback"
-        },
-        {
-          "paragraph": "arg: \nAn argument forcallback; can benil."
-        },
-        {
-          "code": "arg"
-        },
-        {
-          "code": "callback"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "callbackArg:"
-        },
-        {
-          "code": "callbackArg"
-        },
-        {
-          "paragraph": "Alias of async:newSimulationTimer ; call callback(arg) indelaysimulation seconds."
-        },
-        {
-          "code": "delay"
-        },
-        {
-          "paragraph": "Callback must be registered in advance."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number delay:"
+    },
+    {
+      "code": "#number delay"
+    },
+    {
+      "paragraph": "openmw.async#TimerCallbackcallback: \nA callback returned byregisterTimerCallback"
+    },
+    {
+      "code": "openmw.async#TimerCallback\ncallback"
+    },
+    {
+      "code": "registerTimerCallback"
+    },
+    {
+      "paragraph": "arg: \nAn argument forcallback; can benil."
+    },
+    {
+      "code": "arg"
+    },
+    {
+      "code": "callback"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "callbackArg:"
+    },
+    {
+      "code": "callbackArg"
+    },
+    {
+      "paragraph": "Alias of async:newSimulationTimer ; call callback(arg) indelaysimulation seconds."
+    },
+    {
+      "code": "delay"
+    },
+    {
+      "paragraph": "Callback must be registered in advance."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#number delay:"
-        },
-        {
-          "code": "#number delay"
-        },
-        {
-          "paragraph": "openmw.async#TimerCallbackcallback: \nA callback returned byregisterTimerCallback"
-        },
-        {
-          "code": "openmw.async#TimerCallbackcallback"
-        },
-        {
-          "code": "registerTimerCallback"
-        },
-        {
-          "paragraph": "arg: \nAn argument forcallback; can benil."
-        },
-        {
-          "code": "arg"
-        },
-        {
-          "code": "callback"
-        },
-        {
-          "code": "nil"
-        },
-        {
-          "paragraph": "callbackArg:"
-        },
-        {
-          "code": "callbackArg"
-        },
-        {
-          "paragraph": "Alias of async:registerTimerCallback ; register a function as a timer callback."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#number delay:"
+    },
+    {
+      "code": "#number delay"
+    },
+    {
+      "paragraph": "openmw.async#TimerCallbackcallback: \nA callback returned byregisterTimerCallback"
+    },
+    {
+      "code": "openmw.async#TimerCallback\ncallback"
+    },
+    {
+      "code": "registerTimerCallback"
+    },
+    {
+      "paragraph": "arg: \nAn argument forcallback; can benil."
+    },
+    {
+      "code": "arg"
+    },
+    {
+      "code": "callback"
+    },
+    {
+      "code": "nil"
+    },
+    {
+      "paragraph": "callbackArg:"
+    },
+    {
+      "code": "callbackArg"
+    },
+    {
+      "paragraph": "Alias of async:registerTimerCallback ; register a function as a timer callback."
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#string name:"
-        },
-        {
-          "code": "#string name"
-        },
-        {
-          "paragraph": "#function func:"
-        },
-        {
-          "code": "#function func"
-        },
-        {
-          "paragraph": "fn:"
-        },
-        {
-          "code": "fn"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#string name:"
+    },
+    {
+      "code": "#string name"
+    },
+    {
+      "paragraph": "#function func:"
+    },
+    {
+      "code": "#function func"
+    },
+    {
+      "paragraph": "fn:"
+    },
+    {
+      "code": "fn"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "openmw.async#TimerCallback:"
-        },
-        {
-          "paragraph": "Run given function repeatedly."
-        },
-        {
-          "paragraph": "Note that loading a save stops the evaluation. If it should work always, call it during initialization of the script (i.e. not in a handler)"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "openmw.async#TimerCallback: Run given function repeatedly. Note that loading a save stops the evaluation. If it should work always, call it during initialization of the script (i.e. not in a handler)"
     },
     {
       "header": "Parameters",
-      "content": [
-        {
-          "paragraph": "#function fn: \nthe function that should be called"
-        },
-        {
-          "code": "#function fn"
-        },
-        {
-          "paragraph": "#number period: \ninterval"
-        },
-        {
-          "code": "#number period"
-        },
-        {
-          "paragraph": "#table options: \nadditional optionsinitialDelayandtype.initialDelay- delay before the first call. If missed then the delay is a random number in range [0, N]. Randomization is used for performance reasons -- to prevent all scripts from doing time consuming operations at the same time.type- eithertime.SimulationTime(by default, timer uses simulation time) ortime.GameTime(timer uses game time)."
-        },
-        {
-          "code": "#table options"
-        },
-        {
-          "code": "initialDelay"
-        },
-        {
-          "code": "type"
-        },
-        {
-          "code": "initialDelay"
-        },
-        {
-          "code": "type"
-        },
-        {
-          "code": "time.SimulationTime"
-        },
-        {
-          "code": "time.GameTime"
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#function fn: \nthe function that should be called"
+    },
+    {
+      "code": "#function fn"
+    },
+    {
+      "paragraph": "#number period: \ninterval"
+    },
+    {
+      "code": "#number period"
+    },
+    {
+      "paragraph": "#table options: \nadditional optionsinitialDelayandtype.initialDelay- delay before the first call. If missed then the delay is a random number in range [0, N]. Randomization is used for performance reasons -- to prevent all scripts from doing time consuming operations at the same time.type- eithertime.SimulationTime(by default, timer uses simulation time) ortime.GameTime(timer uses game time)."
+    },
+    {
+      "code": "#table options"
+    },
+    {
+      "code": "initialDelay"
+    },
+    {
+      "code": "type"
+    },
+    {
+      "code": "initialDelay"
+    },
+    {
+      "code": "type"
+    },
+    {
+      "code": "time.SimulationTime"
+    },
+    {
+      "code": "time.GameTime"
     },
     {
       "header": "Return value",
-      "content": [
-        {
-          "paragraph": "#function:a function without arguments that can be used to stop the periodical evaluation."
-        }
-      ]
+      "content": []
+    },
+    {
+      "paragraph": "#function:a function without arguments that can be used to stop the periodical evaluation."
     },
     {
       "header": "Usages:",
-      "content": [
-        {
-          "code": "local stopFn = time.runRepeatedly(function() print('Test') end,\n                                  5 * time.second)  -- print 'Test' every 5 seconds\nstopFn()  -- stop printing 'Test'\ntime.runRepeatedly(  -- print 'Test' every 5 minutes with initial 30 second delay\n    function() print('Test2') end, 5 * time.minute,\n    { initialDelay = 30 * time.second })"
-        },
-        {
-          "code": "local stopFn = time.runRepeatedly(function() print('Test') end,\n                                  5 * time.second)  -- print 'Test' every 5 seconds\nstopFn()  -- stop printing 'Test'\ntime.runRepeatedly(  -- print 'Test' every 5 minutes with initial 30 second delay\n    function() print('Test2') end, 5 * time.minute,\n    { initialDelay = 30 * time.second })"
-        },
-        {
-          "code": "local timeBeforeMidnight = time.day - core.getGameTime() % time.day\ntime.runRepeatedly(doSomething, time.day, {\n    initialDelay = timeBeforeMidnight,\n    type = time.GameTime,\n})  -- call `doSomething` at the end of every game day."
-        },
-        {
-          "code": "local timeBeforeMidnight = time.day - core.getGameTime() % time.day\ntime.runRepeatedly(doSomething, time.day, {\n    initialDelay = timeBeforeMidnight,\n    type = time.GameTime,\n})  -- call `doSomething` at the end of every game day."
-        },
-        {
-          "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
-        },
-        {
-          "code": "7d84b85d"
-        }
-      ]
+      "content": []
+    },
+    {
+      "code": "local stopFn = time.runRepeatedly(function() print('Test') end,\n                                  5 * time.second)  -- print 'Test' every 5 seconds\nstopFn()  -- stop printing 'Test'\ntime.runRepeatedly(  -- print 'Test' every 5 minutes with initial 30 second delay\n    function() print('Test2') end, 5 * time.minute,\n    { initialDelay = 30 * time.second })"
+    },
+    {
+      "code": "local stopFn = time.runRepeatedly(function() print('Test') end,\n                                  5 * time.second)  -- print 'Test' every 5 seconds\nstopFn()  -- stop printing 'Test'\ntime.runRepeatedly(  -- print 'Test' every 5 minutes with initial 30 second delay\n    function() print('Test2') end, 5 * time.minute,\n    { initialDelay = 30 * time.second })"
+    },
+    {
+      "code": "local timeBeforeMidnight = time.day - core.getGameTime() % time.day\ntime.runRepeatedly(doSomething, time.day, {\n    initialDelay = timeBeforeMidnight,\n    type = time.GameTime,\n})  -- call `doSomething` at the end of every game day."
+    },
+    {
+      "code": "local timeBeforeMidnight = time.day - core.getGameTime() % time.day\ntime.runRepeatedly(doSomething, time.day, {\n    initialDelay = timeBeforeMidnight,\n    type = time.GameTime,\n})  -- call `doSomething` at the end of every game day."
+    },
+    {
+      "paragraph": "\u00a9 Copyright 2024, OpenMW Team.Revision7d84b85d."
     }
   ]
 }
