@@ -12,7 +12,7 @@ assistant = client.beta.assistants
 
 # Create Vector Store
 
-vector_store = client.beta.vector_stores.create(name="Library 0.4")
+vector_store = client.beta.vector_stores.create(name="Library 0.5")
 print(f"Vector Store ID - {vector_store.id}")
 
 from pathlib import Path

@@ -11,54 +11,41 @@ def load_index(index_path):
 def is_after_january_2024(timestamp):
     return datetime.datetime.fromtimestamp(timestamp) > datetime.datetime(2024, 1, 1)
 
-def contains_openmw(path):
-    if 'openmw' in path.lower():
-        return True
-    
-    if os.path.isfile(path):
-        try:
-            with open(path, 'r', encoding='utf-8') as file:
-                return 'openmw' in file.read().lower()
-        except Exception:
-            return False
-    elif os.path.isdir(path):
-        for root, dirs, files in os.walk(path):
-            if any('openmw' in item.lower() for item in dirs + files):
-                return True
-            for file in files:
-                file_path = os.path.join(root, file)
-                if contains_openmw(file_path):
+def contains_openmw_require(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            for line in file:
+                if "require('openmw" in line:
                     return True
+    except Exception:
+        pass
     return False
 
 def should_process_folder(folder_path, mod_name, index_data):
-    # Check if the mod is in the index and after January 1st, 2024
     mod_entry = index_data.get(mod_name)
     if not mod_entry or not is_after_january_2024(mod_entry.get('indexed_timestamp', 0)):
         return False
     
-    # Check for exclusions
     if 'mwse' in mod_name.lower() or 'tes3mp' in mod_name.lower():
         return False
     
-    # Check for OpenMW mention
-    return contains_openmw(folder_path)
+    for root, _, files in os.walk(folder_path):
+        for file in files:
+            if file.endswith('.lua'):
+                if contains_openmw_require(os.path.join(root, file)):
+                    return True
+    return False
 
 def safe_copy(src, dst):
     if os.path.exists(dst):
         if os.path.isdir(dst):
-            for item in os.listdir(src):
-                s = os.path.join(src, item)
-                d = os.path.join(dst, item)
-                safe_copy(s, d)
+            shutil.rmtree(dst)
         else:
             os.remove(dst)
-            shutil.copy2(src, dst)
+    if os.path.isdir(src):
+        shutil.copytree(src, dst)
     else:
-        if os.path.isdir(src):
-            shutil.copytree(src, dst)
-        else:
-            shutil.copy2(src, dst)
+        shutil.copy2(src, dst)
 
 def process_directory(source_dir, target_dir, index_path):
     index_data = load_index(index_path)

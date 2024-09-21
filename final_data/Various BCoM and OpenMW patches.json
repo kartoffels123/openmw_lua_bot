@@ -1,7 +1,0 @@
-{
-  "folder_name": "Various BCoM and OpenMW patches",
-  "lua_files": {
-    "Dynamic Music - Ashlander-51194-1-9-1710574573\\scripts\\DynamicMusic\\soundBanks\\1100_muse_expansion_ashlander.lua": "local soundBank =      {\n  id = 'muse_expansion_ashlander',\n  cellNamePatterns = {\n\t'Urshilaku Camp',\n\t'Zainab Camp',\n\t'Erabenimsun Camp',\n\t'Ahemmusa Camp'\n  },\n  tracks = {\n    {\n      path='Music/MS/cell/Ashlander/exploration1.mp3',\n      length=231\n    },\n    {\n      path='Music/MS/cell/Ashlander/exploration2.mp3',\n      length=252\n    },\n    {\n      path='Music/MS/cell/Ashlander/exploration3.mp3',\n      length=308\n    },\n    {\n      path='Music/MS/cell/Ashlander/exploration4.mp3',\n      length=362\n    }\n  },\n  combatTracks = {\n    {\n      path=\"Music/MS/combat/Ashlander/combat1.mp3\",\n      length=78\n    },\n    {\n      path=\"Music/MS/combat/Ashlander/combat2.mp3\",\n      length=64\n    },\n    {\n      path=\"Music/MS/combat/Ashlander/combat3.mp3\",\n      length=79\n    }\n  }\n}\n\nreturn soundBank\n",
-    "Dynamic Music - Ashlander-51194-1-9-1710574573\\scripts\\DynamicMusic\\soundBanks\\1100_muse_expansion_incarnate.lua": "local soundBank =      {\n  id = 'muse_expansion_incarnate',\n  cellNamePatterns = {\n\t'Cavern of the Incarnate'\n  },\n  tracks = {\n    {\n      path='Music/MS/cell/Incarnate/incarnate.mp3',\n      length=179\n    }\n  }\n}\n\nreturn soundBank\n"
-  }
-}
